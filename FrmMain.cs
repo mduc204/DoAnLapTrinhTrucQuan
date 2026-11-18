@@ -12,5 +12,10 @@ namespace DoAnLapTrinhTrucQuan
             uc.Dock = DockStyle.Fill;
             pnlContent.Controls.Add(uc);
         }
+
+        private void btnQuanlynhanvien_Click(object sender, EventArgs e)
+        {
+            LoadControl(new UcM05());
+        }
     }
 }

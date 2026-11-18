@@ -51,6 +51,7 @@
             picLogo = new PictureBox();
             lbLogo2 = new Label();
             lbLogo1 = new Label();
+            btnThongtincanhan = new Button();
             pnlTopbar = new Panel();
             lbRoletopbar = new Label();
             lbTentopbar = new Label();
@@ -58,7 +59,6 @@
             label1 = new Label();
             picLogotopbar = new PictureBox();
             pnlContent = new Panel();
-            btnThongtincanhan = new Button();
             pnlSidebar.SuspendLayout();
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
@@ -306,6 +306,7 @@
             btnQuanlynhanvien.TextAlign = ContentAlignment.MiddleLeft;
             btnQuanlynhanvien.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnQuanlynhanvien.UseVisualStyleBackColor = true;
+            btnQuanlynhanvien.Click += btnQuanlynhanvien_Click;
             // 
             // btnXepca
             // 
@@ -421,6 +422,24 @@
             lbLogo1.TabIndex = 0;
             lbLogo1.Text = "LTTQ Cafe";
             // 
+            // btnThongtincanhan
+            // 
+            btnThongtincanhan.FlatAppearance.BorderSize = 0;
+            btnThongtincanhan.FlatStyle = FlatStyle.Flat;
+            btnThongtincanhan.Font = new Font("Segoe UI", 11F);
+            btnThongtincanhan.ForeColor = Color.FromArgb(238, 193, 164);
+            btnThongtincanhan.Image = Properties.Resources.Container;
+            btnThongtincanhan.ImageAlign = ContentAlignment.MiddleLeft;
+            btnThongtincanhan.Location = new Point(0, 756);
+            btnThongtincanhan.Name = "btnThongtincanhan";
+            btnThongtincanhan.Padding = new Padding(15, 0, 0, 0);
+            btnThongtincanhan.Size = new Size(237, 45);
+            btnThongtincanhan.TabIndex = 14;
+            btnThongtincanhan.Text = "Thông tin cá nhân";
+            btnThongtincanhan.TextAlign = ContentAlignment.MiddleLeft;
+            btnThongtincanhan.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnThongtincanhan.UseVisualStyleBackColor = true;
+            // 
             // pnlTopbar
             // 
             pnlTopbar.BackColor = Color.White;
@@ -497,24 +516,6 @@
             pnlContent.Name = "pnlContent";
             pnlContent.Size = new Size(1662, 963);
             pnlContent.TabIndex = 2;
-            // 
-            // btnThongtincanhan
-            // 
-            btnThongtincanhan.FlatAppearance.BorderSize = 0;
-            btnThongtincanhan.FlatStyle = FlatStyle.Flat;
-            btnThongtincanhan.Font = new Font("Segoe UI", 11F);
-            btnThongtincanhan.ForeColor = Color.FromArgb(238, 193, 164);
-            btnThongtincanhan.Image = Properties.Resources.Container;
-            btnThongtincanhan.ImageAlign = ContentAlignment.MiddleLeft;
-            btnThongtincanhan.Location = new Point(0, 756);
-            btnThongtincanhan.Name = "btnThongtincanhan";
-            btnThongtincanhan.Padding = new Padding(15, 0, 0, 0);
-            btnThongtincanhan.Size = new Size(237, 45);
-            btnThongtincanhan.TabIndex = 14;
-            btnThongtincanhan.Text = "Thông tin cá nhân";
-            btnThongtincanhan.TextAlign = ContentAlignment.MiddleLeft;
-            btnThongtincanhan.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnThongtincanhan.UseVisualStyleBackColor = true;
             // 
             // FrmMain
             // 
