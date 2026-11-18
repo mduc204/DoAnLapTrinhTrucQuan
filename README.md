@@ -5,7 +5,7 @@ Hệ thống quản lý quán cafe (Windows Forms .NET 10).
 ## Nhánh feature/m01-quanlymon
 
 Phân hệ Quản lý món và Định lượng nguyên liệu (M01):
-- **Danh sách món:** Xem danh sách, tìm kiếm món, lọc theo danh mục và trạng thái (đang bán / tạm ngưng).
+- **Danh sách món:** Xem danh sách, tìm kiếm món theo tên/mã, lọc theo danh mục và trạng thái (đang bán / tạm ngưng).
 - **Thao tác món:** Thêm món mới (`FormThemMon`), sửa thông tin món, bật/tắt tạm ngưng bán.
 - **Định lượng (BOM):** Chọn nguyên liệu từ kho (`FormChonNguyenLieu`), nhập định lượng, tự tính giá vốn và % lãi.
 - **Xuất file:** Xuất danh sách món ra file Excel/CSV.
