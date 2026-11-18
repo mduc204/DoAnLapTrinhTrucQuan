@@ -472,11 +472,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(85, 55, 34);
-            label1.Location = new Point(65, 19);
+            label1.Location = new Point(65, 22);
             label1.Name = "label1";
-            label1.Size = new Size(107, 28);
+            label1.Size = new Size(100, 25);
             label1.TabIndex = 3;
             label1.Text = "LTTQ Cafe";
             // 
@@ -527,7 +527,7 @@
             Controls.Add(pnlSidebar);
             Name = "FrmMain";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "LTTQ Cafe";
+            Text = "LTTQ Cafe - Hệ thống POS";
             WindowState = FormWindowState.Maximized;
             pnlSidebar.ResumeLayout(false);
             panel1.ResumeLayout(false);
