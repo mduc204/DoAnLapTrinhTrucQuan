@@ -4,12 +4,12 @@
     <Compile Update="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FrmThemNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="UcM05.cs">
+<<<<<<< Updated upstream
+    <Compile Update="UcAccount.cs">
       <SubType>UserControl</SubType>
     </Compile>
+=======
+>>>>>>> Stashed changes
     <Compile Update="UcS01.cs">
       <SubType>UserControl</SubType>
     </Compile>
