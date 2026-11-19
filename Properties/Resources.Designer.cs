@@ -313,6 +313,16 @@ namespace DoAnLapTrinhTrucQuan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icTieudeThemnhanvien {
+            get {
+                object obj = ResourceManager.GetObject("icTieudeThemnhanvien", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icTongnhanvien {
             get {
                 object obj = ResourceManager.GetObject("icTongnhanvien", resourceCulture);

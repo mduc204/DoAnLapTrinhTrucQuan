@@ -28,9 +28,9 @@ namespace DoAnLapTrinhTrucQuan
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             lbQuanlynhanvien = new Label();
             btnThemnhanvien = new Button();
             btnXuatexcelnhanvien = new Button();
@@ -60,7 +60,7 @@ namespace DoAnLapTrinhTrucQuan
             btnDatlaimatkhau = new Button();
             lbTendangnhap = new Label();
             lbTaikhoanvabaomat = new Label();
-            tbVaitro = new TextBox();
+            tbVaitro = new ComboBox();
             lbVaitrochinhsua = new Label();
             tbEmail = new TextBox();
             lbEmail = new Label();
@@ -68,7 +68,7 @@ namespace DoAnLapTrinhTrucQuan
             lbSDT = new Label();
             tbHoten = new TextBox();
             lbHoten = new Label();
-            textBox1 = new TextBox();
+            dateTimePicker1 = new DateTimePicker();
             tbManhanvien = new TextBox();
             lvNgaynhanviec = new Label();
             lbManv = new Label();
@@ -131,6 +131,7 @@ namespace DoAnLapTrinhTrucQuan
             btnThemnhanvien.TextAlign = ContentAlignment.MiddleRight;
             btnThemnhanvien.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnThemnhanvien.UseVisualStyleBackColor = false;
+            btnThemnhanvien.Click += btnThemnhanvien_Click;
             // 
             // btnXuatexcelnhanvien
             // 
@@ -164,36 +165,36 @@ namespace DoAnLapTrinhTrucQuan
             // 
             dgvNhanvien.AllowUserToAddRows = false;
             dgvNhanvien.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(44, 22, 14);
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 217, 194);
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(44, 22, 14);
-            dgvNhanvien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(44, 22, 14);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 217, 194);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(44, 22, 14);
+            dgvNhanvien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvNhanvien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvNhanvien.BackgroundColor = Color.White;
             dgvNhanvien.BorderStyle = BorderStyle.None;
             dgvNhanvien.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgvNhanvien.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(255, 226, 218);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(44, 22, 14);
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(255, 226, 218);
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(44, 22, 14);
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvNhanvien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 226, 218);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(44, 22, 14);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 226, 218);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(44, 22, 14);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvNhanvien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvNhanvien.ColumnHeadersHeight = 44;
             dgvNhanvien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvNhanvien.Columns.AddRange(new DataGridViewColumn[] { MaNV, HoTen, SDT, VaiTro, TrangThai });
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(255, 241, 237);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(44, 22, 14);
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(255, 217, 194);
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(44, 22, 14);
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dgvNhanvien.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(255, 241, 237);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(44, 22, 14);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 217, 194);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(44, 22, 14);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvNhanvien.DefaultCellStyle = dataGridViewCellStyle3;
             dgvNhanvien.Dock = DockStyle.Fill;
             dgvNhanvien.EnableHeadersVisualStyles = false;
             dgvNhanvien.Location = new Point(20, 84);
@@ -394,7 +395,7 @@ namespace DoAnLapTrinhTrucQuan
             pnlChinhsua.Controls.Add(lbSDT);
             pnlChinhsua.Controls.Add(tbHoten);
             pnlChinhsua.Controls.Add(lbHoten);
-            pnlChinhsua.Controls.Add(textBox1);
+            pnlChinhsua.Controls.Add(dateTimePicker1);
             pnlChinhsua.Controls.Add(tbManhanvien);
             pnlChinhsua.Controls.Add(lvNgaynhanviec);
             pnlChinhsua.Controls.Add(lbManv);
@@ -412,6 +413,7 @@ namespace DoAnLapTrinhTrucQuan
             tbUsername.ForeColor = Color.FromArgb(44, 22, 14);
             tbUsername.Location = new Point(20, 589);
             tbUsername.Name = "tbUsername";
+            tbUsername.ReadOnly = true;
             tbUsername.Size = new Size(408, 32);
             tbUsername.TabIndex = 29;
             // 
@@ -510,10 +512,13 @@ namespace DoAnLapTrinhTrucQuan
             // 
             // tbVaitro
             // 
+            tbVaitro.DropDownStyle = ComboBoxStyle.DropDownList;
+            tbVaitro.FlatStyle = FlatStyle.Flat;
             tbVaitro.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            tbVaitro.Items.AddRange(new object[] { "Nhân viên", "Quản lý" });
             tbVaitro.Location = new Point(20, 469);
             tbVaitro.Name = "tbVaitro";
-            tbVaitro.Size = new Size(411, 32);
+            tbVaitro.Size = new Size(411, 33);
             tbVaitro.TabIndex = 21;
             // 
             // lbVaitrochinhsua
@@ -592,13 +597,15 @@ namespace DoAnLapTrinhTrucQuan
             lbHoten.Text = "Họ và tên nhân viên";
             lbHoten.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // dateTimePicker1
             // 
-            textBox1.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            textBox1.Location = new Point(257, 160);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(174, 32);
-            textBox1.TabIndex = 13;
+            dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            dateTimePicker1.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.Location = new Point(257, 160);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(174, 32);
+            dateTimePicker1.TabIndex = 13;
             // 
             // tbManhanvien
             // 
@@ -607,6 +614,7 @@ namespace DoAnLapTrinhTrucQuan
             tbManhanvien.ForeColor = Color.FromArgb(44, 22, 14);
             tbManhanvien.Location = new Point(20, 160);
             tbManhanvien.Name = "tbManhanvien";
+            tbManhanvien.ReadOnly = true;
             tbManhanvien.Size = new Size(211, 32);
             tbManhanvien.TabIndex = 12;
             // 
@@ -858,13 +866,13 @@ namespace DoAnLapTrinhTrucQuan
         private Label lbManvmain;
         private Label lbManv;
         private PictureBox picAvt;
-        private TextBox textBox1;
+        private DateTimePicker dateTimePicker1;
         private TextBox tbManhanvien;
         private Label lvNgaynhanviec;
         private TextBox tbHoten;
         private Label lbHoten;
         private Label lbTaikhoanvabaomat;
-        private TextBox tbVaitro;
+        private ComboBox tbVaitro;
         private Label lbVaitrochinhsua;
         private TextBox tbEmail;
         private Label lbEmail;
