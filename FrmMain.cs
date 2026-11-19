@@ -99,5 +99,10 @@ namespace DoAnLapTrinhTrucQuan
             uc.Dock = DockStyle.Fill;
             pnlContent.Controls.Add(uc);
         }
+
+        private void btnThongtincanhan_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

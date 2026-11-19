@@ -199,7 +199,7 @@ namespace DoAnLapTrinhTrucQuan
             picBrandLogo.BackColor = Color.White;
             picBrandLogo.Image = Properties.Resources.LLTQ_Café_Logo;
             picBrandLogo.Location = new Point(91, 77);
-            picBrandLogo.Margin = new Padding(5, 5, 5, 5);
+            picBrandLogo.Margin = new Padding(5);
             picBrandLogo.Name = "picBrandLogo";
             picBrandLogo.Size = new Size(124, 122);
             picBrandLogo.SizeMode = PictureBoxSizeMode.Zoom;
@@ -272,7 +272,7 @@ namespace DoAnLapTrinhTrucQuan
             card.Controls.Add(pageOtp);
             card.Controls.Add(pageResetPassword);
             card.Location = new Point(221, 64);
-            card.Margin = new Padding(5, 5, 5, 5);
+            card.Margin = new Padding(5);
             card.Name = "card";
             card.Size = new Size(764, 1024);
             card.TabIndex = 0;
@@ -295,7 +295,7 @@ namespace DoAnLapTrinhTrucQuan
             pageLogin.Controls.Add(lblLoginFooter);
             pageLogin.Dock = DockStyle.Fill;
             pageLogin.Location = new Point(0, 0);
-            pageLogin.Margin = new Padding(5, 5, 5, 5);
+            pageLogin.Margin = new Padding(5);
             pageLogin.Name = "pageLogin";
             pageLogin.Size = new Size(764, 1024);
             pageLogin.TabIndex = 0;
@@ -350,11 +350,12 @@ namespace DoAnLapTrinhTrucQuan
             txtLoginEmail.BorderStyle = BorderStyle.FixedSingle;
             txtLoginEmail.Font = new Font("Segoe UI", 11F);
             txtLoginEmail.Location = new Point(52, 301);
-            txtLoginEmail.Margin = new Padding(5, 5, 5, 5);
+            txtLoginEmail.Margin = new Padding(5);
             txtLoginEmail.Name = "txtLoginEmail";
             txtLoginEmail.PlaceholderText = "Nhập email của bạn";
             txtLoginEmail.Size = new Size(658, 47);
             txtLoginEmail.TabIndex = 4;
+            txtLoginEmail.TextChanged += txtLoginEmail_TextChanged;
             // 
             // lblLoginPassword
             // 
@@ -372,7 +373,7 @@ namespace DoAnLapTrinhTrucQuan
             txtLoginPassword.BorderStyle = BorderStyle.FixedSingle;
             txtLoginPassword.Font = new Font("Segoe UI", 11F);
             txtLoginPassword.Location = new Point(52, 429);
-            txtLoginPassword.Margin = new Padding(5, 5, 5, 5);
+            txtLoginPassword.Margin = new Padding(5);
             txtLoginPassword.Name = "txtLoginPassword";
             txtLoginPassword.PlaceholderText = "Nhập mật khẩu";
             txtLoginPassword.Size = new Size(658, 47);
@@ -387,7 +388,7 @@ namespace DoAnLapTrinhTrucQuan
             btnForgotPassword.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
             btnForgotPassword.ForeColor = Color.FromArgb(126, 87, 60);
             btnForgotPassword.Location = new Point(52, 491);
-            btnForgotPassword.Margin = new Padding(5, 5, 5, 5);
+            btnForgotPassword.Margin = new Padding(5);
             btnForgotPassword.Name = "btnForgotPassword";
             btnForgotPassword.Size = new Size(660, 54);
             btnForgotPassword.TabIndex = 7;
@@ -404,7 +405,7 @@ namespace DoAnLapTrinhTrucQuan
             btnLogin.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnLogin.ForeColor = Color.White;
             btnLogin.Location = new Point(52, 568);
-            btnLogin.Margin = new Padding(5, 5, 5, 5);
+            btnLogin.Margin = new Padding(5);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(660, 77);
             btnLogin.TabIndex = 8;
@@ -465,7 +466,7 @@ namespace DoAnLapTrinhTrucQuan
             pageProfile.Controls.Add(lblProfileMessage);
             pageProfile.Dock = DockStyle.Fill;
             pageProfile.Location = new Point(0, 0);
-            pageProfile.Margin = new Padding(5, 5, 5, 5);
+            pageProfile.Margin = new Padding(5);
             pageProfile.Name = "pageProfile";
             pageProfile.Size = new Size(764, 1024);
             pageProfile.TabIndex = 1;
@@ -520,7 +521,7 @@ namespace DoAnLapTrinhTrucQuan
             txtProfileName.BorderStyle = BorderStyle.FixedSingle;
             txtProfileName.Font = new Font("Segoe UI", 11F);
             txtProfileName.Location = new Point(52, 285);
-            txtProfileName.Margin = new Padding(5, 5, 5, 5);
+            txtProfileName.Margin = new Padding(5);
             txtProfileName.Name = "txtProfileName";
             txtProfileName.PlaceholderText = "Nhập họ và tên";
             txtProfileName.Size = new Size(658, 47);
@@ -542,7 +543,7 @@ namespace DoAnLapTrinhTrucQuan
             txtProfileEmail.BorderStyle = BorderStyle.FixedSingle;
             txtProfileEmail.Font = new Font("Segoe UI", 11F);
             txtProfileEmail.Location = new Point(52, 397);
-            txtProfileEmail.Margin = new Padding(5, 5, 5, 5);
+            txtProfileEmail.Margin = new Padding(5);
             txtProfileEmail.Name = "txtProfileEmail";
             txtProfileEmail.PlaceholderText = "Nhập email";
             txtProfileEmail.Size = new Size(658, 47);
@@ -564,7 +565,7 @@ namespace DoAnLapTrinhTrucQuan
             txtProfilePhone.BorderStyle = BorderStyle.FixedSingle;
             txtProfilePhone.Font = new Font("Segoe UI", 11F);
             txtProfilePhone.Location = new Point(52, 509);
-            txtProfilePhone.Margin = new Padding(5, 5, 5, 5);
+            txtProfilePhone.Margin = new Padding(5);
             txtProfilePhone.Name = "txtProfilePhone";
             txtProfilePhone.PlaceholderText = "Nhập số điện thoại";
             txtProfilePhone.Size = new Size(658, 47);
@@ -587,7 +588,7 @@ namespace DoAnLapTrinhTrucQuan
             txtProfileRole.BorderStyle = BorderStyle.FixedSingle;
             txtProfileRole.Font = new Font("Segoe UI", 11F);
             txtProfileRole.Location = new Point(52, 621);
-            txtProfileRole.Margin = new Padding(5, 5, 5, 5);
+            txtProfileRole.Margin = new Padding(5);
             txtProfileRole.Name = "txtProfileRole";
             txtProfileRole.ReadOnly = true;
             txtProfileRole.Size = new Size(658, 47);
@@ -602,7 +603,7 @@ namespace DoAnLapTrinhTrucQuan
             btnSaveProfile.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnSaveProfile.ForeColor = Color.White;
             btnSaveProfile.Location = new Point(52, 704);
-            btnSaveProfile.Margin = new Padding(5, 5, 5, 5);
+            btnSaveProfile.Margin = new Padding(5);
             btnSaveProfile.Name = "btnSaveProfile";
             btnSaveProfile.Size = new Size(660, 74);
             btnSaveProfile.TabIndex = 11;
@@ -618,7 +619,7 @@ namespace DoAnLapTrinhTrucQuan
             btnChangePassword.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnChangePassword.ForeColor = Color.FromArgb(86, 57, 39);
             btnChangePassword.Location = new Point(52, 800);
-            btnChangePassword.Margin = new Padding(5, 5, 5, 5);
+            btnChangePassword.Margin = new Padding(5);
             btnChangePassword.Name = "btnChangePassword";
             btnChangePassword.Size = new Size(660, 67);
             btnChangePassword.TabIndex = 12;
@@ -650,7 +651,7 @@ namespace DoAnLapTrinhTrucQuan
             pageForgotPassword.Controls.Add(lblForgotMessage);
             pageForgotPassword.Dock = DockStyle.Fill;
             pageForgotPassword.Location = new Point(0, 0);
-            pageForgotPassword.Margin = new Padding(5, 5, 5, 5);
+            pageForgotPassword.Margin = new Padding(5);
             pageForgotPassword.Name = "pageForgotPassword";
             pageForgotPassword.Size = new Size(764, 1024);
             pageForgotPassword.TabIndex = 2;
@@ -705,7 +706,7 @@ namespace DoAnLapTrinhTrucQuan
             txtForgotEmail.BorderStyle = BorderStyle.FixedSingle;
             txtForgotEmail.Font = new Font("Segoe UI", 11F);
             txtForgotEmail.Location = new Point(52, 317);
-            txtForgotEmail.Margin = new Padding(5, 5, 5, 5);
+            txtForgotEmail.Margin = new Padding(5);
             txtForgotEmail.Name = "txtForgotEmail";
             txtForgotEmail.PlaceholderText = "name@example.com";
             txtForgotEmail.Size = new Size(658, 47);
@@ -719,7 +720,7 @@ namespace DoAnLapTrinhTrucQuan
             btnSendOtp.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnSendOtp.ForeColor = Color.White;
             btnSendOtp.Location = new Point(52, 416);
-            btnSendOtp.Margin = new Padding(5, 5, 5, 5);
+            btnSendOtp.Margin = new Padding(5);
             btnSendOtp.Name = "btnSendOtp";
             btnSendOtp.Size = new Size(660, 74);
             btnSendOtp.TabIndex = 5;
@@ -747,7 +748,7 @@ namespace DoAnLapTrinhTrucQuan
             btnForgotBack.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnForgotBack.ForeColor = Color.FromArgb(86, 57, 39);
             btnForgotBack.Location = new Point(52, 614);
-            btnForgotBack.Margin = new Padding(5, 5, 5, 5);
+            btnForgotBack.Margin = new Padding(5);
             btnForgotBack.Name = "btnForgotBack";
             btnForgotBack.Size = new Size(660, 67);
             btnForgotBack.TabIndex = 7;
@@ -780,7 +781,7 @@ namespace DoAnLapTrinhTrucQuan
             pageOtp.Controls.Add(lblOtpMessage);
             pageOtp.Dock = DockStyle.Fill;
             pageOtp.Location = new Point(0, 0);
-            pageOtp.Margin = new Padding(5, 5, 5, 5);
+            pageOtp.Margin = new Padding(5);
             pageOtp.Name = "pageOtp";
             pageOtp.Size = new Size(764, 1024);
             pageOtp.TabIndex = 3;
@@ -846,7 +847,7 @@ namespace DoAnLapTrinhTrucQuan
             txtOtpCode.BorderStyle = BorderStyle.FixedSingle;
             txtOtpCode.Font = new Font("Segoe UI", 11F);
             txtOtpCode.Location = new Point(52, 371);
-            txtOtpCode.Margin = new Padding(5, 5, 5, 5);
+            txtOtpCode.Margin = new Padding(5);
             txtOtpCode.MaxLength = 6;
             txtOtpCode.Name = "txtOtpCode";
             txtOtpCode.PlaceholderText = "Nhập mã gồm 6 chữ số";
@@ -861,7 +862,7 @@ namespace DoAnLapTrinhTrucQuan
             btnVerifyOtp.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnVerifyOtp.ForeColor = Color.White;
             btnVerifyOtp.Location = new Point(52, 458);
-            btnVerifyOtp.Margin = new Padding(5, 5, 5, 5);
+            btnVerifyOtp.Margin = new Padding(5);
             btnVerifyOtp.Name = "btnVerifyOtp";
             btnVerifyOtp.Size = new Size(660, 74);
             btnVerifyOtp.TabIndex = 6;
@@ -889,7 +890,7 @@ namespace DoAnLapTrinhTrucQuan
             btnOtpBack.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnOtpBack.ForeColor = Color.FromArgb(86, 57, 39);
             btnOtpBack.Location = new Point(52, 643);
-            btnOtpBack.Margin = new Padding(5, 5, 5, 5);
+            btnOtpBack.Margin = new Padding(5);
             btnOtpBack.Name = "btnOtpBack";
             btnOtpBack.Size = new Size(660, 67);
             btnOtpBack.TabIndex = 8;
@@ -922,7 +923,7 @@ namespace DoAnLapTrinhTrucQuan
             pageResetPassword.Controls.Add(lblResetMessage);
             pageResetPassword.Dock = DockStyle.Fill;
             pageResetPassword.Location = new Point(0, 0);
-            pageResetPassword.Margin = new Padding(5, 5, 5, 5);
+            pageResetPassword.Margin = new Padding(5);
             pageResetPassword.Name = "pageResetPassword";
             pageResetPassword.Size = new Size(764, 1024);
             pageResetPassword.TabIndex = 4;
@@ -977,7 +978,7 @@ namespace DoAnLapTrinhTrucQuan
             txtNewPassword.BorderStyle = BorderStyle.FixedSingle;
             txtNewPassword.Font = new Font("Segoe UI", 11F);
             txtNewPassword.Location = new Point(52, 301);
-            txtNewPassword.Margin = new Padding(5, 5, 5, 5);
+            txtNewPassword.Margin = new Padding(5);
             txtNewPassword.Name = "txtNewPassword";
             txtNewPassword.PlaceholderText = "Tối thiểu 8 ký tự";
             txtNewPassword.Size = new Size(658, 47);
@@ -1000,7 +1001,7 @@ namespace DoAnLapTrinhTrucQuan
             txtConfirmPassword.BorderStyle = BorderStyle.FixedSingle;
             txtConfirmPassword.Font = new Font("Segoe UI", 11F);
             txtConfirmPassword.Location = new Point(52, 429);
-            txtConfirmPassword.Margin = new Padding(5, 5, 5, 5);
+            txtConfirmPassword.Margin = new Padding(5);
             txtConfirmPassword.Name = "txtConfirmPassword";
             txtConfirmPassword.PlaceholderText = "Nhập lại mật khẩu mới";
             txtConfirmPassword.Size = new Size(658, 47);
@@ -1015,7 +1016,7 @@ namespace DoAnLapTrinhTrucQuan
             btnResetPassword.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnResetPassword.ForeColor = Color.White;
             btnResetPassword.Location = new Point(52, 518);
-            btnResetPassword.Margin = new Padding(5, 5, 5, 5);
+            btnResetPassword.Margin = new Padding(5);
             btnResetPassword.Name = "btnResetPassword";
             btnResetPassword.Size = new Size(660, 74);
             btnResetPassword.TabIndex = 7;
@@ -1031,7 +1032,7 @@ namespace DoAnLapTrinhTrucQuan
             btnResetBack.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnResetBack.ForeColor = Color.FromArgb(86, 57, 39);
             btnResetBack.Location = new Point(52, 614);
-            btnResetBack.Margin = new Padding(5, 5, 5, 5);
+            btnResetBack.Margin = new Padding(5);
             btnResetBack.Name = "btnResetBack";
             btnResetBack.Size = new Size(660, 67);
             btnResetBack.TabIndex = 8;
@@ -1054,7 +1055,7 @@ namespace DoAnLapTrinhTrucQuan
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(250, 247, 243);
             Controls.Add(mainLayout);
-            Margin = new Padding(5, 5, 5, 5);
+            Margin = new Padding(5);
             MinimumSize = new Size(1300, 960);
             Name = "UcAccount";
             Size = new Size(2080, 1152);

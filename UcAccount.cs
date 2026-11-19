@@ -192,5 +192,10 @@ namespace DoAnLapTrinhTrucQuan
         }
 
         private static bool IsValidEmail(string email) => Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+
+        private void txtLoginEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
