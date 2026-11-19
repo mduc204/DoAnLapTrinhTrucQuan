@@ -100,9 +100,9 @@ namespace DoAnLapTrinhTrucQuan
             pnlContent.Controls.Add(uc);
         }
 
-        private void btnThongtincanhan_Click(object sender, EventArgs e)
+        private void btnQuanlynhanvien_Click(object sender, EventArgs e)
         {
-
+            LoadControl(new UcM05());
         }
     }
 }

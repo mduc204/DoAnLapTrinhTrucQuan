@@ -320,6 +320,7 @@
             btnQuanlynhanvien.TextAlign = ContentAlignment.MiddleLeft;
             btnQuanlynhanvien.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnQuanlynhanvien.UseVisualStyleBackColor = true;
+            btnQuanlynhanvien.Click += btnQuanlynhanvien_Click;
             // 
             // btnXepca
             // 
@@ -451,17 +452,15 @@
             btnThongtincanhan.ForeColor = Color.FromArgb(238, 193, 164);
             btnThongtincanhan.Image = Properties.Resources.Container;
             btnThongtincanhan.ImageAlign = ContentAlignment.MiddleLeft;
-            btnThongtincanhan.Location = new Point(0, 1210);
-            btnThongtincanhan.Margin = new Padding(5, 5, 5, 5);
+            btnThongtincanhan.Location = new Point(0, 756);
             btnThongtincanhan.Name = "btnThongtincanhan";
-            btnThongtincanhan.Padding = new Padding(24, 0, 0, 0);
-            btnThongtincanhan.Size = new Size(385, 72);
+            btnThongtincanhan.Padding = new Padding(15, 0, 0, 0);
+            btnThongtincanhan.Size = new Size(237, 45);
             btnThongtincanhan.TabIndex = 14;
             btnThongtincanhan.Text = "Thông tin cá nhân";
             btnThongtincanhan.TextAlign = ContentAlignment.MiddleLeft;
             btnThongtincanhan.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnThongtincanhan.UseVisualStyleBackColor = true;
-            btnThongtincanhan.Click += btnThongtincanhan_Click;
             // 
             // pnlTopbar
             // 
