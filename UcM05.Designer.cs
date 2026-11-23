@@ -600,7 +600,7 @@ namespace DoAnLapTrinhTrucQuan
             // dateTimePicker1
             // 
             dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            dateTimePicker1.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            dateTimePicker1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Regular);
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.Location = new Point(257, 160);
             dateTimePicker1.Name = "dateTimePicker1";
