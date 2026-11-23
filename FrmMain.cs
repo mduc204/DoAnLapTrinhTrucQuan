@@ -1,62 +1,75 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using DoAnLapTrinhTrucQuan.Helpers;
 using DoAnLapTrinhTrucQuan.UserControls;
 
 namespace DoAnLapTrinhTrucQuan
 {
-    public partial class FrmMain : Form
+    /// <summary>
+    /// Màn hình chính của hệ thống Mộc Café (frmMain)
+    /// </summary>
+    public partial class frmMain : Form
     {
         private Button? _activeNavButton = null;
-        private System.Windows.Forms.Timer? _clockTimer;
+        private System.Windows.Forms.Timer? tmrClock;
 
-        public FrmMain()
+        public frmMain()
         {
             InitializeComponent();
-            KhoiTaoSuKien();
-            KhoiTaoDongHo();
+            InitializeEvents();
+            InitializeClock();
+            ApplySessionPermissions();
         }
 
-        private void KhoiTaoSuKien()
+        private void InitializeEvents()
         {
-            // Module M01: Quản lý món & Định lượng (BOM)
-            btnQuanlymon.Click += (s, e) => LoadControl(new ucQuanLyMon(), btnQuanlymon);
+            // Module Sản phẩm / Quản lý món
+            btnMenuProduct.Click += (s, e) => LoadControl(new ucProduct(), btnMenuProduct);
 
-            // Module Danh mục: Để trống theo yêu cầu (hiện tại chỉ phụ trách Quản lý món)
-            btnDanhmuc.Click += (s, e) => LoadControl(new ucDanhMuc(), btnDanhmuc);
+            // Module Danh mục
+            btnMenuCategory.Click += (s, e) => LoadControl(new ucDanhMuc(), btnMenuCategory);
 
-            // Module M02 & M03: Nguyên liệu, Kho, Thẻ kho & Nhập xuất Excel
-            btnNguyenlieukho.Click += (s, e) => LoadControl(new ucQuanLyKho(), btnNguyenlieukho);
+            // Module Nguyên liệu & Kho
+            btnMenuInventory.Click += (s, e) => LoadControl(new ucQuanLyKho(), btnMenuInventory);
 
-            // Module M04: Quản lý Voucher & Khuyến mãi
-            btnVoucher.Click += (s, e) => LoadControl(new ucKhuyenMai(), btnVoucher);
+            // Module Voucher & Khuyến mãi
+            btnMenuVoucher.Click += (s, e) => LoadControl(new ucVoucher(), btnMenuVoucher);
 
-            // Module Bán hàng & Sơ đồ bàn (UcS01 của thành viên cùng nhóm)
-            btnBanhang.Click += (s, e) => LoadControl(new UcS01(), btnBanhang);
-            btnSodoban.Click += (s, e) => LoadControl(new UcS01(), btnSodoban);
+            // Module Bán hàng & Sơ đồ bàn
+            btnMenuOrder.Click += (s, e) => LoadControl(new UcS01(), btnMenuOrder);
+            btnMenuTable.Click += (s, e) => LoadControl(new UcS01(), btnMenuTable);
 
-            // Các nút khác
-            btnDangxuatsidebar.Click += (s, e) =>
+            // Đăng xuất
+            btnLogout.Click += (s, e) =>
             {
-                if (MessageBox.Show("Bạn có chắc chắn muốn đăng xuất khỏi hệ thống?", "Xác nhận đăng xuất",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageHelper.Confirm("Bạn có chắc chắn muốn đăng xuất khỏi hệ thống?", "Xác nhận đăng xuất"))
                 {
+                    Session.Logout();
                     Close();
                 }
             };
 
-            // Mặc định khi mở phần mềm: Tải màn hình Quản lý món (M01)
-            LoadControl(new ucQuanLyMon(), btnQuanlymon);
+            // Mặc định tải màn hình Quản lý món
+            LoadControl(new ucProduct(), btnMenuProduct);
+        }
+
+        private void ApplySessionPermissions()
+        {
+            // Quy ước: 1 frmMain duy nhất, ẩn/hiện nút theo Session.IsAdmin
+            lbRoletopbar.Text = Session.Role;
+            lbTentopbar.Text = Session.FullName;
+
+            bool isAdmin = Session.IsAdmin;
+            btnMenuStaff.Visible = isAdmin;
+            btnMenuShift.Visible = isAdmin;
+            btnMenuSchedule.Visible = isAdmin;
+            btnMenuReport.Visible = isAdmin;
         }
 
         private void LoadControl(UserControl uc, Button? navBtn = null)
         {
-            pnlContent.SuspendLayout();
-            pnlContent.Controls.Clear();
-            uc.Dock = DockStyle.Fill;
-            pnlContent.Controls.Add(uc);
-            pnlContent.ResumeLayout();
-
+            NavigationHelper.NavigateTo(pnlContent, uc, navBtn);
             if (navBtn != null)
             {
                 SetActiveNavButton(navBtn);
@@ -78,14 +91,14 @@ namespace DoAnLapTrinhTrucQuan
             _activeNavButton.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
         }
 
-        private void KhoiTaoDongHo()
+        private void InitializeClock()
         {
-            _clockTimer = new System.Windows.Forms.Timer();
-            _clockTimer.Interval = 1000;
-            _clockTimer.Tick += (s, e) =>
+            tmrClock = new System.Windows.Forms.Timer();
+            tmrClock.Interval = 1000;
+            tmrClock.Tick += (s, e) =>
             {
                 DateTime now = DateTime.Now;
-                string thu = now.DayOfWeek switch
+                string dayOfWeek = now.DayOfWeek switch
                 {
                     DayOfWeek.Monday => "Thứ 2",
                     DayOfWeek.Tuesday => "Thứ 3",
@@ -95,9 +108,16 @@ namespace DoAnLapTrinhTrucQuan
                     DayOfWeek.Saturday => "Thứ 7",
                     _ => "Chủ nhật"
                 };
-                lblThoigian.Text = $"{thu}, {now:dd/MM/yyyy HH:mm}";
+                lblThoigian.Text = $"{dayOfWeek}, {FormatHelper.FormatDate(now)}";
             };
-            _clockTimer.Start();
+            tmrClock.Start();
         }
+    }
+
+    /// <summary>
+    /// Wrapper tương thích ngược cho frmMain theo quy ước Form: frmMain
+    /// </summary>
+    public class FrmMain : frmMain
+    {
     }
 }

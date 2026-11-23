@@ -258,6 +258,12 @@ namespace DoAnLapTrinhTrucQuan
             set { _hoverBackColor = value; Invalidate(); }
         }
 
+        public Color HoverColor
+        {
+            get => HoverBackColor;
+            set => HoverBackColor = value;
+        }
+
         public Color DownBackColor
         {
             get => _downBackColor;

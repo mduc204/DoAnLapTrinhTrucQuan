@@ -1,12 +1,9 @@
 ﻿namespace DoAnLapTrinhTrucQuan.Models
 {
     /// <summary>
-    /// Model Danh mục món
+    /// Alias tương thích ngược cho Category (theo quy ước Model số ít: Category)
     /// </summary>
-    public class DanhMuc
+    public class DanhMuc : Category
     {
-        public string MaDanhMuc { get; set; } = string.Empty;
-        public string TenDanhMuc { get; set; } = string.Empty;
-        public int SoLuongMon { get; set; }
     }
 }
