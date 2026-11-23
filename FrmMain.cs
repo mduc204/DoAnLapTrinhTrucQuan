@@ -1,123 +1,118 @@
-using System;
-using System.Drawing;
-using System.Windows.Forms;
-using DoAnLapTrinhTrucQuan.Helpers;
-using DoAnLapTrinhTrucQuan.UserControls;
-
 namespace DoAnLapTrinhTrucQuan
 {
-    /// <summary>
-    /// Màn hình chính của hệ thống Mộc Café (frmMain)
-    /// </summary>
-    public partial class frmMain : Form
+    public partial class FrmMain : Form
     {
-        private Button? _activeNavButton = null;
-        private System.Windows.Forms.Timer? tmrClock;
+        private A03Personalinfo? profileControl;
+        private string  currentUsername;
 
-        public frmMain()
+        public FrmMain(string username)
         {
             InitializeComponent();
-            InitializeEvents();
-            InitializeClock();
-            ApplySessionPermissions();
+
+            currentUsername     = username;
+            WindowState         = FormWindowState.Maximized;
+
+            // Show username in topbar
+            lbTentopbar.Text    = username;
+
+            // Layout helpers
+            flowLayoutPanel1.Dock       = DockStyle.None;
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.Anchor     = AnchorStyles.Top | AnchorStyles.Bottom |
+                                          AnchorStyles.Left | AnchorStyles.Right;
+            btnThongtincanhan.Anchor    = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+
+            pnlSidebar.Resize += (_, _) => LayoutSidebar();
+            pnlTopbar.Resize  += (_, _) => LayoutTopbar();
+            LayoutSidebar();
+            LayoutTopbar();
+
+            // Sidebar navigation
+            btnThongtincanhan.Click    += (_, _) => ShowProfile();
+            btnDangxuatsidebar.Click   += (_, _) => ConfirmLogout();
+            btnQuanlynhanvien.Click    += btnQuanlynhanvien_Click;
         }
 
-        private void InitializeEvents()
+        // ── Load profile panel ──────────────────────────────────────────
+        private void ShowProfile()
         {
-            // Module Sản phẩm / Quản lý món
-            btnMenuProduct.Click += (s, e) => LoadControl(new ucProduct(), btnMenuProduct);
-
-            // Module Danh mục
-            btnMenuCategory.Click += (s, e) => LoadControl(new ucDanhMuc(), btnMenuCategory);
-
-            // Module Nguyên liệu & Kho
-            btnMenuInventory.Click += (s, e) => LoadControl(new ucQuanLyKho(), btnMenuInventory);
-
-            // Module Voucher & Khuyến mãi
-            btnMenuVoucher.Click += (s, e) => LoadControl(new ucVoucher(), btnMenuVoucher);
-
-            // Module Bán hàng & Sơ đồ bàn
-            btnMenuOrder.Click += (s, e) => LoadControl(new UcS01(), btnMenuOrder);
-            btnMenuTable.Click += (s, e) => LoadControl(new UcS01(), btnMenuTable);
-
-            // Đăng xuất
-            btnLogout.Click += (s, e) =>
+            if (profileControl == null)
             {
-                if (MessageHelper.Confirm("Bạn có chắc chắn muốn đăng xuất khỏi hệ thống?", "Xác nhận đăng xuất"))
+                profileControl = new A03Personalinfo();
+                profileControl.ProfileUpdated += (name, _) =>
                 {
-                    Session.Logout();
-                    Close();
-                }
-            };
-
-            // Mặc định tải màn hình Quản lý món
-            LoadControl(new ucProduct(), btnMenuProduct);
-        }
-
-        private void ApplySessionPermissions()
-        {
-            // Quy ước: 1 frmMain duy nhất, ẩn/hiện nút theo Session.IsAdmin
-            lbRoletopbar.Text = Session.Role;
-            lbTentopbar.Text = Session.FullName;
-
-            bool isAdmin = Session.IsAdmin;
-            btnMenuStaff.Visible = isAdmin;
-            btnMenuShift.Visible = isAdmin;
-            btnMenuSchedule.Visible = isAdmin;
-            btnMenuReport.Visible = isAdmin;
-        }
-
-        private void LoadControl(UserControl uc, Button? navBtn = null)
-        {
-            NavigationHelper.NavigateTo(pnlContent, uc, navBtn);
-            if (navBtn != null)
-            {
-                SetActiveNavButton(navBtn);
-            }
-        }
-
-        private void SetActiveNavButton(Button btn)
-        {
-            if (_activeNavButton != null && _activeNavButton != btn)
-            {
-                _activeNavButton.BackColor = Color.FromArgb(85, 55, 34);
-                _activeNavButton.ForeColor = Color.FromArgb(238, 193, 164);
-                _activeNavButton.Font = new Font("Segoe UI", 11F, FontStyle.Regular);
-            }
-
-            _activeNavButton = btn;
-            _activeNavButton.BackColor = Color.FromArgb(106, 80, 63);
-            _activeNavButton.ForeColor = Color.White;
-            _activeNavButton.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-        }
-
-        private void InitializeClock()
-        {
-            tmrClock = new System.Windows.Forms.Timer();
-            tmrClock.Interval = 1000;
-            tmrClock.Tick += (s, e) =>
-            {
-                DateTime now = DateTime.Now;
-                string dayOfWeek = now.DayOfWeek switch
-                {
-                    DayOfWeek.Monday => "Thứ 2",
-                    DayOfWeek.Tuesday => "Thứ 3",
-                    DayOfWeek.Wednesday => "Thứ 4",
-                    DayOfWeek.Thursday => "Thứ 5",
-                    DayOfWeek.Friday => "Thứ 6",
-                    DayOfWeek.Saturday => "Thứ 7",
-                    _ => "Chủ nhật"
+                    lbTentopbar.Text = name;
+                    currentUsername  = name;
                 };
-                lblThoigian.Text = $"{dayOfWeek}, {FormatHelper.FormatDate(now)}";
-            };
-            tmrClock.Start();
+            }
+            LoadControl(profileControl);
         }
-    }
 
-    /// <summary>
-    /// Wrapper tương thích ngược cho frmMain theo quy ước Form: frmMain
-    /// </summary>
-    public class FrmMain : frmMain
-    {
+        // ── Logout ──────────────────────────────────────────────────────
+        private void ConfirmLogout()
+        {
+            var result = MessageBox.Show(
+                "Bạn có muốn đăng xuất không?",
+                "Xác nhận đăng xuất",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Restart();
+            }
+        }
+
+        // ── Layout helpers ───────────────────────────────────────────────
+        private void LayoutSidebar()
+        {
+            const int navItemHeight = 51;
+            flowLayoutPanel1.Location = new Point(0, pnlLogo.Height);
+            flowLayoutPanel1.Size = new Size(
+                pnlSidebar.ClientSize.Width,
+                Math.Max(0, pnlSidebar.ClientSize.Height
+                    - pnlLogo.Height
+                    - panel1.Height
+                    - btnThongtincanhan.Height));
+            btnThongtincanhan.Location = new Point(
+                0,
+                pnlSidebar.ClientSize.Height - panel1.Height - btnThongtincanhan.Height);
+            btnThongtincanhan.Width = pnlSidebar.ClientSize.Width;
+            flowLayoutPanel1.AutoScrollMinSize =
+                new Size(0, flowLayoutPanel1.Controls.Count * navItemHeight);
+        }
+
+        private void LayoutTopbar()
+        {
+            const int rightInset = 16;
+            picAvttopbar.Location = new Point(
+                pnlTopbar.ClientSize.Width - picAvttopbar.Width - rightInset, 12);
+
+            lbTentopbar.Anchor    = AnchorStyles.Top | AnchorStyles.Right;
+            lbTentopbar.AutoSize  = false;
+            lbTentopbar.TextAlign = ContentAlignment.MiddleRight;
+            lbTentopbar.Size      = new Size(160, 26);
+            lbTentopbar.Location  = new Point(picAvttopbar.Left - lbTentopbar.Width - 12, 6);
+
+            lbRoletopbar.Anchor    = AnchorStyles.Top | AnchorStyles.Right;
+            lbRoletopbar.AutoSize  = false;
+            lbRoletopbar.TextAlign = ContentAlignment.MiddleRight;
+            lbRoletopbar.Size      = new Size(160, 26);
+            lbRoletopbar.Location  = new Point(picAvttopbar.Left - lbRoletopbar.Width - 12, 34);
+        }
+
+        // ── Load UserControl into content panel ──────────────────────────
+        private void LoadControl(UserControl uc)
+        {
+            pnlContent.Controls.Clear();
+            uc.Dock = DockStyle.Fill;
+            pnlContent.Controls.Add(uc);
+        }
+
+        // ── Sidebar click handlers ───────────────────────────────────────
+        private void btnQuanlynhanvien_Click(object sender, EventArgs e)
+        {
+            LoadControl(new UcM05());
+        }
     }
 }

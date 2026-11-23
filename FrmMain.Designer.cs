@@ -1,6 +1,6 @@
 ﻿namespace DoAnLapTrinhTrucQuan
 {
-    partial class frmMain
+    partial class FrmMain
     {
         /// <summary>
         ///  Required designer variable.
@@ -32,25 +32,26 @@
             pnlSidebar = new Panel();
             panel1 = new Panel();
             lblThoigian = new Label();
-            btnLogout = new Button();
+            btnDangxuatsidebar = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            btnMenuTable = new Button();
-            btnMenuOrder = new Button();
-            btnMenuOrderList = new Button();
-            btnMenuInvoice = new Button();
-            btnMenuProduct = new Button();
-            btnMenuCategory = new Button();
-            btnMenuInventory = new Button();
-            btnMenuVoucher = new Button();
-            btnMenuStaff = new Button();
-            btnMenuShift = new Button();
-            btnMenuSchedule = new Button();
-            btnMenuTableManage = new Button();
-            btnMenuReport = new Button();
+            btnSodoban = new Button();
+            btnBanhang = new Button();
+            btnDonhang = new Button();
+            btnHoadon = new Button();
+            btnQuanlymon = new Button();
+            btnDanhmuc = new Button();
+            btnNguyenlieukho = new Button();
+            btnVoucher = new Button();
+            btnQuanlynhanvien = new Button();
+            btnXepca = new Button();
+            btnLichlam = new Button();
+            btnQuanlyban = new Button();
+            btnBaocao = new Button();
             pnlLogo = new Panel();
             picLogo = new PictureBox();
             lbLogo2 = new Label();
             lbLogo1 = new Label();
+            btnThongtincanhan = new Button();
             pnlTopbar = new Panel();
             lbRoletopbar = new Label();
             lbTentopbar = new Label();
@@ -58,7 +59,6 @@
             label1 = new Label();
             picLogotopbar = new PictureBox();
             pnlContent = new Panel();
-            btnProfile = new Button();
             pnlSidebar.SuspendLayout();
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
@@ -75,22 +75,24 @@
             pnlSidebar.Controls.Add(panel1);
             pnlSidebar.Controls.Add(flowLayoutPanel1);
             pnlSidebar.Controls.Add(pnlLogo);
-            pnlSidebar.Controls.Add(btnProfile);
+            pnlSidebar.Controls.Add(btnThongtincanhan);
             pnlSidebar.Dock = DockStyle.Left;
             pnlSidebar.Location = new Point(0, 0);
+            pnlSidebar.Margin = new Padding(5);
             pnlSidebar.Name = "pnlSidebar";
-            pnlSidebar.Size = new Size(240, 1033);
+            pnlSidebar.Size = new Size(390, 1653);
             pnlSidebar.TabIndex = 0;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(106, 80, 63);
             panel1.Controls.Add(lblThoigian);
-            panel1.Controls.Add(btnLogout);
+            panel1.Controls.Add(btnDangxuatsidebar);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 933);
+            panel1.Location = new Point(0, 1493);
+            panel1.Margin = new Padding(5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(240, 100);
+            panel1.Size = new Size(390, 160);
             panel1.TabIndex = 2;
             // 
             // lblThoigian
@@ -98,286 +100,303 @@
             lblThoigian.AutoSize = true;
             lblThoigian.Font = new Font("Segoe UI", 11F);
             lblThoigian.ForeColor = Color.FromArgb(238, 193, 164);
-            lblThoigian.Location = new Point(29, 66);
+            lblThoigian.Location = new Point(47, 106);
+            lblThoigian.Margin = new Padding(5, 0, 5, 0);
             lblThoigian.Name = "lblThoigian";
-            lblThoigian.Size = new Size(162, 25);
+            lblThoigian.Size = new Size(260, 41);
             lblThoigian.TabIndex = 15;
             lblThoigian.Text = "Thứ 3, 17/11/2026";
             // 
-            // btnLogout
+            // btnDangxuatsidebar
             // 
-            btnLogout.FlatAppearance.BorderSize = 0;
-            btnLogout.FlatStyle = FlatStyle.Flat;
-            btnLogout.Font = new Font("Segoe UI", 11F);
-            btnLogout.ForeColor = Color.FromArgb(238, 193, 164);
-            btnLogout.Image = Properties.Resources.Container__12_;
-            btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLogout.Location = new Point(12, 20);
-            btnLogout.Name = "btnLogout";
-            btnLogout.Padding = new Padding(15, 0, 0, 0);
-            btnLogout.Size = new Size(143, 34);
-            btnLogout.TabIndex = 14;
-            btnLogout.Text = "Đăng xuất";
-            btnLogout.TextAlign = ContentAlignment.MiddleLeft;
-            btnLogout.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnLogout.UseVisualStyleBackColor = true;
+            btnDangxuatsidebar.FlatAppearance.BorderSize = 0;
+            btnDangxuatsidebar.FlatStyle = FlatStyle.Flat;
+            btnDangxuatsidebar.Font = new Font("Segoe UI", 11F);
+            btnDangxuatsidebar.ForeColor = Color.FromArgb(238, 193, 164);
+            btnDangxuatsidebar.Image = Properties.Resources.Container__12_;
+            btnDangxuatsidebar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDangxuatsidebar.Location = new Point(20, 32);
+            btnDangxuatsidebar.Margin = new Padding(5);
+            btnDangxuatsidebar.Name = "btnDangxuatsidebar";
+            btnDangxuatsidebar.Padding = new Padding(24, 0, 0, 0);
+            btnDangxuatsidebar.Size = new Size(232, 54);
+            btnDangxuatsidebar.TabIndex = 14;
+            btnDangxuatsidebar.Text = "Đăng xuất";
+            btnDangxuatsidebar.TextAlign = ContentAlignment.MiddleLeft;
+            btnDangxuatsidebar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnDangxuatsidebar.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.Controls.Add(btnMenuTable);
-            flowLayoutPanel1.Controls.Add(btnMenuOrder);
-            flowLayoutPanel1.Controls.Add(btnMenuOrderList);
-            flowLayoutPanel1.Controls.Add(btnMenuInvoice);
-            flowLayoutPanel1.Controls.Add(btnMenuProduct);
-            flowLayoutPanel1.Controls.Add(btnMenuCategory);
-            flowLayoutPanel1.Controls.Add(btnMenuInventory);
-            flowLayoutPanel1.Controls.Add(btnMenuVoucher);
-            flowLayoutPanel1.Controls.Add(btnMenuStaff);
-            flowLayoutPanel1.Controls.Add(btnMenuShift);
-            flowLayoutPanel1.Controls.Add(btnMenuSchedule);
-            flowLayoutPanel1.Controls.Add(btnMenuTableManage);
-            flowLayoutPanel1.Controls.Add(btnMenuReport);
+            flowLayoutPanel1.Controls.Add(btnSodoban);
+            flowLayoutPanel1.Controls.Add(btnBanhang);
+            flowLayoutPanel1.Controls.Add(btnDonhang);
+            flowLayoutPanel1.Controls.Add(btnHoadon);
+            flowLayoutPanel1.Controls.Add(btnQuanlymon);
+            flowLayoutPanel1.Controls.Add(btnDanhmuc);
+            flowLayoutPanel1.Controls.Add(btnNguyenlieukho);
+            flowLayoutPanel1.Controls.Add(btnVoucher);
+            flowLayoutPanel1.Controls.Add(btnQuanlynhanvien);
+            flowLayoutPanel1.Controls.Add(btnXepca);
+            flowLayoutPanel1.Controls.Add(btnLichlam);
+            flowLayoutPanel1.Controls.Add(btnQuanlyban);
+            flowLayoutPanel1.Controls.Add(btnBaocao);
             flowLayoutPanel1.Dock = DockStyle.Top;
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel1.Location = new Point(0, 70);
+            flowLayoutPanel1.Location = new Point(0, 112);
+            flowLayoutPanel1.Margin = new Padding(5);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(240, 689);
+            flowLayoutPanel1.Size = new Size(390, 1102);
             flowLayoutPanel1.TabIndex = 1;
             flowLayoutPanel1.WrapContents = false;
             // 
-            // btnMenuTable
+            // btnSodoban
             // 
-            btnMenuTable.FlatAppearance.BorderSize = 0;
-            btnMenuTable.FlatStyle = FlatStyle.Flat;
-            btnMenuTable.Font = new Font("Segoe UI", 11F);
-            btnMenuTable.ForeColor = Color.FromArgb(238, 193, 164);
-            btnMenuTable.Image = Properties.Resources.Container__1_;
-            btnMenuTable.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMenuTable.Location = new Point(3, 3);
-            btnMenuTable.Name = "btnMenuTable";
-            btnMenuTable.Padding = new Padding(15, 0, 0, 0);
-            btnMenuTable.Size = new Size(234, 45);
-            btnMenuTable.TabIndex = 1;
-            btnMenuTable.Text = "Sơ đồ bàn";
-            btnMenuTable.TextAlign = ContentAlignment.MiddleLeft;
-            btnMenuTable.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnMenuTable.UseVisualStyleBackColor = true;
+            btnSodoban.FlatAppearance.BorderSize = 0;
+            btnSodoban.FlatStyle = FlatStyle.Flat;
+            btnSodoban.Font = new Font("Segoe UI", 11F);
+            btnSodoban.ForeColor = Color.FromArgb(238, 193, 164);
+            btnSodoban.Image = Properties.Resources.Container__1_;
+            btnSodoban.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSodoban.Location = new Point(5, 5);
+            btnSodoban.Margin = new Padding(5);
+            btnSodoban.Name = "btnSodoban";
+            btnSodoban.Padding = new Padding(24, 0, 0, 0);
+            btnSodoban.Size = new Size(380, 72);
+            btnSodoban.TabIndex = 1;
+            btnSodoban.Text = "Sơ đồ bàn";
+            btnSodoban.TextAlign = ContentAlignment.MiddleLeft;
+            btnSodoban.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnSodoban.UseVisualStyleBackColor = true;
             // 
-            // btnMenuOrder
+            // btnBanhang
             // 
-            btnMenuOrder.FlatAppearance.BorderSize = 0;
-            btnMenuOrder.FlatStyle = FlatStyle.Flat;
-            btnMenuOrder.Font = new Font("Segoe UI", 11F);
-            btnMenuOrder.ForeColor = Color.FromArgb(238, 193, 164);
-            btnMenuOrder.Image = Properties.Resources.Icon;
-            btnMenuOrder.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMenuOrder.Location = new Point(3, 54);
-            btnMenuOrder.Name = "btnMenuOrder";
-            btnMenuOrder.Padding = new Padding(15, 0, 0, 0);
-            btnMenuOrder.Size = new Size(234, 45);
-            btnMenuOrder.TabIndex = 2;
-            btnMenuOrder.Text = "Bán hàng";
-            btnMenuOrder.TextAlign = ContentAlignment.MiddleLeft;
-            btnMenuOrder.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnMenuOrder.UseVisualStyleBackColor = true;
+            btnBanhang.FlatAppearance.BorderSize = 0;
+            btnBanhang.FlatStyle = FlatStyle.Flat;
+            btnBanhang.Font = new Font("Segoe UI", 11F);
+            btnBanhang.ForeColor = Color.FromArgb(238, 193, 164);
+            btnBanhang.Image = Properties.Resources.Icon;
+            btnBanhang.ImageAlign = ContentAlignment.MiddleLeft;
+            btnBanhang.Location = new Point(5, 87);
+            btnBanhang.Margin = new Padding(5);
+            btnBanhang.Name = "btnBanhang";
+            btnBanhang.Padding = new Padding(24, 0, 0, 0);
+            btnBanhang.Size = new Size(380, 72);
+            btnBanhang.TabIndex = 2;
+            btnBanhang.Text = "Bán hàng";
+            btnBanhang.TextAlign = ContentAlignment.MiddleLeft;
+            btnBanhang.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnBanhang.UseVisualStyleBackColor = true;
             // 
-            // btnMenuOrderList
+            // btnDonhang
             // 
-            btnMenuOrderList.FlatAppearance.BorderSize = 0;
-            btnMenuOrderList.FlatStyle = FlatStyle.Flat;
-            btnMenuOrderList.Font = new Font("Segoe UI", 11F);
-            btnMenuOrderList.ForeColor = Color.FromArgb(238, 193, 164);
-            btnMenuOrderList.Image = Properties.Resources.Container__2_;
-            btnMenuOrderList.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMenuOrderList.Location = new Point(3, 105);
-            btnMenuOrderList.Name = "btnMenuOrderList";
-            btnMenuOrderList.Padding = new Padding(15, 0, 0, 0);
-            btnMenuOrderList.Size = new Size(234, 45);
-            btnMenuOrderList.TabIndex = 3;
-            btnMenuOrderList.Text = "Đơn hàng";
-            btnMenuOrderList.TextAlign = ContentAlignment.MiddleLeft;
-            btnMenuOrderList.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnMenuOrderList.UseVisualStyleBackColor = true;
+            btnDonhang.FlatAppearance.BorderSize = 0;
+            btnDonhang.FlatStyle = FlatStyle.Flat;
+            btnDonhang.Font = new Font("Segoe UI", 11F);
+            btnDonhang.ForeColor = Color.FromArgb(238, 193, 164);
+            btnDonhang.Image = Properties.Resources.Container__2_;
+            btnDonhang.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDonhang.Location = new Point(5, 169);
+            btnDonhang.Margin = new Padding(5);
+            btnDonhang.Name = "btnDonhang";
+            btnDonhang.Padding = new Padding(24, 0, 0, 0);
+            btnDonhang.Size = new Size(380, 72);
+            btnDonhang.TabIndex = 3;
+            btnDonhang.Text = "Đơn hàng";
+            btnDonhang.TextAlign = ContentAlignment.MiddleLeft;
+            btnDonhang.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnDonhang.UseVisualStyleBackColor = true;
             // 
-            // btnMenuInvoice
+            // btnHoadon
             // 
-            btnMenuInvoice.FlatAppearance.BorderSize = 0;
-            btnMenuInvoice.FlatStyle = FlatStyle.Flat;
-            btnMenuInvoice.Font = new Font("Segoe UI", 11F);
-            btnMenuInvoice.ForeColor = Color.FromArgb(238, 193, 164);
-            btnMenuInvoice.Image = Properties.Resources.Container__3_;
-            btnMenuInvoice.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMenuInvoice.Location = new Point(3, 156);
-            btnMenuInvoice.Name = "btnMenuInvoice";
-            btnMenuInvoice.Padding = new Padding(15, 0, 0, 0);
-            btnMenuInvoice.Size = new Size(234, 45);
-            btnMenuInvoice.TabIndex = 4;
-            btnMenuInvoice.Text = "Hóa đơn";
-            btnMenuInvoice.TextAlign = ContentAlignment.MiddleLeft;
-            btnMenuInvoice.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnMenuInvoice.UseVisualStyleBackColor = true;
+            btnHoadon.FlatAppearance.BorderSize = 0;
+            btnHoadon.FlatStyle = FlatStyle.Flat;
+            btnHoadon.Font = new Font("Segoe UI", 11F);
+            btnHoadon.ForeColor = Color.FromArgb(238, 193, 164);
+            btnHoadon.Image = Properties.Resources.Container__3_;
+            btnHoadon.ImageAlign = ContentAlignment.MiddleLeft;
+            btnHoadon.Location = new Point(5, 251);
+            btnHoadon.Margin = new Padding(5);
+            btnHoadon.Name = "btnHoadon";
+            btnHoadon.Padding = new Padding(24, 0, 0, 0);
+            btnHoadon.Size = new Size(380, 72);
+            btnHoadon.TabIndex = 4;
+            btnHoadon.Text = "Hóa đơn";
+            btnHoadon.TextAlign = ContentAlignment.MiddleLeft;
+            btnHoadon.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnHoadon.UseVisualStyleBackColor = true;
             // 
-            // btnMenuProduct
+            // btnQuanlymon
             // 
-            btnMenuProduct.FlatAppearance.BorderSize = 0;
-            btnMenuProduct.FlatStyle = FlatStyle.Flat;
-            btnMenuProduct.Font = new Font("Segoe UI", 11F);
-            btnMenuProduct.ForeColor = Color.FromArgb(238, 193, 164);
-            btnMenuProduct.Image = Properties.Resources.Container__4_;
-            btnMenuProduct.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMenuProduct.Location = new Point(3, 207);
-            btnMenuProduct.Name = "btnMenuProduct";
-            btnMenuProduct.Padding = new Padding(15, 0, 0, 0);
-            btnMenuProduct.Size = new Size(234, 45);
-            btnMenuProduct.TabIndex = 5;
-            btnMenuProduct.Text = "Quản lý món";
-            btnMenuProduct.TextAlign = ContentAlignment.MiddleLeft;
-            btnMenuProduct.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnMenuProduct.UseVisualStyleBackColor = true;
+            btnQuanlymon.FlatAppearance.BorderSize = 0;
+            btnQuanlymon.FlatStyle = FlatStyle.Flat;
+            btnQuanlymon.Font = new Font("Segoe UI", 11F);
+            btnQuanlymon.ForeColor = Color.FromArgb(238, 193, 164);
+            btnQuanlymon.Image = Properties.Resources.Container__4_;
+            btnQuanlymon.ImageAlign = ContentAlignment.MiddleLeft;
+            btnQuanlymon.Location = new Point(5, 333);
+            btnQuanlymon.Margin = new Padding(5);
+            btnQuanlymon.Name = "btnQuanlymon";
+            btnQuanlymon.Padding = new Padding(24, 0, 0, 0);
+            btnQuanlymon.Size = new Size(380, 72);
+            btnQuanlymon.TabIndex = 5;
+            btnQuanlymon.Text = "Quản lý món";
+            btnQuanlymon.TextAlign = ContentAlignment.MiddleLeft;
+            btnQuanlymon.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnQuanlymon.UseVisualStyleBackColor = true;
             // 
-            // btnMenuCategory
+            // btnDanhmuc
             // 
-            btnMenuCategory.FlatAppearance.BorderSize = 0;
-            btnMenuCategory.FlatStyle = FlatStyle.Flat;
-            btnMenuCategory.Font = new Font("Segoe UI", 11F);
-            btnMenuCategory.ForeColor = Color.FromArgb(238, 193, 164);
-            btnMenuCategory.Image = Properties.Resources.Container__5_;
-            btnMenuCategory.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMenuCategory.Location = new Point(3, 258);
-            btnMenuCategory.Name = "btnMenuCategory";
-            btnMenuCategory.Padding = new Padding(15, 0, 0, 0);
-            btnMenuCategory.Size = new Size(234, 45);
-            btnMenuCategory.TabIndex = 6;
-            btnMenuCategory.Text = "Danh mục";
-            btnMenuCategory.TextAlign = ContentAlignment.MiddleLeft;
-            btnMenuCategory.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnMenuCategory.UseVisualStyleBackColor = true;
+            btnDanhmuc.FlatAppearance.BorderSize = 0;
+            btnDanhmuc.FlatStyle = FlatStyle.Flat;
+            btnDanhmuc.Font = new Font("Segoe UI", 11F);
+            btnDanhmuc.ForeColor = Color.FromArgb(238, 193, 164);
+            btnDanhmuc.Image = Properties.Resources.Container__5_;
+            btnDanhmuc.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDanhmuc.Location = new Point(5, 415);
+            btnDanhmuc.Margin = new Padding(5);
+            btnDanhmuc.Name = "btnDanhmuc";
+            btnDanhmuc.Padding = new Padding(24, 0, 0, 0);
+            btnDanhmuc.Size = new Size(380, 72);
+            btnDanhmuc.TabIndex = 6;
+            btnDanhmuc.Text = "Danh mục";
+            btnDanhmuc.TextAlign = ContentAlignment.MiddleLeft;
+            btnDanhmuc.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnDanhmuc.UseVisualStyleBackColor = true;
             // 
-            // btnMenuInventory
+            // btnNguyenlieukho
             // 
-            btnMenuInventory.FlatAppearance.BorderSize = 0;
-            btnMenuInventory.FlatStyle = FlatStyle.Flat;
-            btnMenuInventory.Font = new Font("Segoe UI", 11F);
-            btnMenuInventory.ForeColor = Color.FromArgb(238, 193, 164);
-            btnMenuInventory.Image = Properties.Resources.Container__6_;
-            btnMenuInventory.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMenuInventory.Location = new Point(3, 309);
-            btnMenuInventory.Name = "btnMenuInventory";
-            btnMenuInventory.Padding = new Padding(15, 0, 0, 0);
-            btnMenuInventory.Size = new Size(234, 45);
-            btnMenuInventory.TabIndex = 7;
-            btnMenuInventory.Text = "Nguyên liệu, Kho";
-            btnMenuInventory.TextAlign = ContentAlignment.MiddleLeft;
-            btnMenuInventory.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnMenuInventory.UseVisualStyleBackColor = true;
+            btnNguyenlieukho.FlatAppearance.BorderSize = 0;
+            btnNguyenlieukho.FlatStyle = FlatStyle.Flat;
+            btnNguyenlieukho.Font = new Font("Segoe UI", 11F);
+            btnNguyenlieukho.ForeColor = Color.FromArgb(238, 193, 164);
+            btnNguyenlieukho.Image = Properties.Resources.Container__6_;
+            btnNguyenlieukho.ImageAlign = ContentAlignment.MiddleLeft;
+            btnNguyenlieukho.Location = new Point(5, 497);
+            btnNguyenlieukho.Margin = new Padding(5);
+            btnNguyenlieukho.Name = "btnNguyenlieukho";
+            btnNguyenlieukho.Padding = new Padding(24, 0, 0, 0);
+            btnNguyenlieukho.Size = new Size(380, 72);
+            btnNguyenlieukho.TabIndex = 7;
+            btnNguyenlieukho.Text = "Nguyên liệu, Kho";
+            btnNguyenlieukho.TextAlign = ContentAlignment.MiddleLeft;
+            btnNguyenlieukho.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnNguyenlieukho.UseVisualStyleBackColor = true;
             // 
-            // btnMenuVoucher
+            // btnVoucher
             // 
-            btnMenuVoucher.FlatAppearance.BorderSize = 0;
-            btnMenuVoucher.FlatStyle = FlatStyle.Flat;
-            btnMenuVoucher.Font = new Font("Segoe UI", 11F);
-            btnMenuVoucher.ForeColor = Color.FromArgb(238, 193, 164);
-            btnMenuVoucher.Image = Properties.Resources.Container__7_;
-            btnMenuVoucher.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMenuVoucher.Location = new Point(3, 360);
-            btnMenuVoucher.Name = "btnMenuVoucher";
-            btnMenuVoucher.Padding = new Padding(15, 0, 0, 0);
-            btnMenuVoucher.Size = new Size(234, 45);
-            btnMenuVoucher.TabIndex = 8;
-            btnMenuVoucher.Text = "Voucher";
-            btnMenuVoucher.TextAlign = ContentAlignment.MiddleLeft;
-            btnMenuVoucher.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnMenuVoucher.UseVisualStyleBackColor = true;
+            btnVoucher.FlatAppearance.BorderSize = 0;
+            btnVoucher.FlatStyle = FlatStyle.Flat;
+            btnVoucher.Font = new Font("Segoe UI", 11F);
+            btnVoucher.ForeColor = Color.FromArgb(238, 193, 164);
+            btnVoucher.Image = Properties.Resources.Container__7_;
+            btnVoucher.ImageAlign = ContentAlignment.MiddleLeft;
+            btnVoucher.Location = new Point(5, 579);
+            btnVoucher.Margin = new Padding(5);
+            btnVoucher.Name = "btnVoucher";
+            btnVoucher.Padding = new Padding(24, 0, 0, 0);
+            btnVoucher.Size = new Size(380, 72);
+            btnVoucher.TabIndex = 8;
+            btnVoucher.Text = "Voucher";
+            btnVoucher.TextAlign = ContentAlignment.MiddleLeft;
+            btnVoucher.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnVoucher.UseVisualStyleBackColor = true;
             // 
-            // btnMenuStaff
+            // btnQuanlynhanvien
             // 
-            btnMenuStaff.FlatAppearance.BorderSize = 0;
-            btnMenuStaff.FlatStyle = FlatStyle.Flat;
-            btnMenuStaff.Font = new Font("Segoe UI", 11F);
-            btnMenuStaff.ForeColor = Color.FromArgb(238, 193, 164);
-            btnMenuStaff.Image = Properties.Resources.Container__8_;
-            btnMenuStaff.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMenuStaff.Location = new Point(3, 411);
-            btnMenuStaff.Name = "btnMenuStaff";
-            btnMenuStaff.Padding = new Padding(15, 0, 0, 0);
-            btnMenuStaff.Size = new Size(234, 45);
-            btnMenuStaff.TabIndex = 9;
-            btnMenuStaff.Text = "Quản lý nhân viên";
-            btnMenuStaff.TextAlign = ContentAlignment.MiddleLeft;
-            btnMenuStaff.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnMenuStaff.UseVisualStyleBackColor = true;
+            btnQuanlynhanvien.FlatAppearance.BorderSize = 0;
+            btnQuanlynhanvien.FlatStyle = FlatStyle.Flat;
+            btnQuanlynhanvien.Font = new Font("Segoe UI", 11F);
+            btnQuanlynhanvien.ForeColor = Color.FromArgb(238, 193, 164);
+            btnQuanlynhanvien.Image = Properties.Resources.Container__8_;
+            btnQuanlynhanvien.ImageAlign = ContentAlignment.MiddleLeft;
+            btnQuanlynhanvien.Location = new Point(5, 661);
+            btnQuanlynhanvien.Margin = new Padding(5);
+            btnQuanlynhanvien.Name = "btnQuanlynhanvien";
+            btnQuanlynhanvien.Padding = new Padding(24, 0, 0, 0);
+            btnQuanlynhanvien.Size = new Size(380, 72);
+            btnQuanlynhanvien.TabIndex = 9;
+            btnQuanlynhanvien.Text = "Quản lý nhân viên";
+            btnQuanlynhanvien.TextAlign = ContentAlignment.MiddleLeft;
+            btnQuanlynhanvien.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnQuanlynhanvien.UseVisualStyleBackColor = true;
+            btnQuanlynhanvien.Click += btnQuanlynhanvien_Click;
             // 
-            // btnMenuShift
+            // btnXepca
             // 
-            btnMenuShift.FlatAppearance.BorderSize = 0;
-            btnMenuShift.FlatStyle = FlatStyle.Flat;
-            btnMenuShift.Font = new Font("Segoe UI", 11F);
-            btnMenuShift.ForeColor = Color.FromArgb(238, 193, 164);
-            btnMenuShift.Image = Properties.Resources.Icon__1_;
-            btnMenuShift.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMenuShift.Location = new Point(3, 462);
-            btnMenuShift.Name = "btnMenuShift";
-            btnMenuShift.Padding = new Padding(15, 0, 0, 0);
-            btnMenuShift.Size = new Size(234, 45);
-            btnMenuShift.TabIndex = 10;
-            btnMenuShift.Text = "Xếp lịch ca làm việc";
-            btnMenuShift.TextAlign = ContentAlignment.MiddleLeft;
-            btnMenuShift.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnMenuShift.UseVisualStyleBackColor = true;
+            btnXepca.FlatAppearance.BorderSize = 0;
+            btnXepca.FlatStyle = FlatStyle.Flat;
+            btnXepca.Font = new Font("Segoe UI", 11F);
+            btnXepca.ForeColor = Color.FromArgb(238, 193, 164);
+            btnXepca.Image = Properties.Resources.Icon__1_;
+            btnXepca.ImageAlign = ContentAlignment.MiddleLeft;
+            btnXepca.Location = new Point(5, 743);
+            btnXepca.Margin = new Padding(5);
+            btnXepca.Name = "btnXepca";
+            btnXepca.Padding = new Padding(24, 0, 0, 0);
+            btnXepca.Size = new Size(380, 72);
+            btnXepca.TabIndex = 10;
+            btnXepca.Text = "Xếp lịch ca làm việc";
+            btnXepca.TextAlign = ContentAlignment.MiddleLeft;
+            btnXepca.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnXepca.UseVisualStyleBackColor = true;
             // 
-            // btnMenuSchedule
+            // btnLichlam
             // 
-            btnMenuSchedule.FlatAppearance.BorderSize = 0;
-            btnMenuSchedule.FlatStyle = FlatStyle.Flat;
-            btnMenuSchedule.Font = new Font("Segoe UI", 11F);
-            btnMenuSchedule.ForeColor = Color.FromArgb(238, 193, 164);
-            btnMenuSchedule.Image = Properties.Resources.Container__9_;
-            btnMenuSchedule.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMenuSchedule.Location = new Point(3, 513);
-            btnMenuSchedule.Name = "btnMenuSchedule";
-            btnMenuSchedule.Padding = new Padding(15, 0, 0, 0);
-            btnMenuSchedule.Size = new Size(234, 45);
-            btnMenuSchedule.TabIndex = 11;
-            btnMenuSchedule.Text = "Lịch làm của tôi";
-            btnMenuSchedule.TextAlign = ContentAlignment.MiddleLeft;
-            btnMenuSchedule.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnMenuSchedule.UseVisualStyleBackColor = true;
+            btnLichlam.FlatAppearance.BorderSize = 0;
+            btnLichlam.FlatStyle = FlatStyle.Flat;
+            btnLichlam.Font = new Font("Segoe UI", 11F);
+            btnLichlam.ForeColor = Color.FromArgb(238, 193, 164);
+            btnLichlam.Image = Properties.Resources.Container__9_;
+            btnLichlam.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLichlam.Location = new Point(5, 825);
+            btnLichlam.Margin = new Padding(5);
+            btnLichlam.Name = "btnLichlam";
+            btnLichlam.Padding = new Padding(24, 0, 0, 0);
+            btnLichlam.Size = new Size(380, 72);
+            btnLichlam.TabIndex = 11;
+            btnLichlam.Text = "Lịch làm của tôi";
+            btnLichlam.TextAlign = ContentAlignment.MiddleLeft;
+            btnLichlam.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnLichlam.UseVisualStyleBackColor = true;
             // 
-            // btnMenuTableManage
+            // btnQuanlyban
             // 
-            btnMenuTableManage.FlatAppearance.BorderSize = 0;
-            btnMenuTableManage.FlatStyle = FlatStyle.Flat;
-            btnMenuTableManage.Font = new Font("Segoe UI", 11F);
-            btnMenuTableManage.ForeColor = Color.FromArgb(238, 193, 164);
-            btnMenuTableManage.Image = Properties.Resources.Container__10_;
-            btnMenuTableManage.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMenuTableManage.Location = new Point(3, 564);
-            btnMenuTableManage.Name = "btnMenuTableManage";
-            btnMenuTableManage.Padding = new Padding(15, 0, 0, 0);
-            btnMenuTableManage.Size = new Size(234, 45);
-            btnMenuTableManage.TabIndex = 12;
-            btnMenuTableManage.Text = "Quản lý bàn";
-            btnMenuTableManage.TextAlign = ContentAlignment.MiddleLeft;
-            btnMenuTableManage.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnMenuTableManage.UseVisualStyleBackColor = true;
+            btnQuanlyban.FlatAppearance.BorderSize = 0;
+            btnQuanlyban.FlatStyle = FlatStyle.Flat;
+            btnQuanlyban.Font = new Font("Segoe UI", 11F);
+            btnQuanlyban.ForeColor = Color.FromArgb(238, 193, 164);
+            btnQuanlyban.Image = Properties.Resources.Container__10_;
+            btnQuanlyban.ImageAlign = ContentAlignment.MiddleLeft;
+            btnQuanlyban.Location = new Point(5, 907);
+            btnQuanlyban.Margin = new Padding(5);
+            btnQuanlyban.Name = "btnQuanlyban";
+            btnQuanlyban.Padding = new Padding(24, 0, 0, 0);
+            btnQuanlyban.Size = new Size(380, 72);
+            btnQuanlyban.TabIndex = 12;
+            btnQuanlyban.Text = "Quản lý bàn";
+            btnQuanlyban.TextAlign = ContentAlignment.MiddleLeft;
+            btnQuanlyban.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnQuanlyban.UseVisualStyleBackColor = true;
             // 
-            // btnMenuReport
+            // btnBaocao
             // 
-            btnMenuReport.FlatAppearance.BorderSize = 0;
-            btnMenuReport.FlatStyle = FlatStyle.Flat;
-            btnMenuReport.Font = new Font("Segoe UI", 11F);
-            btnMenuReport.ForeColor = Color.FromArgb(238, 193, 164);
-            btnMenuReport.Image = Properties.Resources.Container__11_;
-            btnMenuReport.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMenuReport.Location = new Point(3, 615);
-            btnMenuReport.Name = "btnMenuReport";
-            btnMenuReport.Padding = new Padding(15, 0, 0, 0);
-            btnMenuReport.Size = new Size(234, 45);
-            btnMenuReport.TabIndex = 13;
-            btnMenuReport.Text = "Báo cáo doanh thu";
-            btnMenuReport.TextAlign = ContentAlignment.MiddleLeft;
-            btnMenuReport.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnMenuReport.UseVisualStyleBackColor = true;
+            btnBaocao.FlatAppearance.BorderSize = 0;
+            btnBaocao.FlatStyle = FlatStyle.Flat;
+            btnBaocao.Font = new Font("Segoe UI", 11F);
+            btnBaocao.ForeColor = Color.FromArgb(238, 193, 164);
+            btnBaocao.Image = Properties.Resources.Container__11_;
+            btnBaocao.ImageAlign = ContentAlignment.MiddleLeft;
+            btnBaocao.Location = new Point(5, 989);
+            btnBaocao.Margin = new Padding(5);
+            btnBaocao.Name = "btnBaocao";
+            btnBaocao.Padding = new Padding(24, 0, 0, 0);
+            btnBaocao.Size = new Size(380, 72);
+            btnBaocao.TabIndex = 13;
+            btnBaocao.Text = "Báo cáo doanh thu";
+            btnBaocao.TextAlign = ContentAlignment.MiddleLeft;
+            btnBaocao.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnBaocao.UseVisualStyleBackColor = true;
             // 
             // pnlLogo
             // 
@@ -386,16 +405,18 @@
             pnlLogo.Controls.Add(lbLogo1);
             pnlLogo.Dock = DockStyle.Top;
             pnlLogo.Location = new Point(0, 0);
+            pnlLogo.Margin = new Padding(5);
             pnlLogo.Name = "pnlLogo";
-            pnlLogo.Size = new Size(240, 70);
+            pnlLogo.Size = new Size(390, 112);
             pnlLogo.TabIndex = 0;
             // 
             // picLogo
             // 
             picLogo.Image = Properties.Resources.Background;
-            picLogo.Location = new Point(14, 14);
+            picLogo.Location = new Point(23, 22);
+            picLogo.Margin = new Padding(5);
             picLogo.Name = "picLogo";
-            picLogo.Size = new Size(41, 44);
+            picLogo.Size = new Size(67, 70);
             picLogo.TabIndex = 2;
             picLogo.TabStop = false;
             // 
@@ -404,9 +425,10 @@
             lbLogo2.AutoSize = true;
             lbLogo2.Font = new Font("Segoe UI", 11F);
             lbLogo2.ForeColor = Color.FromArgb(238, 193, 164);
-            lbLogo2.Location = new Point(61, 35);
+            lbLogo2.Location = new Point(99, 56);
+            lbLogo2.Margin = new Padding(5, 0, 5, 0);
             lbLogo2.Name = "lbLogo2";
-            lbLogo2.Size = new Size(130, 25);
+            lbLogo2.Size = new Size(207, 41);
             lbLogo2.TabIndex = 1;
             lbLogo2.Text = "Hệ thống POS";
             // 
@@ -415,11 +437,30 @@
             lbLogo1.AutoSize = true;
             lbLogo1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             lbLogo1.ForeColor = Color.White;
-            lbLogo1.Location = new Point(61, 9);
+            lbLogo1.Location = new Point(99, 14);
+            lbLogo1.Margin = new Padding(5, 0, 5, 0);
             lbLogo1.Name = "lbLogo1";
-            lbLogo1.Size = new Size(100, 25);
+            lbLogo1.Size = new Size(161, 41);
             lbLogo1.TabIndex = 0;
             lbLogo1.Text = "LTTQ Cafe";
+            // 
+            // btnThongtincanhan
+            // 
+            btnThongtincanhan.FlatAppearance.BorderSize = 0;
+            btnThongtincanhan.FlatStyle = FlatStyle.Flat;
+            btnThongtincanhan.Font = new Font("Segoe UI", 11F);
+            btnThongtincanhan.ForeColor = Color.FromArgb(238, 193, 164);
+            btnThongtincanhan.Image = Properties.Resources.Container;
+            btnThongtincanhan.ImageAlign = ContentAlignment.MiddleLeft;
+            btnThongtincanhan.Location = new Point(0, 756);
+            btnThongtincanhan.Name = "btnThongtincanhan";
+            btnThongtincanhan.Padding = new Padding(15, 0, 0, 0);
+            btnThongtincanhan.Size = new Size(237, 45);
+            btnThongtincanhan.TabIndex = 14;
+            btnThongtincanhan.Text = "Thông tin cá nhân";
+            btnThongtincanhan.TextAlign = ContentAlignment.MiddleLeft;
+            btnThongtincanhan.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnThongtincanhan.UseVisualStyleBackColor = true;
             // 
             // pnlTopbar
             // 
@@ -430,9 +471,10 @@
             pnlTopbar.Controls.Add(label1);
             pnlTopbar.Controls.Add(picLogotopbar);
             pnlTopbar.Dock = DockStyle.Top;
-            pnlTopbar.Location = new Point(240, 0);
+            pnlTopbar.Location = new Point(390, 0);
+            pnlTopbar.Margin = new Padding(5);
             pnlTopbar.Name = "pnlTopbar";
-            pnlTopbar.Size = new Size(1662, 70);
+            pnlTopbar.Size = new Size(2494, 112);
             pnlTopbar.TabIndex = 1;
             // 
             // lbRoletopbar
@@ -440,9 +482,10 @@
             lbRoletopbar.AutoSize = true;
             lbRoletopbar.Font = new Font("Segoe UI", 11F);
             lbRoletopbar.ForeColor = Color.FromArgb(125, 86, 45);
-            lbRoletopbar.Location = new Point(1507, 33);
+            lbRoletopbar.Location = new Point(2449, 53);
+            lbRoletopbar.Margin = new Padding(5, 0, 5, 0);
             lbRoletopbar.Name = "lbRoletopbar";
-            lbRoletopbar.Size = new Size(77, 25);
+            lbRoletopbar.Size = new Size(120, 41);
             lbRoletopbar.TabIndex = 6;
             lbRoletopbar.Text = "Quản lý";
             // 
@@ -452,9 +495,10 @@
             lbTentopbar.AutoSize = true;
             lbTentopbar.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             lbTentopbar.ForeColor = Color.FromArgb(85, 55, 34);
-            lbTentopbar.Location = new Point(1463, 9);
+            lbTentopbar.Location = new Point(2170, 14);
+            lbTentopbar.Margin = new Padding(5, 0, 5, 0);
             lbTentopbar.Name = "lbTentopbar";
-            lbTentopbar.Size = new Size(121, 25);
+            lbTentopbar.Size = new Size(187, 41);
             lbTentopbar.TabIndex = 5;
             lbTentopbar.Text = "Trần Văn An";
             // 
@@ -462,9 +506,10 @@
             // 
             picAvttopbar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             picAvttopbar.Image = Properties.Resources.Background__1_;
-            picAvttopbar.Location = new Point(1590, 12);
+            picAvttopbar.Location = new Point(2377, 19);
+            picAvttopbar.Margin = new Padding(5);
             picAvttopbar.Name = "picAvttopbar";
-            picAvttopbar.Size = new Size(60, 46);
+            picAvttopbar.Size = new Size(98, 74);
             picAvttopbar.SizeMode = PictureBoxSizeMode.Zoom;
             picAvttopbar.TabIndex = 4;
             picAvttopbar.TabStop = false;
@@ -472,20 +517,22 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(85, 55, 34);
-            label1.Location = new Point(65, 22);
+            label1.Location = new Point(106, 30);
+            label1.Margin = new Padding(5, 0, 5, 0);
             label1.Name = "label1";
-            label1.Size = new Size(100, 25);
+            label1.Size = new Size(171, 45);
             label1.TabIndex = 3;
             label1.Text = "LTTQ Cafe";
             // 
             // picLogotopbar
             // 
             picLogotopbar.Image = Properties.Resources.LLTQ_Café_Logo;
-            picLogotopbar.Location = new Point(9, 14);
+            picLogotopbar.Location = new Point(15, 22);
+            picLogotopbar.Margin = new Padding(5);
             picLogotopbar.Name = "picLogotopbar";
-            picLogotopbar.Size = new Size(50, 46);
+            picLogotopbar.Size = new Size(81, 74);
             picLogotopbar.SizeMode = PictureBoxSizeMode.Zoom;
             picLogotopbar.TabIndex = 0;
             picLogotopbar.TabStop = false;
@@ -493,41 +540,25 @@
             // pnlContent
             // 
             pnlContent.Dock = DockStyle.Fill;
-            pnlContent.Location = new Point(240, 70);
+            pnlContent.Location = new Point(390, 112);
+            pnlContent.Margin = new Padding(5);
             pnlContent.Name = "pnlContent";
-            pnlContent.Size = new Size(1662, 963);
+            pnlContent.Size = new Size(2494, 1541);
             pnlContent.TabIndex = 2;
-            // 
-            // btnProfile
-            // 
-            btnProfile.FlatAppearance.BorderSize = 0;
-            btnProfile.FlatStyle = FlatStyle.Flat;
-            btnProfile.Font = new Font("Segoe UI", 11F);
-            btnProfile.ForeColor = Color.FromArgb(238, 193, 164);
-            btnProfile.Image = Properties.Resources.Container;
-            btnProfile.ImageAlign = ContentAlignment.MiddleLeft;
-            btnProfile.Location = new Point(0, 756);
-            btnProfile.Name = "btnProfile";
-            btnProfile.Padding = new Padding(15, 0, 0, 0);
-            btnProfile.Size = new Size(237, 45);
-            btnProfile.TabIndex = 14;
-            btnProfile.Text = "Thông tin cá nhân";
-            btnProfile.TextAlign = ContentAlignment.MiddleLeft;
-            btnProfile.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnProfile.UseVisualStyleBackColor = true;
             // 
             // FrmMain
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 248, 246);
-            ClientSize = new Size(1902, 1033);
+            ClientSize = new Size(2884, 1653);
             Controls.Add(pnlContent);
             Controls.Add(pnlTopbar);
             Controls.Add(pnlSidebar);
+            Margin = new Padding(5);
             Name = "FrmMain";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "LTTQ Cafe - Hệ thống POS";
+            Text = "LTTQ Cafe";
             WindowState = FormWindowState.Maximized;
             pnlSidebar.ResumeLayout(false);
             panel1.ResumeLayout(false);
@@ -554,27 +585,27 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private Label lbLogo2;
         private PictureBox picLogo;
-        private Button btnMenuTable;
-        private Button btnMenuOrder;
-        private Button btnMenuOrderList;
-        private Button btnMenuInvoice;
-        private Button btnMenuProduct;
-        private Button btnMenuCategory;
-        private Button btnMenuInventory;
-        private Button btnMenuVoucher;
-        private Button btnMenuStaff;
-        private Button btnMenuShift;
-        private Button btnMenuSchedule;
+        private Button btnSodoban;
+        private Button btnBanhang;
+        private Button btnDonhang;
+        private Button btnHoadon;
+        private Button btnQuanlymon;
+        private Button btnDanhmuc;
+        private Button btnNguyenlieukho;
+        private Button btnVoucher;
+        private Button btnQuanlynhanvien;
+        private Button btnXepca;
+        private Button btnLichlam;
         private Panel panel1;
-        private Button btnLogout;
-        private Button btnMenuTableManage;
-        private Button btnMenuReport;
+        private Button btnDangxuatsidebar;
+        private Button btnQuanlyban;
+        private Button btnBaocao;
         private Label lblThoigian;
         private PictureBox picLogotopbar;
         private PictureBox picAvttopbar;
         private Label label1;
         private Label lbRoletopbar;
         private Label lbTentopbar;
-        private Button btnProfile;
+        private Button btnThongtincanhan;
     }
 }
