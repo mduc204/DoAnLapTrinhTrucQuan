@@ -191,12 +191,29 @@ namespace DoAnLapTrinhTrucQuan
             Padding = new Padding(12);
         }
 
+        private Color GetParentEffectiveColor()
+        {
+            Control? p = Parent;
+            while (p != null)
+            {
+                if (p is RoundedPanel rp && rp.FillColor != Color.Transparent)
+                    return rp.FillColor;
+                if (p.BackColor != Color.Transparent)
+                    return p.BackColor;
+                p = p.Parent;
+            }
+            return Color.White;
+        }
+
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
             Graphics g = e.Graphics;
             g.SmoothingMode = SmoothingMode.AntiAlias;
             g.PixelOffsetMode = PixelOffsetMode.HighQuality;
+
+            Color parentBg = GetParentEffectiveColor();
+            g.Clear(parentBg);
 
             Rectangle rect = new Rectangle(0, 0, Width - 1, Height - 1);
             if (rect.Width <= 0 || rect.Height <= 0) return;
@@ -230,9 +247,9 @@ namespace DoAnLapTrinhTrucQuan
     public class RoundedButton : Button
     {
         private int _borderRadius = 8;
-        private Color _normalBackColor = UIHelper.PrimaryCoffee;
-        private Color _hoverBackColor = UIHelper.PrimaryHover;
-        private Color _downBackColor = UIHelper.PrimaryDown;
+        private Color _normalBackColor = Color.Empty;
+        private Color _hoverBackColor = Color.Empty;
+        private Color _downBackColor = Color.Empty;
         private Color _borderColor = Color.Transparent;
         private int _borderWidth = 0;
         private bool _isOutlined = false;
@@ -248,13 +265,27 @@ namespace DoAnLapTrinhTrucQuan
 
         public Color NormalBackColor
         {
-            get => _normalBackColor;
+            get
+            {
+                if (_normalBackColor != Color.Empty) return _normalBackColor;
+                if (BackColor != Color.Transparent && BackColor != Color.Empty) return BackColor;
+                return UIHelper.PrimaryCoffee;
+            }
             set { _normalBackColor = value; Invalidate(); }
         }
 
         public Color HoverBackColor
         {
-            get => _hoverBackColor;
+            get
+            {
+                if (_hoverBackColor != Color.Empty) return _hoverBackColor;
+                Color baseBg = NormalBackColor;
+                if (baseBg.GetBrightness() > 0.65f)
+                {
+                    return Color.FromArgb(238, 230, 220);
+                }
+                return UIHelper.PrimaryHover;
+            }
             set { _hoverBackColor = value; Invalidate(); }
         }
 
@@ -266,7 +297,16 @@ namespace DoAnLapTrinhTrucQuan
 
         public Color DownBackColor
         {
-            get => _downBackColor;
+            get
+            {
+                if (_downBackColor != Color.Empty) return _downBackColor;
+                Color baseBg = NormalBackColor;
+                if (baseBg.GetBrightness() > 0.65f)
+                {
+                    return Color.FromArgb(225, 215, 203);
+                }
+                return UIHelper.PrimaryDown;
+            }
             set { _downBackColor = value; Invalidate(); }
         }
 
@@ -295,7 +335,7 @@ namespace DoAnLapTrinhTrucQuan
                     _downBackColor = ColorTranslator.FromHtml("#EFE5DB");
                     _borderColor = ColorTranslator.FromHtml("#D0C5B8");
                     _borderWidth = 1;
-                    ForeColor = UIHelper.TextMain;
+                    ForeColor = UIHelper.PrimaryCoffee;
                 }
                 Invalidate();
             }
@@ -307,6 +347,16 @@ namespace DoAnLapTrinhTrucQuan
             set { _customIcon = value; Invalidate(); }
         }
 
+        public override Color BackColor
+        {
+            get => base.BackColor;
+            set
+            {
+                base.BackColor = value;
+                Invalidate();
+            }
+        }
+
         public RoundedButton()
         {
             SetStyle(ControlStyles.UserPaint |
@@ -314,6 +364,7 @@ namespace DoAnLapTrinhTrucQuan
                      ControlStyles.OptimizedDoubleBuffer |
                      ControlStyles.ResizeRedraw |
                      ControlStyles.SupportsTransparentBackColor, true);
+            DoubleBuffered = true;
             FlatStyle = FlatStyle.Flat;
             FlatAppearance.BorderSize = 0;
             BackColor = Color.Transparent;
@@ -321,6 +372,20 @@ namespace DoAnLapTrinhTrucQuan
             Font = UIHelper.FontBold;
             Cursor = Cursors.Hand;
             Size = new Size(110, 36);
+        }
+
+        private Color GetParentEffectiveColor()
+        {
+            Control? p = Parent;
+            while (p != null)
+            {
+                if (p is RoundedPanel rp && rp.FillColor != Color.Transparent)
+                    return rp.FillColor;
+                if (p.BackColor != Color.Transparent)
+                    return p.BackColor;
+                p = p.Parent;
+            }
+            return Color.White;
         }
 
         protected override void OnMouseEnter(EventArgs e)
@@ -359,10 +424,18 @@ namespace DoAnLapTrinhTrucQuan
             g.PixelOffsetMode = PixelOffsetMode.HighQuality;
             g.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
 
+            Color parentBg = GetParentEffectiveColor();
+            g.Clear(parentBg);
+
             Rectangle rect = new Rectangle(0, 0, Width - 1, Height - 1);
             if (rect.Width <= 0 || rect.Height <= 0) return;
 
-            Color currentBg = _isPressed ? _downBackColor : (_isHovered ? _hoverBackColor : _normalBackColor);
+            Color normalBg = NormalBackColor;
+            Color currentBg = _isPressed ? DownBackColor : (_isHovered ? HoverBackColor : normalBg);
+            if (currentBg == Color.Transparent)
+            {
+                currentBg = parentBg;
+            }
 
             using (GraphicsPath path = UIHelper.GetRoundedPath(rect, _borderRadius))
             {

@@ -20,6 +20,7 @@ namespace DoAnLapTrinhTrucQuan.Data
         public List<Mon> DanhSachMon { get; set; } = new List<Mon>();
         public List<DanhMuc> DanhSachDanhMuc { get; set; } = new List<DanhMuc>();
         public List<NguyenLieu> DanhSachNguyenLieu { get; set; } = new List<NguyenLieu>();
+        public List<InventoryTransaction> DanhSachLichSuKho { get; set; } = new List<InventoryTransaction>();
         public Dictionary<string, List<DinhLuongBOM>> DinhLuongMap { get; set; } = new Dictionary<string, List<DinhLuongBOM>>();
         public List<Voucher> DanhSachVoucher { get; set; } = new List<Voucher>();
 
@@ -40,6 +41,7 @@ namespace DoAnLapTrinhTrucQuan.Data
 
             KhoiTaoDuLieuDanhMuc();
             KhoiTaoDuLieuNguyenLieu();
+            KhoiTaoDuLieuLichSuKho();
             KhoiTaoDuLieuMonVaBOM();
             KhoiTaoDuLieuVoucher();
         }
@@ -64,18 +66,59 @@ namespace DoAnLapTrinhTrucQuan.Data
         {
             DanhSachNguyenLieu = new List<NguyenLieu>
             {
-                new NguyenLieu { MaNL = "NL001", TenNL = "Hạt Cà Phê LTTQ Blend Robusta/Arabica", DVT = "gram (g)", DonGiaNhap = 260m, TonKhoHienTai = 15000, DinhMucToiThieu = 5000, ViTriKho = "Kho mát quầy Bar" },
-                new NguyenLieu { MaNL = "NL002", TenNL = "Hạt Cà Phê Arabica Cầu Đất Typica", DVT = "gram (g)", DonGiaNhap = 420m, TonKhoHienTai = 8000, DinhMucToiThieu = 3000, ViTriKho = "Kho mát quầy Bar" },
-                new NguyenLieu { MaNL = "NL014", TenNL = "Sữa đặc có đường Phương Nam (Hộp xanh)", DVT = "mililit (ml)", DonGiaNhap = 116.67m, TonKhoHienTai = 24000, DinhMucToiThieu = 6000, ViTriKho = "Tủ trữ sữa quầy Bar" },
-                new NguyenLieu { MaNL = "NL015", TenNL = "Sữa tươi thanh trùng Dalat Milk không đường", DVT = "mililit (ml)", DonGiaNhap = 36.67m, TonKhoHienTai = 18000, DinhMucToiThieu = 4000, ViTriKho = "Tủ trữ sữa quầy Bar" },
-                new NguyenLieu { MaNL = "NL016", TenNL = "Nước cốt dừa tươi nguyên chất Bến Tre", DVT = "mililit (ml)", DonGiaNhap = 75m, TonKhoHienTai = 5000, DinhMucToiThieu = 2000, ViTriKho = "Tủ mát quầy Bar" },
-                new NguyenLieu { MaNL = "NL008", TenNL = "Đá viên tinh khiết lọc RO", DVT = "gram (g)", DonGiaNhap = 3.33m, TonKhoHienTai = 80000, DinhMucToiThieu = 20000, ViTriKho = "Thùng đá Barista" },
-                new NguyenLieu { MaNL = "NL020", TenNL = "Ly giấy / Ly nhựa nắp cầu LTTQ Cafe kèm ống hút", DVT = "cái (set)", DonGiaNhap = 2000m, TonKhoHienTai = 1200, DinhMucToiThieu = 300, ViTriKho = "Kệ bao bì mang về" },
-                new NguyenLieu { MaNL = "NL025", TenNL = "Đào ngâm Kronos miếng giòn", DVT = "miếng", DonGiaNhap = 2500m, TonKhoHienTai = 400, DinhMucToiThieu = 100, ViTriKho = "Kệ nguyên liệu Bar" },
-                new NguyenLieu { MaNL = "NL026", TenNL = "Trà túi lọc Ceylon Earl Grey cao cấp", DVT = "gói", DonGiaNhap = 3200m, TonKhoHienTai = 600, DinhMucToiThieu = 150, ViTriKho = "Kệ trà & syrup" },
-                new NguyenLieu { MaNL = "NL027", TenNL = "Cam vàng Navel tươi mọng nước", DVT = "lát", DonGiaNhap = 1800m, TonKhoHienTai = 350, DinhMucToiThieu = 80, ViTriKho = "Tủ mát trái cây" },
-                new NguyenLieu { MaNL = "NL028", TenNL = "Hạt chia hữu cơ Úc sấy thăng hoa", DVT = "gram (g)", DonGiaNhap = 130m, TonKhoHienTai = 3000, DinhMucToiThieu = 500, ViTriKho = "Kệ topping" },
-                new NguyenLieu { MaNL = "NL035", TenNL = "Bột phô mai New York Cream Cheese", DVT = "gram (g)", DonGiaNhap = 300m, TonKhoHienTai = 2500, DinhMucToiThieu = 600, ViTriKho = "Tủ mát bánh" }
+                // Đúng 100% Mockup M02 (6 dòng hiển thị trang đầu)
+                new NguyenLieu { MaNL = "NL001", TenNL = "Cà phê hạt Cầu Đất Arabica", NhomNL = "Cà phê", DVT = "gram (g)", DonGiaNhap = 320m, TonKhoHienTai = 1200, DinhMucToiThieu = 2000, ViTriKho = "Kho mát quầy Bar", DangSuDung = true },
+                new NguyenLieu { MaNL = "NL014", TenNL = "Sữa đặc Ngôi Sao Phương Nam", NhomNL = "Sữa", DVT = "lon", DonGiaNhap = 24000m, TonKhoHienTai = 4, DinhMucToiThieu = 10, ViTriKho = "Tủ trữ sữa quầy Bar", DangSuDung = true },
+                new NguyenLieu { MaNL = "NL022", TenNL = "Trà đen Phúc Long Hảo Hạng", NhomNL = "Trà", DVT = "gram (g)", DonGiaNhap = 450m, TonKhoHienTai = 300, DinhMucToiThieu = 500, ViTriKho = "Kệ trà & syrup", DangSuDung = true },
+                new NguyenLieu { MaNL = "NL005", TenNL = "Sữa tươi thanh trùng Barista", NhomNL = "Sữa", DVT = "hộp", DonGiaNhap = 35000m, TonKhoHienTai = 0, DinhMucToiThieu = 6, ViTriKho = "Tủ trữ sữa quầy Bar", DangSuDung = true },
+                new NguyenLieu { MaNL = "NL008", TenNL = "Đường mía Biên Hòa", NhomNL = "Đường", DVT = "kg", DonGiaNhap = 26000m, TonKhoHienTai = 15, DinhMucToiThieu = 5, ViTriKho = "Kho khô", DangSuDung = true },
+                new NguyenLieu { MaNL = "NL018", TenNL = "Trái đào ngâm Kronos", NhomNL = "Topping", DVT = "hộp", DonGiaNhap = 42000m, TonKhoHienTai = 8, DinhMucToiThieu = 3, ViTriKho = "Kệ nguyên liệu Bar", DangSuDung = true },
+
+                // Các nguyên liệu khác để đủ 28 nguyên liệu (3 sắp hết, 1 hết hàng, 24 an toàn)
+                new NguyenLieu { MaNL = "NL002", TenNL = "Hạt Cà Phê Robusta Buôn Ma Thuột", NhomNL = "Cà phê", DVT = "gram (g)", DonGiaNhap = 240m, TonKhoHienTai = 8500, DinhMucToiThieu = 2000, ViTriKho = "Kho mát quầy Bar", DangSuDung = true },
+                new NguyenLieu { MaNL = "NL003", TenNL = "Hạt Cà Phê Mộc Blend Signature", NhomNL = "Cà phê", DVT = "gram (g)", DonGiaNhap = 380m, TonKhoHienTai = 5200, DinhMucToiThieu = 1500, ViTriKho = "Kho mát quầy Bar", DangSuDung = true },
+                new NguyenLieu { MaNL = "NL004", TenNL = "Bột Cacao Đắk Lắk nguyên chất", NhomNL = "Bột", DVT = "gram (g)", DonGiaNhap = 280m, TonKhoHienTai = 4000, DinhMucToiThieu = 1000, ViTriKho = "Kệ bột & sốt", DangSuDung = true },
+                new NguyenLieu { MaNL = "NL006", TenNL = "Sữa tươi tiệt trùng Vinamilk", NhomNL = "Sữa", DVT = "hộp", DonGiaNhap = 32000m, TonKhoHienTai = 18, DinhMucToiThieu = 8, ViTriKho = "Tủ trữ sữa quầy Bar", DangSuDung = true },
+                new NguyenLieu { MaNL = "NL007", TenNL = "Kem béo thực vật Rich's", NhomNL = "Sữa", DVT = "hộp", DonGiaNhap = 41000m, TonKhoHienTai = 12, DinhMucToiThieu = 4, ViTriKho = "Tủ đông quầy Bar", DangSuDung = true },
+                new NguyenLieu { MaNL = "NL009", TenNL = "Đường phèn Quảng Ngãi", NhomNL = "Đường", DVT = "kg", DonGiaNhap = 34000m, TonKhoHienTai = 20, DinhMucToiThieu = 5, ViTriKho = "Kho khô", DangSuDung = true },
+                new NguyenLieu { MaNL = "NL010", TenNL = "Siro Vani Monin", NhomNL = "Syrup", DVT = "chai (ml)", DonGiaNhap = 240000m, TonKhoHienTai = 3500, DinhMucToiThieu = 1000, ViTriKho = "Kệ siro", DangSuDung = true },
+                new NguyenLieu { MaNL = "NL011", TenNL = "Siro Caramel Torani", NhomNL = "Syrup", DVT = "chai (ml)", DonGiaNhap = 220000m, TonKhoHienTai = 2800, DinhMucToiThieu = 1000, ViTriKho = "Kệ siro", DangSuDung = true },
+                new NguyenLieu { MaNL = "NL012", TenNL = "Siro Hạt Dẻ Hazelnut", NhomNL = "Syrup", DVT = "chai (ml)", DonGiaNhap = 235000m, TonKhoHienTai = 2100, DinhMucToiThieu = 800, ViTriKho = "Kệ siro", DangSuDung = true },
+                new NguyenLieu { MaNL = "NL013", TenNL = "Bột Matcha Uji Nhật Bản", NhomNL = "Bột", DVT = "gram (g)", DonGiaNhap = 650m, TonKhoHienTai = 1800, DinhMucToiThieu = 500, ViTriKho = "Tủ mát trà", DangSuDung = true },
+                new NguyenLieu { MaNL = "NL015", TenNL = "Nước cốt dừa tươi Bến Tre", NhomNL = "Sữa", DVT = "mililit (ml)", DonGiaNhap = 75m, TonKhoHienTai = 5000, DinhMucToiThieu = 2000, ViTriKho = "Tủ mát quầy Bar", DangSuDung = true },
+                new NguyenLieu { MaNL = "NL016", TenNL = "Đá viên tinh khiết lọc RO", NhomNL = "Đá", DVT = "kg", DonGiaNhap = 3300m, TonKhoHienTai = 120, DinhMucToiThieu = 30, ViTriKho = "Thùng đá Barista", DangSuDung = true },
+                new NguyenLieu { MaNL = "NL017", TenNL = "Trân châu đen hoàng kim", NhomNL = "Topping", DVT = "kg", DonGiaNhap = 65000m, TonKhoHienTai = 15, DinhMucToiThieu = 4, ViTriKho = "Kệ topping", DangSuDung = true },
+                new NguyenLieu { MaNL = "NL019", TenNL = "Thạch dừa nha đam giòn", NhomNL = "Topping", DVT = "hộp", DonGiaNhap = 38000m, TonKhoHienTai = 9, DinhMucToiThieu = 3, ViTriKho = "Kệ topping", DangSuDung = true },
+                new NguyenLieu { MaNL = "NL020", TenNL = "Hạt chia hữu cơ Úc sấy", NhomNL = "Topping", DVT = "gram (g)", DonGiaNhap = 130m, TonKhoHienTai = 3000, DinhMucToiThieu = 500, ViTriKho = "Kệ topping", DangSuDung = true },
+                new NguyenLieu { MaNL = "NL021", TenNL = "Trà Oolong Cao Sơn Mộc Châu", NhomNL = "Trà", DVT = "gram (g)", DonGiaNhap = 520m, TonKhoHienTai = 2500, DinhMucToiThieu = 600, ViTriKho = "Kệ trà", DangSuDung = true },
+                new NguyenLieu { MaNL = "NL023", TenNL = "Trà lài hoa sen tự nhiên", NhomNL = "Trà", DVT = "gram (g)", DonGiaNhap = 390m, TonKhoHienTai = 3200, DinhMucToiThieu = 800, ViTriKho = "Kệ trà", DangSuDung = true },
+                new NguyenLieu { MaNL = "NL024", TenNL = "Cam vàng Navel tươi mọng", NhomNL = "Trái cây", DVT = "kg", DonGiaNhap = 55000m, TonKhoHienTai = 22, DinhMucToiThieu = 5, ViTriKho = "Tủ mát trái cây", DangSuDung = true },
+                new NguyenLieu { MaNL = "NL025", TenNL = "Sả cây tươi Tây Ninh", NhomNL = "Trái cây", DVT = "kg", DonGiaNhap = 25000m, TonKhoHienTai = 8, DinhMucToiThieu = 2, ViTriKho = "Tủ mát trái cây", DangSuDung = true },
+                new NguyenLieu { MaNL = "NL026", TenNL = "Ly giấy 500ml kèm nắp nón", NhomNL = "Bao bì", DVT = "cái", DonGiaNhap = 1800m, TonKhoHienTai = 1200, DinhMucToiThieu = 300, ViTriKho = "Kho bao bì", DangSuDung = true },
+                new NguyenLieu { MaNL = "NL027", TenNL = "Ống hút giấy bọc màng", NhomNL = "Bao bì", DVT = "cái", DonGiaNhap = 350m, TonKhoHienTai = 3500, DinhMucToiThieu = 500, ViTriKho = "Kho bao bì", DangSuDung = true },
+                new NguyenLieu { MaNL = "NL028", TenNL = "Túi đựng mang đi 1 ly tự hủy", NhomNL = "Bao bì", DVT = "cái", DonGiaNhap = 450m, TonKhoHienTai = 2800, DinhMucToiThieu = 400, ViTriKho = "Kho bao bì", DangSuDung = true }
+            };
+        }
+
+        private void KhoiTaoDuLieuLichSuKho()
+        {
+            DanhSachLichSuKho = new List<InventoryTransaction>
+            {
+                new InventoryTransaction { TransactionId = "TX001", IngredientId = "NL001", DisplayTime = "10:38 hôm nay", TransactionType = "Bán hàng", Quantity = -40, BalanceAfter = 1200, PerformedBy = "POS", Note = "Trừ kho tự động theo hóa đơn HD0042" },
+                new InventoryTransaction { TransactionId = "TX002", IngredientId = "NL001", DisplayTime = "09:20 hôm nay", TransactionType = "Bán hàng", Quantity = -40, BalanceAfter = 1240, PerformedBy = "POS", Note = "Trừ kho tự động theo hóa đơn HD0039" },
+                new InventoryTransaction { TransactionId = "TX003", IngredientId = "NL001", DisplayTime = "22/10 16:30", TransactionType = "Xuất hủy (ẩm mốc)", Quantity = -500, BalanceAfter = 1280, PerformedBy = "Nguyễn Văn Hưng", Note = "Hạt cà phê bị ẩm mốc do túi thủng" },
+                new InventoryTransaction { TransactionId = "TX004", IngredientId = "NL001", DisplayTime = "22/10 09:00", TransactionType = "Nhập kho", Quantity = 1500, BalanceAfter = 1780, PerformedBy = "Nguyễn Văn Hưng", Note = "Nhập hàng định kỳ NCC Cầu Đất Farm" },
+
+                new InventoryTransaction { TransactionId = "TX005", IngredientId = "NL014", DisplayTime = "11:15 hôm nay", TransactionType = "Bán hàng", Quantity = -1, BalanceAfter = 4, PerformedBy = "POS", Note = "Trừ kho quầy Bar" },
+                new InventoryTransaction { TransactionId = "TX006", IngredientId = "NL014", DisplayTime = "20/10 10:00", TransactionType = "Nhập kho", Quantity = 12, BalanceAfter = 16, PerformedBy = "Nguyễn Văn Hưng", Note = "Nhập từ NPP Vinamilk" },
+
+                new InventoryTransaction { TransactionId = "TX007", IngredientId = "NL022", DisplayTime = "10:00 hôm nay", TransactionType = "Bán hàng", Quantity = -50, BalanceAfter = 300, PerformedBy = "POS", Note = "Pha trà Phúc Long" },
+
+                new InventoryTransaction { TransactionId = "TX008", IngredientId = "NL005", DisplayTime = "Hôm qua 18:00", TransactionType = "Bán hàng", Quantity = -2, BalanceAfter = 0, PerformedBy = "POS", Note = "Đã hết sữa tươi Barista" },
+
+                new InventoryTransaction { TransactionId = "TX009", IngredientId = "NL008", DisplayTime = "21/10 14:00", TransactionType = "Bán hàng", Quantity = -2, BalanceAfter = 15, PerformedBy = "POS", Note = "Pha chế siro đường" },
+
+                new InventoryTransaction { TransactionId = "TX010", IngredientId = "NL018", DisplayTime = "19/10 09:30", TransactionType = "Nhập kho", Quantity = 10, BalanceAfter = 10, PerformedBy = "Nguyễn Văn Hưng", Note = "Nhập đào Kronos" }
             };
         }
         #endregion
@@ -852,6 +895,84 @@ namespace DoAnLapTrinhTrucQuan.Data
                 }
             }
             return $"{prefix}{maxSo + 1:D2}";
+        }
+        #endregion
+
+        #region 6. Thao tác Quản lý Kho & Lịch sử Nhập / Xuất (Thẻ kho M02)
+        public List<Ingredient> LayTatCaNguyenLieu()
+        {
+            return DanhSachNguyenLieu.Cast<Ingredient>().ToList();
+        }
+
+        public List<InventoryTransaction> LayLichSuTheoMaNL(string maNL)
+        {
+            return DanhSachLichSuKho
+                .Where(x => x.IngredientId.Equals(maNL, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+        }
+
+        public void GhiNhanNhapKho(string maNL, decimal soLuong, decimal donGia, string ghiChu, string nguoiThucHien)
+        {
+            var item = DanhSachNguyenLieu.FirstOrDefault(x => x.MaNL.Equals(maNL, StringComparison.OrdinalIgnoreCase));
+            if (item != null)
+            {
+                item.TonKhoHienTai += soLuong;
+                if (donGia > 0) item.DonGiaNhap = donGia;
+
+                string timeDisplay = DateTime.Now.ToString("HH:mm") + " hôm nay";
+                var tx = new InventoryTransaction
+                {
+                    TransactionId = "TX" + DateTime.Now.ToString("yyyyMMddHHmmss"),
+                    IngredientId = maNL,
+                    TransactionTime = DateTime.Now,
+                    DisplayTime = timeDisplay,
+                    TransactionType = "Nhập kho",
+                    Quantity = soLuong,
+                    BalanceAfter = item.TonKhoHienTai,
+                    PerformedBy = string.IsNullOrWhiteSpace(nguoiThucHien) ? "Nguyễn Văn Hưng" : nguoiThucHien,
+                    Note = ghiChu
+                };
+                DanhSachLichSuKho.Insert(0, tx);
+            }
+        }
+
+        public void GhiNhanXuatKho(string maNL, decimal soLuong, string lyDo, string nguoiThucHien, string ghiChu = "")
+        {
+            var item = DanhSachNguyenLieu.FirstOrDefault(x => x.MaNL.Equals(maNL, StringComparison.OrdinalIgnoreCase));
+            if (item != null)
+            {
+                item.TonKhoHienTai -= soLuong;
+                if (item.TonKhoHienTai < 0) item.TonKhoHienTai = 0;
+
+                string timeDisplay = DateTime.Now.ToString("HH:mm") + " hôm nay";
+                var tx = new InventoryTransaction
+                {
+                    TransactionId = "TX" + DateTime.Now.ToString("yyyyMMddHHmmss"),
+                    IngredientId = maNL,
+                    TransactionTime = DateTime.Now,
+                    DisplayTime = timeDisplay,
+                    TransactionType = string.IsNullOrWhiteSpace(lyDo) ? "Xuất hủy" : lyDo,
+                    Quantity = -soLuong,
+                    BalanceAfter = item.TonKhoHienTai,
+                    PerformedBy = string.IsNullOrWhiteSpace(nguoiThucHien) ? "Nguyễn Văn Hưng" : nguoiThucHien,
+                    Note = ghiChu
+                };
+                DanhSachLichSuKho.Insert(0, tx);
+            }
+        }
+
+        public void CapNhatNguyenLieu(Ingredient updated)
+        {
+            var item = DanhSachNguyenLieu.FirstOrDefault(x => x.MaNL.Equals(updated.MaNL, StringComparison.OrdinalIgnoreCase));
+            if (item != null)
+            {
+                item.TenNL = updated.TenNL;
+                item.NhomNL = updated.NhomNL;
+                item.DVT = updated.DVT;
+                item.DonGiaNhap = updated.DonGiaNhap;
+                item.DinhMucToiThieu = updated.DinhMucToiThieu;
+                item.DangSuDung = updated.DangSuDung;
+            }
         }
         #endregion
     }

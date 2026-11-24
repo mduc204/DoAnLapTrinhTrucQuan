@@ -92,8 +92,13 @@ namespace DoAnLapTrinhTrucQuan.UserControls
             ApplyFilter();
         }
 
-        private void ApplyFilter()
+        private void ApplyFilter(string? preserveVoucherCode = null)
         {
+            if (string.IsNullOrEmpty(preserveVoucherCode) && _selectedVoucher != null && !_isCreatingNew)
+            {
+                preserveVoucherCode = _selectedVoucher.VoucherCode;
+            }
+
             string keyword = (txtSearch.Text ?? "").Trim().ToLower();
             int scopeIdx = cboFilterScope.SelectedIndex;
 
@@ -115,15 +120,17 @@ namespace DoAnLapTrinhTrucQuan.UserControls
                 return matchKeyword && matchTab && matchScope;
             }).ToList();
 
-            RenderVoucherGrid();
+            RenderVoucherGrid(preserveVoucherCode);
         }
 
-        private void RenderVoucherGrid()
+        private void RenderVoucherGrid(string? preserveVoucherCode = null)
         {
             dgvVoucher.SuspendLayout();
             dgvVoucher.Rows.Clear();
 
             int stt = 1;
+            int targetRowIndex = -1;
+
             foreach (var v in _displayedVouchers)
             {
                 int rowIndex = dgvVoucher.Rows.Add(
@@ -137,14 +144,25 @@ namespace DoAnLapTrinhTrucQuan.UserControls
                     "❐"
                 );
                 dgvVoucher.Rows[rowIndex].Tag = v;
+
+                if (!string.IsNullOrEmpty(preserveVoucherCode) && v.VoucherCode.Equals(preserveVoucherCode, StringComparison.OrdinalIgnoreCase))
+                {
+                    targetRowIndex = rowIndex;
+                }
             }
 
             dgvVoucher.ResumeLayout();
 
             if (dgvVoucher.Rows.Count > 0)
             {
-                dgvVoucher.Rows[0].Selected = true;
-                DgvVoucher_SelectionChanged(null, EventArgs.Empty);
+                int selectIndex = (targetRowIndex >= 0 && targetRowIndex < dgvVoucher.Rows.Count) ? targetRowIndex : 0;
+                dgvVoucher.ClearSelection();
+                dgvVoucher.Rows[selectIndex].Selected = true;
+                if (dgvVoucher.Rows[selectIndex].Tag is Voucher v)
+                {
+                    _selectedVoucher = v;
+                    DisplayVoucherDetails(v);
+                }
             }
         }
 
@@ -182,7 +200,14 @@ namespace DoAnLapTrinhTrucQuan.UserControls
         private void DisplayVoucherDetails(Voucher v)
         {
             lblDetailTitle.Text = $"🏷 Chi tiết Voucher: {v.VoucherCode}";
+
+            // Đồng bộ trạng thái Toggle Switch và nút Tạm ngưng
             toggleKichHoat.Checked = v.IsActive;
+            lblKichHoat.Text = v.IsActive ? "KÍCH HOẠT" : "TẠM NGƯNG";
+            lblKichHoat.ForeColor = v.IsActive ? UIHelper.TextMain : ColorTranslator.FromHtml("#C0392B");
+
+            btnToggleStatus.Text = v.IsActive ? "🚫 Tạm ngưng mã này" : "✔ Kích hoạt lại mã";
+            btnToggleStatus.ForeColor = v.IsActive ? ColorTranslator.FromHtml("#C0392B") : ColorTranslator.FromHtml("#16793F");
 
             txtVoucherCode.Text = v.VoucherCode;
             txtVoucherCode.ReadOnly = true;
@@ -576,13 +601,14 @@ namespace DoAnLapTrinhTrucQuan.UserControls
                 _selectedVoucher = newVoucher;
                 _isCreatingNew = false;
 
-                ApplyFilter();
+                ApplyFilter(newVoucher.VoucherCode);
                 UpdateStats();
 
                 MessageHelper.ShowInfo($"Đã tạo mới mã voucher '{newVoucher.VoucherCode}' thành công!", "Tạo voucher thành công");
             }
             else
             {
+                string targetCode = _selectedVoucher.VoucherCode;
                 _selectedVoucher.ProgramName = name;
                 _selectedVoucher.DiscountType = rdoPercentage.Checked ? "PhanTram" : "TienMat";
                 _selectedVoucher.DiscountValue = discountVal;
@@ -599,10 +625,10 @@ namespace DoAnLapTrinhTrucQuan.UserControls
 
                 _voucherBLL.SaveVoucher(_selectedVoucher, out _);
 
-                ApplyFilter();
+                ApplyFilter(targetCode);
                 UpdateStats();
 
-                MessageHelper.ShowInfo($"Đã cập nhật thay đổi cho mã voucher '{_selectedVoucher.VoucherCode}' thành công!", "Lưu thay đổi");
+                MessageHelper.ShowInfo($"Đã cập nhật thay đổi cho mã voucher '{targetCode}' thành công!", "Lưu thay đổi");
             }
         }
 
@@ -618,20 +644,19 @@ namespace DoAnLapTrinhTrucQuan.UserControls
         {
             if (_selectedVoucher == null) return;
 
+            string targetCode = _selectedVoucher.VoucherCode;
             string action = _selectedVoucher.IsActive ? "tạm ngưng" : "kích hoạt lại";
-            bool confirmed = MessageHelper.Confirm($"Bạn có chắc chắn muốn {action} mã voucher '{_selectedVoucher.VoucherCode}' không?", "Xác nhận");
+            bool confirmed = MessageHelper.Confirm($"Bạn có chắc chắn muốn {action} mã voucher '{targetCode}' không?", "Xác nhận");
 
             if (confirmed)
             {
-                _voucherBLL.ToggleVoucherStatus(_selectedVoucher.VoucherCode);
+                _voucherBLL.ToggleVoucherStatus(targetCode);
 
-                toggleKichHoat.Checked = _selectedVoucher.IsActive;
-                btnToggleStatus.Text = _selectedVoucher.IsActive ? "🚫 Tạm ngưng mã này" : "✔ Kích hoạt lại mã";
-
-                ApplyFilter();
+                ApplyFilter(targetCode);
                 UpdateStats();
 
-                MessageHelper.ShowInfo($"Mã voucher '{_selectedVoucher.VoucherCode}' đã được chuyển sang trạng thái: {_selectedVoucher.Status}.", "Thông báo");
+                string currentStatus = _selectedVoucher?.Status ?? (_selectedVoucher?.IsActive == true ? "Đang hiệu lực" : "Tạm dừng");
+                MessageHelper.ShowInfo($"Mã voucher '{targetCode}' đã được chuyển sang trạng thái: {currentStatus}.", "Thông báo");
             }
         }
 

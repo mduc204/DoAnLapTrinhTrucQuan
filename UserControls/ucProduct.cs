@@ -404,7 +404,7 @@ namespace DoAnLapTrinhTrucQuan.UserControls
             {
                 string val = e.Value?.ToString() ?? "Đang bán";
                 bool isDangBan = val == "Đang bán";
-                Rectangle badgeRect = new Rectangle(cellBounds.Left + (cellBounds.Width - 94) / 2, cellBounds.Top + (cellBounds.Height - 24) / 2, 94, 24);
+                Rectangle badgeRect = new Rectangle(cellBounds.Left + (cellBounds.Width - 100) / 2, cellBounds.Top + (cellBounds.Height - 24) / 2, 100, 24);
 
                 Color bColor = isDangBan ? UIHelper.BadgeGreenBg : UIHelper.BadgeRedBg;
                 Color tColor = isDangBan ? UIHelper.BadgeGreenText : ColorTranslator.FromHtml("#C0392B");
@@ -415,13 +415,9 @@ namespace DoAnLapTrinhTrucQuan.UserControls
                     g.FillPath(bgB, path);
                 }
 
-                using (SolidBrush dotBrush = new SolidBrush(tColor))
-                {
-                    g.FillEllipse(dotBrush, badgeRect.Left + 8, badgeRect.Top + (badgeRect.Height - 6) / 2, 6, 6);
-                }
-
-                Rectangle textRect = new Rectangle(badgeRect.Left + 14, badgeRect.Top, badgeRect.Width - 14, badgeRect.Height);
-                TextRenderer.DrawText(g, val, UIHelper.FontSmallBold, textRect, tColor,
+                // Vẽ chữ kèm chấm tròn đồng nhất, không bị đè lên chữ
+                string dotText = "● " + val;
+                TextRenderer.DrawText(g, dotText, UIHelper.FontSmallBold, badgeRect, tColor,
                     TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
                 e.Handled = true;
                 return;
