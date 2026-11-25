@@ -3,34 +3,34 @@ namespace DoAnLapTrinhTrucQuan
     public partial class FrmMain : Form
     {
         private A03Personalinfo? profileControl;
-        private string  currentUsername;
+        private string currentUsername;
 
         public FrmMain(string username)
         {
             InitializeComponent();
 
-            currentUsername     = username;
-            WindowState         = FormWindowState.Maximized;
+            currentUsername = username;
+            WindowState = FormWindowState.Maximized;
 
             // Show username in topbar
-            lbTentopbar.Text    = username;
+            lbTentopbar.Text = username;
 
             // Layout helpers
-            flowLayoutPanel1.Dock       = DockStyle.None;
+            flowLayoutPanel1.Dock = DockStyle.None;
             flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.Anchor     = AnchorStyles.Top | AnchorStyles.Bottom |
+            flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom |
                                           AnchorStyles.Left | AnchorStyles.Right;
-            btnThongtincanhan.Anchor    = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            btnThongtincanhan.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
 
             pnlSidebar.Resize += (_, _) => LayoutSidebar();
-            pnlTopbar.Resize  += (_, _) => LayoutTopbar();
+            pnlTopbar.Resize += (_, _) => LayoutTopbar();
             LayoutSidebar();
             LayoutTopbar();
 
             // Sidebar navigation
-            btnThongtincanhan.Click    += (_, _) => ShowProfile();
-            btnDangxuatsidebar.Click   += (_, _) => ConfirmLogout();
-            btnQuanlynhanvien.Click    += btnQuanlynhanvien_Click;
+            btnThongtincanhan.Click += (_, _) => ShowProfile();
+            btnDangxuatsidebar.Click += (_, _) => ConfirmLogout();
+            btnQuanlynhanvien.Click += btnQuanlynhanvien_Click;
         }
 
         // ── Load profile panel ──────────────────────────────────────────
@@ -42,7 +42,7 @@ namespace DoAnLapTrinhTrucQuan
                 profileControl.ProfileUpdated += (name, _) =>
                 {
                     lbTentopbar.Text = name;
-                    currentUsername  = name;
+                    currentUsername = name;
                 };
             }
             LoadControl(profileControl);
@@ -88,17 +88,17 @@ namespace DoAnLapTrinhTrucQuan
             picAvttopbar.Location = new Point(
                 pnlTopbar.ClientSize.Width - picAvttopbar.Width - rightInset, 12);
 
-            lbTentopbar.Anchor    = AnchorStyles.Top | AnchorStyles.Right;
-            lbTentopbar.AutoSize  = false;
+            lbTentopbar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lbTentopbar.AutoSize = false;
             lbTentopbar.TextAlign = ContentAlignment.MiddleRight;
-            lbTentopbar.Size      = new Size(160, 26);
-            lbTentopbar.Location  = new Point(picAvttopbar.Left - lbTentopbar.Width - 12, 6);
+            lbTentopbar.Size = new Size(160, 26);
+            lbTentopbar.Location = new Point(picAvttopbar.Left - lbTentopbar.Width - 12, 6);
 
-            lbRoletopbar.Anchor    = AnchorStyles.Top | AnchorStyles.Right;
-            lbRoletopbar.AutoSize  = false;
+            lbRoletopbar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lbRoletopbar.AutoSize = false;
             lbRoletopbar.TextAlign = ContentAlignment.MiddleRight;
-            lbRoletopbar.Size      = new Size(160, 26);
-            lbRoletopbar.Location  = new Point(picAvttopbar.Left - lbRoletopbar.Width - 12, 34);
+            lbRoletopbar.Size = new Size(160, 26);
+            lbRoletopbar.Location = new Point(picAvttopbar.Left - lbRoletopbar.Width - 12, 34);
         }
 
         // ── Load UserControl into content panel ──────────────────────────
@@ -113,6 +113,26 @@ namespace DoAnLapTrinhTrucQuan
         private void btnQuanlynhanvien_Click(object sender, EventArgs e)
         {
             LoadControl(new UcM05());
+        }
+
+        private void btnDonhang_Click(object sender, EventArgs e)
+        {
+            LoadControl(new UcS03());
+        }
+
+        private void btnBanhang_Click(object sender, EventArgs e)
+        {
+            LoadControl(new UcS02());
+        }
+
+        private void btnSodoban_Click(object sender, EventArgs e)
+        {
+            LoadControl(new UcS01());
+        }
+
+        private void btnHoadon_Click(object sender, EventArgs e)
+        {
+            LoadControl(new UcS05());
         }
     }
 }
