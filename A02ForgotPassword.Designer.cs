@@ -28,341 +28,386 @@ namespace DoAnLapTrinhTrucQuan
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlMain = new System.Windows.Forms.Panel();
-            this.stepOne = new System.Windows.Forms.Panel();
-            this.lblFPTitle = new System.Windows.Forms.Label();
-            this.lblFPSubtitle = new System.Windows.Forms.Label();
-            this.lblFPUsernameLabel = new System.Windows.Forms.Label();
-            this.pnlFPUsername = new System.Windows.Forms.Panel();
-            this.txtFPUsername = new System.Windows.Forms.TextBox();
-            this.lblFPContactLabel = new System.Windows.Forms.Label();
-            this.pnlFPContact = new System.Windows.Forms.Panel();
-            this.txtFPContact = new System.Windows.Forms.TextBox();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSendOTP = new System.Windows.Forms.Button();
-            this.stepTwo = new System.Windows.Forms.Panel();
-            this.lblRPTitle = new System.Windows.Forms.Label();
-            this.lblRPSubtitle = new System.Windows.Forms.Label();
-            this.lblNewPwdLabel = new System.Windows.Forms.Label();
-            this.pnlNewPwd = new System.Windows.Forms.Panel();
-            this.txtNewPassword = new System.Windows.Forms.TextBox();
-            this.btnToggleNewPwd = new System.Windows.Forms.Button();
-            this.lblConfirmPwdLabel = new System.Windows.Forms.Label();
-            this.pnlConfirmPwd = new System.Windows.Forms.Panel();
-            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
-            this.btnToggleConfirmPwd = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.btnChangePassword = new System.Windows.Forms.Button();
-
-            this.pnlMain.SuspendLayout();
-            this.stepOne.SuspendLayout();
-            this.pnlFPUsername.SuspendLayout();
-            this.pnlFPContact.SuspendLayout();
-            this.stepTwo.SuspendLayout();
-            this.pnlNewPwd.SuspendLayout();
-            this.pnlConfirmPwd.SuspendLayout();
-            this.SuspendLayout();
-
-            // ─────────────────────────────────────────────
-            // pnlMain  (outer card; 10px offset creates shadow illusion)
-            // ─────────────────────────────────────────────
-            this.pnlMain.BackColor = System.Drawing.Color.White;
-            this.pnlMain.Location = new System.Drawing.Point(20, 56);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(440, 340);
-            this.pnlMain.TabIndex = 0;
-
-            // ─────────────────────────────────────────────
+            pnlMain = new Panel();
+            stepOne = new Panel();
+            lblFPTitle = new Label();
+            lblFPSubtitle = new Label();
+            lblFPUsernameLabel = new Label();
+            pnlFPUsername = new Panel();
+            txtFPUsername = new TextBox();
+            lblFPContactLabel = new Label();
+            pnlFPContact = new Panel();
+            txtFPContact = new TextBox();
+            btnCancel = new Button();
+            btnSendOTP = new Button();
+            stepTwo = new Panel();
+            lblRPTitle = new Label();
+            lblRPSubtitle = new Label();
+            lblNewPwdLabel = new Label();
+            pnlNewPwd = new Panel();
+            txtNewPassword = new TextBox();
+            btnToggleNewPwd = new Button();
+            lblConfirmPwdLabel = new Label();
+            pnlConfirmPwd = new Panel();
+            txtConfirmPassword = new TextBox();
+            btnToggleConfirmPwd = new Button();
+            btnBack = new Button();
+            btnChangePassword = new Button();
+            pnlMain.SuspendLayout();
+            stepOne.SuspendLayout();
+            pnlFPUsername.SuspendLayout();
+            pnlFPContact.SuspendLayout();
+            stepTwo.SuspendLayout();
+            pnlNewPwd.SuspendLayout();
+            pnlConfirmPwd.SuspendLayout();
+            SuspendLayout();
+            // 
+            // pnlMain
+            // 
+            pnlMain.BackColor = Color.White;
+            pnlMain.Controls.Add(stepOne);
+            pnlMain.Controls.Add(stepTwo);
+            pnlMain.Location = new Point(37, 119);
+            pnlMain.Margin = new Padding(6, 6, 6, 6);
+            pnlMain.Name = "pnlMain";
+            pnlMain.Size = new Size(817, 725);
+            pnlMain.TabIndex = 0;
+            // 
             // stepOne
-            // ─────────────────────────────────────────────
-            this.stepOne.BackColor = System.Drawing.Color.White;
-            this.stepOne.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.stepOne.Name = "stepOne";
-            this.stepOne.TabIndex = 0;
-            this.stepOne.Visible = true;
-
+            // 
+            stepOne.BackColor = Color.White;
+            stepOne.Controls.Add(lblFPTitle);
+            stepOne.Controls.Add(lblFPSubtitle);
+            stepOne.Controls.Add(lblFPUsernameLabel);
+            stepOne.Controls.Add(pnlFPUsername);
+            stepOne.Controls.Add(lblFPContactLabel);
+            stepOne.Controls.Add(pnlFPContact);
+            stepOne.Controls.Add(btnCancel);
+            stepOne.Controls.Add(btnSendOTP);
+            stepOne.Dock = DockStyle.Fill;
+            stepOne.Location = new Point(0, 0);
+            stepOne.Margin = new Padding(6, 6, 6, 6);
+            stepOne.Name = "stepOne";
+            stepOne.Size = new Size(817, 725);
+            stepOne.TabIndex = 0;
+            // 
             // lblFPTitle
-            this.lblFPTitle.AutoSize = true;
-            this.lblFPTitle.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
-            this.lblFPTitle.ForeColor = System.Drawing.Color.FromArgb(86, 57, 39);
-            this.lblFPTitle.Location = new System.Drawing.Point(24, 20);
-            this.lblFPTitle.Name = "lblFPTitle";
-            this.lblFPTitle.Text = "Quên mật khẩu";
-
+            // 
+            lblFPTitle.AutoSize = true;
+            lblFPTitle.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            lblFPTitle.ForeColor = Color.FromArgb(86, 57, 39);
+            lblFPTitle.Location = new Point(202, 43);
+            lblFPTitle.Margin = new Padding(6, 0, 6, 0);
+            lblFPTitle.Name = "lblFPTitle";
+            lblFPTitle.Size = new Size(420, 72);
+            lblFPTitle.TabIndex = 0;
+            lblFPTitle.Text = "Quên mật khẩu";
+            // 
             // lblFPSubtitle
-            this.lblFPSubtitle.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblFPSubtitle.ForeColor = System.Drawing.Color.Gray;
-            this.lblFPSubtitle.Location = new System.Drawing.Point(24, 59);
-            this.lblFPSubtitle.Name = "lblFPSubtitle";
-            this.lblFPSubtitle.Size = new System.Drawing.Size(392, 40);
-            this.lblFPSubtitle.Text = "Nhập tên đăng nhập và số điện thoại hoặc email đã đăng ký để nhận mã OTP.";
-
+            // 
+            lblFPSubtitle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblFPSubtitle.ForeColor = Color.Gray;
+            lblFPSubtitle.Location = new Point(45, 126);
+            lblFPSubtitle.Margin = new Padding(6, 0, 6, 0);
+            lblFPSubtitle.Name = "lblFPSubtitle";
+            lblFPSubtitle.Size = new Size(728, 85);
+            lblFPSubtitle.TabIndex = 1;
+            lblFPSubtitle.Text = "Nhập tên đăng nhập và số điện thoại hoặc email đã đăng ký để nhận mã OTP.";
+            // 
             // lblFPUsernameLabel
-            this.lblFPUsernameLabel.AutoSize = true;
-            this.lblFPUsernameLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblFPUsernameLabel.Location = new System.Drawing.Point(24, 112);
-            this.lblFPUsernameLabel.Name = "lblFPUsernameLabel";
-            this.lblFPUsernameLabel.Text = "Tên đăng nhập";
-
+            // 
+            lblFPUsernameLabel.AutoSize = true;
+            lblFPUsernameLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblFPUsernameLabel.Location = new Point(45, 239);
+            lblFPUsernameLabel.Margin = new Padding(6, 0, 6, 0);
+            lblFPUsernameLabel.Name = "lblFPUsernameLabel";
+            lblFPUsernameLabel.Size = new Size(183, 32);
+            lblFPUsernameLabel.TabIndex = 2;
+            lblFPUsernameLabel.Text = "Tên đăng nhập";
+            // 
             // pnlFPUsername
-            this.pnlFPUsername.BackColor = System.Drawing.Color.White;
-            this.pnlFPUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlFPUsername.Location = new System.Drawing.Point(24, 137);
-            this.pnlFPUsername.Name = "pnlFPUsername";
-            this.pnlFPUsername.Size = new System.Drawing.Size(392, 38);
-            this.pnlFPUsername.TabIndex = 1;
-
+            // 
+            pnlFPUsername.BackColor = Color.White;
+            pnlFPUsername.BorderStyle = BorderStyle.FixedSingle;
+            pnlFPUsername.Controls.Add(txtFPUsername);
+            pnlFPUsername.Location = new Point(45, 292);
+            pnlFPUsername.Margin = new Padding(6, 6, 6, 6);
+            pnlFPUsername.Name = "pnlFPUsername";
+            pnlFPUsername.Size = new Size(726, 79);
+            pnlFPUsername.TabIndex = 1;
+            // 
             // txtFPUsername
-            this.txtFPUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFPUsername.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtFPUsername.Location = new System.Drawing.Point(10, 8);
-            this.txtFPUsername.Name = "txtFPUsername";
-            this.txtFPUsername.PlaceholderText = "Nhập tên đăng nhập";
-            this.txtFPUsername.Size = new System.Drawing.Size(370, 22);
-            this.txtFPUsername.TabIndex = 0;
-
+            // 
+            txtFPUsername.BorderStyle = BorderStyle.None;
+            txtFPUsername.Font = new Font("Segoe UI", 10F);
+            txtFPUsername.Location = new Point(19, 17);
+            txtFPUsername.Margin = new Padding(6, 6, 6, 6);
+            txtFPUsername.Name = "txtFPUsername";
+            txtFPUsername.PlaceholderText = "Nhập tên đăng nhập";
+            txtFPUsername.Size = new Size(687, 36);
+            txtFPUsername.TabIndex = 0;
+            // 
             // lblFPContactLabel
-            this.lblFPContactLabel.AutoSize = true;
-            this.lblFPContactLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblFPContactLabel.Location = new System.Drawing.Point(24, 192);
-            this.lblFPContactLabel.Name = "lblFPContactLabel";
-            this.lblFPContactLabel.Text = "Số điện thoại hoặc email";
-
+            // 
+            lblFPContactLabel.AutoSize = true;
+            lblFPContactLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblFPContactLabel.Location = new Point(45, 410);
+            lblFPContactLabel.Margin = new Padding(6, 0, 6, 0);
+            lblFPContactLabel.Name = "lblFPContactLabel";
+            lblFPContactLabel.Size = new Size(294, 32);
+            lblFPContactLabel.TabIndex = 3;
+            lblFPContactLabel.Text = "Số điện thoại hoặc email";
+            // 
             // pnlFPContact
-            this.pnlFPContact.BackColor = System.Drawing.Color.White;
-            this.pnlFPContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlFPContact.Location = new System.Drawing.Point(24, 215);
-            this.pnlFPContact.Name = "pnlFPContact";
-            this.pnlFPContact.Size = new System.Drawing.Size(392, 38);
-            this.pnlFPContact.TabIndex = 2;
-
+            // 
+            pnlFPContact.BackColor = Color.White;
+            pnlFPContact.BorderStyle = BorderStyle.FixedSingle;
+            pnlFPContact.Controls.Add(txtFPContact);
+            pnlFPContact.Location = new Point(45, 459);
+            pnlFPContact.Margin = new Padding(6, 6, 6, 6);
+            pnlFPContact.Name = "pnlFPContact";
+            pnlFPContact.Size = new Size(726, 79);
+            pnlFPContact.TabIndex = 2;
+            // 
             // txtFPContact
-            this.txtFPContact.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFPContact.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtFPContact.Location = new System.Drawing.Point(10, 8);
-            this.txtFPContact.Name = "txtFPContact";
-            this.txtFPContact.PlaceholderText = "0912 345 678 hoặc email@moccafe.vn";
-            this.txtFPContact.Size = new System.Drawing.Size(370, 22);
-            this.txtFPContact.TabIndex = 0;
-
+            // 
+            txtFPContact.BorderStyle = BorderStyle.None;
+            txtFPContact.Font = new Font("Segoe UI", 10F);
+            txtFPContact.Location = new Point(19, 17);
+            txtFPContact.Margin = new Padding(6, 6, 6, 6);
+            txtFPContact.Name = "txtFPContact";
+            txtFPContact.PlaceholderText = "0912 345 678 hoặc email@moccafe.vn";
+            txtFPContact.Size = new Size(687, 36);
+            txtFPContact.TabIndex = 0;
+            // 
             // btnCancel
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(255, 235, 230);
-            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(86, 57, 39);
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnCancel.Location = new System.Drawing.Point(24, 274);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(70, 40);
-            this.btnCancel.TabIndex = 3;
-            this.btnCancel.Text = "× Hủy bỏ";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-
+            // 
+            btnCancel.BackColor = Color.FromArgb(255, 235, 230);
+            btnCancel.FlatAppearance.BorderSize = 0;
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.Font = new Font("Segoe UI", 10F);
+            btnCancel.ForeColor = Color.FromArgb(86, 57, 39);
+            btnCancel.Location = new Point(45, 585);
+            btnCancel.Margin = new Padding(6, 6, 6, 6);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(189, 85);
+            btnCancel.TabIndex = 3;
+            btnCancel.Text = "× Hủy bỏ";
+            btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += btnCancel_Click;
+            // 
             // btnSendOTP
-            this.btnSendOTP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSendOTP.FlatAppearance.BorderSize = 0;
-            this.btnSendOTP.BackColor = System.Drawing.Color.FromArgb(86, 57, 39);
-            this.btnSendOTP.ForeColor = System.Drawing.Color.White;
-            this.btnSendOTP.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnSendOTP.Location = new System.Drawing.Point(300, 274);
-            this.btnSendOTP.Name = "btnSendOTP";
-            this.btnSendOTP.Size = new System.Drawing.Size(116, 40);
-            this.btnSendOTP.TabIndex = 4;
-            this.btnSendOTP.Text = "Gửi mã OTP →";
-            this.btnSendOTP.UseVisualStyleBackColor = false;
-            this.btnSendOTP.Click += new System.EventHandler(this.btnSendOTP_Click);
-
-            // Add controls to pnlFPUsername
-            this.pnlFPUsername.Controls.Add(this.txtFPUsername);
-
-            // Add controls to pnlFPContact
-            this.pnlFPContact.Controls.Add(this.txtFPContact);
-
-            // Add controls to stepOne
-            this.stepOne.Controls.Add(this.lblFPTitle);
-            this.stepOne.Controls.Add(this.lblFPSubtitle);
-            this.stepOne.Controls.Add(this.lblFPUsernameLabel);
-            this.stepOne.Controls.Add(this.pnlFPUsername);
-            this.stepOne.Controls.Add(this.lblFPContactLabel);
-            this.stepOne.Controls.Add(this.pnlFPContact);
-            this.stepOne.Controls.Add(this.btnCancel);
-            this.stepOne.Controls.Add(this.btnSendOTP);
-
-            // ─────────────────────────────────────────────
+            // 
+            btnSendOTP.BackColor = Color.FromArgb(86, 57, 39);
+            btnSendOTP.FlatAppearance.BorderSize = 0;
+            btnSendOTP.FlatStyle = FlatStyle.Flat;
+            btnSendOTP.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnSendOTP.ForeColor = Color.White;
+            btnSendOTP.Location = new Point(517, 585);
+            btnSendOTP.Margin = new Padding(6, 6, 6, 6);
+            btnSendOTP.Name = "btnSendOTP";
+            btnSendOTP.Size = new Size(255, 85);
+            btnSendOTP.TabIndex = 4;
+            btnSendOTP.Text = "Gửi mã OTP →";
+            btnSendOTP.UseVisualStyleBackColor = false;
+            btnSendOTP.Click += btnSendOTP_Click;
+            // 
             // stepTwo
-            // ─────────────────────────────────────────────
-            this.stepTwo.BackColor = System.Drawing.Color.White;
-            this.stepTwo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.stepTwo.Name = "stepTwo";
-            this.stepTwo.TabIndex = 1;
-            this.stepTwo.Visible = false;
-
+            // 
+            stepTwo.BackColor = Color.White;
+            stepTwo.Controls.Add(lblRPTitle);
+            stepTwo.Controls.Add(lblRPSubtitle);
+            stepTwo.Controls.Add(lblNewPwdLabel);
+            stepTwo.Controls.Add(pnlNewPwd);
+            stepTwo.Controls.Add(lblConfirmPwdLabel);
+            stepTwo.Controls.Add(pnlConfirmPwd);
+            stepTwo.Controls.Add(btnBack);
+            stepTwo.Controls.Add(btnChangePassword);
+            stepTwo.Dock = DockStyle.Fill;
+            stepTwo.Location = new Point(0, 0);
+            stepTwo.Margin = new Padding(6, 6, 6, 6);
+            stepTwo.Name = "stepTwo";
+            stepTwo.Size = new Size(817, 725);
+            stepTwo.TabIndex = 1;
+            stepTwo.Visible = false;
+            // 
             // lblRPTitle
-            this.lblRPTitle.AutoSize = true;
-            this.lblRPTitle.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
-            this.lblRPTitle.ForeColor = System.Drawing.Color.FromArgb(86, 57, 39);
-            this.lblRPTitle.Location = new System.Drawing.Point(24, 20);
-            this.lblRPTitle.Name = "lblRPTitle";
-            this.lblRPTitle.Text = "Đặt lại mật khẩu";
-
+            // 
+            lblRPTitle.AutoSize = true;
+            lblRPTitle.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            lblRPTitle.ForeColor = Color.FromArgb(86, 57, 39);
+            lblRPTitle.Location = new Point(45, 43);
+            lblRPTitle.Margin = new Padding(6, 0, 6, 0);
+            lblRPTitle.Name = "lblRPTitle";
+            lblRPTitle.Size = new Size(448, 72);
+            lblRPTitle.TabIndex = 0;
+            lblRPTitle.Text = "Đặt lại mật khẩu";
+            // 
             // lblRPSubtitle
-            this.lblRPSubtitle.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblRPSubtitle.ForeColor = System.Drawing.Color.Gray;
-            this.lblRPSubtitle.Location = new System.Drawing.Point(24, 59);
-            this.lblRPSubtitle.Name = "lblRPSubtitle";
-            this.lblRPSubtitle.Size = new System.Drawing.Size(392, 40);
-            this.lblRPSubtitle.Text = "Tạo mật khẩu mới cho tài khoản.\nTối thiểu 8 ký tự, gồm chữ hoa và số.";
-
+            // 
+            lblRPSubtitle.Font = new Font("Segoe UI", 9F);
+            lblRPSubtitle.ForeColor = Color.Gray;
+            lblRPSubtitle.Location = new Point(45, 126);
+            lblRPSubtitle.Margin = new Padding(6, 0, 6, 0);
+            lblRPSubtitle.Name = "lblRPSubtitle";
+            lblRPSubtitle.Size = new Size(728, 85);
+            lblRPSubtitle.TabIndex = 1;
+            lblRPSubtitle.Text = "Tạo mật khẩu mới cho tài khoản.\nTối thiểu 8 ký tự, gồm chữ hoa và số.";
+            // 
             // lblNewPwdLabel
-            this.lblNewPwdLabel.AutoSize = true;
-            this.lblNewPwdLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblNewPwdLabel.Location = new System.Drawing.Point(24, 112);
-            this.lblNewPwdLabel.Name = "lblNewPwdLabel";
-            this.lblNewPwdLabel.Text = "Mật khẩu mới";
-
+            // 
+            lblNewPwdLabel.AutoSize = true;
+            lblNewPwdLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblNewPwdLabel.Location = new Point(45, 239);
+            lblNewPwdLabel.Margin = new Padding(6, 0, 6, 0);
+            lblNewPwdLabel.Name = "lblNewPwdLabel";
+            lblNewPwdLabel.Size = new Size(172, 32);
+            lblNewPwdLabel.TabIndex = 2;
+            lblNewPwdLabel.Text = "Mật khẩu mới";
+            // 
             // pnlNewPwd
-            this.pnlNewPwd.BackColor = System.Drawing.Color.White;
-            this.pnlNewPwd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlNewPwd.Location = new System.Drawing.Point(24, 137);
-            this.pnlNewPwd.Name = "pnlNewPwd";
-            this.pnlNewPwd.Size = new System.Drawing.Size(392, 38);
-            this.pnlNewPwd.TabIndex = 1;
-
+            // 
+            pnlNewPwd.BackColor = Color.White;
+            pnlNewPwd.BorderStyle = BorderStyle.FixedSingle;
+            pnlNewPwd.Controls.Add(txtNewPassword);
+            pnlNewPwd.Controls.Add(btnToggleNewPwd);
+            pnlNewPwd.Location = new Point(45, 292);
+            pnlNewPwd.Margin = new Padding(6, 6, 6, 6);
+            pnlNewPwd.Name = "pnlNewPwd";
+            pnlNewPwd.Size = new Size(726, 79);
+            pnlNewPwd.TabIndex = 1;
+            // 
             // txtNewPassword
-            this.txtNewPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNewPassword.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtNewPassword.Location = new System.Drawing.Point(10, 8);
-            this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.PasswordChar = '•';
-            this.txtNewPassword.Size = new System.Drawing.Size(335, 22);
-            this.txtNewPassword.TabIndex = 0;
-
+            // 
+            txtNewPassword.BorderStyle = BorderStyle.None;
+            txtNewPassword.Font = new Font("Segoe UI", 10F);
+            txtNewPassword.Location = new Point(19, 17);
+            txtNewPassword.Margin = new Padding(6, 6, 6, 6);
+            txtNewPassword.Name = "txtNewPassword";
+            txtNewPassword.PasswordChar = '•';
+            txtNewPassword.Size = new Size(622, 36);
+            txtNewPassword.TabIndex = 0;
+            // 
             // btnToggleNewPwd
-            this.btnToggleNewPwd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnToggleNewPwd.FlatAppearance.BorderSize = 0;
-            this.btnToggleNewPwd.BackColor = System.Drawing.Color.White;
-            this.btnToggleNewPwd.Location = new System.Drawing.Point(355, 6);
-            this.btnToggleNewPwd.Name = "btnToggleNewPwd";
-            this.btnToggleNewPwd.Size = new System.Drawing.Size(25, 25);
-            this.btnToggleNewPwd.TabIndex = 1;
-            this.btnToggleNewPwd.Text = "👁";
-            this.btnToggleNewPwd.UseVisualStyleBackColor = false;
-            this.btnToggleNewPwd.Click += new System.EventHandler(this.btnToggleNewPwd_Click);
-
+            // 
+            btnToggleNewPwd.BackColor = Color.White;
+            btnToggleNewPwd.FlatAppearance.BorderSize = 0;
+            btnToggleNewPwd.FlatStyle = FlatStyle.Flat;
+            btnToggleNewPwd.Location = new Point(659, 13);
+            btnToggleNewPwd.Margin = new Padding(6, 6, 6, 6);
+            btnToggleNewPwd.Name = "btnToggleNewPwd";
+            btnToggleNewPwd.Size = new Size(46, 53);
+            btnToggleNewPwd.TabIndex = 1;
+            btnToggleNewPwd.Text = "👁";
+            btnToggleNewPwd.UseVisualStyleBackColor = false;
+            btnToggleNewPwd.Click += btnToggleNewPwd_Click;
+            // 
             // lblConfirmPwdLabel
-            this.lblConfirmPwdLabel.AutoSize = true;
-            this.lblConfirmPwdLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblConfirmPwdLabel.Location = new System.Drawing.Point(24, 192);
-            this.lblConfirmPwdLabel.Name = "lblConfirmPwdLabel";
-            this.lblConfirmPwdLabel.Text = "Xác nhận mật khẩu mới";
-
+            // 
+            lblConfirmPwdLabel.AutoSize = true;
+            lblConfirmPwdLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblConfirmPwdLabel.Location = new Point(45, 410);
+            lblConfirmPwdLabel.Margin = new Padding(6, 0, 6, 0);
+            lblConfirmPwdLabel.Name = "lblConfirmPwdLabel";
+            lblConfirmPwdLabel.Size = new Size(283, 32);
+            lblConfirmPwdLabel.TabIndex = 3;
+            lblConfirmPwdLabel.Text = "Xác nhận mật khẩu mới";
+            // 
             // pnlConfirmPwd
-            this.pnlConfirmPwd.BackColor = System.Drawing.Color.White;
-            this.pnlConfirmPwd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlConfirmPwd.Location = new System.Drawing.Point(24, 215);
-            this.pnlConfirmPwd.Name = "pnlConfirmPwd";
-            this.pnlConfirmPwd.Size = new System.Drawing.Size(392, 38);
-            this.pnlConfirmPwd.TabIndex = 2;
-
+            // 
+            pnlConfirmPwd.BackColor = Color.White;
+            pnlConfirmPwd.BorderStyle = BorderStyle.FixedSingle;
+            pnlConfirmPwd.Controls.Add(txtConfirmPassword);
+            pnlConfirmPwd.Controls.Add(btnToggleConfirmPwd);
+            pnlConfirmPwd.Location = new Point(45, 459);
+            pnlConfirmPwd.Margin = new Padding(6, 6, 6, 6);
+            pnlConfirmPwd.Name = "pnlConfirmPwd";
+            pnlConfirmPwd.Size = new Size(726, 79);
+            pnlConfirmPwd.TabIndex = 2;
+            // 
             // txtConfirmPassword
-            this.txtConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtConfirmPassword.Location = new System.Drawing.Point(10, 8);
-            this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.PasswordChar = '•';
-            this.txtConfirmPassword.Size = new System.Drawing.Size(335, 22);
-            this.txtConfirmPassword.TabIndex = 0;
-
+            // 
+            txtConfirmPassword.BorderStyle = BorderStyle.None;
+            txtConfirmPassword.Font = new Font("Segoe UI", 10F);
+            txtConfirmPassword.Location = new Point(19, 17);
+            txtConfirmPassword.Margin = new Padding(6, 6, 6, 6);
+            txtConfirmPassword.Name = "txtConfirmPassword";
+            txtConfirmPassword.PasswordChar = '•';
+            txtConfirmPassword.Size = new Size(622, 36);
+            txtConfirmPassword.TabIndex = 0;
+            // 
             // btnToggleConfirmPwd
-            this.btnToggleConfirmPwd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnToggleConfirmPwd.FlatAppearance.BorderSize = 0;
-            this.btnToggleConfirmPwd.BackColor = System.Drawing.Color.White;
-            this.btnToggleConfirmPwd.Location = new System.Drawing.Point(355, 6);
-            this.btnToggleConfirmPwd.Name = "btnToggleConfirmPwd";
-            this.btnToggleConfirmPwd.Size = new System.Drawing.Size(25, 25);
-            this.btnToggleConfirmPwd.TabIndex = 1;
-            this.btnToggleConfirmPwd.Text = "👁";
-            this.btnToggleConfirmPwd.UseVisualStyleBackColor = false;
-            this.btnToggleConfirmPwd.Click += new System.EventHandler(this.btnToggleConfirmPwd_Click);
-
+            // 
+            btnToggleConfirmPwd.BackColor = Color.White;
+            btnToggleConfirmPwd.FlatAppearance.BorderSize = 0;
+            btnToggleConfirmPwd.FlatStyle = FlatStyle.Flat;
+            btnToggleConfirmPwd.Location = new Point(659, 13);
+            btnToggleConfirmPwd.Margin = new Padding(6, 6, 6, 6);
+            btnToggleConfirmPwd.Name = "btnToggleConfirmPwd";
+            btnToggleConfirmPwd.Size = new Size(46, 53);
+            btnToggleConfirmPwd.TabIndex = 1;
+            btnToggleConfirmPwd.Text = "👁";
+            btnToggleConfirmPwd.UseVisualStyleBackColor = false;
+            btnToggleConfirmPwd.Click += btnToggleConfirmPwd_Click;
+            // 
             // btnBack
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.BackColor = System.Drawing.Color.FromArgb(255, 235, 230);
-            this.btnBack.ForeColor = System.Drawing.Color.FromArgb(86, 57, 39);
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnBack.Location = new System.Drawing.Point(24, 274);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(76, 40);
-            this.btnBack.TabIndex = 3;
-            this.btnBack.Text = "← Quay lại";
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-
+            // 
+            btnBack.BackColor = Color.FromArgb(255, 235, 230);
+            btnBack.FlatAppearance.BorderSize = 0;
+            btnBack.FlatStyle = FlatStyle.Flat;
+            btnBack.Font = new Font("Segoe UI", 10F);
+            btnBack.ForeColor = Color.FromArgb(86, 57, 39);
+            btnBack.Location = new Point(45, 585);
+            btnBack.Margin = new Padding(6, 6, 6, 6);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(141, 85);
+            btnBack.TabIndex = 3;
+            btnBack.Text = "← Quay lại";
+            btnBack.UseVisualStyleBackColor = false;
+            btnBack.Click += btnBack_Click;
+            // 
             // btnChangePassword
-            this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangePassword.FlatAppearance.BorderSize = 0;
-            this.btnChangePassword.BackColor = System.Drawing.Color.FromArgb(86, 57, 39);
-            this.btnChangePassword.ForeColor = System.Drawing.Color.White;
-            this.btnChangePassword.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnChangePassword.Location = new System.Drawing.Point(284, 274);
-            this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(132, 40);
-            this.btnChangePassword.TabIndex = 4;
-            this.btnChangePassword.Text = "Đổi mật khẩu ✓";
-            this.btnChangePassword.UseVisualStyleBackColor = false;
-            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
-
-            // Add controls to pnlNewPwd
-            this.pnlNewPwd.Controls.Add(this.txtNewPassword);
-            this.pnlNewPwd.Controls.Add(this.btnToggleNewPwd);
-
-            // Add controls to pnlConfirmPwd
-            this.pnlConfirmPwd.Controls.Add(this.txtConfirmPassword);
-            this.pnlConfirmPwd.Controls.Add(this.btnToggleConfirmPwd);
-
-            // Add controls to stepTwo
-            this.stepTwo.Controls.Add(this.lblRPTitle);
-            this.stepTwo.Controls.Add(this.lblRPSubtitle);
-            this.stepTwo.Controls.Add(this.lblNewPwdLabel);
-            this.stepTwo.Controls.Add(this.pnlNewPwd);
-            this.stepTwo.Controls.Add(this.lblConfirmPwdLabel);
-            this.stepTwo.Controls.Add(this.pnlConfirmPwd);
-            this.stepTwo.Controls.Add(this.btnBack);
-            this.stepTwo.Controls.Add(this.btnChangePassword);
-
-            // Add both step panels to pnlMain
-            this.pnlMain.Controls.Add(this.stepOne);
-            this.pnlMain.Controls.Add(this.stepTwo);
-
-            // ─────────────────────────────────────────────
+            // 
+            btnChangePassword.BackColor = Color.FromArgb(86, 57, 39);
+            btnChangePassword.FlatAppearance.BorderSize = 0;
+            btnChangePassword.FlatStyle = FlatStyle.Flat;
+            btnChangePassword.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnChangePassword.ForeColor = Color.White;
+            btnChangePassword.Location = new Point(527, 585);
+            btnChangePassword.Margin = new Padding(6, 6, 6, 6);
+            btnChangePassword.Name = "btnChangePassword";
+            btnChangePassword.Size = new Size(245, 85);
+            btnChangePassword.TabIndex = 4;
+            btnChangePassword.Text = "Đổi mật khẩu ✓";
+            btnChangePassword.UseVisualStyleBackColor = false;
+            btnChangePassword.Click += btnChangePassword_Click;
+            // 
             // A02ForgotPassword
-            // ─────────────────────────────────────────────
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(220, 210, 200);
-            this.ClientSize = new System.Drawing.Size(480, 452);
-            this.Controls.Add(this.pnlMain);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "A02ForgotPassword";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Quên mật khẩu";
-
-            this.pnlConfirmPwd.ResumeLayout(false);
-            this.pnlConfirmPwd.PerformLayout();
-            this.pnlNewPwd.ResumeLayout(false);
-            this.pnlNewPwd.PerformLayout();
-            this.stepTwo.ResumeLayout(false);
-            this.stepTwo.PerformLayout();
-            this.pnlFPContact.ResumeLayout(false);
-            this.pnlFPContact.PerformLayout();
-            this.pnlFPUsername.ResumeLayout(false);
-            this.pnlFPUsername.PerformLayout();
-            this.stepOne.ResumeLayout(false);
-            this.stepOne.PerformLayout();
-            this.pnlMain.ResumeLayout(false);
-            this.ResumeLayout(false);
+            // 
+            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(220, 210, 200);
+            ClientSize = new Size(891, 964);
+            Controls.Add(pnlMain);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(6, 6, 6, 6);
+            Name = "A02ForgotPassword";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Quên mật khẩu";
+            pnlMain.ResumeLayout(false);
+            stepOne.ResumeLayout(false);
+            stepOne.PerformLayout();
+            pnlFPUsername.ResumeLayout(false);
+            pnlFPUsername.PerformLayout();
+            pnlFPContact.ResumeLayout(false);
+            pnlFPContact.PerformLayout();
+            stepTwo.ResumeLayout(false);
+            stepTwo.PerformLayout();
+            pnlNewPwd.ResumeLayout(false);
+            pnlNewPwd.PerformLayout();
+            pnlConfirmPwd.ResumeLayout(false);
+            pnlConfirmPwd.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

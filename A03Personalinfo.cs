@@ -21,8 +21,26 @@ namespace DoAnLapTrinhTrucQuan
         public A03Personalinfo()
         {
             InitializeComponent();
+            pnlLeft.Paint += pnlLeft_Paint;
+            picAvatar.Paint += picAvatar_Paint;
             picAvatar.Image = Properties.Resources.Background__1_;
             LoadData();
+        }
+
+        private void pnlLeft_Paint(object? sender, PaintEventArgs e)
+        {
+            using var header = new SolidBrush(Color.FromArgb(125, 91, 66));
+            e.Graphics.FillRectangle(header, 0, 0, pnlLeft.Width, 110);
+            using var pen = new Pen(Color.FromArgb(230, 224, 218));
+            e.Graphics.DrawRectangle(pen, 0, 0, pnlLeft.Width - 1, pnlLeft.Height - 1);
+        }
+
+        private void picAvatar_Paint(object? sender, PaintEventArgs e)
+        {
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            using var path = new System.Drawing.Drawing2D.GraphicsPath();
+            path.AddEllipse(0, 0, picAvatar.Width - 1, picAvatar.Height - 1);
+            e.Graphics.SetClip(path);
         }
 
         // ── Nạp dữ liệu vào form ────────────────────────────────────────

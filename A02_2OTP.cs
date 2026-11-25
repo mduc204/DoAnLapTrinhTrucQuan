@@ -9,6 +9,7 @@ namespace DoAnLapTrinhTrucQuan
     {
         private System.Windows.Forms.Timer _countdownTimer;
         private int _secondsLeft = 60;
+        private System.Windows.Forms.TextBox[] otpBoxes;
 
         public A02_2OTP() : this("số *** *** 678")
         {
@@ -17,6 +18,7 @@ namespace DoAnLapTrinhTrucQuan
         public A02_2OTP(string recipient)
         {
             InitializeComponent();
+            otpBoxes = new[] { otpBox0, otpBox1, otpBox2, otpBox3, otpBox4, otpBox5 };
             lblOTPSubtitle.Text = $"Mã gồm 6 số đã được gửi đến {MaskRecipient(recipient)}";
             CancelButton = btnCancel;
             AcceptButton = btnConfirm;

@@ -111,7 +111,7 @@
             // 
             picBrandLogo.Image = Properties.Resources.LLTQ_Café_Logo;
             picBrandLogo.Location = new Point(74, 107);
-            picBrandLogo.Margin = new Padding(6, 6, 6, 6);
+            picBrandLogo.Margin = new Padding(6);
             picBrandLogo.Name = "picBrandLogo";
             picBrandLogo.Size = new Size(149, 171);
             picBrandLogo.SizeMode = PictureBoxSizeMode.Zoom;
@@ -240,7 +240,7 @@
             card.Controls.Add(btnLogin);
             card.Controls.Add(pnlBottom);
             card.Location = new Point(347, 222);
-            card.Margin = new Padding(6, 6, 6, 6);
+            card.Margin = new Padding(6);
             card.Name = "card";
             card.Padding = new Padding(67, 68, 67, 68);
             card.Size = new Size(780, 1195);
@@ -277,7 +277,7 @@
             pnlError.Controls.Add(lblErrorMsg);
             pnlError.Controls.Add(btnCloseError);
             pnlError.Location = new Point(67, 265);
-            pnlError.Margin = new Padding(6, 6, 6, 6);
+            pnlError.Margin = new Padding(6);
             pnlError.Name = "pnlError";
             pnlError.Size = new Size(646, 115);
             pnlError.TabIndex = 2;
@@ -312,7 +312,7 @@
             btnCloseError.FlatStyle = FlatStyle.Flat;
             btnCloseError.ForeColor = Color.Red;
             btnCloseError.Location = new Point(594, 4);
-            btnCloseError.Margin = new Padding(6, 6, 6, 6);
+            btnCloseError.Margin = new Padding(6);
             btnCloseError.Name = "btnCloseError";
             btnCloseError.Size = new Size(37, 43);
             btnCloseError.TabIndex = 2;
@@ -338,7 +338,7 @@
             pnlUsername.Controls.Add(lblUsernameIcon);
             pnlUsername.Controls.Add(txtUsername);
             pnlUsername.Location = new Point(67, 452);
-            pnlUsername.Margin = new Padding(6, 6, 6, 6);
+            pnlUsername.Margin = new Padding(6);
             pnlUsername.Name = "pnlUsername";
             pnlUsername.Size = new Size(645, 87);
             pnlUsername.TabIndex = 4;
@@ -347,7 +347,7 @@
             // 
             lblUsernameIcon.AutoSize = true;
             lblUsernameIcon.Font = new Font("Segoe UI", 12F);
-            lblUsernameIcon.Location = new Point(15, 19);
+            lblUsernameIcon.Location = new Point(-2, 17);
             lblUsernameIcon.Margin = new Padding(6, 0, 6, 0);
             lblUsernameIcon.Name = "lblUsernameIcon";
             lblUsernameIcon.Size = new Size(64, 45);
@@ -358,8 +358,8 @@
             // 
             txtUsername.BorderStyle = BorderStyle.None;
             txtUsername.Font = new Font("Segoe UI", 10F);
-            txtUsername.Location = new Point(74, 23);
-            txtUsername.Margin = new Padding(6, 6, 6, 6);
+            txtUsername.Location = new Point(87, 23);
+            txtUsername.Margin = new Padding(6);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(557, 36);
             txtUsername.TabIndex = 1;
@@ -384,7 +384,7 @@
             pnlPassword.Controls.Add(txtPassword);
             pnlPassword.Controls.Add(btnTogglePassword);
             pnlPassword.Location = new Point(67, 619);
-            pnlPassword.Margin = new Padding(6, 6, 6, 6);
+            pnlPassword.Margin = new Padding(6);
             pnlPassword.Name = "pnlPassword";
             pnlPassword.Size = new Size(645, 87);
             pnlPassword.TabIndex = 6;
@@ -393,7 +393,7 @@
             // 
             lblPasswordIcon.AutoSize = true;
             lblPasswordIcon.Font = new Font("Segoe UI", 12F);
-            lblPasswordIcon.Location = new Point(15, 19);
+            lblPasswordIcon.Location = new Point(-2, 17);
             lblPasswordIcon.Margin = new Padding(6, 0, 6, 0);
             lblPasswordIcon.Name = "lblPasswordIcon";
             lblPasswordIcon.Size = new Size(64, 45);
@@ -404,8 +404,8 @@
             // 
             txtPassword.BorderStyle = BorderStyle.None;
             txtPassword.Font = new Font("Segoe UI", 10F);
-            txtPassword.Location = new Point(74, 23);
-            txtPassword.Margin = new Padding(6, 6, 6, 6);
+            txtPassword.Location = new Point(87, 26);
+            txtPassword.Margin = new Padding(6);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '•';
             txtPassword.Size = new Size(498, 36);
@@ -416,7 +416,7 @@
             btnTogglePassword.FlatAppearance.BorderSize = 0;
             btnTogglePassword.FlatStyle = FlatStyle.Flat;
             btnTogglePassword.Location = new Point(579, 15);
-            btnTogglePassword.Margin = new Padding(6, 6, 6, 6);
+            btnTogglePassword.Margin = new Padding(6);
             btnTogglePassword.Name = "btnTogglePassword";
             btnTogglePassword.Size = new Size(56, 55);
             btnTogglePassword.TabIndex = 2;
@@ -428,7 +428,7 @@
             pnlRemember.Controls.Add(chkRemember);
             pnlRemember.Controls.Add(lnkForgotPassword);
             pnlRemember.Location = new Point(67, 742);
-            pnlRemember.Margin = new Padding(6, 6, 6, 6);
+            pnlRemember.Margin = new Padding(6);
             pnlRemember.Name = "pnlRemember";
             pnlRemember.Size = new Size(646, 64);
             pnlRemember.TabIndex = 7;
@@ -438,7 +438,7 @@
             chkRemember.AutoSize = true;
             chkRemember.Font = new Font("Segoe UI", 9F);
             chkRemember.Location = new Point(0, 13);
-            chkRemember.Margin = new Padding(6, 6, 6, 6);
+            chkRemember.Margin = new Padding(6);
             chkRemember.Name = "chkRemember";
             chkRemember.Size = new Size(253, 36);
             chkRemember.TabIndex = 0;
@@ -468,7 +468,7 @@
             btnLogin.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnLogin.ForeColor = Color.White;
             btnLogin.Location = new Point(67, 841);
-            btnLogin.Margin = new Padding(6, 6, 6, 6);
+            btnLogin.Margin = new Padding(6);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(646, 98);
             btnLogin.TabIndex = 8;
@@ -479,7 +479,7 @@
             // 
             pnlBottom.Controls.Add(lnkRegister);
             pnlBottom.Location = new Point(67, 973);
-            pnlBottom.Margin = new Padding(6, 6, 6, 6);
+            pnlBottom.Margin = new Padding(6);
             pnlBottom.Name = "pnlBottom";
             pnlBottom.Size = new Size(646, 77);
             pnlBottom.TabIndex = 9;
@@ -508,7 +508,7 @@
             ClientSize = new Size(2537, 1638);
             Controls.Add(mainLayout);
             Font = new Font("Segoe UI", 9F);
-            Margin = new Padding(6, 6, 6, 6);
+            Margin = new Padding(6);
             MinimumSize = new Size(1835, 1200);
             Name = "A01Login";
             StartPosition = FormStartPosition.CenterScreen;
