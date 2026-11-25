@@ -133,6 +133,16 @@ namespace DoAnLapTrinhTrucQuan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Container__13_ {
+            get {
+                object obj = ResourceManager.GetObject("Container (13)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Container__2_ {
             get {
                 object obj = ResourceManager.GetObject("Container (2)", resourceCulture);
@@ -213,6 +223,36 @@ namespace DoAnLapTrinhTrucQuan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icDanglamviec {
+            get {
+                object obj = ResourceManager.GetObject("icDanglamviec", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icDoimatkhau {
+            get {
+                object obj = ResourceManager.GetObject("icDoimatkhau", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icKhoa {
+            get {
+                object obj = ResourceManager.GetObject("icKhoa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icon {
             get {
                 object obj = ResourceManager.GetObject("Icon", resourceCulture);
@@ -226,6 +266,66 @@ namespace DoAnLapTrinhTrucQuan.Properties {
         internal static System.Drawing.Bitmap Icon__1_ {
             get {
                 object obj = ResourceManager.GetObject("Icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon__2_ {
+            get {
+                object obj = ResourceManager.GetObject("Icon (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon__3_ {
+            get {
+                object obj = ResourceManager.GetObject("Icon (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icTaive {
+            get {
+                object obj = ResourceManager.GetObject("icTaive", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icThemnhanvien {
+            get {
+                object obj = ResourceManager.GetObject("icThemnhanvien", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icTieudeThemnhanvien {
+            get {
+                object obj = ResourceManager.GetObject("icTieudeThemnhanvien", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icTongnhanvien {
+            get {
+                object obj = ResourceManager.GetObject("icTongnhanvien", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -1,5 +1,6 @@
-﻿## Visual Studio / .NET Ignore Rule Chuẩn
-/.vs/
+.vs/
+obj/
+bin/
 [Bb]in/
 [Oo]bj/
 *.user
