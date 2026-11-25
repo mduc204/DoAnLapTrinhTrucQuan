@@ -1,3 +1,4 @@
+using DoAnLapTrinhTrucQuan.Models;
 using System.Globalization;
 
 namespace DoAnLapTrinhTrucQuan.UserControls.Sales
@@ -14,6 +15,9 @@ namespace DoAnLapTrinhTrucQuan.UserControls.Sales
 
         private readonly List<DiningTable> _tables = CreateDemoTables();
         private DiningTable? _selectedTable;
+        internal IReadOnlyList<DiningTable> Tables => _tables;
+        internal event Action<DiningTable, bool>? SaleRequested;
+        internal void RefreshOrders() => RenderTables();
         private Area? _selectedArea;
 
         public ucTableMap()
@@ -186,10 +190,10 @@ namespace DoAnLapTrinhTrucQuan.UserControls.Sales
                 case TableState.Serving:
                     string action = table == _selectedTable ? "Thêm món" : "Chi tiết";
                     layout.Controls.Add(CreateButton($"btnOpenTable_{table.Id}", action, () => OpenTable(table), Peach, Ink), 0, 3);
-                    layout.Controls.Add(CreateButton($"btnPayTable_{table.Id}", "Thu tiền", () => ShowPendingScreen("Thanh toán"), Coffee, Color.White), 1, 3);
+                    layout.Controls.Add(CreateButton($"btnPayTable_{table.Id}", "Thu tiền", () => SaleRequested?.Invoke(table, true), Coffee, Color.White), 1, 3);
                     break;
                 case TableState.Empty:
-                    AddSpanningControl(layout, CreateButton($"btnCreateOrder_{table.Id}", "Tạo đơn mới (POS)", () => ShowPendingScreen("Bán hàng (POS)"), Coffee, Color.White), 3);
+                    AddSpanningControl(layout, CreateButton($"btnCreateOrder_{table.Id}", "Tạo đơn mới (POS)", () => SaleRequested?.Invoke(table, false), Coffee, Color.White), 3);
                     break;
                 case TableState.Cleaning:
                     AddSpanningControl(layout, CreateButton($"btnMarkClean_{table.Id}", "✓  Đã dọn xong", () => MarkTableClean(table), Orange, Ink), 3);
@@ -207,7 +211,7 @@ namespace DoAnLapTrinhTrucQuan.UserControls.Sales
         private void OpenTable(DiningTable table)
         {
             if (table == _selectedTable)
-                ShowPendingScreen("Bán hàng (POS)");
+                SaleRequested?.Invoke(table, false);
             else
                 SelectTable(table);
         }
@@ -286,23 +290,25 @@ namespace DoAnLapTrinhTrucQuan.UserControls.Sales
                 foreach (var line in order.Lines)
                     AddDetailControl(CreateDetailRow($"{line.Quantity}x  {line.Name}", FormatMoney(line.Amount), Cream, true), 31);
 
-                AddDetailControl(CreateDetailRow("Tiền hàng", FormatMoney(order.Total), Color.White), 28);
+                AddDetailControl(CreateDetailRow("Tiền hàng", FormatMoney(order.Subtotal), Color.White), 28);
                 AddDetailControl(CreateDetailRow("Thuế & phí dịch vụ", "0 đ", Color.White), 24);
+                if (order.Discount > 0)
+                    AddDetailControl(CreateDetailRow(order.Voucher, "−" + FormatMoney(order.Discount), Cream), 24);
                 var totals = CreateDetailRow("Tổng thanh toán", FormatMoney(order.Total), Color.White, true);
                 totals.GetControlFromPosition(1, 0)!.ForeColor = Color.FromArgb(146, 72, 0);
                 AddDetailControl(totals, 37);
                 var actions = CreateDetailRow("", "", Color.White);
                 ClearControls(actions);
                 actions.Controls.Add(CreateButton("btnMergeTables", "Đổi / Gộp bàn", () => ShowPendingScreen("Đổi / Gộp bàn"), Peach, Ink), 0, 0);
-                actions.Controls.Add(CreateButton("btnAddOrderItems", "Thêm món (POS)", () => ShowPendingScreen("Bán hàng (POS)"), Peach, Ink), 1, 0);
+                actions.Controls.Add(CreateButton("btnAddOrderItems", "Thêm món (POS)", () => SaleRequested?.Invoke(table, false), Peach, Ink), 1, 0);
                 AddDetailControl(actions, 32);
-                AddDetailControl(CreateButton("btnPayOrder", $"Thanh toán · {FormatMoney(order.Total)}", () => ShowPendingScreen("Thanh toán"), Coffee, Color.White), 40);
+                AddDetailControl(CreateButton("btnPayOrder", $"Thanh toán · {FormatMoney(order.Total)}", () => SaleRequested?.Invoke(table, true), Coffee, Color.White), 40);
             }
             else
             {
                 AddDetailControl(CreateLabel(table.Note, Cream, Muted), 60);
                 if (table.State == TableState.Empty)
-                    AddDetailControl(CreateButton("btnCreateOrder", "Tạo đơn mới (POS)", () => ShowPendingScreen("Bán hàng (POS)"), Coffee, Color.White), 38);
+                    AddDetailControl(CreateButton("btnCreateOrder", "Tạo đơn mới (POS)", () => SaleRequested?.Invoke(table, false), Coffee, Color.White), 38);
                 if (table.State == TableState.Cleaning)
                     AddDetailControl(CreateButton("btnMarkClean", "✓  Đã dọn xong", () => MarkTableClean(table), Orange, Ink), 38);
             }
@@ -436,29 +442,5 @@ namespace DoAnLapTrinhTrucQuan.UserControls.Sales
             new("C06", 6, Area.AirConditioned, TableState.Empty)
         ];
 
-        private enum Area { Indoor, Garden, AirConditioned }
-        private enum TableState { Empty, Serving, Cleaning, Locked }
-
-        private sealed class DiningTable(
-            string id, int seats, Area area, TableState state,
-            string note = "Sẵn sàng đón khách", Order? order = null)
-        {
-            public string Id { get; } = id;
-            public int Seats { get; } = seats;
-            public Area Area { get; } = area;
-            public TableState State { get; set; } = state;
-            public string Note { get; set; } = note;
-            public Order? Order { get; } = order;
-        }
-
-        private sealed record Order(string Code, string OpenedAt, int Guests, OrderLine[] Lines)
-        {
-            public decimal Total => Lines.Sum(line => line.Amount);
-        }
-
-        private sealed record OrderLine(string Name, int Quantity, decimal UnitPrice)
-        {
-            public decimal Amount => Quantity * UnitPrice;
-        }
     }
 }

@@ -1,16 +1,29 @@
-﻿using DoAnLapTrinhTrucQuan.UserControls.Sales;
+using DoAnLapTrinhTrucQuan.UserControls.Sales;
 
 namespace DoAnLapTrinhTrucQuan.Forms
 {
     public partial class FrmMain : Form
     {
         private Button _activeMenuButton;
+        private readonly ucTableMap _tableMap = new();
+        private readonly ucPos _pos = new();
+        private readonly ucOrders _orders = new();
+        private readonly ucInvoices _invoices = new();
 
         public FrmMain()
         {
             InitializeComponent();
 
-            pnlContent.Controls.Add(new ucTableMap { Dock = DockStyle.Fill });
+            _tableMap.Dock = _pos.Dock = _orders.Dock = _invoices.Dock = DockStyle.Fill;
+            pnlContent.Controls.AddRange([_orders, _invoices]);
+            _orders.Visible = _invoices.Visible = false;
+            _orders.SaleRequested += table => OpenSale(table, false);
+            _orders.CancelRequested += record => { _pos.CancelOrder(record); ShowOrders(); };
+            pnlContent.Controls.Add(_tableMap);
+            pnlContent.Controls.Add(_pos);
+            _pos.Visible = false;
+            _tableMap.SaleRequested += OpenSale;
+            _pos.ReturnRequested += ShowTableMap;
             _activeMenuButton = btnMenuTableMap;
             using var iconFont = new Font("Segoe MDL2 Assets", 14, FontStyle.Regular, GraphicsUnit.Pixel);
 
@@ -28,7 +41,42 @@ namespace DoAnLapTrinhTrucQuan.Forms
             ConfigureMenuButton(btnMenuMyShifts, "\uE823", iconFont);
             ConfigureMenuButton(btnMenuTables, "\uE713", iconFont);
             ConfigureMenuButton(btnMenuReports, "\uE9D9", iconFont);
+            btnMenuOrders.Click += (_, _) => ShowOrders();
+            btnMenuInvoices.Click += (_, _) =>
+            {
+                _invoices.LoadInvoices(_pos.Invoices);
+                ShowPage(_invoices, btnMenuInvoices);
+            };
+            btnMenuTableMap.Click += (_, _) => ShowTableMap();
+
+
             AddButtonIcon(btnSignOut, "\uE8AC", iconFont);
+        }
+
+        private void ShowPage(UserControl page, Button button)
+        {
+            foreach (Control child in pnlContent.Controls) child.Visible = child == page;
+            page.BringToFront();
+            SelectMenuButton(button);
+        }
+
+        private void ShowOrders()
+        {
+            _orders.LoadOrders(_pos.GetOrders(_tableMap.Tables));
+            ShowPage(_orders, btnMenuOrders);
+        }
+
+        private void ShowTableMap()
+        {
+            _tableMap.RefreshOrders();
+            ShowPage(_tableMap, btnMenuTableMap);
+        }
+
+        private void OpenSale(DoAnLapTrinhTrucQuan.Models.DiningTable? table, bool pay)
+        {
+            _pos.OpenSale(_tableMap.Tables, table);
+            ShowPage(_pos, btnMenuPos);
+            if (pay) _pos.PayOrder();
         }
 
         private void ConfigureMenuButton(Button button, string glyph, Font iconFont)
@@ -57,9 +105,6 @@ namespace DoAnLapTrinhTrucQuan.Forms
             _activeMenuButton = button;
         }
 
-        private void btnMenuPos_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void btnMenuPos_Click(object sender, EventArgs e) => OpenSale(null, false);
     }
 }
