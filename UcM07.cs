@@ -41,22 +41,60 @@ namespace DoAnLapTrinhTrucQuan
         private static readonly Color BorderWarm = Color.FromArgb(229, 220, 214);
         private static readonly Color PillWarm = Color.FromArgb(250, 238, 232);
 
+        private bool suppressSelection;
+        private static readonly Color FieldBorder = Color.FromArgb(236, 226, 220);
+
+        private static readonly Font FontCellBold = new("Segoe UI", 8.5f, FontStyle.Bold);
+        private static readonly Font FontCell = new("Segoe UI", 8.5f, FontStyle.Regular);
+        private static readonly Font FontCellStrike = new("Segoe UI", 8.5f, FontStyle.Strikeout);
+        private static readonly Font FontSmall = new("Segoe UI", 8f, FontStyle.Regular);
+        private static readonly Font FontPill = new("Segoe UI", 7.5f, FontStyle.Bold);
+        private static readonly Font FontIcon = new("Segoe UI", 10f, FontStyle.Regular);
+
         public UcM07()
         {
             InitializeComponent();
             SeedData();
-            BuildFilterTabs();
             WireEvents();
+        }
+
+        /// <summary>Đổi đơn vị thiết kế (96 DPI) sang pixel thực tế của màn hình.</summary>
+        private int S(int logical) => LogicalToDeviceUnits(logical);
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            // Chạy sau khi control đã được auto-scale theo DPI của form cha
+            dgvBan.ColumnHeadersHeight = S(40);
+            dgvBan.RowTemplate.Height = S(RowHeight);
+
+            // Icon vuông bên phải mỗi thẻ thống kê: căn giữa theo chiều dọc
+            foreach (var (card, icon) in new[] { (pnlStatTotal, lblStatTotalIcon), (pnlStatT1, lblStatT1Icon),
+                                                 (pnlStatT2, lblStatT2Icon), (pnlStatSV, lblStatSVIcon),
+                                                 (pnlStatTamNgung, lblStatTamNgungIcon) })
+            {
+                icon.Anchor = AnchorStyles.None;
+                void Place() => icon.Location = new Point(card.ClientSize.Width - icon.Width - S(10), (card.ClientSize.Height - icon.Height) / 2);
+                card.Resize += (_, _) => Place();
+                Place();
+                icon.BringToFront();
+            }
+
+            BuildFilterTabs();
             LoadTableList();
 
-            // Select B03 by default to match Figma layout
+            // Mặc định chọn B03 giống thiết kế Figma
             var defaultTable = allTables.FirstOrDefault(t => t.Ma == "B03") ?? allTables.FirstOrDefault();
             if (defaultTable != null)
             {
                 LoadDetail(defaultTable);
+                LoadTableList();
                 SelectRowForTable(defaultTable);
             }
+            ActiveControl = dgvBan; // để ô tìm kiếm hiện placeholder
         }
+
+        private const int RowHeight = 56;
 
         // ─── Seed data ───────────────────────────────────────────────────────
         private void SeedData()
@@ -85,23 +123,23 @@ namespace DoAnLapTrinhTrucQuan
                 ("Sân vườn", allTables.Count(t => t.KhuVuc.StartsWith("Sân vườn"))),
             };
 
+            pnlFilterTabs.SuspendLayout();
+            foreach (Control c in pnlFilterTabs.Controls.Cast<Control>().ToList()) c.Dispose();
             pnlFilterTabs.Controls.Clear();
             filterButtons.Clear();
-            int x = 0;
             foreach (var (label, count) in filters)
             {
                 var btn = new Button
                 {
                     Text = $"{label} ({count})",
-                    AutoSize = false,
-                    Width = 96,
-                    Height = 28,
-                    Location = new Point(x, 1),
+                    AutoSize = true,
+                    AutoSizeMode = AutoSizeMode.GrowAndShrink,
+                    Padding = new Padding(S(6), 0, S(6), 0),
+                    Margin = new Padding(0, 0, S(2), 0),
                     FlatStyle = FlatStyle.Flat,
-                    Font = new Font("Segoe UI", 8.5f, FontStyle.Regular),
                     Cursor = Cursors.Hand,
                 };
-                btn.FlatAppearance.BorderSize = 1;
+                btn.FlatAppearance.BorderSize = 0;
                 SetTabStyle(btn, label == activeFilter);
                 string capturedLabel = label;
                 btn.Click += (_, _) =>
@@ -113,27 +151,16 @@ namespace DoAnLapTrinhTrucQuan
                 };
                 pnlFilterTabs.Controls.Add(btn);
                 filterButtons[label] = btn;
-                x += 100;
             }
-            pnlFilterTabs.Width = x;
+            pnlFilterTabs.ResumeLayout(true);
         }
 
         private static void SetTabStyle(Button btn, bool active)
         {
-            if (active)
-            {
-                btn.BackColor = Espresso;
-                btn.ForeColor = Color.White;
-                btn.FlatAppearance.BorderColor = Espresso;
-                btn.Font = new Font("Segoe UI", 8.5f, FontStyle.Bold);
-            }
-            else
-            {
-                btn.BackColor = Color.FromArgb(250, 247, 245);
-                btn.ForeColor = Color.FromArgb(80, 65, 58);
-                btn.FlatAppearance.BorderColor = BorderWarm;
-                btn.Font = new Font("Segoe UI", 8.5f, FontStyle.Regular);
-            }
+            btn.BackColor = active ? Espresso : Color.FromArgb(250, 245, 242);
+            btn.ForeColor = active ? Color.White : Color.FromArgb(70, 55, 48);
+            btn.FlatAppearance.MouseOverBackColor = active ? Espresso : Color.FromArgb(244, 234, 228);
+            btn.Font = active ? FontCellBold : FontCell;
         }
 
         private void RefreshFilterTabStyles()
@@ -148,35 +175,29 @@ namespace DoAnLapTrinhTrucQuan
             string search = txtSearch.Text.Trim().ToLower();
             var filtered = allTables.AsEnumerable();
             if (activeFilter != "Tất cả")
-            {
-                if (activeFilter == "Tầng 1")   filtered = filtered.Where(t => t.KhuVuc.StartsWith("Tầng 1"));
-                if (activeFilter == "Tầng 2")   filtered = filtered.Where(t => t.KhuVuc.StartsWith("Tầng 2"));
-                if (activeFilter == "Sân vườn") filtered = filtered.Where(t => t.KhuVuc.StartsWith("Sân vườn"));
-            }
+                filtered = filtered.Where(t => t.KhuVuc.StartsWith(activeFilter));
             if (!string.IsNullOrEmpty(search))
                 filtered = filtered.Where(t => t.Ma.ToLower().Contains(search) || t.TenHienThi.ToLower().Contains(search));
 
-            dgvBan.Rows.Clear();
-            int perPage = 8;
+            const int perPage = 8;
             var list = filtered.ToList();
             int total = list.Count;
             int totalPages = Math.Max(1, (int)Math.Ceiling(total / (double)perPage));
             if (currentPage > totalPages) currentPage = 1;
-
             var paged = list.Skip((currentPage - 1) * perPage).Take(perPage).ToList();
+
+            suppressSelection = true;
+            dgvBan.Rows.Clear();
             foreach (var t in paged)
             {
-                string sucChuaText = t.SucChua != t.SucChuaMax ? $"{t.SucChua} - {t.SucChuaMax}\nchỗ" : $"{t.SucChua}\nchỗ";
-                string icon = t.TrangThai == "Tạm ngưng" ? "🔧" : (t == selectedTable ? "👁" : "✎");
-                int idx = dgvBan.Rows.Add(t.Ma, t.TenHienThi, t.KhuVuc, sucChuaText, $"{t.PhuThu:N0} đ", t.MayIn, t.TrangThai, icon);
-                dgvBan.Rows[idx].Tag = t;
-                if (t.TrangThai == "Tạm ngưng")
-                    dgvBan.Rows[idx].DefaultCellStyle.BackColor = Color.FromArgb(255, 240, 240);
-                else if (t == selectedTable)
-                    dgvBan.Rows[idx].DefaultCellStyle.BackColor = Color.FromArgb(255, 236, 226);
-                else if (idx % 2 == 1)
-                    dgvBan.Rows[idx].DefaultCellStyle.BackColor = Color.FromArgb(255, 250, 247);
+                int idx = dgvBan.Rows.Add(t.Ma, t.TenHienThi, t.KhuVuc, "", $"{t.PhuThu:N0} đ", t.MayIn, t.TrangThai, "");
+                var row = dgvBan.Rows[idx];
+                row.Tag = t;
+                row.Height = S(RowHeight);
+                ApplyRowStyle(row, t);
             }
+            dgvBan.ClearSelection();
+            suppressSelection = false;
 
             lblPager.Text = $"Hiển thị {paged.Count} / {total} bàn";
             btnPrevPage.Enabled = currentPage > 1;
@@ -186,48 +207,64 @@ namespace DoAnLapTrinhTrucQuan
             UpdateStatCards();
         }
 
+        private void ApplyRowStyle(DataGridViewRow row, TableInfo t)
+        {
+            Color bg = t.TrangThai == "Tạm ngưng" ? Color.FromArgb(253, 236, 236)
+                     : t == selectedTable ? Color.FromArgb(253, 233, 224)
+                     : Color.White;
+            row.DefaultCellStyle.BackColor = bg;
+            row.DefaultCellStyle.SelectionBackColor = bg;
+        }
+
         private void SelectRowForTable(TableInfo table)
         {
+            suppressSelection = true;
             foreach (DataGridViewRow row in dgvBan.Rows)
             {
                 if (row.Tag == table)
                 {
+                    dgvBan.CurrentCell = row.Cells[0];
                     row.Selected = true;
                     break;
                 }
             }
+            suppressSelection = false;
         }
 
         private void UpdateStatCards()
         {
-            int total = allTables.Count;
-            int t1 = allTables.Count(t => t.KhuVuc.StartsWith("Tầng 1"));
-            int t1Cho = allTables.Where(t => t.KhuVuc.StartsWith("Tầng 1")).Sum(t => t.SucChuaMax);
-            int t2 = allTables.Count(t => t.KhuVuc.StartsWith("Tầng 2"));
-            int t2Cho = allTables.Where(t => t.KhuVuc.StartsWith("Tầng 2")).Sum(t => t.SucChuaMax);
-            int sv = allTables.Count(t => t.KhuVuc.StartsWith("Sân vườn"));
-            int svCho = allTables.Where(t => t.KhuVuc.StartsWith("Sân vườn")).Sum(t => t.SucChuaMax);
-            int tamNgung = allTables.Count(t => t.TrangThai == "Tạm ngưng");
-            string tamNgungMa = string.Join(", ", allTables.Where(t => t.TrangThai == "Tạm ngưng").Select(t => $"Bàn {t.Ma}"));
+            int CountOf(string prefix) => allTables.Count(t => t.KhuVuc.StartsWith(prefix));
+            int SeatsOf(string prefix) => allTables.Where(t => t.KhuVuc.StartsWith(prefix)).Sum(t => t.SucChuaMax);
+            var tamNgung = allTables.Where(t => t.TrangThai == "Tạm ngưng").ToList();
 
-            lblStatTotal.Text = $"{total} bàn";
-            lblStatT1.Text = $"{t1} ({t1Cho} chỗ ngồi)";
-            lblStatT2.Text = $"{t2} ({t2Cho} chỗ ngồi)";
-            lblStatSV.Text = $"{sv} ({svCho} chỗ ngồi)";
-            lblStatTamNgung.Text = tamNgung > 0 ? $"{tamNgung:D2} ({tamNgungMa})" : "00";
-            pnlStatTamNgung.BackColor = tamNgung > 0 ? Color.FromArgb(255, 235, 235) : Color.FromArgb(240, 253, 244);
-            lblStatTamNgungTitle.ForeColor = tamNgung > 0 ? Red : Green;
+            lblStatTotal.Text = $"{allTables.Count}";
+            lblStatTotalSub.Text = "bàn";
+            lblStatT1.Text = $"{CountOf("Tầng 1")}";
+            lblStatT1Sub.Text = $"({SeatsOf("Tầng 1")} chỗ ngồi)";
+            lblStatT2.Text = $"{CountOf("Tầng 2")}";
+            lblStatT2Sub.Text = $"({SeatsOf("Tầng 2")} chỗ ngồi)";
+            lblStatSV.Text = $"{CountOf("Sân vườn")}";
+            lblStatSVSub.Text = $"({SeatsOf("Sân vườn")} chỗ ngồi)";
+            lblStatTamNgung.Text = $"{tamNgung.Count:D2}";
+            lblStatTamNgungSub.Text = tamNgung.Count > 0 ? $"({string.Join(", ", tamNgung.Select(t => $"Bàn {t.Ma}"))})" : "(không có)";
+
+            bool hasIssue = tamNgung.Count > 0;
+            pnlStatTamNgung.BackColor = hasIssue ? Color.FromArgb(255, 235, 235) : Color.FromArgb(240, 253, 244);
+            lblStatTamNgungTitle.ForeColor = hasIssue ? Red : Green;
+            lblStatTamNgung.ForeColor = hasIssue ? Red : Green;
         }
 
-        // ─── Wire events & layout ────────────────────────────────────────────
+        // ─── Wire events ─────────────────────────────────────────────────────
         private void WireEvents()
         {
-            pnlToolbar.Layout += PnlToolbar_Layout;
-            pnlStats.Resize += PnlStats_Resize;
-            pnlFilterRow.Resize += PnlFilterRow_Resize;
-            pnlDangerBtns.Layout += PnlDangerBtns_Layout;
-            pnlPager.Resize += PnlPager_Resize;
             picQrCode.Paint += PicQrCode_Paint;
+
+            // Viền mảnh cho các thẻ / ô nhập giống Figma
+            foreach (var c in new Control[] { pnlStatTotal, pnlStatT1, pnlStatT2, pnlStatSV, pnlLeft, pnlDetail,
+                                              boxSearch, boxMa, boxTen, boxKhuVuc, boxLoaiBan, boxSucChua,
+                                              boxX, boxY, boxMayIn, boxPhuThu, pnlQr, lblQrLink })
+                c.Paint += PaintBorder;
+            pnlStatTamNgung.Paint += (s, e) => PaintBorder(s, e, Color.FromArgb(252, 200, 200));
 
             txtSearch.TextChanged += (_, _) => { currentPage = 1; LoadTableList(); };
             dgvBan.SelectionChanged += DgvBan_SelectionChanged;
@@ -244,67 +281,38 @@ namespace DoAnLapTrinhTrucQuan
             btnPrintQR.Click += (_, _) => MessageBox.Show($"Đang gửi lệnh in tem QR cho bàn {selectedTable?.Ma ?? ""} (khổ K80).", "In tem QR", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnDownloadSvg.Click += (_, _) => MessageBox.Show($"Đã tải ảnh QR SVG cho bàn {selectedTable?.Ma ?? ""}.", "Tải SVG", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            btnHuyDetail.Click += (_, _) => ClearDetail();
+            btnHuyDetail.Click += (_, _) =>
+            {
+                if (selectedTable != null)
+                {
+                    LoadDetail(selectedTable);
+                    LoadTableList();
+                    SelectRowForTable(selectedTable);
+                }
+            };
             btnLuuDetail.Click += BtnLuuDetail_Click;
             btnTamNgung.Click += BtnTamNgung_Click;
             btnXoaBan.Click += BtnXoaBan_Click;
-
-            PnlStats_Resize(null, EventArgs.Empty);
-            PnlFilterRow_Resize(null, EventArgs.Empty);
-            PnlPager_Resize(null, EventArgs.Empty);
         }
 
-        private void PnlToolbar_Layout(object? sender, LayoutEventArgs e)
-        {
-            int x = pnlToolbar.Padding.Left;
-            foreach (Control c in pnlToolbar.Controls)
-            {
-                c.Location = new Point(x, 8);
-                x += c.Width + 8;
-            }
-        }
+        private void PaintBorder(object? sender, PaintEventArgs e) => PaintBorder(sender, e, FieldBorder);
 
-        private void PnlStats_Resize(object? sender, EventArgs e)
+        private static void PaintBorder(object? sender, PaintEventArgs e, Color color)
         {
-            var cards = new[] { pnlStatTotal, pnlStatT1, pnlStatT2, pnlStatSV, pnlStatTamNgung };
-            int gap = 10;
-            int w = Math.Max(100, (pnlStats.ClientSize.Width - pnlStats.Padding.Horizontal - (cards.Length - 1) * gap) / cards.Length);
-            int x = pnlStats.Padding.Left;
-            foreach (var c in cards)
-            {
-                c.SetBounds(x, pnlStats.Padding.Top, w, 64);
-                x += w + gap;
-            }
-        }
-
-        private void PnlFilterRow_Resize(object? sender, EventArgs e)
-        {
-            btnFilterIcon.Location = new Point(pnlFilterRow.ClientSize.Width - btnFilterIcon.Width, 2);
-            txtSearch.Location = new Point(btnFilterIcon.Left - txtSearch.Width - 6, 2);
-        }
-
-        private void PnlDangerBtns_Layout(object? sender, LayoutEventArgs e)
-        {
-            btnTamNgung.Location = new Point(0, 3);
-            btnXoaBan.Location = new Point(btnTamNgung.Width + 8, 3);
-        }
-
-        private void PnlPager_Resize(object? sender, EventArgs e)
-        {
-            int rx = pnlPager.ClientSize.Width - 4;
-            btnNextPage.Location = new Point(rx - btnNextPage.Width, 5);
-            lblPageNum.Location = new Point(btnNextPage.Left - lblPageNum.Width - 6, 5);
-            btnPrevPage.Location = new Point(lblPageNum.Left - btnPrevPage.Width - 6, 5);
+            if (sender is not Control c) return;
+            using var pen = new Pen(color);
+            e.Graphics.DrawRectangle(pen, 0, 0, c.ClientSize.Width - 1, c.ClientSize.Height - 1);
         }
 
         // ─── DGV events & custom painting ────────────────────────────────────
         private void DgvBan_SelectionChanged(object? sender, EventArgs e)
         {
-            if (dgvBan.SelectedRows.Count == 0) return;
-            var t = dgvBan.SelectedRows[0].Tag as TableInfo;
-            if (t != null && t != selectedTable)
+            if (suppressSelection || dgvBan.SelectedRows.Count == 0) return;
+            if (dgvBan.SelectedRows[0].Tag is TableInfo t && t != selectedTable)
             {
                 LoadDetail(t);
+                foreach (DataGridViewRow row in dgvBan.Rows)
+                    if (row.Tag is TableInfo rt) ApplyRowStyle(row, rt);
                 dgvBan.Invalidate();
             }
         }
@@ -312,106 +320,147 @@ namespace DoAnLapTrinhTrucQuan
         private void DgvBan_CellPainting(object? sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.ColumnIndex < 0 || e.RowIndex < 0 || e.Graphics == null) return;
-            var row = dgvBan.Rows[e.RowIndex];
-            var tt = row.Tag as TableInfo;
-            if (tt == null) return;
+            if (dgvBan.Rows[e.RowIndex].Tag is not TableInfo tt) return;
 
+            var g = e.Graphics;
+            var cb = e.CellBounds;
             string colName = dgvBan.Columns[e.ColumnIndex].Name;
             bool isSelected = tt == selectedTable;
             bool isSuspended = tt.TrangThai == "Tạm ngưng";
+            var muted = Color.FromArgb(120, 100, 90);
+            var faded = Color.FromArgb(150, 130, 120);
+            var leftFlags = TextFormatFlags.WordBreak | TextFormatFlags.VerticalCenter | TextFormatFlags.Left | TextFormatFlags.NoPadding;
+            var centerFlags = TextFormatFlags.WordBreak | TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter | TextFormatFlags.NoPadding;
+            Rectangle Inset(int dx, int dy) => new(cb.X + S(dx), cb.Y + S(dy), cb.Width - S(dx) * 2, cb.Height - S(dy) * 2);
 
-            if (colName == "colMa")
+            e.PaintBackground(cb, false);
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+
+            switch (colName)
             {
-                e.PaintBackground(e.CellBounds, true);
-                if (isSelected)
+                case "colMa":
                 {
-                    using var pillBrush = new SolidBrush(Brown);
-                    e.Graphics.FillRectangle(pillBrush, e.CellBounds.X + 4, e.CellBounds.Y + 20, 4, 14);
+                    if (isSelected)
+                    {
+                        using var bar = new SolidBrush(Brown);
+                        using var p = CreateRoundedPath(new Rectangle(cb.X + S(6), cb.Y + cb.Height / 2 - S(7), S(4), S(14)), S(2));
+                        g.FillPath(bar, p);
+                    }
+                    var fg = isSuspended ? Red : isSelected ? Brown : Espresso;
+                    TextRenderer.DrawText(g, tt.Ma, FontCellBold, Inset(isSelected ? 7 : 2, 0), fg,
+                        TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter);
+                    break;
                 }
-                var fg = isSuspended ? Red : Espresso;
-                TextRenderer.DrawText(e.Graphics, tt.Ma, new Font("Segoe UI", 8.5f, FontStyle.Bold),
-                    new Rectangle(e.CellBounds.X + 10, e.CellBounds.Y, e.CellBounds.Width - 10, e.CellBounds.Height),
-                    fg, TextFormatFlags.VerticalCenter | TextFormatFlags.Left);
-                e.Handled = true;
-                return;
+                case "colTenHienThi":
+                {
+                    var rect = Inset(4, 4);
+                    if (isSelected)
+                    {
+                        var textRect = new Rectangle(rect.X, rect.Y, rect.Width, rect.Height - S(18));
+                        TextRenderer.DrawText(g, tt.TenHienThi, FontCellBold, textRect, Espresso, leftFlags);
+                        const string badge = "Đang chọn";
+                        var sz = TextRenderer.MeasureText(badge, FontPill);
+                        var badgeRect = new Rectangle(rect.X, rect.Bottom - S(17), sz.Width + S(4), S(16));
+                        using var bb = new SolidBrush(Color.FromArgb(254, 240, 199));
+                        g.FillRectangle(bb, badgeRect);
+                        TextRenderer.DrawText(g, badge, FontPill, badgeRect, Color.FromArgb(146, 64, 14),
+                            TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+                    }
+                    else
+                    {
+                        TextRenderer.DrawText(g, tt.TenHienThi, isSuspended ? FontCellStrike : FontCell, rect,
+                            isSuspended ? faded : Espresso, leftFlags);
+                    }
+                    break;
+                }
+                case "colKhuVuc":
+                    TextRenderer.DrawText(g, tt.KhuVuc.Replace("–", "-"), FontSmall, Inset(4, 4),
+                        isSuspended ? faded : Color.FromArgb(80, 65, 58), leftFlags);
+                    break;
+                case "colSucChua":
+                {
+                    string scText = tt.SucChua != tt.SucChuaMax ? $"{tt.SucChua} - {tt.SucChuaMax}\nchỗ" : $"{tt.SucChua}\nchỗ";
+                    var sz = TextRenderer.MeasureText(scText, FontPill);
+                    int w = sz.Width + S(10), h = sz.Height + S(6);
+                    var rect = new Rectangle(cb.X + (cb.Width - w) / 2, cb.Y + (cb.Height - h) / 2, w, h);
+                    bool big = tt.SucChuaMax >= 10;
+                    using var path = CreateRoundedPath(rect, S(4));
+                    using var brush = new SolidBrush(big ? Color.FromArgb(254, 226, 196) : PillWarm);
+                    g.FillPath(brush, path);
+                    TextRenderer.DrawText(g, scText, FontPill, rect, big ? Color.FromArgb(154, 52, 18) : Espresso,
+                        TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+                    break;
+                }
+                case "colPhuThu":
+                    TextRenderer.DrawText(g, $"{tt.PhuThu:N0} đ", isSelected ? FontCellBold : FontCell, cb, Espresso,
+                        TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+                    break;
+                case "colMayIn":
+                {
+                    var rect = Inset(4, 4);
+                    TextRenderer.DrawText(g, "🖶", FontSmall, new Rectangle(rect.X, rect.Y, S(16), rect.Height),
+                        isSelected ? Brown : muted, TextFormatFlags.VerticalCenter | TextFormatFlags.Left | TextFormatFlags.NoPadding);
+                    TextRenderer.DrawText(g, tt.MayIn, FontSmall, new Rectangle(rect.X + S(16), rect.Y, rect.Width - S(16), rect.Height),
+                        isSuspended ? faded : Color.FromArgb(80, 65, 58), leftFlags);
+                    break;
+                }
+                case "colTrangThai":
+                {
+                    bool active = !isSuspended;
+                    var fgColor = active ? Green : Red;
+                    string text = active ? "Hoạt\nđộng" : "Tạm\nngưng\n(Bảo trì)";
+                    var rect = Inset(6, active ? 14 : 8);
+                    using var path = CreateRoundedPath(rect, S(4));
+                    using var brush = new SolidBrush(active ? GreenBg : RedBg);
+                    g.FillPath(brush, path);
+                    using var dot = new SolidBrush(fgColor);
+                    int d = S(5);
+                    g.FillEllipse(dot, rect.X + S(7), rect.Y + rect.Height / 2 - d / 2, d, d);
+                    TextRenderer.DrawText(g, text, FontPill, new Rectangle(rect.X + S(12), rect.Y, rect.Width - S(12), rect.Height),
+                        fgColor, centerFlags);
+                    break;
+                }
+                case "colThaoTac":
+                {
+                    string icon = isSuspended ? "🔧" : isSelected ? "👁" : "✎";
+                    var fg = isSuspended ? Red : isSelected ? Brown : muted;
+                    TextRenderer.DrawText(g, icon, FontIcon, cb, fg, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+                    break;
+                }
+                default:
+                    return;
             }
-
-            if (colName == "colTenHienThi")
-            {
-                e.PaintBackground(e.CellBounds, true);
-                var fontStyle = isSuspended ? FontStyle.Strikeout : (isSelected ? FontStyle.Bold : FontStyle.Regular);
-                var fg = isSuspended ? Color.Gray : Espresso;
-                using var font = new Font("Segoe UI", 8.5f, fontStyle);
-                var rect = new Rectangle(e.CellBounds.X + 4, e.CellBounds.Y + 4, e.CellBounds.Width - 8, e.CellBounds.Height - 8);
-                TextRenderer.DrawText(e.Graphics, tt.TenHienThi, font, rect, fg,
-                    TextFormatFlags.WordBreak | TextFormatFlags.VerticalCenter | TextFormatFlags.Left);
-                e.Handled = true;
-                return;
-            }
-
-            if (colName == "colSucChua")
-            {
-                e.PaintBackground(e.CellBounds, true);
-                string scText = tt.SucChua != tt.SucChuaMax ? $"{tt.SucChua} - {tt.SucChuaMax}\nchỗ" : $"{tt.SucChua}\nchỗ";
-                var rect = new Rectangle(e.CellBounds.X + 10, e.CellBounds.Y + 8, e.CellBounds.Width - 20, e.CellBounds.Height - 16);
-                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                using var path = CreateRoundedPath(rect, 6);
-                using var brush = new SolidBrush(PillWarm);
-                e.Graphics.FillPath(brush, path);
-                TextRenderer.DrawText(e.Graphics, scText, new Font("Segoe UI", 7.5f, FontStyle.Bold),
-                    rect, Espresso, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
-                e.Handled = true;
-                return;
-            }
-
-            if (colName == "colTrangThai")
-            {
-                e.PaintBackground(e.CellBounds, true);
-                bool active = !isSuspended;
-                var bgColor = active ? GreenBg : RedBg;
-                var fgColor = active ? Green : Red;
-                string text = active ? "● Hoạt động" : "▌Tạm ngưng\n(Bảo trì)";
-
-                var rect = new Rectangle(e.CellBounds.X + 6, e.CellBounds.Y + 10, e.CellBounds.Width - 12, e.CellBounds.Height - 20);
-                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                using var path = CreateRoundedPath(rect, 6);
-                using var brush = new SolidBrush(bgColor);
-                e.Graphics.FillPath(brush, path);
-                TextRenderer.DrawText(e.Graphics, text, new Font("Segoe UI", 7.5f, FontStyle.Bold),
-                    rect, fgColor, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
-                e.Handled = true;
-            }
+            e.Handled = true;
         }
 
         private void PicQrCode_Paint(object? sender, PaintEventArgs e)
         {
             var g = e.Graphics;
             g.Clear(Color.White);
-            int seed = (selectedTable?.Ma ?? "B03").GetHashCode();
-            int cell = 6;
-            int pad = 6;
+            int seed = (selectedTable?.Ma ?? "B03").Sum(ch => ch);
+            int pad = S(5);
+            int cell = (Math.Min(picQrCode.Width, picQrCode.Height) - pad * 2) / 9;
+            int b = Math.Max(1, cell / 2);
             using var dark = new SolidBrush(Espresso);
 
-            // Draw 3 corner finder squares + deterministic data pattern
             void Finder(int gx, int gy)
             {
-                g.FillRectangle(dark, pad + gx * cell, pad + gy * cell, 3 * cell, 3 * cell);
-                g.FillRectangle(Brushes.White, pad + gx * cell + 3, pad + gy * cell + 3, 3 * cell - 6, 3 * cell - 6);
-                g.FillRectangle(dark, pad + gx * cell + 6, pad + gy * cell + 6, 3 * cell - 12, 3 * cell - 12);
+                int x = pad + gx * cell, y = pad + gy * cell, sz = 3 * cell;
+                g.FillRectangle(dark, x, y, sz, sz);
+                g.FillRectangle(Brushes.White, x + b, y + b, sz - 2 * b, sz - 2 * b);
+                g.FillRectangle(dark, x + 2 * b, y + 2 * b, sz - 4 * b, sz - 4 * b);
             }
             Finder(0, 0);
             Finder(6, 0);
             Finder(0, 6);
 
             for (int r = 0; r < 9; r++)
-            {
                 for (int c = 0; c < 9; c++)
                 {
                     if ((r < 4 && c < 4) || (r < 4 && c > 4) || (r > 4 && c < 4)) continue;
-                    if (((r * 13 + c * 7 + seed) & 1) == 0)
+                    if (((r * 13 + c * 7 + seed) % 3) != 0)
                         g.FillRectangle(dark, pad + c * cell, pad + r * cell, cell - 1, cell - 1);
                 }
-            }
         }
 
         private static GraphicsPath CreateRoundedPath(Rectangle bounds, int radius)
@@ -431,7 +480,7 @@ namespace DoAnLapTrinhTrucQuan
         {
             selectedTable = t;
             pnlDetail.Visible = true;
-            lblDetailTitle.Text = $"⊞ Thông tin bàn {t.Ma}";
+            lblDetailTitle.Text = $"☷  Thông tin bàn {t.Ma}";
             lblDetailStatus.Text = t.TrangThai == "Hoạt động" ? "● Đồng bộ POS sẵn sàng" : "▌Tạm ngưng phục vụ";
             lblDetailStatus.ForeColor = t.TrangThai == "Hoạt động" ? GreenLight : Color.FromArgb(252, 165, 165);
 
@@ -448,7 +497,7 @@ namespace DoAnLapTrinhTrucQuan
             lblQrLink.Text = $"moccafe.vn/order?table={t.Ma}";
             picQrCode.Invalidate();
 
-            btnTamNgung.Text = t.TrangThai == "Hoạt động" ? "⏸ Tạm ngưng phục vụ" : "✓ Kích hoạt lại";
+            btnTamNgung.Text = t.TrangThai == "Hoạt động" ? "⏸  Tạm ngưng phục vụ" : "✓  Kích hoạt lại";
             btnTamNgung.ForeColor = t.TrangThai == "Hoạt động" ? Red : Green;
             btnTamNgung.FlatAppearance.BorderColor = t.TrangThai == "Hoạt động" ? Color.FromArgb(254, 202, 202) : Green;
         }
@@ -522,9 +571,9 @@ namespace DoAnLapTrinhTrucQuan
             };
             allTables.Add(newTable);
             activeFilter = "Tất cả";
+            LoadDetail(newTable);
             BuildFilterTabs();
             LoadTableList();
-            LoadDetail(newTable);
             SelectRowForTable(newTable);
         }
     }
