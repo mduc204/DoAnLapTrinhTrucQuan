@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            label47 = new Label();
             lbQuanlynhanvien = new Label();
             btnCongbo = new Button();
             btnXuatexcelnhanvien = new Button();
@@ -42,6 +43,34 @@
             pnlToolbar = new Panel();
             pnlCard = new Panel();
             tlpLich = new TableLayoutPanel();
+            panel40 = new Panel();
+            label137 = new Label();
+            label138 = new Label();
+            label139 = new Label();
+            panel41 = new Panel();
+            label140 = new Label();
+            label141 = new Label();
+            panel36 = new Panel();
+            label127 = new Label();
+            label128 = new Label();
+            label129 = new Label();
+            panel37 = new Panel();
+            label130 = new Label();
+            label131 = new Label();
+            panel34 = new Panel();
+            label122 = new Label();
+            label123 = new Label();
+            label124 = new Label();
+            panel35 = new Panel();
+            label125 = new Label();
+            label126 = new Label();
+            panel30 = new Panel();
+            label88 = new Label();
+            label94 = new Label();
+            label114 = new Label();
+            panel31 = new Panel();
+            label115 = new Label();
+            label116 = new Label();
             panel24 = new Panel();
             label99 = new Label();
             label100 = new Label();
@@ -180,38 +209,14 @@
             panel1 = new Panel();
             label32 = new Label();
             lbSangt2 = new Label();
-            panel30 = new Panel();
-            label88 = new Label();
-            label94 = new Label();
-            label114 = new Label();
-            panel31 = new Panel();
-            label115 = new Label();
-            label116 = new Label();
-            panel34 = new Panel();
-            label122 = new Label();
-            label123 = new Label();
-            label124 = new Label();
-            panel35 = new Panel();
-            label125 = new Label();
-            label126 = new Label();
-            panel36 = new Panel();
-            label127 = new Label();
-            label128 = new Label();
-            label129 = new Label();
-            panel37 = new Panel();
-            label130 = new Label();
-            label131 = new Label();
-            panel40 = new Panel();
-            label137 = new Label();
-            label138 = new Label();
-            label139 = new Label();
-            panel41 = new Panel();
-            label140 = new Label();
-            label141 = new Label();
             pnlHeader.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             pnlCard.SuspendLayout();
             tlpLich.SuspendLayout();
+            panel40.SuspendLayout();
+            panel36.SuspendLayout();
+            panel34.SuspendLayout();
+            panel30.SuspendLayout();
             panel24.SuspendLayout();
             panel28.SuspendLayout();
             panel26.SuspendLayout();
@@ -235,11 +240,19 @@
             tableLayoutPanel3.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
             pnlSangt2.SuspendLayout();
-            panel30.SuspendLayout();
-            panel34.SuspendLayout();
-            panel36.SuspendLayout();
-            panel40.SuspendLayout();
             SuspendLayout();
+            // 
+            // label47
+            // 
+            label47.BackColor = Color.FromArgb(151, 244, 148);
+            label47.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            label47.ForeColor = Color.FromArgb(27, 94, 52);
+            label47.Location = new Point(1302, 14);
+            label47.Name = "label47";
+            label47.Size = new Size(172, 36);
+            label47.TabIndex = 13;
+            label47.Text = "   Đã công bố";
+            label47.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbQuanlynhanvien
             // 
@@ -305,6 +318,7 @@
             // 
             // pnlHeader
             // 
+            pnlHeader.Controls.Add(label47);
             pnlHeader.Controls.Add(btnNhap);
             pnlHeader.Controls.Add(flowLayoutPanel1);
             pnlHeader.Dock = DockStyle.Top;
@@ -469,6 +483,326 @@
             tlpLich.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tlpLich.Size = new Size(1602, 742);
             tlpLich.TabIndex = 0;
+            // 
+            // panel40
+            // 
+            panel40.BackColor = Color.FromArgb(234, 221, 253);
+            panel40.Controls.Add(label137);
+            panel40.Controls.Add(label138);
+            panel40.Controls.Add(label139);
+            panel40.Controls.Add(panel41);
+            panel40.Controls.Add(label140);
+            panel40.Controls.Add(label141);
+            panel40.Dock = DockStyle.Fill;
+            panel40.ForeColor = SystemColors.ControlLightLight;
+            panel40.Location = new Point(1389, 517);
+            panel40.Margin = new Padding(5);
+            panel40.Name = "panel40";
+            panel40.Size = new Size(207, 219);
+            panel40.TabIndex = 35;
+            // 
+            // label137
+            // 
+            label137.AutoSize = true;
+            label137.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label137.ForeColor = Color.FromArgb(91, 46, 145);
+            label137.Location = new Point(10, 125);
+            label137.Name = "label137";
+            label137.Size = new Size(123, 25);
+            label137.TabIndex = 5;
+            label137.Text = "Nguyễn Văn B";
+            // 
+            // label138
+            // 
+            label138.AutoSize = true;
+            label138.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label138.ForeColor = Color.FromArgb(91, 46, 145);
+            label138.Location = new Point(10, 100);
+            label138.Name = "label138";
+            label138.Size = new Size(125, 25);
+            label138.TabIndex = 4;
+            label138.Text = "Nguyễn Văn A";
+            // 
+            // label139
+            // 
+            label139.AutoSize = true;
+            label139.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            label139.ForeColor = Color.FromArgb(91, 46, 145);
+            label139.Location = new Point(10, 75);
+            label139.Name = "label139";
+            label139.Size = new Size(99, 25);
+            label139.TabIndex = 3;
+            label139.Text = "2 nhân sự";
+            // 
+            // panel41
+            // 
+            panel41.BackColor = Color.FromArgb(91, 46, 145);
+            panel41.Location = new Point(10, 64);
+            panel41.Name = "panel41";
+            panel41.Size = new Size(182, 2);
+            panel41.TabIndex = 2;
+            // 
+            // label140
+            // 
+            label140.AutoSize = true;
+            label140.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label140.ForeColor = Color.FromArgb(91, 46, 145);
+            label140.Location = new Point(10, 36);
+            label140.Name = "label140";
+            label140.Size = new Size(117, 25);
+            label140.TabIndex = 1;
+            label140.Text = "17:00 - 22:00";
+            // 
+            // label141
+            // 
+            label141.AutoSize = true;
+            label141.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            label141.ForeColor = Color.FromArgb(91, 46, 145);
+            label141.Location = new Point(10, 7);
+            label141.Name = "label141";
+            label141.Size = new Size(63, 25);
+            label141.TabIndex = 0;
+            label141.Text = "Ca tối";
+            // 
+            // panel36
+            // 
+            panel36.BackColor = Color.FromArgb(234, 221, 253);
+            panel36.Controls.Add(label127);
+            panel36.Controls.Add(label128);
+            panel36.Controls.Add(label129);
+            panel36.Controls.Add(panel37);
+            panel36.Controls.Add(label130);
+            panel36.Controls.Add(label131);
+            panel36.Dock = DockStyle.Fill;
+            panel36.ForeColor = SystemColors.ControlLightLight;
+            panel36.Location = new Point(965, 517);
+            panel36.Margin = new Padding(5);
+            panel36.Name = "panel36";
+            panel36.Size = new Size(201, 219);
+            panel36.TabIndex = 33;
+            // 
+            // label127
+            // 
+            label127.AutoSize = true;
+            label127.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label127.ForeColor = Color.FromArgb(91, 46, 145);
+            label127.Location = new Point(10, 125);
+            label127.Name = "label127";
+            label127.Size = new Size(123, 25);
+            label127.TabIndex = 5;
+            label127.Text = "Nguyễn Văn B";
+            // 
+            // label128
+            // 
+            label128.AutoSize = true;
+            label128.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label128.ForeColor = Color.FromArgb(91, 46, 145);
+            label128.Location = new Point(10, 100);
+            label128.Name = "label128";
+            label128.Size = new Size(125, 25);
+            label128.TabIndex = 4;
+            label128.Text = "Nguyễn Văn A";
+            // 
+            // label129
+            // 
+            label129.AutoSize = true;
+            label129.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            label129.ForeColor = Color.FromArgb(91, 46, 145);
+            label129.Location = new Point(10, 75);
+            label129.Name = "label129";
+            label129.Size = new Size(99, 25);
+            label129.TabIndex = 3;
+            label129.Text = "2 nhân sự";
+            // 
+            // panel37
+            // 
+            panel37.BackColor = Color.FromArgb(91, 46, 145);
+            panel37.Location = new Point(10, 64);
+            panel37.Name = "panel37";
+            panel37.Size = new Size(182, 2);
+            panel37.TabIndex = 2;
+            // 
+            // label130
+            // 
+            label130.AutoSize = true;
+            label130.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label130.ForeColor = Color.FromArgb(91, 46, 145);
+            label130.Location = new Point(10, 36);
+            label130.Name = "label130";
+            label130.Size = new Size(117, 25);
+            label130.TabIndex = 1;
+            label130.Text = "17:00 - 22:00";
+            // 
+            // label131
+            // 
+            label131.AutoSize = true;
+            label131.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            label131.ForeColor = Color.FromArgb(91, 46, 145);
+            label131.Location = new Point(10, 7);
+            label131.Name = "label131";
+            label131.Size = new Size(63, 25);
+            label131.TabIndex = 0;
+            label131.Text = "Ca tối";
+            // 
+            // panel34
+            // 
+            panel34.BackColor = Color.FromArgb(234, 221, 253);
+            panel34.Controls.Add(label122);
+            panel34.Controls.Add(label123);
+            panel34.Controls.Add(label124);
+            panel34.Controls.Add(panel35);
+            panel34.Controls.Add(label125);
+            panel34.Controls.Add(label126);
+            panel34.Dock = DockStyle.Fill;
+            panel34.ForeColor = SystemColors.ControlLightLight;
+            panel34.Location = new Point(753, 517);
+            panel34.Margin = new Padding(5);
+            panel34.Name = "panel34";
+            panel34.Size = new Size(201, 219);
+            panel34.TabIndex = 32;
+            // 
+            // label122
+            // 
+            label122.AutoSize = true;
+            label122.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label122.ForeColor = Color.FromArgb(91, 46, 145);
+            label122.Location = new Point(10, 125);
+            label122.Name = "label122";
+            label122.Size = new Size(123, 25);
+            label122.TabIndex = 5;
+            label122.Text = "Nguyễn Văn B";
+            // 
+            // label123
+            // 
+            label123.AutoSize = true;
+            label123.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label123.ForeColor = Color.FromArgb(91, 46, 145);
+            label123.Location = new Point(10, 100);
+            label123.Name = "label123";
+            label123.Size = new Size(125, 25);
+            label123.TabIndex = 4;
+            label123.Text = "Nguyễn Văn A";
+            // 
+            // label124
+            // 
+            label124.AutoSize = true;
+            label124.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            label124.ForeColor = Color.FromArgb(91, 46, 145);
+            label124.Location = new Point(10, 75);
+            label124.Name = "label124";
+            label124.Size = new Size(99, 25);
+            label124.TabIndex = 3;
+            label124.Text = "2 nhân sự";
+            // 
+            // panel35
+            // 
+            panel35.BackColor = Color.FromArgb(91, 46, 145);
+            panel35.Location = new Point(10, 64);
+            panel35.Name = "panel35";
+            panel35.Size = new Size(182, 2);
+            panel35.TabIndex = 2;
+            // 
+            // label125
+            // 
+            label125.AutoSize = true;
+            label125.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label125.ForeColor = Color.FromArgb(91, 46, 145);
+            label125.Location = new Point(10, 36);
+            label125.Name = "label125";
+            label125.Size = new Size(117, 25);
+            label125.TabIndex = 1;
+            label125.Text = "17:00 - 22:00";
+            // 
+            // label126
+            // 
+            label126.AutoSize = true;
+            label126.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            label126.ForeColor = Color.FromArgb(91, 46, 145);
+            label126.Location = new Point(10, 7);
+            label126.Name = "label126";
+            label126.Size = new Size(63, 25);
+            label126.TabIndex = 0;
+            label126.Text = "Ca tối";
+            // 
+            // panel30
+            // 
+            panel30.BackColor = Color.FromArgb(234, 221, 253);
+            panel30.Controls.Add(label88);
+            panel30.Controls.Add(label94);
+            panel30.Controls.Add(label114);
+            panel30.Controls.Add(panel31);
+            panel30.Controls.Add(label115);
+            panel30.Controls.Add(label116);
+            panel30.Dock = DockStyle.Fill;
+            panel30.ForeColor = SystemColors.ControlLightLight;
+            panel30.Location = new Point(329, 517);
+            panel30.Margin = new Padding(5);
+            panel30.Name = "panel30";
+            panel30.Size = new Size(201, 219);
+            panel30.TabIndex = 30;
+            // 
+            // label88
+            // 
+            label88.AutoSize = true;
+            label88.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label88.ForeColor = Color.FromArgb(91, 46, 145);
+            label88.Location = new Point(10, 125);
+            label88.Name = "label88";
+            label88.Size = new Size(123, 25);
+            label88.TabIndex = 5;
+            label88.Text = "Nguyễn Văn B";
+            // 
+            // label94
+            // 
+            label94.AutoSize = true;
+            label94.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label94.ForeColor = Color.FromArgb(91, 46, 145);
+            label94.Location = new Point(10, 100);
+            label94.Name = "label94";
+            label94.Size = new Size(125, 25);
+            label94.TabIndex = 4;
+            label94.Text = "Nguyễn Văn A";
+            // 
+            // label114
+            // 
+            label114.AutoSize = true;
+            label114.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            label114.ForeColor = Color.FromArgb(91, 46, 145);
+            label114.Location = new Point(10, 75);
+            label114.Name = "label114";
+            label114.Size = new Size(99, 25);
+            label114.TabIndex = 3;
+            label114.Text = "2 nhân sự";
+            // 
+            // panel31
+            // 
+            panel31.BackColor = Color.FromArgb(91, 46, 145);
+            panel31.Location = new Point(10, 64);
+            panel31.Name = "panel31";
+            panel31.Size = new Size(182, 2);
+            panel31.TabIndex = 2;
+            // 
+            // label115
+            // 
+            label115.AutoSize = true;
+            label115.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label115.ForeColor = Color.FromArgb(91, 46, 145);
+            label115.Location = new Point(10, 36);
+            label115.Name = "label115";
+            label115.Size = new Size(117, 25);
+            label115.TabIndex = 1;
+            label115.Text = "17:00 - 22:00";
+            // 
+            // label116
+            // 
+            label116.AutoSize = true;
+            label116.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            label116.ForeColor = Color.FromArgb(91, 46, 145);
+            label116.Location = new Point(10, 7);
+            label116.Name = "label116";
+            label116.Size = new Size(63, 25);
+            label116.TabIndex = 0;
+            label116.Text = "Ca tối";
             // 
             // panel24
             // 
@@ -1925,12 +2259,12 @@
             tableLayoutPanel3.Location = new Point(4, 515);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 6;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 17.8805923F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 17.8805923F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 17.8805923F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 17.8805923F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 15.3488369F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 13.9534883F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 17.7343349F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 17.7343369F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 17.7343369F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 17.7343369F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 15.22329F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 13.8393555F));
             tableLayoutPanel3.Size = new Size(104, 223);
             tableLayoutPanel3.TabIndex = 3;
             // 
@@ -2126,326 +2460,6 @@
             lbSangt2.TabIndex = 0;
             lbSangt2.Text = "Ca sáng";
             // 
-            // panel30
-            // 
-            panel30.BackColor = Color.FromArgb(234, 221, 253);
-            panel30.Controls.Add(label88);
-            panel30.Controls.Add(label94);
-            panel30.Controls.Add(label114);
-            panel30.Controls.Add(panel31);
-            panel30.Controls.Add(label115);
-            panel30.Controls.Add(label116);
-            panel30.Dock = DockStyle.Fill;
-            panel30.ForeColor = SystemColors.ControlLightLight;
-            panel30.Location = new Point(329, 517);
-            panel30.Margin = new Padding(5);
-            panel30.Name = "panel30";
-            panel30.Size = new Size(201, 219);
-            panel30.TabIndex = 30;
-            // 
-            // label88
-            // 
-            label88.AutoSize = true;
-            label88.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label88.ForeColor = Color.FromArgb(91, 46, 145);
-            label88.Location = new Point(10, 125);
-            label88.Name = "label88";
-            label88.Size = new Size(123, 25);
-            label88.TabIndex = 5;
-            label88.Text = "Nguyễn Văn B";
-            // 
-            // label94
-            // 
-            label94.AutoSize = true;
-            label94.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label94.ForeColor = Color.FromArgb(91, 46, 145);
-            label94.Location = new Point(10, 100);
-            label94.Name = "label94";
-            label94.Size = new Size(125, 25);
-            label94.TabIndex = 4;
-            label94.Text = "Nguyễn Văn A";
-            // 
-            // label114
-            // 
-            label114.AutoSize = true;
-            label114.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            label114.ForeColor = Color.FromArgb(91, 46, 145);
-            label114.Location = new Point(10, 75);
-            label114.Name = "label114";
-            label114.Size = new Size(99, 25);
-            label114.TabIndex = 3;
-            label114.Text = "2 nhân sự";
-            // 
-            // panel31
-            // 
-            panel31.BackColor = Color.FromArgb(91, 46, 145);
-            panel31.Location = new Point(10, 64);
-            panel31.Name = "panel31";
-            panel31.Size = new Size(182, 2);
-            panel31.TabIndex = 2;
-            // 
-            // label115
-            // 
-            label115.AutoSize = true;
-            label115.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label115.ForeColor = Color.FromArgb(91, 46, 145);
-            label115.Location = new Point(10, 36);
-            label115.Name = "label115";
-            label115.Size = new Size(117, 25);
-            label115.TabIndex = 1;
-            label115.Text = "17:00 - 22:00";
-            // 
-            // label116
-            // 
-            label116.AutoSize = true;
-            label116.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            label116.ForeColor = Color.FromArgb(91, 46, 145);
-            label116.Location = new Point(10, 7);
-            label116.Name = "label116";
-            label116.Size = new Size(63, 25);
-            label116.TabIndex = 0;
-            label116.Text = "Ca tối";
-            // 
-            // panel34
-            // 
-            panel34.BackColor = Color.FromArgb(234, 221, 253);
-            panel34.Controls.Add(label122);
-            panel34.Controls.Add(label123);
-            panel34.Controls.Add(label124);
-            panel34.Controls.Add(panel35);
-            panel34.Controls.Add(label125);
-            panel34.Controls.Add(label126);
-            panel34.Dock = DockStyle.Fill;
-            panel34.ForeColor = SystemColors.ControlLightLight;
-            panel34.Location = new Point(753, 517);
-            panel34.Margin = new Padding(5);
-            panel34.Name = "panel34";
-            panel34.Size = new Size(201, 219);
-            panel34.TabIndex = 32;
-            // 
-            // label122
-            // 
-            label122.AutoSize = true;
-            label122.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label122.ForeColor = Color.FromArgb(91, 46, 145);
-            label122.Location = new Point(10, 125);
-            label122.Name = "label122";
-            label122.Size = new Size(123, 25);
-            label122.TabIndex = 5;
-            label122.Text = "Nguyễn Văn B";
-            // 
-            // label123
-            // 
-            label123.AutoSize = true;
-            label123.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label123.ForeColor = Color.FromArgb(91, 46, 145);
-            label123.Location = new Point(10, 100);
-            label123.Name = "label123";
-            label123.Size = new Size(125, 25);
-            label123.TabIndex = 4;
-            label123.Text = "Nguyễn Văn A";
-            // 
-            // label124
-            // 
-            label124.AutoSize = true;
-            label124.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            label124.ForeColor = Color.FromArgb(91, 46, 145);
-            label124.Location = new Point(10, 75);
-            label124.Name = "label124";
-            label124.Size = new Size(99, 25);
-            label124.TabIndex = 3;
-            label124.Text = "2 nhân sự";
-            // 
-            // panel35
-            // 
-            panel35.BackColor = Color.FromArgb(91, 46, 145);
-            panel35.Location = new Point(10, 64);
-            panel35.Name = "panel35";
-            panel35.Size = new Size(182, 2);
-            panel35.TabIndex = 2;
-            // 
-            // label125
-            // 
-            label125.AutoSize = true;
-            label125.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label125.ForeColor = Color.FromArgb(91, 46, 145);
-            label125.Location = new Point(10, 36);
-            label125.Name = "label125";
-            label125.Size = new Size(117, 25);
-            label125.TabIndex = 1;
-            label125.Text = "17:00 - 22:00";
-            // 
-            // label126
-            // 
-            label126.AutoSize = true;
-            label126.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            label126.ForeColor = Color.FromArgb(91, 46, 145);
-            label126.Location = new Point(10, 7);
-            label126.Name = "label126";
-            label126.Size = new Size(63, 25);
-            label126.TabIndex = 0;
-            label126.Text = "Ca tối";
-            // 
-            // panel36
-            // 
-            panel36.BackColor = Color.FromArgb(234, 221, 253);
-            panel36.Controls.Add(label127);
-            panel36.Controls.Add(label128);
-            panel36.Controls.Add(label129);
-            panel36.Controls.Add(panel37);
-            panel36.Controls.Add(label130);
-            panel36.Controls.Add(label131);
-            panel36.Dock = DockStyle.Fill;
-            panel36.ForeColor = SystemColors.ControlLightLight;
-            panel36.Location = new Point(965, 517);
-            panel36.Margin = new Padding(5);
-            panel36.Name = "panel36";
-            panel36.Size = new Size(201, 219);
-            panel36.TabIndex = 33;
-            // 
-            // label127
-            // 
-            label127.AutoSize = true;
-            label127.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label127.ForeColor = Color.FromArgb(91, 46, 145);
-            label127.Location = new Point(10, 125);
-            label127.Name = "label127";
-            label127.Size = new Size(123, 25);
-            label127.TabIndex = 5;
-            label127.Text = "Nguyễn Văn B";
-            // 
-            // label128
-            // 
-            label128.AutoSize = true;
-            label128.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label128.ForeColor = Color.FromArgb(91, 46, 145);
-            label128.Location = new Point(10, 100);
-            label128.Name = "label128";
-            label128.Size = new Size(125, 25);
-            label128.TabIndex = 4;
-            label128.Text = "Nguyễn Văn A";
-            // 
-            // label129
-            // 
-            label129.AutoSize = true;
-            label129.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            label129.ForeColor = Color.FromArgb(91, 46, 145);
-            label129.Location = new Point(10, 75);
-            label129.Name = "label129";
-            label129.Size = new Size(99, 25);
-            label129.TabIndex = 3;
-            label129.Text = "2 nhân sự";
-            // 
-            // panel37
-            // 
-            panel37.BackColor = Color.FromArgb(91, 46, 145);
-            panel37.Location = new Point(10, 64);
-            panel37.Name = "panel37";
-            panel37.Size = new Size(182, 2);
-            panel37.TabIndex = 2;
-            // 
-            // label130
-            // 
-            label130.AutoSize = true;
-            label130.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label130.ForeColor = Color.FromArgb(91, 46, 145);
-            label130.Location = new Point(10, 36);
-            label130.Name = "label130";
-            label130.Size = new Size(117, 25);
-            label130.TabIndex = 1;
-            label130.Text = "17:00 - 22:00";
-            // 
-            // label131
-            // 
-            label131.AutoSize = true;
-            label131.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            label131.ForeColor = Color.FromArgb(91, 46, 145);
-            label131.Location = new Point(10, 7);
-            label131.Name = "label131";
-            label131.Size = new Size(63, 25);
-            label131.TabIndex = 0;
-            label131.Text = "Ca tối";
-            // 
-            // panel40
-            // 
-            panel40.BackColor = Color.FromArgb(234, 221, 253);
-            panel40.Controls.Add(label137);
-            panel40.Controls.Add(label138);
-            panel40.Controls.Add(label139);
-            panel40.Controls.Add(panel41);
-            panel40.Controls.Add(label140);
-            panel40.Controls.Add(label141);
-            panel40.Dock = DockStyle.Fill;
-            panel40.ForeColor = SystemColors.ControlLightLight;
-            panel40.Location = new Point(1389, 517);
-            panel40.Margin = new Padding(5);
-            panel40.Name = "panel40";
-            panel40.Size = new Size(207, 219);
-            panel40.TabIndex = 35;
-            // 
-            // label137
-            // 
-            label137.AutoSize = true;
-            label137.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label137.ForeColor = Color.FromArgb(91, 46, 145);
-            label137.Location = new Point(10, 125);
-            label137.Name = "label137";
-            label137.Size = new Size(123, 25);
-            label137.TabIndex = 5;
-            label137.Text = "Nguyễn Văn B";
-            // 
-            // label138
-            // 
-            label138.AutoSize = true;
-            label138.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label138.ForeColor = Color.FromArgb(91, 46, 145);
-            label138.Location = new Point(10, 100);
-            label138.Name = "label138";
-            label138.Size = new Size(125, 25);
-            label138.TabIndex = 4;
-            label138.Text = "Nguyễn Văn A";
-            // 
-            // label139
-            // 
-            label139.AutoSize = true;
-            label139.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            label139.ForeColor = Color.FromArgb(91, 46, 145);
-            label139.Location = new Point(10, 75);
-            label139.Name = "label139";
-            label139.Size = new Size(99, 25);
-            label139.TabIndex = 3;
-            label139.Text = "2 nhân sự";
-            // 
-            // panel41
-            // 
-            panel41.BackColor = Color.FromArgb(91, 46, 145);
-            panel41.Location = new Point(10, 64);
-            panel41.Name = "panel41";
-            panel41.Size = new Size(182, 2);
-            panel41.TabIndex = 2;
-            // 
-            // label140
-            // 
-            label140.AutoSize = true;
-            label140.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label140.ForeColor = Color.FromArgb(91, 46, 145);
-            label140.Location = new Point(10, 36);
-            label140.Name = "label140";
-            label140.Size = new Size(117, 25);
-            label140.TabIndex = 1;
-            label140.Text = "17:00 - 22:00";
-            // 
-            // label141
-            // 
-            label141.AutoSize = true;
-            label141.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            label141.ForeColor = Color.FromArgb(91, 46, 145);
-            label141.Location = new Point(10, 7);
-            label141.Name = "label141";
-            label141.Size = new Size(63, 25);
-            label141.TabIndex = 0;
-            label141.Text = "Ca tối";
-            // 
             // UcM06
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -2465,6 +2479,14 @@
             pnlCard.ResumeLayout(false);
             tlpLich.ResumeLayout(false);
             tlpLich.PerformLayout();
+            panel40.ResumeLayout(false);
+            panel40.PerformLayout();
+            panel36.ResumeLayout(false);
+            panel36.PerformLayout();
+            panel34.ResumeLayout(false);
+            panel34.PerformLayout();
+            panel30.ResumeLayout(false);
+            panel30.PerformLayout();
             panel24.ResumeLayout(false);
             panel24.PerformLayout();
             panel28.ResumeLayout(false);
@@ -2511,14 +2533,6 @@
             tableLayoutPanel4.PerformLayout();
             pnlSangt2.ResumeLayout(false);
             pnlSangt2.PerformLayout();
-            panel30.ResumeLayout(false);
-            panel30.PerformLayout();
-            panel34.ResumeLayout(false);
-            panel34.PerformLayout();
-            panel36.ResumeLayout(false);
-            panel36.PerformLayout();
-            panel40.ResumeLayout(false);
-            panel40.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -2705,5 +2719,6 @@
         private Panel panel31;
         private Label label115;
         private Label label116;
+        private Label label47;
     }
 }
