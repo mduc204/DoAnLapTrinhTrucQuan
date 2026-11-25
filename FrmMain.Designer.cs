@@ -78,9 +78,8 @@
             pnlSidebar.Controls.Add(btnThongtincanhan);
             pnlSidebar.Dock = DockStyle.Left;
             pnlSidebar.Location = new Point(0, 0);
-            pnlSidebar.Margin = new Padding(5);
             pnlSidebar.Name = "pnlSidebar";
-            pnlSidebar.Size = new Size(390, 1653);
+            pnlSidebar.Size = new Size(240, 659);
             pnlSidebar.TabIndex = 0;
             // 
             // panel1
@@ -89,10 +88,9 @@
             panel1.Controls.Add(lblThoigian);
             panel1.Controls.Add(btnDangxuatsidebar);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 1493);
-            panel1.Margin = new Padding(5);
+            panel1.Location = new Point(0, 559);
             panel1.Name = "panel1";
-            panel1.Size = new Size(390, 160);
+            panel1.Size = new Size(240, 100);
             panel1.TabIndex = 2;
             // 
             // lblThoigian
@@ -100,10 +98,9 @@
             lblThoigian.AutoSize = true;
             lblThoigian.Font = new Font("Segoe UI", 11F);
             lblThoigian.ForeColor = Color.FromArgb(238, 193, 164);
-            lblThoigian.Location = new Point(47, 106);
-            lblThoigian.Margin = new Padding(5, 0, 5, 0);
+            lblThoigian.Location = new Point(29, 66);
             lblThoigian.Name = "lblThoigian";
-            lblThoigian.Size = new Size(260, 41);
+            lblThoigian.Size = new Size(162, 25);
             lblThoigian.TabIndex = 15;
             lblThoigian.Text = "Thứ 3, 17/11/2026";
             // 
@@ -115,11 +112,10 @@
             btnDangxuatsidebar.ForeColor = Color.FromArgb(238, 193, 164);
             btnDangxuatsidebar.Image = Properties.Resources.Container__12_;
             btnDangxuatsidebar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDangxuatsidebar.Location = new Point(20, 32);
-            btnDangxuatsidebar.Margin = new Padding(5);
+            btnDangxuatsidebar.Location = new Point(12, 20);
             btnDangxuatsidebar.Name = "btnDangxuatsidebar";
-            btnDangxuatsidebar.Padding = new Padding(24, 0, 0, 0);
-            btnDangxuatsidebar.Size = new Size(232, 54);
+            btnDangxuatsidebar.Padding = new Padding(15, 0, 0, 0);
+            btnDangxuatsidebar.Size = new Size(143, 34);
             btnDangxuatsidebar.TabIndex = 14;
             btnDangxuatsidebar.Text = "Đăng xuất";
             btnDangxuatsidebar.TextAlign = ContentAlignment.MiddleLeft;
@@ -143,10 +139,9 @@
             flowLayoutPanel1.Controls.Add(btnBaocao);
             flowLayoutPanel1.Dock = DockStyle.Top;
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel1.Location = new Point(0, 112);
-            flowLayoutPanel1.Margin = new Padding(5);
+            flowLayoutPanel1.Location = new Point(0, 70);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(390, 1102);
+            flowLayoutPanel1.Size = new Size(240, 689);
             flowLayoutPanel1.TabIndex = 1;
             flowLayoutPanel1.WrapContents = false;
             // 
@@ -158,11 +153,10 @@
             btnSodoban.ForeColor = Color.FromArgb(238, 193, 164);
             btnSodoban.Image = Properties.Resources.Container__1_;
             btnSodoban.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSodoban.Location = new Point(5, 5);
-            btnSodoban.Margin = new Padding(5);
+            btnSodoban.Location = new Point(3, 3);
             btnSodoban.Name = "btnSodoban";
-            btnSodoban.Padding = new Padding(24, 0, 0, 0);
-            btnSodoban.Size = new Size(380, 72);
+            btnSodoban.Padding = new Padding(15, 0, 0, 0);
+            btnSodoban.Size = new Size(234, 45);
             btnSodoban.TabIndex = 1;
             btnSodoban.Text = "Sơ đồ bàn";
             btnSodoban.TextAlign = ContentAlignment.MiddleLeft;
@@ -177,11 +171,10 @@
             btnBanhang.ForeColor = Color.FromArgb(238, 193, 164);
             btnBanhang.Image = Properties.Resources.Icon;
             btnBanhang.ImageAlign = ContentAlignment.MiddleLeft;
-            btnBanhang.Location = new Point(5, 87);
-            btnBanhang.Margin = new Padding(5);
+            btnBanhang.Location = new Point(3, 54);
             btnBanhang.Name = "btnBanhang";
-            btnBanhang.Padding = new Padding(24, 0, 0, 0);
-            btnBanhang.Size = new Size(380, 72);
+            btnBanhang.Padding = new Padding(15, 0, 0, 0);
+            btnBanhang.Size = new Size(234, 45);
             btnBanhang.TabIndex = 2;
             btnBanhang.Text = "Bán hàng";
             btnBanhang.TextAlign = ContentAlignment.MiddleLeft;
@@ -196,11 +189,10 @@
             btnDonhang.ForeColor = Color.FromArgb(238, 193, 164);
             btnDonhang.Image = Properties.Resources.Container__2_;
             btnDonhang.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDonhang.Location = new Point(5, 169);
-            btnDonhang.Margin = new Padding(5);
+            btnDonhang.Location = new Point(3, 105);
             btnDonhang.Name = "btnDonhang";
-            btnDonhang.Padding = new Padding(24, 0, 0, 0);
-            btnDonhang.Size = new Size(380, 72);
+            btnDonhang.Padding = new Padding(15, 0, 0, 0);
+            btnDonhang.Size = new Size(234, 45);
             btnDonhang.TabIndex = 3;
             btnDonhang.Text = "Đơn hàng";
             btnDonhang.TextAlign = ContentAlignment.MiddleLeft;
@@ -215,11 +207,10 @@
             btnHoadon.ForeColor = Color.FromArgb(238, 193, 164);
             btnHoadon.Image = Properties.Resources.Container__3_;
             btnHoadon.ImageAlign = ContentAlignment.MiddleLeft;
-            btnHoadon.Location = new Point(5, 251);
-            btnHoadon.Margin = new Padding(5);
+            btnHoadon.Location = new Point(3, 156);
             btnHoadon.Name = "btnHoadon";
-            btnHoadon.Padding = new Padding(24, 0, 0, 0);
-            btnHoadon.Size = new Size(380, 72);
+            btnHoadon.Padding = new Padding(15, 0, 0, 0);
+            btnHoadon.Size = new Size(234, 45);
             btnHoadon.TabIndex = 4;
             btnHoadon.Text = "Hóa đơn";
             btnHoadon.TextAlign = ContentAlignment.MiddleLeft;
@@ -234,11 +225,10 @@
             btnQuanlymon.ForeColor = Color.FromArgb(238, 193, 164);
             btnQuanlymon.Image = Properties.Resources.Container__4_;
             btnQuanlymon.ImageAlign = ContentAlignment.MiddleLeft;
-            btnQuanlymon.Location = new Point(5, 333);
-            btnQuanlymon.Margin = new Padding(5);
+            btnQuanlymon.Location = new Point(3, 207);
             btnQuanlymon.Name = "btnQuanlymon";
-            btnQuanlymon.Padding = new Padding(24, 0, 0, 0);
-            btnQuanlymon.Size = new Size(380, 72);
+            btnQuanlymon.Padding = new Padding(15, 0, 0, 0);
+            btnQuanlymon.Size = new Size(234, 45);
             btnQuanlymon.TabIndex = 5;
             btnQuanlymon.Text = "Quản lý món";
             btnQuanlymon.TextAlign = ContentAlignment.MiddleLeft;
@@ -253,11 +243,10 @@
             btnDanhmuc.ForeColor = Color.FromArgb(238, 193, 164);
             btnDanhmuc.Image = Properties.Resources.Container__5_;
             btnDanhmuc.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDanhmuc.Location = new Point(5, 415);
-            btnDanhmuc.Margin = new Padding(5);
+            btnDanhmuc.Location = new Point(3, 258);
             btnDanhmuc.Name = "btnDanhmuc";
-            btnDanhmuc.Padding = new Padding(24, 0, 0, 0);
-            btnDanhmuc.Size = new Size(380, 72);
+            btnDanhmuc.Padding = new Padding(15, 0, 0, 0);
+            btnDanhmuc.Size = new Size(234, 45);
             btnDanhmuc.TabIndex = 6;
             btnDanhmuc.Text = "Danh mục";
             btnDanhmuc.TextAlign = ContentAlignment.MiddleLeft;
@@ -272,11 +261,10 @@
             btnNguyenlieukho.ForeColor = Color.FromArgb(238, 193, 164);
             btnNguyenlieukho.Image = Properties.Resources.Container__6_;
             btnNguyenlieukho.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNguyenlieukho.Location = new Point(5, 497);
-            btnNguyenlieukho.Margin = new Padding(5);
+            btnNguyenlieukho.Location = new Point(3, 309);
             btnNguyenlieukho.Name = "btnNguyenlieukho";
-            btnNguyenlieukho.Padding = new Padding(24, 0, 0, 0);
-            btnNguyenlieukho.Size = new Size(380, 72);
+            btnNguyenlieukho.Padding = new Padding(15, 0, 0, 0);
+            btnNguyenlieukho.Size = new Size(234, 45);
             btnNguyenlieukho.TabIndex = 7;
             btnNguyenlieukho.Text = "Nguyên liệu, Kho";
             btnNguyenlieukho.TextAlign = ContentAlignment.MiddleLeft;
@@ -291,11 +279,10 @@
             btnVoucher.ForeColor = Color.FromArgb(238, 193, 164);
             btnVoucher.Image = Properties.Resources.Container__7_;
             btnVoucher.ImageAlign = ContentAlignment.MiddleLeft;
-            btnVoucher.Location = new Point(5, 579);
-            btnVoucher.Margin = new Padding(5);
+            btnVoucher.Location = new Point(3, 360);
             btnVoucher.Name = "btnVoucher";
-            btnVoucher.Padding = new Padding(24, 0, 0, 0);
-            btnVoucher.Size = new Size(380, 72);
+            btnVoucher.Padding = new Padding(15, 0, 0, 0);
+            btnVoucher.Size = new Size(234, 45);
             btnVoucher.TabIndex = 8;
             btnVoucher.Text = "Voucher";
             btnVoucher.TextAlign = ContentAlignment.MiddleLeft;
@@ -310,11 +297,10 @@
             btnQuanlynhanvien.ForeColor = Color.FromArgb(238, 193, 164);
             btnQuanlynhanvien.Image = Properties.Resources.Container__8_;
             btnQuanlynhanvien.ImageAlign = ContentAlignment.MiddleLeft;
-            btnQuanlynhanvien.Location = new Point(5, 661);
-            btnQuanlynhanvien.Margin = new Padding(5);
+            btnQuanlynhanvien.Location = new Point(3, 411);
             btnQuanlynhanvien.Name = "btnQuanlynhanvien";
-            btnQuanlynhanvien.Padding = new Padding(24, 0, 0, 0);
-            btnQuanlynhanvien.Size = new Size(380, 72);
+            btnQuanlynhanvien.Padding = new Padding(15, 0, 0, 0);
+            btnQuanlynhanvien.Size = new Size(234, 45);
             btnQuanlynhanvien.TabIndex = 9;
             btnQuanlynhanvien.Text = "Quản lý nhân viên";
             btnQuanlynhanvien.TextAlign = ContentAlignment.MiddleLeft;
@@ -330,16 +316,16 @@
             btnXepca.ForeColor = Color.FromArgb(238, 193, 164);
             btnXepca.Image = Properties.Resources.Icon__1_;
             btnXepca.ImageAlign = ContentAlignment.MiddleLeft;
-            btnXepca.Location = new Point(5, 743);
-            btnXepca.Margin = new Padding(5);
+            btnXepca.Location = new Point(3, 462);
             btnXepca.Name = "btnXepca";
-            btnXepca.Padding = new Padding(24, 0, 0, 0);
-            btnXepca.Size = new Size(380, 72);
+            btnXepca.Padding = new Padding(15, 0, 0, 0);
+            btnXepca.Size = new Size(234, 45);
             btnXepca.TabIndex = 10;
             btnXepca.Text = "Xếp lịch ca làm việc";
             btnXepca.TextAlign = ContentAlignment.MiddleLeft;
             btnXepca.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnXepca.UseVisualStyleBackColor = true;
+            btnXepca.Click += btnXepca_Click;
             // 
             // btnLichlam
             // 
@@ -349,11 +335,10 @@
             btnLichlam.ForeColor = Color.FromArgb(238, 193, 164);
             btnLichlam.Image = Properties.Resources.Container__9_;
             btnLichlam.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLichlam.Location = new Point(5, 825);
-            btnLichlam.Margin = new Padding(5);
+            btnLichlam.Location = new Point(3, 513);
             btnLichlam.Name = "btnLichlam";
-            btnLichlam.Padding = new Padding(24, 0, 0, 0);
-            btnLichlam.Size = new Size(380, 72);
+            btnLichlam.Padding = new Padding(15, 0, 0, 0);
+            btnLichlam.Size = new Size(234, 45);
             btnLichlam.TabIndex = 11;
             btnLichlam.Text = "Lịch làm của tôi";
             btnLichlam.TextAlign = ContentAlignment.MiddleLeft;
@@ -368,11 +353,10 @@
             btnQuanlyban.ForeColor = Color.FromArgb(238, 193, 164);
             btnQuanlyban.Image = Properties.Resources.Container__10_;
             btnQuanlyban.ImageAlign = ContentAlignment.MiddleLeft;
-            btnQuanlyban.Location = new Point(5, 907);
-            btnQuanlyban.Margin = new Padding(5);
+            btnQuanlyban.Location = new Point(3, 564);
             btnQuanlyban.Name = "btnQuanlyban";
-            btnQuanlyban.Padding = new Padding(24, 0, 0, 0);
-            btnQuanlyban.Size = new Size(380, 72);
+            btnQuanlyban.Padding = new Padding(15, 0, 0, 0);
+            btnQuanlyban.Size = new Size(234, 45);
             btnQuanlyban.TabIndex = 12;
             btnQuanlyban.Text = "Quản lý bàn";
             btnQuanlyban.TextAlign = ContentAlignment.MiddleLeft;
@@ -387,11 +371,10 @@
             btnBaocao.ForeColor = Color.FromArgb(238, 193, 164);
             btnBaocao.Image = Properties.Resources.Container__11_;
             btnBaocao.ImageAlign = ContentAlignment.MiddleLeft;
-            btnBaocao.Location = new Point(5, 989);
-            btnBaocao.Margin = new Padding(5);
+            btnBaocao.Location = new Point(3, 615);
             btnBaocao.Name = "btnBaocao";
-            btnBaocao.Padding = new Padding(24, 0, 0, 0);
-            btnBaocao.Size = new Size(380, 72);
+            btnBaocao.Padding = new Padding(15, 0, 0, 0);
+            btnBaocao.Size = new Size(234, 45);
             btnBaocao.TabIndex = 13;
             btnBaocao.Text = "Báo cáo doanh thu";
             btnBaocao.TextAlign = ContentAlignment.MiddleLeft;
@@ -405,18 +388,16 @@
             pnlLogo.Controls.Add(lbLogo1);
             pnlLogo.Dock = DockStyle.Top;
             pnlLogo.Location = new Point(0, 0);
-            pnlLogo.Margin = new Padding(5);
             pnlLogo.Name = "pnlLogo";
-            pnlLogo.Size = new Size(390, 112);
+            pnlLogo.Size = new Size(240, 70);
             pnlLogo.TabIndex = 0;
             // 
             // picLogo
             // 
             picLogo.Image = Properties.Resources.Background;
-            picLogo.Location = new Point(23, 22);
-            picLogo.Margin = new Padding(5);
+            picLogo.Location = new Point(14, 14);
             picLogo.Name = "picLogo";
-            picLogo.Size = new Size(67, 70);
+            picLogo.Size = new Size(41, 44);
             picLogo.TabIndex = 2;
             picLogo.TabStop = false;
             // 
@@ -425,10 +406,9 @@
             lbLogo2.AutoSize = true;
             lbLogo2.Font = new Font("Segoe UI", 11F);
             lbLogo2.ForeColor = Color.FromArgb(238, 193, 164);
-            lbLogo2.Location = new Point(99, 56);
-            lbLogo2.Margin = new Padding(5, 0, 5, 0);
+            lbLogo2.Location = new Point(61, 35);
             lbLogo2.Name = "lbLogo2";
-            lbLogo2.Size = new Size(207, 41);
+            lbLogo2.Size = new Size(130, 25);
             lbLogo2.TabIndex = 1;
             lbLogo2.Text = "Hệ thống POS";
             // 
@@ -437,10 +417,9 @@
             lbLogo1.AutoSize = true;
             lbLogo1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             lbLogo1.ForeColor = Color.White;
-            lbLogo1.Location = new Point(99, 14);
-            lbLogo1.Margin = new Padding(5, 0, 5, 0);
+            lbLogo1.Location = new Point(61, 9);
             lbLogo1.Name = "lbLogo1";
-            lbLogo1.Size = new Size(161, 41);
+            lbLogo1.Size = new Size(100, 25);
             lbLogo1.TabIndex = 0;
             lbLogo1.Text = "LTTQ Cafe";
             // 
@@ -452,10 +431,11 @@
             btnThongtincanhan.ForeColor = Color.FromArgb(238, 193, 164);
             btnThongtincanhan.Image = Properties.Resources.Container;
             btnThongtincanhan.ImageAlign = ContentAlignment.MiddleLeft;
-            btnThongtincanhan.Location = new Point(0, 756);
+            btnThongtincanhan.Location = new Point(0, 472);
+            btnThongtincanhan.Margin = new Padding(2, 2, 2, 2);
             btnThongtincanhan.Name = "btnThongtincanhan";
-            btnThongtincanhan.Padding = new Padding(15, 0, 0, 0);
-            btnThongtincanhan.Size = new Size(237, 45);
+            btnThongtincanhan.Padding = new Padding(9, 0, 0, 0);
+            btnThongtincanhan.Size = new Size(146, 28);
             btnThongtincanhan.TabIndex = 14;
             btnThongtincanhan.Text = "Thông tin cá nhân";
             btnThongtincanhan.TextAlign = ContentAlignment.MiddleLeft;
@@ -471,10 +451,9 @@
             pnlTopbar.Controls.Add(label1);
             pnlTopbar.Controls.Add(picLogotopbar);
             pnlTopbar.Dock = DockStyle.Top;
-            pnlTopbar.Location = new Point(390, 0);
-            pnlTopbar.Margin = new Padding(5);
+            pnlTopbar.Location = new Point(240, 0);
             pnlTopbar.Name = "pnlTopbar";
-            pnlTopbar.Size = new Size(2494, 112);
+            pnlTopbar.Size = new Size(944, 70);
             pnlTopbar.TabIndex = 1;
             // 
             // lbRoletopbar
@@ -482,10 +461,9 @@
             lbRoletopbar.AutoSize = true;
             lbRoletopbar.Font = new Font("Segoe UI", 11F);
             lbRoletopbar.ForeColor = Color.FromArgb(125, 86, 45);
-            lbRoletopbar.Location = new Point(2449, 53);
-            lbRoletopbar.Margin = new Padding(5, 0, 5, 0);
+            lbRoletopbar.Location = new Point(1507, 33);
             lbRoletopbar.Name = "lbRoletopbar";
-            lbRoletopbar.Size = new Size(120, 41);
+            lbRoletopbar.Size = new Size(77, 25);
             lbRoletopbar.TabIndex = 6;
             lbRoletopbar.Text = "Quản lý";
             // 
@@ -495,10 +473,9 @@
             lbTentopbar.AutoSize = true;
             lbTentopbar.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             lbTentopbar.ForeColor = Color.FromArgb(85, 55, 34);
-            lbTentopbar.Location = new Point(2170, 14);
-            lbTentopbar.Margin = new Padding(5, 0, 5, 0);
+            lbTentopbar.Location = new Point(744, 9);
             lbTentopbar.Name = "lbTentopbar";
-            lbTentopbar.Size = new Size(187, 41);
+            lbTentopbar.Size = new Size(121, 25);
             lbTentopbar.TabIndex = 5;
             lbTentopbar.Text = "Trần Văn An";
             // 
@@ -506,10 +483,9 @@
             // 
             picAvttopbar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             picAvttopbar.Image = Properties.Resources.Background__1_;
-            picAvttopbar.Location = new Point(2377, 19);
-            picAvttopbar.Margin = new Padding(5);
+            picAvttopbar.Location = new Point(872, 12);
             picAvttopbar.Name = "picAvttopbar";
-            picAvttopbar.Size = new Size(98, 74);
+            picAvttopbar.Size = new Size(60, 46);
             picAvttopbar.SizeMode = PictureBoxSizeMode.Zoom;
             picAvttopbar.TabIndex = 4;
             picAvttopbar.TabStop = false;
@@ -519,20 +495,18 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(85, 55, 34);
-            label1.Location = new Point(106, 30);
-            label1.Margin = new Padding(5, 0, 5, 0);
+            label1.Location = new Point(65, 19);
             label1.Name = "label1";
-            label1.Size = new Size(171, 45);
+            label1.Size = new Size(107, 28);
             label1.TabIndex = 3;
             label1.Text = "LTTQ Cafe";
             // 
             // picLogotopbar
             // 
             picLogotopbar.Image = Properties.Resources.LLTQ_Café_Logo;
-            picLogotopbar.Location = new Point(15, 22);
-            picLogotopbar.Margin = new Padding(5);
+            picLogotopbar.Location = new Point(9, 14);
             picLogotopbar.Name = "picLogotopbar";
-            picLogotopbar.Size = new Size(81, 74);
+            picLogotopbar.Size = new Size(50, 46);
             picLogotopbar.SizeMode = PictureBoxSizeMode.Zoom;
             picLogotopbar.TabIndex = 0;
             picLogotopbar.TabStop = false;
@@ -540,22 +514,20 @@
             // pnlContent
             // 
             pnlContent.Dock = DockStyle.Fill;
-            pnlContent.Location = new Point(390, 112);
-            pnlContent.Margin = new Padding(5);
+            pnlContent.Location = new Point(240, 70);
             pnlContent.Name = "pnlContent";
-            pnlContent.Size = new Size(2494, 1541);
+            pnlContent.Size = new Size(944, 589);
             pnlContent.TabIndex = 2;
             // 
             // FrmMain
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 248, 246);
-            ClientSize = new Size(2884, 1653);
+            ClientSize = new Size(1184, 659);
             Controls.Add(pnlContent);
             Controls.Add(pnlTopbar);
             Controls.Add(pnlSidebar);
-            Margin = new Padding(5);
             Name = "FrmMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LTTQ Cafe";

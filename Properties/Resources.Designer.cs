@@ -223,6 +223,16 @@ namespace DoAnLapTrinhTrucQuan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icCongbo {
+            get {
+                object obj = ResourceManager.GetObject("icCongbo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icDanglamviec {
             get {
                 object obj = ResourceManager.GetObject("icDanglamviec", resourceCulture);
@@ -246,6 +256,16 @@ namespace DoAnLapTrinhTrucQuan.Properties {
         internal static System.Drawing.Bitmap icKhoa {
             get {
                 object obj = ResourceManager.GetObject("icKhoa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icLuu {
+            get {
+                object obj = ResourceManager.GetObject("icLuu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -286,6 +306,16 @@ namespace DoAnLapTrinhTrucQuan.Properties {
         internal static System.Drawing.Bitmap Icon__3_ {
             get {
                 object obj = ResourceManager.GetObject("Icon (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icSaochep {
+            get {
+                object obj = ResourceManager.GetObject("icSaochep", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
