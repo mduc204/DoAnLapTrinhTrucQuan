@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace DoAnLapTrinhTrucQuan
 {
-    public partial class UcM06 : UserControl
+    public partial class ucShiftSchedule : UserControl
     {
         private readonly DateTime sampleWeekStart;
         private DateTime displayedWeekStart;
 
-        public UcM06()
+        public ucShiftSchedule()
         {
             InitializeComponent();
             label47.Paint += Label47_Paint;

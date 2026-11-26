@@ -1,3 +1,5 @@
+using DoAnLapTrinhTrucQuan.Helpers;
+
 namespace DoAnLapTrinhTrucQuan.Dialogs
 {
     partial class dlgAddProduct
@@ -17,18 +19,18 @@ namespace DoAnLapTrinhTrucQuan.Dialogs
 
         private void InitializeComponent()
         {
-            this.pnlCard = new DoAnLapTrinhTrucQuan.RoundedPanel();
+            this.pnlCard = new DoAnLapTrinhTrucQuan.Helpers.RoundedPanel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.pnlDivider1 = new System.Windows.Forms.Panel();
             this.pnlAnhBorder = new System.Windows.Forms.Panel();
             this.picProductImage = new System.Windows.Forms.PictureBox();
-            this.btnChooseImage = new DoAnLapTrinhTrucQuan.RoundedButton();
+            this.btnChooseImage = new DoAnLapTrinhTrucQuan.Helpers.RoundedButton();
             this.lblDanhMuc = new System.Windows.Forms.Label();
             this.cboCategory = new System.Windows.Forms.ComboBox();
             this.lblMaMon = new System.Windows.Forms.Label();
             this.txtProductId = new System.Windows.Forms.TextBox();
-            this.btnAutoGenerateCode = new DoAnLapTrinhTrucQuan.RoundedButton();
+            this.btnAutoGenerateCode = new DoAnLapTrinhTrucQuan.Helpers.RoundedButton();
             this.lblGhiChuMa = new System.Windows.Forms.Label();
             this.lblTenMon = new System.Windows.Forms.Label();
             this.txtProductName = new System.Windows.Forms.TextBox();
@@ -40,8 +42,8 @@ namespace DoAnLapTrinhTrucQuan.Dialogs
             this.lblMoTa = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.pnlDivider2 = new System.Windows.Forms.Panel();
-            this.btnCancel = new DoAnLapTrinhTrucQuan.RoundedButton();
-            this.btnSave = new DoAnLapTrinhTrucQuan.RoundedButton();
+            this.btnCancel = new DoAnLapTrinhTrucQuan.Helpers.RoundedButton();
+            this.btnSave = new DoAnLapTrinhTrucQuan.Helpers.RoundedButton();
             this.pnlCard.SuspendLayout();
             this.pnlAnhBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProductImage)).BeginInit();
@@ -399,18 +401,18 @@ namespace DoAnLapTrinhTrucQuan.Dialogs
 
         #endregion
 
-        private DoAnLapTrinhTrucQuan.RoundedPanel pnlCard;
+        private RoundedPanel pnlCard;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblSubTitle;
         private System.Windows.Forms.Panel pnlDivider1;
         private System.Windows.Forms.Panel pnlAnhBorder;
         private System.Windows.Forms.PictureBox picProductImage;
-        private DoAnLapTrinhTrucQuan.RoundedButton btnChooseImage;
+        private RoundedButton btnChooseImage;
         private System.Windows.Forms.Label lblDanhMuc;
         private System.Windows.Forms.ComboBox cboCategory;
         private System.Windows.Forms.Label lblMaMon;
         private System.Windows.Forms.TextBox txtProductId;
-        private DoAnLapTrinhTrucQuan.RoundedButton btnAutoGenerateCode;
+        private RoundedButton btnAutoGenerateCode;
         private System.Windows.Forms.Label lblGhiChuMa;
         private System.Windows.Forms.Label lblTenMon;
         private System.Windows.Forms.TextBox txtProductName;
@@ -422,7 +424,7 @@ namespace DoAnLapTrinhTrucQuan.Dialogs
         private System.Windows.Forms.Label lblMoTa;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Panel pnlDivider2;
-        private DoAnLapTrinhTrucQuan.RoundedButton btnCancel;
-        private DoAnLapTrinhTrucQuan.RoundedButton btnSave;
+        private RoundedButton btnCancel;
+        private RoundedButton btnSave;
     }
 }

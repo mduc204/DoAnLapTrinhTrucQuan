@@ -1,4 +1,4 @@
-﻿namespace DoAnLapTrinhTrucQuan
+﻿namespace DoAnLapTrinhTrucQuan.Forms
 {
     partial class FrmThemNhanVien
     {

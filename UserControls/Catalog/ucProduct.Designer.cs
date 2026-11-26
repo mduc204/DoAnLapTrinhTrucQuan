@@ -1,4 +1,6 @@
-﻿namespace DoAnLapTrinhTrucQuan.UserControls
+﻿using DoAnLapTrinhTrucQuan.Helpers;
+
+namespace DoAnLapTrinhTrucQuan.UserControls
 {
     partial class ucProduct
     {
@@ -1154,7 +1156,7 @@
             lblBOMHeader.TabIndex = 0;
             lblBOMHeader.Text = "⚗ Định lượng pha chế - 1 ly";
             // 
-            // ucQuanLyMon
+            // ucProduct
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -1164,7 +1166,7 @@
             Controls.Add(pnlTopHeader);
             Font = new Font("Segoe UI", 9F);
             Margin = new Padding(3, 4, 3, 4);
-            Name = "ucQuanLyMon";
+            Name = "ucProduct";
             Padding = new Padding(18, 16, 18, 16);
             Size = new Size(1280, 997);
             pnlTopHeader.ResumeLayout(false);
@@ -1220,28 +1222,28 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblSubtitle;
         private System.Windows.Forms.Panel pnlTopHeaderButtons;
-        private DoAnLapTrinhTrucQuan.RoundedButton btnAddProduct;
-        private DoAnLapTrinhTrucQuan.RoundedButton btnExportExcel;
-        private DoAnLapTrinhTrucQuan.RoundedButton btnUpdatePrice;
+        private RoundedButton btnAddProduct;
+        private RoundedButton btnExportExcel;
+        private RoundedButton btnUpdatePrice;
         private System.Windows.Forms.Panel pnlFilterBar;
-        private DoAnLapTrinhTrucQuan.RoundedTextBox txtSearch;
-        private DoAnLapTrinhTrucQuan.RoundedPanel pnlFilterDanhMuc;
+        private RoundedTextBox txtSearch;
+        private RoundedPanel pnlFilterDanhMuc;
         private System.Windows.Forms.Label lblPrefixDanhMuc;
         private System.Windows.Forms.ComboBox cboFilterCategory;
-        private DoAnLapTrinhTrucQuan.RoundedPanel pnlFilterTrangThai;
+        private RoundedPanel pnlFilterTrangThai;
         private System.Windows.Forms.Label lblPrefixTrangThai;
         private System.Windows.Forms.ComboBox cboFilterStatus;
         private System.Windows.Forms.SplitContainer splitMain;
         private System.Windows.Forms.SplitContainer splitMasterDetail;
-        private DoAnLapTrinhTrucQuan.RoundedPanel pnlMasterCard;
+        private RoundedPanel pnlMasterCard;
         private System.Windows.Forms.DataGridView dgvProduct;
-                private DoAnLapTrinhTrucQuan.RoundedPanel pnlDetailCard;
+                private RoundedPanel pnlDetailCard;
         private System.Windows.Forms.Panel pnlDetailHeader;
         private System.Windows.Forms.Label lblDetailHeader;
         private System.Windows.Forms.Label lblDetailSubHeader;
         private System.Windows.Forms.Panel pnlDetailHeaderButtons;
-        private DoAnLapTrinhTrucQuan.RoundedButton btnSave;
-        private DoAnLapTrinhTrucQuan.RoundedButton btnPrint;
+        private RoundedButton btnSave;
+        private RoundedButton btnPrint;
         private System.Windows.Forms.Panel pnlDetailBody;
         private System.Windows.Forms.Panel pnlImageContainer;
         private System.Windows.Forms.PictureBox picProductDetail;
@@ -1264,18 +1266,18 @@
         private System.Windows.Forms.Label lblGiaVonTitle;
         private System.Windows.Forms.FlowLayoutPanel pnlGiaVonRow;
         private System.Windows.Forms.Label lblGiaVonBOM;
-        private DoAnLapTrinhTrucQuan.StatusBadge badgeLai;
+        private StatusBadge badgeLai;
         private System.Windows.Forms.Panel pnlMoTaSection;
         private System.Windows.Forms.RichTextBox rtbDescription;
         private System.Windows.Forms.Label lblMoTaLabel;
         private System.Windows.Forms.Panel pnlDetailFooter;
-        private DoAnLapTrinhTrucQuan.RoundedButton btnToggleStatus;
-        private DoAnLapTrinhTrucQuan.RoundedPanel pnlBOMCard;
+        private RoundedButton btnToggleStatus;
+        private RoundedPanel pnlBOMCard;
         private System.Windows.Forms.Panel pnlBOMHeader;
         private System.Windows.Forms.Label lblBOMHeader;
         private System.Windows.Forms.Panel pnlBOMHeaderButtons;
-        private DoAnLapTrinhTrucQuan.RoundedButton btnAddIngredient;
-        private DoAnLapTrinhTrucQuan.RoundedButton btnRecalculate;
+        private RoundedButton btnAddIngredient;
+        private RoundedButton btnRecalculate;
         private System.Windows.Forms.DataGridView dgvBOM;
         private System.Windows.Forms.Panel pnlBOMFooter;
         private System.Windows.Forms.Label lblCOGSLabel;

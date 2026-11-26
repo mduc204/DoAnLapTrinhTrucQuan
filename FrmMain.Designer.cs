@@ -1,6 +1,6 @@
 ﻿namespace DoAnLapTrinhTrucQuan
 {
-    partial class FrmMain
+    partial class frmMain
     {
         /// <summary>
         ///  Required designer variable.

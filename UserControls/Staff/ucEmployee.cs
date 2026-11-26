@@ -7,14 +7,15 @@ using System.Drawing.Drawing2D;
 using System.Globalization;
 using System.Text;
 using System.Windows.Forms;
+using DoAnLapTrinhTrucQuan.Forms;
 
 namespace DoAnLapTrinhTrucQuan
 {
-    public partial class UcM05 : UserControl
+    public partial class ucEmployee : UserControl
     {
         private DataGridViewRow? selectedEmployeeRow;
 
-        public UcM05()
+        public ucEmployee()
         {
             InitializeComponent();
             ApplyRoundedCorners();

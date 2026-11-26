@@ -1,6 +1,8 @@
-﻿namespace DoAnLapTrinhTrucQuan.UserControls
+﻿using DoAnLapTrinhTrucQuan.Helpers;
+
+namespace DoAnLapTrinhTrucQuan.UserControls
 {
-    partial class ucQuanLyKho
+    partial class ucInventory
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -946,20 +948,20 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblSubtitle;
         private System.Windows.Forms.Panel pnlHeaderButtons;
-        private DoAnLapTrinhTrucQuan.RoundedButton btnThemNguyenLieu;
-        private DoAnLapTrinhTrucQuan.RoundedButton btnXuatExcel;
-        private DoAnLapTrinhTrucQuan.RoundedButton btnNhapKhoTop;
+        private RoundedButton btnThemNguyenLieu;
+        private RoundedButton btnXuatExcel;
+        private RoundedButton btnNhapKhoTop;
         private System.Windows.Forms.Panel pnlFilterBar;
-        private DoAnLapTrinhTrucQuan.RoundedTextBox txtSearch;
-        private DoAnLapTrinhTrucQuan.RoundedPanel pnlFilterNhom;
+        private RoundedTextBox txtSearch;
+        private RoundedPanel pnlFilterNhom;
         private System.Windows.Forms.Label lblPrefixNhom;
         private System.Windows.Forms.ComboBox cboNhom;
-        private DoAnLapTrinhTrucQuan.RoundedPanel pnlFilterTrangThai;
+        private RoundedPanel pnlFilterTrangThai;
         private System.Windows.Forms.Label lblPrefixTrangThai;
         private System.Windows.Forms.ComboBox cboTrangThai;
         private System.Windows.Forms.SplitContainer splitMain;
         private System.Windows.Forms.SplitContainer splitTop;
-        private DoAnLapTrinhTrucQuan.RoundedPanel pnlMasterCard;
+        private RoundedPanel pnlMasterCard;
         private System.Windows.Forms.DataGridView dgvNguyenLieu;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaNL;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenNL;
@@ -967,11 +969,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTonKho;
         private System.Windows.Forms.DataGridViewTextBoxColumn colToiThieu;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
-        private DoAnLapTrinhTrucQuan.RoundedPanel pnlDetailCard;
+        private RoundedPanel pnlDetailCard;
         private System.Windows.Forms.Panel pnlDetailHeader;
         private System.Windows.Forms.Label lblDetailHeader;
         private System.Windows.Forms.Label lblDetailMaNL;
-        private DoAnLapTrinhTrucQuan.RoundedButton btnLuu;
+        private RoundedButton btnLuu;
         private System.Windows.Forms.TableLayoutPanel tlpDetailFields;
         private System.Windows.Forms.Label lblFieldMaNL;
         private System.Windows.Forms.TextBox txtDetailMaNL;
@@ -988,10 +990,10 @@
         private System.Windows.Forms.Label lblFieldMucToiThieu;
         private System.Windows.Forms.NumericUpDown nudDetailMucToiThieu;
         private System.Windows.Forms.FlowLayoutPanel flpDetailActions;
-        private DoAnLapTrinhTrucQuan.RoundedButton btnNhapKho;
-        private DoAnLapTrinhTrucQuan.RoundedButton btnXuatKho;
-        private DoAnLapTrinhTrucQuan.RoundedButton btnNgungSuDung;
-        private DoAnLapTrinhTrucQuan.RoundedPanel pnlHistoryCard;
+        private RoundedButton btnNhapKho;
+        private RoundedButton btnXuatKho;
+        private RoundedButton btnNgungSuDung;
+        private RoundedPanel pnlHistoryCard;
         private System.Windows.Forms.Label lblHistoryTitle;
         private System.Windows.Forms.DataGridView dgvLichSuKho;
         private System.Windows.Forms.DataGridViewTextBoxColumn colHistoryThoiGian;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using DoAnLapTrinhTrucQuan.Helpers;
 
 namespace DoAnLapTrinhTrucQuan.UserControls
 {

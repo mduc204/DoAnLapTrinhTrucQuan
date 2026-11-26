@@ -1,3 +1,5 @@
+using DoAnLapTrinhTrucQuan.Helpers;
+
 namespace DoAnLapTrinhTrucQuan.Dialogs
 {
     partial class dlgSelectIngredient
@@ -15,7 +17,7 @@ namespace DoAnLapTrinhTrucQuan.Dialogs
 
         private void InitializeComponent()
         {
-            this.pnlCard = new DoAnLapTrinhTrucQuan.RoundedPanel();
+            this.pnlCard = new DoAnLapTrinhTrucQuan.Helpers.RoundedPanel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.lblNguyenLieu = new System.Windows.Forms.Label();
@@ -25,8 +27,8 @@ namespace DoAnLapTrinhTrucQuan.Dialogs
             this.lblDVT = new System.Windows.Forms.Label();
             this.lblDonGia = new System.Windows.Forms.Label();
             this.lblThanhTienTamTinh = new System.Windows.Forms.Label();
-            this.btnCancel = new DoAnLapTrinhTrucQuan.RoundedButton();
-            this.btnConfirm = new DoAnLapTrinhTrucQuan.RoundedButton();
+            this.btnCancel = new DoAnLapTrinhTrucQuan.Helpers.RoundedButton();
+            this.btnConfirm = new DoAnLapTrinhTrucQuan.Helpers.RoundedButton();
             this.pnlCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
             this.SuspendLayout();
@@ -219,7 +221,7 @@ namespace DoAnLapTrinhTrucQuan.Dialogs
 
         }
 
-        private DoAnLapTrinhTrucQuan.RoundedPanel pnlCard;
+        private RoundedPanel pnlCard;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblSubTitle;
         private System.Windows.Forms.Label lblNguyenLieu;
@@ -229,7 +231,7 @@ namespace DoAnLapTrinhTrucQuan.Dialogs
         private System.Windows.Forms.Label lblDVT;
         private System.Windows.Forms.Label lblDonGia;
         private System.Windows.Forms.Label lblThanhTienTamTinh;
-        private DoAnLapTrinhTrucQuan.RoundedButton btnCancel;
-        private DoAnLapTrinhTrucQuan.RoundedButton btnConfirm;
+        private RoundedButton btnCancel;
+        private RoundedButton btnConfirm;
     }
 }

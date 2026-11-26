@@ -1,6 +1,6 @@
 ﻿namespace DoAnLapTrinhTrucQuan
 {
-    partial class UcM06
+    partial class ucShiftSchedule
     {
         /// <summary> 
         /// Required designer variable.

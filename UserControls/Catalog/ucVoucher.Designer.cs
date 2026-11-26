@@ -1,4 +1,6 @@
-﻿namespace DoAnLapTrinhTrucQuan.UserControls
+﻿using DoAnLapTrinhTrucQuan.Helpers;
+
+namespace DoAnLapTrinhTrucQuan.UserControls
 {
     partial class ucVoucher
     {
@@ -271,6 +273,7 @@
             btnAddVoucher.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
             btnAddVoucher.ForeColor = Color.White;
             btnAddVoucher.HoverBackColor = Color.FromArgb(91, 63, 43);
+            btnAddVoucher.HoverColor = Color.FromArgb(91, 63, 43);
             btnAddVoucher.IsOutlined = false;
             btnAddVoucher.Location = new Point(10, 2);
             btnAddVoucher.Name = "btnAddVoucher";
@@ -290,8 +293,9 @@
             btnExportExcel.DownBackColor = Color.FromArgb(239, 229, 219);
             btnExportExcel.FlatStyle = FlatStyle.Flat;
             btnExportExcel.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            btnExportExcel.ForeColor = Color.FromArgb(44, 30, 20);
+            btnExportExcel.ForeColor = Color.FromArgb(111, 78, 55);
             btnExportExcel.HoverBackColor = Color.FromArgb(247, 239, 231);
+            btnExportExcel.HoverColor = Color.FromArgb(247, 239, 231);
             btnExportExcel.IsOutlined = true;
             btnExportExcel.Location = new Point(175, 2);
             btnExportExcel.Name = "btnExportExcel";
@@ -311,8 +315,9 @@
             btnHistory.DownBackColor = Color.FromArgb(239, 229, 219);
             btnHistory.FlatStyle = FlatStyle.Flat;
             btnHistory.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            btnHistory.ForeColor = Color.FromArgb(44, 30, 20);
+            btnHistory.ForeColor = Color.FromArgb(111, 78, 55);
             btnHistory.HoverBackColor = Color.FromArgb(247, 239, 231);
+            btnHistory.HoverColor = Color.FromArgb(247, 239, 231);
             btnHistory.IsOutlined = true;
             btnHistory.Location = new Point(310, 2);
             btnHistory.Name = "btnHistory";
@@ -340,7 +345,7 @@
             splitMasterDetail.Panel2.Controls.Add(pnlDetailCard);
             splitMasterDetail.Panel2MinSize = 250;
             splitMasterDetail.Size = new Size(1050, 662);
-            splitMasterDetail.SplitterDistance = 197;
+            splitMasterDetail.SplitterDistance = 189;
             splitMasterDetail.SplitterWidth = 8;
             splitMasterDetail.TabIndex = 0;
             // 
@@ -357,7 +362,7 @@
             pnlGridCard.Location = new Point(0, 0);
             pnlGridCard.Name = "pnlGridCard";
             pnlGridCard.Padding = new Padding(12, 10, 12, 10);
-            pnlGridCard.Size = new Size(1050, 197);
+            pnlGridCard.Size = new Size(1050, 189);
             pnlGridCard.TabIndex = 0;
             // 
             // dgvVoucher
@@ -399,7 +404,7 @@
             dgvVoucher.RowsDefaultCellStyle = dataGridViewCellStyle8;
             dgvVoucher.RowTemplate.Height = 50;
             dgvVoucher.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvVoucher.Size = new Size(1026, 133);
+            dgvVoucher.Size = new Size(1026, 125);
             dgvVoucher.TabIndex = 0;
             // 
             // colSTT
@@ -612,7 +617,7 @@
             pnlDetailCard.Location = new Point(0, 0);
             pnlDetailCard.Name = "pnlDetailCard";
             pnlDetailCard.Padding = new Padding(16, 10, 16, 10);
-            pnlDetailCard.Size = new Size(1050, 457);
+            pnlDetailCard.Size = new Size(1050, 465);
             pnlDetailCard.TabIndex = 0;
             // 
             // pnlFormScroll
@@ -622,7 +627,7 @@
             pnlFormScroll.Dock = DockStyle.Fill;
             pnlFormScroll.Location = new Point(16, 46);
             pnlFormScroll.Name = "pnlFormScroll";
-            pnlFormScroll.Size = new Size(1018, 357);
+            pnlFormScroll.Size = new Size(1018, 365);
             pnlFormScroll.TabIndex = 0;
             // 
             // tlpDetailForm
@@ -1445,7 +1450,7 @@
             pnlDetailFooter.Controls.Add(btnToggleStatus);
             pnlDetailFooter.Controls.Add(pnlFooterActions);
             pnlDetailFooter.Dock = DockStyle.Bottom;
-            pnlDetailFooter.Location = new Point(16, 403);
+            pnlDetailFooter.Location = new Point(16, 411);
             pnlDetailFooter.Name = "pnlDetailFooter";
             pnlDetailFooter.Padding = new Padding(0, 6, 0, 0);
             pnlDetailFooter.Size = new Size(1018, 44);
@@ -1461,8 +1466,9 @@
             btnToggleStatus.DownBackColor = Color.FromArgb(239, 229, 219);
             btnToggleStatus.FlatStyle = FlatStyle.Flat;
             btnToggleStatus.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            btnToggleStatus.ForeColor = Color.FromArgb(44, 30, 20);
+            btnToggleStatus.ForeColor = Color.FromArgb(111, 78, 55);
             btnToggleStatus.HoverBackColor = Color.FromArgb(247, 239, 231);
+            btnToggleStatus.HoverColor = Color.FromArgb(247, 239, 231);
             btnToggleStatus.IsOutlined = true;
             btnToggleStatus.Location = new Point(0, 6);
             btnToggleStatus.Name = "btnToggleStatus";
@@ -1492,8 +1498,9 @@
             btnCancel.DownBackColor = Color.FromArgb(239, 229, 219);
             btnCancel.FlatStyle = FlatStyle.Flat;
             btnCancel.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            btnCancel.ForeColor = Color.FromArgb(44, 30, 20);
+            btnCancel.ForeColor = Color.FromArgb(111, 78, 55);
             btnCancel.HoverBackColor = Color.FromArgb(247, 239, 231);
+            btnCancel.HoverColor = Color.FromArgb(247, 239, 231);
             btnCancel.IsOutlined = true;
             btnCancel.Location = new Point(10, 2);
             btnCancel.Name = "btnCancel";
@@ -1515,6 +1522,7 @@
             btnSave.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
             btnSave.ForeColor = Color.White;
             btnSave.HoverBackColor = Color.FromArgb(91, 63, 43);
+            btnSave.HoverColor = Color.FromArgb(91, 63, 43);
             btnSave.IsOutlined = false;
             btnSave.Location = new Point(115, 2);
             btnSave.Name = "btnSave";
@@ -1577,7 +1585,7 @@
             toggleKichHoat.Size = new Size(46, 24);
             toggleKichHoat.TabIndex = 1;
             // 
-            // ucKhuyenMai
+            // ucVoucher
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -1585,7 +1593,7 @@
             Controls.Add(splitMasterDetail);
             Controls.Add(pnlTopArea);
             Font = new Font("Segoe UI", 9.5F);
-            Name = "ucKhuyenMai";
+            Name = "ucVoucher";
             Size = new Size(1050, 750);
             pnlTopArea.ResumeLayout(false);
             pnlQuickStats.ResumeLayout(false);
@@ -1676,17 +1684,17 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblSubtitle;
         private System.Windows.Forms.Panel pnlTopActions;
-        private DoAnLapTrinhTrucQuan.RoundedButton btnAddVoucher;
-        private DoAnLapTrinhTrucQuan.RoundedButton btnExportExcel;
-        private DoAnLapTrinhTrucQuan.RoundedButton btnHistory;
+        private RoundedButton btnAddVoucher;
+        private RoundedButton btnExportExcel;
+        private RoundedButton btnHistory;
         private System.Windows.Forms.Panel pnlQuickStats;
         private System.Windows.Forms.Label lblQuickStats;
 
         private System.Windows.Forms.SplitContainer splitMasterDetail;
 
-        private DoAnLapTrinhTrucQuan.RoundedPanel pnlGridCard;
+        private RoundedPanel pnlGridCard;
         private System.Windows.Forms.Panel pnlFilterBar;
-        private DoAnLapTrinhTrucQuan.RoundedTextBox txtSearch;
+        private RoundedTextBox txtSearch;
         private System.Windows.Forms.Panel pnlTabButtons;
         private System.Windows.Forms.Button btnTabAll;
         private System.Windows.Forms.Button btnTabActive;
@@ -1698,12 +1706,12 @@
         private System.Windows.Forms.DataGridView dgvVoucher;
 
         
-        private DoAnLapTrinhTrucQuan.RoundedPanel pnlDetailCard;
+        private RoundedPanel pnlDetailCard;
         private System.Windows.Forms.Panel pnlDetailHeader;
         private System.Windows.Forms.Label lblDetailTitle;
         private System.Windows.Forms.Panel pnlKichHoat;
         private System.Windows.Forms.Label lblKichHoat;
-        private DoAnLapTrinhTrucQuan.ToggleSwitch toggleKichHoat;
+        private ToggleSwitch toggleKichHoat;
 
         private System.Windows.Forms.Panel pnlFormScroll;
         private System.Windows.Forms.TableLayoutPanel tlpDetailForm;
@@ -1711,12 +1719,12 @@
         // Row 0
         private System.Windows.Forms.Panel pnlFieldMa;
         private System.Windows.Forms.Label lblMaTitle;
-        private DoAnLapTrinhTrucQuan.RoundedPanel pnlBoxMa;
+        private RoundedPanel pnlBoxMa;
         private System.Windows.Forms.TextBox txtVoucherCode;
 
         private System.Windows.Forms.Panel pnlFieldTen;
         private System.Windows.Forms.Label lblTenTitle;
-        private DoAnLapTrinhTrucQuan.RoundedPanel pnlBoxTen;
+        private RoundedPanel pnlBoxTen;
         private System.Windows.Forms.TextBox txtProgramName;
 
         // Row 1
@@ -1728,12 +1736,12 @@
         private System.Windows.Forms.TableLayoutPanel tlpDiscountInputs;
         private System.Windows.Forms.Panel pnlMucGiamContainer;
         private System.Windows.Forms.Label lblMucGiam;
-        private DoAnLapTrinhTrucQuan.RoundedPanel pnlBoxMucGiam;
+        private RoundedPanel pnlBoxMucGiam;
         private System.Windows.Forms.TextBox txtDiscountValue;
         private System.Windows.Forms.Label lblMucGiamUnit;
         private System.Windows.Forms.Panel pnlGiamToiDaContainer;
         private System.Windows.Forms.Label lblGiamToiDa;
-        private DoAnLapTrinhTrucQuan.RoundedPanel pnlBoxGiamToiDa;
+        private RoundedPanel pnlBoxGiamToiDa;
         private System.Windows.Forms.TextBox txtMaxDiscount;
         private System.Windows.Forms.Label lblGiamToiDaUnit;
 
@@ -1741,12 +1749,12 @@
         private System.Windows.Forms.TableLayoutPanel tlpConditionInputs;
         private System.Windows.Forms.Panel pnlDonToiThieuContainer;
         private System.Windows.Forms.Label lblDonToiThieuTitle;
-        private DoAnLapTrinhTrucQuan.RoundedPanel pnlBoxDonToiThieu;
+        private RoundedPanel pnlBoxDonToiThieu;
         private System.Windows.Forms.TextBox txtMinOrder;
         private System.Windows.Forms.Label lblDonToiThieuUnit;
         private System.Windows.Forms.Panel pnlPhamViContainer;
         private System.Windows.Forms.Label lblPhamViTitle;
-        private DoAnLapTrinhTrucQuan.RoundedPanel pnlBoxPhamVi;
+        private RoundedPanel pnlBoxPhamVi;
         private System.Windows.Forms.ComboBox cboScope;
 
         // Row 2
@@ -1755,39 +1763,39 @@
         private System.Windows.Forms.TableLayoutPanel tlpTimeInputs;
         private System.Windows.Forms.Panel pnlNgayBDContainer;
         private System.Windows.Forms.Label lblNgayBD;
-        private DoAnLapTrinhTrucQuan.RoundedPanel pnlBoxNgayBD;
+        private RoundedPanel pnlBoxNgayBD;
         private System.Windows.Forms.DateTimePicker dtpStartDate;
         private System.Windows.Forms.Panel pnlNgayKTContainer;
         private System.Windows.Forms.Label lblNgayKT;
-        private DoAnLapTrinhTrucQuan.RoundedPanel pnlBoxNgayKT;
+        private RoundedPanel pnlBoxNgayKT;
         private System.Windows.Forms.DateTimePicker dtpEndDate;
 
         private System.Windows.Forms.Panel pnlFieldLuotDung;
         private System.Windows.Forms.TableLayoutPanel tlpUsageInputs;
         private System.Windows.Forms.Panel pnlTongLuotContainer;
         private System.Windows.Forms.Label lblTongLuotTitle;
-        private DoAnLapTrinhTrucQuan.RoundedPanel pnlBoxTongLuot;
+        private RoundedPanel pnlBoxTongLuot;
         private System.Windows.Forms.TextBox txtTotalUsage;
         private System.Windows.Forms.FlowLayoutPanel pnlThongKeLuotContainer;
         private System.Windows.Forms.Label lblDaDung;
         private System.Windows.Forms.Label lblConLai;
         private System.Windows.Forms.Panel pnlGioiHanHDContainer;
         private System.Windows.Forms.Label lblGioiHanHDTitle;
-        private DoAnLapTrinhTrucQuan.RoundedPanel pnlBoxGioiHanHD;
+        private RoundedPanel pnlBoxGioiHanHD;
         private System.Windows.Forms.TextBox txtUsagePerOrder;
 
         // Row 3
         private System.Windows.Forms.Panel pnlFieldGhiChu;
         private System.Windows.Forms.Label lblGhiChuTitle;
-        private DoAnLapTrinhTrucQuan.RoundedPanel pnlBoxGhiChu;
+        private RoundedPanel pnlBoxGhiChu;
         private System.Windows.Forms.TextBox txtNote;
 
         // Footer
         private System.Windows.Forms.Panel pnlDetailFooter;
-        private DoAnLapTrinhTrucQuan.RoundedButton btnToggleStatus;
+        private RoundedButton btnToggleStatus;
         private System.Windows.Forms.Panel pnlFooterActions;
-        private DoAnLapTrinhTrucQuan.RoundedButton btnCancel;
-        private DoAnLapTrinhTrucQuan.RoundedButton btnSave;
+        private RoundedButton btnCancel;
+        private RoundedButton btnSave;
         private DataGridViewTextBoxColumn colSTT;
         private DataGridViewTextBoxColumn colMaVoucher;
         private DataGridViewTextBoxColumn colTenChuongTrinh;

@@ -5,19 +5,18 @@ using DoAnLapTrinhTrucQuan.UserControls;
 
 namespace DoAnLapTrinhTrucQuan
 {
-    public partial class FrmMain : Form
+    public partial class frmMain : Form
     {
-        private A03Personalinfo? profileControl;
-        private string currentUsername;
+        private ucPersonalInfo? profileControl;
         private string currentUsername = "Quản lý ca";
         private Button? _activeNavButton = null;
         private System.Windows.Forms.Timer? _clockTimer;
 
-        public FrmMain() : this("Quản lý ca")
+        public frmMain() : this("Quản lý ca")
         {
         }
 
-        public FrmMain(string username)
+        public frmMain(string username)
         {
             InitializeComponent();
 
@@ -70,23 +69,23 @@ namespace DoAnLapTrinhTrucQuan
             btnQuanlynhanvien.Click += btnQuanlynhanvien_Click;
 
             // Module M01: Quản lý món
-            btnQuanlymon.Click += (s, e) => LoadControl(new ucQuanLyMon(), btnQuanlymon);
+            btnQuanlymon.Click += (s, e) => LoadControl(new ucProduct(), btnQuanlymon);
 
             // Module M04: Quản lý Voucher & Khuyến mãi
-            btnVoucher.Click += (s, e) => LoadControl(new ucKhuyenMai(), btnVoucher);
+            btnVoucher.Click += (s, e) => LoadControl(new ucVoucher(), btnVoucher);
 
             // Module Danh mục
             btnDanhmuc.Click += (s, e) => LoadControl(new ucDanhMuc(), btnDanhmuc);
 
             // Module M02 & M03: Tồn kho, Nguyên liệu & Nhập xuất Excel
-            btnNguyenlieukho.Click += (s, e) => LoadControl(new ucQuanLyKho(), btnNguyenlieukho);
+            btnNguyenlieukho.Click += (s, e) => LoadControl(new ucInventory(), btnNguyenlieukho);
 
             // Module Bán hàng & Sơ đồ bàn (UcS01 của thành viên cùng nhóm)
             btnBanhang.Click += (s, e) => LoadControl(new UcS01(), btnBanhang);
             btnSodoban.Click += (s, e) => LoadControl(new UcS01(), btnSodoban);
 
             // Mặc định khi mở phần mềm: Tải màn hình Quản lý kho (M02)
-            LoadControl(new ucQuanLyKho(), btnNguyenlieukho);
+            LoadControl(new ucInventory(), btnNguyenlieukho);
         }
 
         // ── Load profile panel ──────────────────────────────────────────
@@ -94,7 +93,7 @@ namespace DoAnLapTrinhTrucQuan
         {
             if (profileControl == null)
             {
-                profileControl = new A03Personalinfo();
+                profileControl = new ucPersonalInfo();
                 profileControl.ProfileUpdated += (name, _) =>
                 {
                     lbTentopbar.Text = name;
@@ -215,12 +214,12 @@ namespace DoAnLapTrinhTrucQuan
 
         private void btnQuanlynhanvien_Click(object? sender, EventArgs e)
         {
-            LoadControl(new UcM05(), btnQuanlynhanvien);
+            LoadControl(new ucEmployee(), btnQuanlynhanvien);
         }
 
         private void btnXepca_Click(object sender, EventArgs e)
         {
-            LoadControl(new UcM06());
+            LoadControl(new ucShiftSchedule());
         }
     }
 }

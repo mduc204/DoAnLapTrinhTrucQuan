@@ -15,7 +15,7 @@ using DoAnLapTrinhTrucQuan.Models;
 
 namespace DoAnLapTrinhTrucQuan.UserControls
 {
-    public partial class ucQuanLyKho : UserControl
+    public partial class ucInventory : UserControl
     {
         private readonly InventoryBLL _bll;
         private List<Ingredient> _allIngredients = new List<Ingredient>();
@@ -23,7 +23,7 @@ namespace DoAnLapTrinhTrucQuan.UserControls
         private Ingredient? _selectedIngredient = null;
         private bool _isBinding = false;
 
-        public ucQuanLyKho()
+        public ucInventory()
         {
             InitializeComponent();
             _bll = new InventoryBLL();

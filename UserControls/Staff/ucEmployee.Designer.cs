@@ -1,6 +1,6 @@
 namespace DoAnLapTrinhTrucQuan
 {
-    partial class UcM05
+    partial class ucEmployee
     {
         /// <summary> 
         /// Required designer variable.

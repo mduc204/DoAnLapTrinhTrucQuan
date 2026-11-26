@@ -18,7 +18,7 @@ namespace DoAnLapTrinhTrucQuan
 
             if (result == DialogResult.OK)
             {
-                Application.Run(new FrmMain(login.LoggedInUsername));
+                Application.Run(new frmMain(login.LoggedInUsername));
             }
             // If the user closes the login dialog without logging in,
             // the application simply exits.

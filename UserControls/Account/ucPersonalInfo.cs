@@ -2,7 +2,7 @@ using System.Text.RegularExpressions;
 
 namespace DoAnLapTrinhTrucQuan
 {
-    public partial class A03Personalinfo : UserControl
+    public partial class ucPersonalInfo : UserControl
     {
         // ── Dữ liệu mẫu (hardcode) ──────────────────────────────────────
         private string fullName  = "Trần Văn An";
@@ -18,7 +18,7 @@ namespace DoAnLapTrinhTrucQuan
 
         public event Action<string, string>? ProfileUpdated; // (fullName, email)
 
-        public A03Personalinfo()
+        public ucPersonalInfo()
         {
             InitializeComponent();
             picAvatar.Image = Properties.Resources.Background__1_;

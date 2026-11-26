@@ -1,6 +1,6 @@
 namespace DoAnLapTrinhTrucQuan
 {
-    partial class A03Personalinfo
+    partial class ucPersonalInfo
     {
         private System.ComponentModel.IContainer? components = null;
 

@@ -4,7 +4,7 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.Windows.Forms;
 
-namespace DoAnLapTrinhTrucQuan
+namespace DoAnLapTrinhTrucQuan.Helpers
 {
     /// <summary>
     /// Bảng màu chuẩn & Các hàm tiện ích đồ họa GDI+ cho Hệ thống POS Quán Cà phê

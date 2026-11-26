@@ -1,3 +1,5 @@
+using DoAnLapTrinhTrucQuan.Helpers;
+
 namespace DoAnLapTrinhTrucQuan.Forms
 {
     partial class FormPreviewExcel
@@ -21,7 +23,7 @@ namespace DoAnLapTrinhTrucQuan.Forms
             lblTitle = new System.Windows.Forms.Label();
             lblSubtitle = new System.Windows.Forms.Label();
             pnlBottom = new System.Windows.Forms.Panel();
-            btnDong = new DoAnLapTrinhTrucQuan.RoundedButton();
+            btnDong = new DoAnLapTrinhTrucQuan.Helpers.RoundedButton();
             lblCount = new System.Windows.Forms.Label();
             dgvPreview = new System.Windows.Forms.DataGridView();
             pnlHeader.SuspendLayout();
@@ -158,7 +160,7 @@ namespace DoAnLapTrinhTrucQuan.Forms
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblSubtitle;
         private System.Windows.Forms.Panel pnlBottom;
-        private DoAnLapTrinhTrucQuan.RoundedButton btnDong;
+        private RoundedButton btnDong;
         private System.Windows.Forms.Label lblCount;
         private System.Windows.Forms.DataGridView dgvPreview;
     }

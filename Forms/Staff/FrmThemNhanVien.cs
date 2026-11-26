@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Net.Mail;
 
-namespace DoAnLapTrinhTrucQuan
+namespace DoAnLapTrinhTrucQuan.Forms
 {
     public partial class FrmThemNhanVien : Form
     {
