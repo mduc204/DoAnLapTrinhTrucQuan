@@ -89,37 +89,6 @@ namespace DoAnLapTrinhTrucQuan
             pnlDangerBtns = new FlowLayoutPanel();
             btnTamNgung = new Button();
             btnXoaBan = new Button();
-            rowPrinterFee = new TableLayoutPanel();
-            lblMayIn = new Label();
-            lblPhuThu = new Label();
-            boxMayIn = new Panel();
-            txtDetailMayIn = new TextBox();
-            boxPhuThu = new Panel();
-            txtDetailPhuThu = new TextBox();
-            sp4 = new Label();
-            pnlQr = new Panel();
-            pnlQrContent = new Panel();
-            pnlQrRight = new Panel();
-            pnlQrActions = new FlowLayoutPanel();
-            btnPrintQR = new Button();
-            btnDownloadSvg = new Button();
-            lblQrLink = new Label();
-            lblQrDirectTitle = new Label();
-            pnlQrPicHost = new Panel();
-            picQrCode = new PictureBox();
-            pnlQrTop = new Panel();
-            lblMaQR = new Label();
-            lblQrAutoBadge = new Label();
-            rowXY = new TableLayoutPanel();
-            boxX = new Panel();
-            txtDetailX = new TextBox();
-            lblXLabel = new Label();
-            boxY = new Panel();
-            txtDetailY = new TextBox();
-            lblYLabel = new Label();
-            pnlViTriHeader = new Panel();
-            lblViTri = new Label();
-            btnKeoTha = new Button();
             row2 = new TableLayoutPanel();
             lblKhuVuc = new Label();
             lblLoaiBan = new Label();
@@ -168,20 +137,6 @@ namespace DoAnLapTrinhTrucQuan
             pnlDetailBody.SuspendLayout();
             pnlDetailButtons.SuspendLayout();
             pnlDangerBtns.SuspendLayout();
-            rowPrinterFee.SuspendLayout();
-            boxMayIn.SuspendLayout();
-            boxPhuThu.SuspendLayout();
-            pnlQr.SuspendLayout();
-            pnlQrContent.SuspendLayout();
-            pnlQrRight.SuspendLayout();
-            pnlQrActions.SuspendLayout();
-            pnlQrPicHost.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)picQrCode).BeginInit();
-            pnlQrTop.SuspendLayout();
-            rowXY.SuspendLayout();
-            boxX.SuspendLayout();
-            boxY.SuspendLayout();
-            pnlViTriHeader.SuspendLayout();
             row2.SuspendLayout();
             boxKhuVuc.SuspendLayout();
             tlpLoaiSC.SuspendLayout();
@@ -1106,11 +1061,6 @@ namespace DoAnLapTrinhTrucQuan
             pnlDetailBody.BackColor = Color.White;
             pnlDetailBody.Controls.Add(pnlDetailButtons);
             pnlDetailBody.Controls.Add(pnlDangerBtns);
-            pnlDetailBody.Controls.Add(rowPrinterFee);
-            pnlDetailBody.Controls.Add(sp4);
-            pnlDetailBody.Controls.Add(pnlQr);
-            pnlDetailBody.Controls.Add(rowXY);
-            pnlDetailBody.Controls.Add(pnlViTriHeader);
             pnlDetailBody.Controls.Add(row2);
             pnlDetailBody.Controls.Add(row1);
             pnlDetailBody.Dock = DockStyle.Fill;
@@ -1179,6 +1129,7 @@ namespace DoAnLapTrinhTrucQuan
             pnlDangerBtns.Location = new Point(26, 891);
             pnlDangerBtns.Margin = new Padding(6);
             pnlDangerBtns.Name = "pnlDangerBtns";
+            pnlDangerBtns.Padding = new Padding(0, 16, 0, 0);
             pnlDangerBtns.Size = new Size(747, 81);
             pnlDangerBtns.TabIndex = 7;
             pnlDangerBtns.WrapContents = false;
@@ -1220,424 +1171,6 @@ namespace DoAnLapTrinhTrucQuan
             btnXoaBan.TabIndex = 1;
             btnXoaBan.Text = "🗑  Xóa bàn";
             btnXoaBan.UseVisualStyleBackColor = false;
-            // 
-            // rowPrinterFee
-            // 
-            rowPrinterFee.ColumnCount = 2;
-            rowPrinterFee.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            rowPrinterFee.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            rowPrinterFee.Controls.Add(lblMayIn, 0, 0);
-            rowPrinterFee.Controls.Add(lblPhuThu, 1, 0);
-            rowPrinterFee.Controls.Add(boxMayIn, 0, 1);
-            rowPrinterFee.Controls.Add(boxPhuThu, 1, 1);
-            rowPrinterFee.Dock = DockStyle.Top;
-            rowPrinterFee.Location = new Point(26, 742);
-            rowPrinterFee.Margin = new Padding(6);
-            rowPrinterFee.Name = "rowPrinterFee";
-            rowPrinterFee.RowCount = 3;
-            rowPrinterFee.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
-            rowPrinterFee.RowStyles.Add(new RowStyle(SizeType.Absolute, 77F));
-            rowPrinterFee.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            rowPrinterFee.Size = new Size(747, 149);
-            rowPrinterFee.TabIndex = 6;
-            // 
-            // lblMayIn
-            // 
-            lblMayIn.Dock = DockStyle.Fill;
-            lblMayIn.Font = new Font("Segoe UI", 7.5F, FontStyle.Bold);
-            lblMayIn.ForeColor = Color.FromArgb(110, 90, 80);
-            lblMayIn.Location = new Point(0, 0);
-            lblMayIn.Margin = new Padding(0, 0, 11, 0);
-            lblMayIn.Name = "lblMayIn";
-            lblMayIn.Size = new Size(362, 60);
-            lblMayIn.TabIndex = 0;
-            lblMayIn.Text = "MÁY IN ORDER";
-            lblMayIn.TextAlign = ContentAlignment.BottomLeft;
-            // 
-            // lblPhuThu
-            // 
-            lblPhuThu.Dock = DockStyle.Fill;
-            lblPhuThu.Font = new Font("Segoe UI", 7.5F, FontStyle.Bold);
-            lblPhuThu.ForeColor = Color.FromArgb(110, 90, 80);
-            lblPhuThu.Location = new Point(384, 0);
-            lblPhuThu.Margin = new Padding(11, 0, 0, 0);
-            lblPhuThu.Name = "lblPhuThu";
-            lblPhuThu.Size = new Size(363, 60);
-            lblPhuThu.TabIndex = 1;
-            lblPhuThu.Text = "PHỤ THU KHU VỰC / GIỜ ĐẶC BIỆT";
-            lblPhuThu.TextAlign = ContentAlignment.BottomLeft;
-            // 
-            // boxMayIn
-            // 
-            boxMayIn.BackColor = Color.FromArgb(250, 247, 245);
-            boxMayIn.Controls.Add(txtDetailMayIn);
-            boxMayIn.Dock = DockStyle.Fill;
-            boxMayIn.Location = new Point(0, 60);
-            boxMayIn.Margin = new Padding(0, 0, 11, 0);
-            boxMayIn.Name = "boxMayIn";
-            boxMayIn.Padding = new Padding(15, 19, 15, 0);
-            boxMayIn.Size = new Size(362, 77);
-            boxMayIn.TabIndex = 2;
-            // 
-            // txtDetailMayIn
-            // 
-            txtDetailMayIn.BackColor = Color.FromArgb(250, 247, 245);
-            txtDetailMayIn.BorderStyle = BorderStyle.None;
-            txtDetailMayIn.Dock = DockStyle.Fill;
-            txtDetailMayIn.Font = new Font("Segoe UI", 9.5F);
-            txtDetailMayIn.ForeColor = Color.FromArgb(44, 29, 22);
-            txtDetailMayIn.Location = new Point(15, 19);
-            txtDetailMayIn.Margin = new Padding(6);
-            txtDetailMayIn.Name = "txtDetailMayIn";
-            txtDetailMayIn.Size = new Size(332, 34);
-            txtDetailMayIn.TabIndex = 0;
-            // 
-            // boxPhuThu
-            // 
-            boxPhuThu.BackColor = Color.White;
-            boxPhuThu.Controls.Add(txtDetailPhuThu);
-            boxPhuThu.Dock = DockStyle.Fill;
-            boxPhuThu.Location = new Point(384, 60);
-            boxPhuThu.Margin = new Padding(11, 0, 0, 0);
-            boxPhuThu.Name = "boxPhuThu";
-            boxPhuThu.Padding = new Padding(15, 17, 19, 0);
-            boxPhuThu.Size = new Size(363, 77);
-            boxPhuThu.TabIndex = 3;
-            // 
-            // txtDetailPhuThu
-            // 
-            txtDetailPhuThu.BackColor = Color.White;
-            txtDetailPhuThu.BorderStyle = BorderStyle.None;
-            txtDetailPhuThu.Dock = DockStyle.Fill;
-            txtDetailPhuThu.Font = new Font("Segoe UI", 10.5F);
-            txtDetailPhuThu.ForeColor = Color.FromArgb(44, 29, 22);
-            txtDetailPhuThu.Location = new Point(15, 17);
-            txtDetailPhuThu.Margin = new Padding(6);
-            txtDetailPhuThu.Name = "txtDetailPhuThu";
-            txtDetailPhuThu.Size = new Size(329, 38);
-            txtDetailPhuThu.TabIndex = 0;
-            txtDetailPhuThu.TextAlign = HorizontalAlignment.Right;
-            // 
-            // sp4
-            // 
-            sp4.Dock = DockStyle.Top;
-            sp4.Location = new Point(26, 729);
-            sp4.Margin = new Padding(6, 0, 6, 0);
-            sp4.Name = "sp4";
-            sp4.Size = new Size(747, 13);
-            sp4.TabIndex = 5;
-            // 
-            // pnlQr
-            // 
-            pnlQr.BackColor = Color.FromArgb(250, 247, 245);
-            pnlQr.Controls.Add(pnlQrContent);
-            pnlQr.Controls.Add(pnlQrTop);
-            pnlQr.Dock = DockStyle.Top;
-            pnlQr.Location = new Point(26, 443);
-            pnlQr.Margin = new Padding(6);
-            pnlQr.Name = "pnlQr";
-            pnlQr.Padding = new Padding(19, 13, 19, 13);
-            pnlQr.Size = new Size(747, 286);
-            pnlQr.TabIndex = 4;
-            // 
-            // pnlQrContent
-            // 
-            pnlQrContent.Controls.Add(pnlQrRight);
-            pnlQrContent.Controls.Add(pnlQrPicHost);
-            pnlQrContent.Dock = DockStyle.Fill;
-            pnlQrContent.Location = new Point(19, 68);
-            pnlQrContent.Margin = new Padding(6);
-            pnlQrContent.Name = "pnlQrContent";
-            pnlQrContent.Size = new Size(709, 205);
-            pnlQrContent.TabIndex = 1;
-            // 
-            // pnlQrRight
-            // 
-            pnlQrRight.Controls.Add(pnlQrActions);
-            pnlQrRight.Controls.Add(lblQrLink);
-            pnlQrRight.Controls.Add(lblQrDirectTitle);
-            pnlQrRight.Dock = DockStyle.Fill;
-            pnlQrRight.Location = new Point(178, 0);
-            pnlQrRight.Margin = new Padding(6);
-            pnlQrRight.Name = "pnlQrRight";
-            pnlQrRight.Padding = new Padding(7, 4, 0, 0);
-            pnlQrRight.Size = new Size(531, 205);
-            pnlQrRight.TabIndex = 1;
-            // 
-            // pnlQrActions
-            // 
-            pnlQrActions.Controls.Add(btnPrintQR);
-            pnlQrActions.Controls.Add(btnDownloadSvg);
-            pnlQrActions.Dock = DockStyle.Top;
-            pnlQrActions.Location = new Point(7, 107);
-            pnlQrActions.Margin = new Padding(6);
-            pnlQrActions.Name = "pnlQrActions";
-            pnlQrActions.Padding = new Padding(0, 13, 0, 0);
-            pnlQrActions.Size = new Size(524, 90);
-            pnlQrActions.TabIndex = 2;
-            pnlQrActions.WrapContents = false;
-            // 
-            // btnPrintQR
-            // 
-            btnPrintQR.AutoSize = true;
-            btnPrintQR.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnPrintQR.BackColor = Color.FromArgb(146, 64, 14);
-            btnPrintQR.Cursor = Cursors.Hand;
-            btnPrintQR.FlatAppearance.BorderSize = 0;
-            btnPrintQR.FlatStyle = FlatStyle.Flat;
-            btnPrintQR.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
-            btnPrintQR.ForeColor = Color.White;
-            btnPrintQR.Location = new Point(0, 13);
-            btnPrintQR.Margin = new Padding(0, 0, 11, 0);
-            btnPrintQR.Name = "btnPrintQR";
-            btnPrintQR.Size = new Size(271, 40);
-            btnPrintQR.TabIndex = 0;
-            btnPrintQR.Text = "🖨 In tem QR bàn (K80)";
-            btnPrintQR.UseVisualStyleBackColor = false;
-            // 
-            // btnDownloadSvg
-            // 
-            btnDownloadSvg.AutoSize = true;
-            btnDownloadSvg.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnDownloadSvg.BackColor = Color.White;
-            btnDownloadSvg.Cursor = Cursors.Hand;
-            btnDownloadSvg.FlatAppearance.BorderColor = Color.FromArgb(232, 218, 210);
-            btnDownloadSvg.FlatStyle = FlatStyle.Flat;
-            btnDownloadSvg.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
-            btnDownloadSvg.ForeColor = Color.FromArgb(44, 29, 22);
-            btnDownloadSvg.Location = new Point(282, 13);
-            btnDownloadSvg.Margin = new Padding(0);
-            btnDownloadSvg.Name = "btnDownloadSvg";
-            btnDownloadSvg.Size = new Size(166, 42);
-            btnDownloadSvg.TabIndex = 1;
-            btnDownloadSvg.Text = "⤓ Tải ảnh SVG";
-            btnDownloadSvg.UseVisualStyleBackColor = false;
-            // 
-            // lblQrLink
-            // 
-            lblQrLink.AutoEllipsis = true;
-            lblQrLink.BackColor = Color.White;
-            lblQrLink.Dock = DockStyle.Top;
-            lblQrLink.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
-            lblQrLink.ForeColor = Color.FromArgb(146, 64, 14);
-            lblQrLink.Location = new Point(7, 47);
-            lblQrLink.Margin = new Padding(6, 0, 6, 0);
-            lblQrLink.Name = "lblQrLink";
-            lblQrLink.Padding = new Padding(11, 0, 11, 0);
-            lblQrLink.Size = new Size(524, 60);
-            lblQrLink.TabIndex = 1;
-            lblQrLink.Text = "moccafe.vn/order?table=B03";
-            lblQrLink.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // lblQrDirectTitle
-            // 
-            lblQrDirectTitle.Dock = DockStyle.Top;
-            lblQrDirectTitle.Font = new Font("Segoe UI", 7.5F, FontStyle.Bold);
-            lblQrDirectTitle.ForeColor = Color.FromArgb(110, 90, 80);
-            lblQrDirectTitle.Location = new Point(7, 4);
-            lblQrDirectTitle.Margin = new Padding(6, 0, 6, 0);
-            lblQrDirectTitle.Name = "lblQrDirectTitle";
-            lblQrDirectTitle.Size = new Size(524, 43);
-            lblQrDirectTitle.TabIndex = 0;
-            lblQrDirectTitle.Text = "ĐƯỜNG DẪN ĐẶT MÓN TRỰC TIẾP:";
-            // 
-            // pnlQrPicHost
-            // 
-            pnlQrPicHost.Controls.Add(picQrCode);
-            pnlQrPicHost.Dock = DockStyle.Left;
-            pnlQrPicHost.Location = new Point(0, 0);
-            pnlQrPicHost.Margin = new Padding(6);
-            pnlQrPicHost.Name = "pnlQrPicHost";
-            pnlQrPicHost.Size = new Size(178, 205);
-            pnlQrPicHost.TabIndex = 0;
-            // 
-            // picQrCode
-            // 
-            picQrCode.BackColor = Color.White;
-            picQrCode.Location = new Point(0, 4);
-            picQrCode.Margin = new Padding(6);
-            picQrCode.Name = "picQrCode";
-            picQrCode.Size = new Size(160, 183);
-            picQrCode.TabIndex = 0;
-            picQrCode.TabStop = false;
-            // 
-            // pnlQrTop
-            // 
-            pnlQrTop.Controls.Add(lblMaQR);
-            pnlQrTop.Controls.Add(lblQrAutoBadge);
-            pnlQrTop.Dock = DockStyle.Top;
-            pnlQrTop.Location = new Point(19, 13);
-            pnlQrTop.Margin = new Padding(6);
-            pnlQrTop.Name = "pnlQrTop";
-            pnlQrTop.Padding = new Padding(0, 4, 0, 9);
-            pnlQrTop.Size = new Size(709, 55);
-            pnlQrTop.TabIndex = 0;
-            // 
-            // lblMaQR
-            // 
-            lblMaQR.Dock = DockStyle.Fill;
-            lblMaQR.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lblMaQR.ForeColor = Color.FromArgb(44, 29, 22);
-            lblMaQR.Location = new Point(0, 4);
-            lblMaQR.Margin = new Padding(6, 0, 6, 0);
-            lblMaQR.Name = "lblMaQR";
-            lblMaQR.Size = new Size(519, 42);
-            lblMaQR.TabIndex = 0;
-            lblMaQR.Text = "▦  Mã QR gọi món";
-            lblMaQR.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // lblQrAutoBadge
-            // 
-            lblQrAutoBadge.AutoSize = true;
-            lblQrAutoBadge.BackColor = Color.FromArgb(134, 239, 172);
-            lblQrAutoBadge.Dock = DockStyle.Right;
-            lblQrAutoBadge.Font = new Font("Segoe UI", 7.5F, FontStyle.Bold);
-            lblQrAutoBadge.ForeColor = Color.FromArgb(21, 128, 61);
-            lblQrAutoBadge.Location = new Point(519, 4);
-            lblQrAutoBadge.Margin = new Padding(6, 0, 6, 0);
-            lblQrAutoBadge.Name = "lblQrAutoBadge";
-            lblQrAutoBadge.Padding = new Padding(11, 6, 11, 0);
-            lblQrAutoBadge.Size = new Size(190, 34);
-            lblQrAutoBadge.TabIndex = 1;
-            lblQrAutoBadge.Text = "Tự động gắn mã";
-            // 
-            // rowXY
-            // 
-            rowXY.ColumnCount = 2;
-            rowXY.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            rowXY.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            rowXY.Controls.Add(boxX, 0, 0);
-            rowXY.Controls.Add(boxY, 1, 0);
-            rowXY.Dock = DockStyle.Top;
-            rowXY.Location = new Point(26, 349);
-            rowXY.Margin = new Padding(6);
-            rowXY.Name = "rowXY";
-            rowXY.RowCount = 2;
-            rowXY.RowStyles.Add(new RowStyle(SizeType.Absolute, 77F));
-            rowXY.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            rowXY.Size = new Size(747, 94);
-            rowXY.TabIndex = 3;
-            // 
-            // boxX
-            // 
-            boxX.BackColor = Color.FromArgb(250, 247, 245);
-            boxX.Controls.Add(txtDetailX);
-            boxX.Controls.Add(lblXLabel);
-            boxX.Dock = DockStyle.Fill;
-            boxX.Location = new Point(0, 0);
-            boxX.Margin = new Padding(0, 0, 11, 0);
-            boxX.Name = "boxX";
-            boxX.Padding = new Padding(15, 19, 15, 0);
-            boxX.Size = new Size(362, 77);
-            boxX.TabIndex = 0;
-            // 
-            // txtDetailX
-            // 
-            txtDetailX.BackColor = Color.FromArgb(250, 247, 245);
-            txtDetailX.BorderStyle = BorderStyle.None;
-            txtDetailX.Dock = DockStyle.Fill;
-            txtDetailX.Font = new Font("Segoe UI", 9.5F);
-            txtDetailX.ForeColor = Color.FromArgb(44, 29, 22);
-            txtDetailX.Location = new Point(100, 19);
-            txtDetailX.Margin = new Padding(6);
-            txtDetailX.Name = "txtDetailX";
-            txtDetailX.Size = new Size(247, 34);
-            txtDetailX.TabIndex = 1;
-            // 
-            // lblXLabel
-            // 
-            lblXLabel.Dock = DockStyle.Left;
-            lblXLabel.Font = new Font("Segoe UI", 8F);
-            lblXLabel.ForeColor = Color.FromArgb(160, 140, 130);
-            lblXLabel.Location = new Point(15, 19);
-            lblXLabel.Margin = new Padding(6, 0, 6, 0);
-            lblXLabel.Name = "lblXLabel";
-            lblXLabel.Size = new Size(85, 58);
-            lblXLabel.TabIndex = 0;
-            lblXLabel.Text = "X (px):";
-            // 
-            // boxY
-            // 
-            boxY.BackColor = Color.FromArgb(250, 247, 245);
-            boxY.Controls.Add(txtDetailY);
-            boxY.Controls.Add(lblYLabel);
-            boxY.Dock = DockStyle.Fill;
-            boxY.Location = new Point(384, 0);
-            boxY.Margin = new Padding(11, 0, 0, 0);
-            boxY.Name = "boxY";
-            boxY.Padding = new Padding(15, 19, 15, 0);
-            boxY.Size = new Size(363, 77);
-            boxY.TabIndex = 1;
-            // 
-            // txtDetailY
-            // 
-            txtDetailY.BackColor = Color.FromArgb(250, 247, 245);
-            txtDetailY.BorderStyle = BorderStyle.None;
-            txtDetailY.Dock = DockStyle.Fill;
-            txtDetailY.Font = new Font("Segoe UI", 9.5F);
-            txtDetailY.ForeColor = Color.FromArgb(44, 29, 22);
-            txtDetailY.Location = new Point(100, 19);
-            txtDetailY.Margin = new Padding(6);
-            txtDetailY.Name = "txtDetailY";
-            txtDetailY.Size = new Size(248, 34);
-            txtDetailY.TabIndex = 1;
-            // 
-            // lblYLabel
-            // 
-            lblYLabel.Dock = DockStyle.Left;
-            lblYLabel.Font = new Font("Segoe UI", 8F);
-            lblYLabel.ForeColor = Color.FromArgb(160, 140, 130);
-            lblYLabel.Location = new Point(15, 19);
-            lblYLabel.Margin = new Padding(6, 0, 6, 0);
-            lblYLabel.Name = "lblYLabel";
-            lblYLabel.Size = new Size(85, 58);
-            lblYLabel.TabIndex = 0;
-            lblYLabel.Text = "Y (px):";
-            // 
-            // pnlViTriHeader
-            // 
-            pnlViTriHeader.Controls.Add(lblViTri);
-            pnlViTriHeader.Controls.Add(btnKeoTha);
-            pnlViTriHeader.Dock = DockStyle.Top;
-            pnlViTriHeader.Location = new Point(26, 285);
-            pnlViTriHeader.Margin = new Padding(6);
-            pnlViTriHeader.Name = "pnlViTriHeader";
-            pnlViTriHeader.Padding = new Padding(0, 2, 0, 11);
-            pnlViTriHeader.Size = new Size(747, 64);
-            pnlViTriHeader.TabIndex = 2;
-            // 
-            // lblViTri
-            // 
-            lblViTri.Dock = DockStyle.Fill;
-            lblViTri.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lblViTri.ForeColor = Color.FromArgb(44, 29, 22);
-            lblViTri.Location = new Point(0, 2);
-            lblViTri.Margin = new Padding(6, 0, 6, 0);
-            lblViTri.Name = "lblViTri";
-            lblViTri.Size = new Size(475, 51);
-            lblViTri.TabIndex = 0;
-            lblViTri.Text = "✥  Vị trí trên sơ đồ";
-            lblViTri.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // btnKeoTha
-            // 
-            btnKeoTha.AutoSize = true;
-            btnKeoTha.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnKeoTha.BackColor = Color.FromArgb(253, 236, 229);
-            btnKeoTha.Cursor = Cursors.Hand;
-            btnKeoTha.Dock = DockStyle.Right;
-            btnKeoTha.FlatAppearance.BorderSize = 0;
-            btnKeoTha.FlatStyle = FlatStyle.Flat;
-            btnKeoTha.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
-            btnKeoTha.ForeColor = Color.FromArgb(92, 56, 36);
-            btnKeoTha.Location = new Point(475, 2);
-            btnKeoTha.Margin = new Padding(6);
-            btnKeoTha.Name = "btnKeoTha";
-            btnKeoTha.Padding = new Padding(7, 0, 7, 0);
-            btnKeoTha.Size = new Size(272, 51);
-            btnKeoTha.TabIndex = 1;
-            btnKeoTha.Text = "↗  Kéo thả trên bản đồ";
-            btnKeoTha.UseVisualStyleBackColor = false;
             // 
             // row2
             // 
@@ -1992,27 +1525,6 @@ namespace DoAnLapTrinhTrucQuan
             pnlDetailButtons.PerformLayout();
             pnlDangerBtns.ResumeLayout(false);
             pnlDangerBtns.PerformLayout();
-            rowPrinterFee.ResumeLayout(false);
-            boxMayIn.ResumeLayout(false);
-            boxMayIn.PerformLayout();
-            boxPhuThu.ResumeLayout(false);
-            boxPhuThu.PerformLayout();
-            pnlQr.ResumeLayout(false);
-            pnlQrContent.ResumeLayout(false);
-            pnlQrRight.ResumeLayout(false);
-            pnlQrActions.ResumeLayout(false);
-            pnlQrActions.PerformLayout();
-            pnlQrPicHost.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)picQrCode).EndInit();
-            pnlQrTop.ResumeLayout(false);
-            pnlQrTop.PerformLayout();
-            rowXY.ResumeLayout(false);
-            boxX.ResumeLayout(false);
-            boxX.PerformLayout();
-            boxY.ResumeLayout(false);
-            boxY.PerformLayout();
-            pnlViTriHeader.ResumeLayout(false);
-            pnlViTriHeader.PerformLayout();
             row2.ResumeLayout(false);
             boxKhuVuc.ResumeLayout(false);
             boxKhuVuc.PerformLayout();
@@ -2106,54 +1618,23 @@ namespace DoAnLapTrinhTrucQuan
         private TableLayoutPanel row1;
         private TableLayoutPanel row2;
         private TableLayoutPanel tlpLoaiSC;
-        private TableLayoutPanel rowXY;
-        private TableLayoutPanel rowPrinterFee;
         private Panel boxMa;
         private Panel boxTen;
         private Panel boxKhuVuc;
         private Panel boxLoaiBan;
         private Panel boxSucChua;
-        private Panel boxX;
-        private Panel boxY;
-        private Panel boxMayIn;
-        private Panel boxPhuThu;
-        private Panel pnlViTriHeader;
-        private Button btnKeoTha;
-        private Panel pnlQr;
-        private Panel pnlQrTop;
-        private Label lblQrAutoBadge;
-        private Panel pnlQrContent;
-        private Panel pnlQrPicHost;
-        private PictureBox picQrCode;
-        private Panel pnlQrRight;
-        private Label lblQrDirectTitle;
-        private FlowLayoutPanel pnlQrActions;
-        private Button btnDownloadSvg;
-        private Label sp4;
         private FlowLayoutPanel pnlDangerBtns;
         private Label lblMaDinhDanh;
         private Label lblTenHienThi;
         private Label lblKhuVuc;
         private Label lblLoaiBan;
         private Label lblSucChuaSlash;
-        private Label lblViTri;
-        private Label lblXLabel;
-        private Label lblYLabel;
-        private Label lblMaQR;
-        private Label lblQrLink;
-        private Label lblMayIn;
-        private Label lblPhuThu;
         private TextBox txtDetailMa;
         private TextBox txtDetailTen;
         private TextBox txtDetailKhuVuc;
         private TextBox txtDetailLoaiBan;
         private TextBox txtDetailSucChua;
         private TextBox txtDetailSucChuaMax;
-        private TextBox txtDetailX;
-        private TextBox txtDetailY;
-        private TextBox txtDetailMayIn;
-        private TextBox txtDetailPhuThu;
-        private Button btnPrintQR;
         private FlowLayoutPanel pnlDetailButtons;
         private Button btnTamNgung;
         private Button btnXoaBan;

@@ -257,12 +257,9 @@ namespace DoAnLapTrinhTrucQuan
         // ─── Wire events ─────────────────────────────────────────────────────
         private void WireEvents()
         {
-            picQrCode.Paint += PicQrCode_Paint;
-
             // Viền mảnh cho các thẻ / ô nhập giống Figma
             foreach (var c in new Control[] { pnlStatTotal, pnlStatT1, pnlStatT2, pnlStatSV, pnlLeft, pnlDetail,
-                                              boxSearch, boxMa, boxTen, boxKhuVuc, boxLoaiBan, boxSucChua,
-                                              boxX, boxY, boxMayIn, boxPhuThu, pnlQr, lblQrLink })
+                                              boxSearch, boxMa, boxTen, boxKhuVuc, boxLoaiBan, boxSucChua })
                 c.Paint += PaintBorder;
             pnlStatTamNgung.Paint += (s, e) => PaintBorder(s, e, Color.FromArgb(252, 200, 200));
 
@@ -277,9 +274,6 @@ namespace DoAnLapTrinhTrucQuan
             btnThemKhuVuc.Click += (_, _) => MessageBox.Show("Tính năng thêm khu vực mới đang được đồng bộ với sơ đồ POS.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnLuuToaDo.Click += (_, _) => MessageBox.Show("Đã lưu tọa độ sơ đồ tất cả các bàn.", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnXuatExcel.Click += (_, _) => MessageBox.Show($"Đã xuất danh sách {allTables.Count} bàn ra định dạng CSV.", "Xuất dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            btnKeoTha.Click += (_, _) => MessageBox.Show("Chuyển sang tab 'Sơ đồ bàn' để kéo thả trực tiếp vị trí bàn.", "Vị trí sơ đồ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            btnPrintQR.Click += (_, _) => MessageBox.Show($"Đang gửi lệnh in tem QR cho bàn {selectedTable?.Ma ?? ""} (khổ K80).", "In tem QR", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            btnDownloadSvg.Click += (_, _) => MessageBox.Show($"Đã tải ảnh QR SVG cho bàn {selectedTable?.Ma ?? ""}.", "Tải SVG", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             btnHuyDetail.Click += (_, _) =>
             {
@@ -433,36 +427,6 @@ namespace DoAnLapTrinhTrucQuan
             e.Handled = true;
         }
 
-        private void PicQrCode_Paint(object? sender, PaintEventArgs e)
-        {
-            var g = e.Graphics;
-            g.Clear(Color.White);
-            int seed = (selectedTable?.Ma ?? "B03").Sum(ch => ch);
-            int pad = S(5);
-            int cell = (Math.Min(picQrCode.Width, picQrCode.Height) - pad * 2) / 9;
-            int b = Math.Max(1, cell / 2);
-            using var dark = new SolidBrush(Espresso);
-
-            void Finder(int gx, int gy)
-            {
-                int x = pad + gx * cell, y = pad + gy * cell, sz = 3 * cell;
-                g.FillRectangle(dark, x, y, sz, sz);
-                g.FillRectangle(Brushes.White, x + b, y + b, sz - 2 * b, sz - 2 * b);
-                g.FillRectangle(dark, x + 2 * b, y + 2 * b, sz - 4 * b, sz - 4 * b);
-            }
-            Finder(0, 0);
-            Finder(6, 0);
-            Finder(0, 6);
-
-            for (int r = 0; r < 9; r++)
-                for (int c = 0; c < 9; c++)
-                {
-                    if ((r < 4 && c < 4) || (r < 4 && c > 4) || (r > 4 && c < 4)) continue;
-                    if (((r * 13 + c * 7 + seed) % 3) != 0)
-                        g.FillRectangle(dark, pad + c * cell, pad + r * cell, cell - 1, cell - 1);
-                }
-        }
-
         private static GraphicsPath CreateRoundedPath(Rectangle bounds, int radius)
         {
             var path = new GraphicsPath();
@@ -490,12 +454,6 @@ namespace DoAnLapTrinhTrucQuan
             txtDetailLoaiBan.Text = t.LoaiBan;
             txtDetailSucChua.Text = t.SucChua.ToString();
             txtDetailSucChuaMax.Text = t.SucChuaMax.ToString();
-            txtDetailX.Text = t.X.ToString();
-            txtDetailY.Text = t.Y.ToString();
-            txtDetailMayIn.Text = t.MayIn;
-            txtDetailPhuThu.Text = $"{t.PhuThu:N0} VNĐ";
-            lblQrLink.Text = $"moccafe.vn/order?table={t.Ma}";
-            picQrCode.Invalidate();
 
             btnTamNgung.Text = t.TrangThai == "Hoạt động" ? "⏸  Tạm ngưng phục vụ" : "✓  Kích hoạt lại";
             btnTamNgung.ForeColor = t.TrangThai == "Hoạt động" ? Red : Green;
@@ -517,11 +475,6 @@ namespace DoAnLapTrinhTrucQuan
             selectedTable.LoaiBan = txtDetailLoaiBan.Text.Trim();
             if (int.TryParse(txtDetailSucChua.Text, out int sc)) selectedTable.SucChua = sc;
             if (int.TryParse(txtDetailSucChuaMax.Text, out int scm)) selectedTable.SucChuaMax = scm;
-            if (int.TryParse(txtDetailX.Text, out int x)) selectedTable.X = x;
-            if (int.TryParse(txtDetailY.Text, out int y)) selectedTable.Y = y;
-            selectedTable.MayIn = txtDetailMayIn.Text.Trim();
-            string cleanFee = txtDetailPhuThu.Text.Replace("VNĐ", "").Replace("đ", "").Replace(",", "").Trim();
-            if (decimal.TryParse(cleanFee, out decimal pt)) selectedTable.PhuThu = pt;
 
             BuildFilterTabs();
             LoadTableList();
