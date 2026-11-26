@@ -31,6 +31,11 @@ namespace DoAnLapTrinhTrucQuan
             btnThongtincanhan.Click    += (_, _) => ShowProfile();
             btnDangxuatsidebar.Click   += (_, _) => ConfirmLogout();
             btnQuanlynhanvien.Click    += btnQuanlynhanvien_Click;
+<<<<<<< Updated upstream
+=======
+            btnBaocao.Click            += (_, _) => LoadControl(new UcM08());
+            btnQuanlyban.Click         += (_, _) => LoadControl(new UcM07());
+>>>>>>> Stashed changes
         }
 
         // ── Load profile panel ──────────────────────────────────────────
