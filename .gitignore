@@ -1,5 +1,10 @@
 .vs/
 obj/
 bin/
+[Bb]in/
+[Oo]bj/
 *.user
 *.suo
+*.userosscache
+*.sln.docstates
+*.DotSettings.user

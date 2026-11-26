@@ -81,7 +81,7 @@ namespace DoAnLapTrinhTrucQuan
         private void ApplyRoundedRegions()
         {
             SetRoundedRegion(this, 12);
-            foreach (var control in new Control[] { btnDong, button1, btnHuy, dateTimePicker1, cbVaitro })
+            foreach (var control in new Control[] { btnDong, button1, btnHuy, cbVaitro })
                 SetRoundedRegion(control, 8);
         }
 
