@@ -8,6 +8,7 @@ namespace DoAnLapTrinhTrucQuan
     public partial class FrmMain : Form
     {
         private A03Personalinfo? profileControl;
+        private string currentUsername;
         private string currentUsername = "Quản lý ca";
         private Button? _activeNavButton = null;
         private System.Windows.Forms.Timer? _clockTimer;
@@ -20,6 +21,17 @@ namespace DoAnLapTrinhTrucQuan
         {
             InitializeComponent();
 
+            currentUsername = username;
+            WindowState = FormWindowState.Maximized;
+
+            // Show username in topbar
+            lbTentopbar.Text = username;
+
+            // Layout helpers
+            flowLayoutPanel1.Dock = DockStyle.None;
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom |
+                                          AnchorStyles.Left | AnchorStyles.Right;
             currentUsername = string.IsNullOrWhiteSpace(username) ? "Quản lý ca" : username;
             WindowState = FormWindowState.Maximized;
 
@@ -40,6 +52,10 @@ namespace DoAnLapTrinhTrucQuan
             LayoutSidebar();
             LayoutTopbar();
 
+            // Sidebar navigation
+            btnThongtincanhan.Click += (_, _) => ShowProfile();
+            btnDangxuatsidebar.Click += (_, _) => ConfirmLogout();
+            btnQuanlynhanvien.Click += btnQuanlynhanvien_Click;
             KhoiTaoSuKien();
             KhoiTaoDongHo();
         }
@@ -81,6 +97,7 @@ namespace DoAnLapTrinhTrucQuan
                 profileControl = new A03Personalinfo();
                 profileControl.ProfileUpdated += (name, _) =>
                 {
+                    lbTentopbar.Text = name;
                     if (lbTentopbar != null) lbTentopbar.Text = name;
                     currentUsername = name;
                 };
@@ -199,6 +216,11 @@ namespace DoAnLapTrinhTrucQuan
         private void btnQuanlynhanvien_Click(object? sender, EventArgs e)
         {
             LoadControl(new UcM05(), btnQuanlynhanvien);
+        }
+
+        private void btnXepca_Click(object sender, EventArgs e)
+        {
+            LoadControl(new UcM06());
         }
     }
 }
