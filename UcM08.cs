@@ -50,6 +50,16 @@ namespace DoAnLapTrinhTrucQuan
         public UcM08()
         {
             InitializeComponent();
+            SetupKpiCard(pnlKpi1, lblKpi1Title, lblKpi1Val, lblKpi1Sub, lblKpi1Badge,
+                "Doanh thu thuần", BrownDark, Color.FromArgb(232, 244, 234), Color.FromArgb(46, 125, 50));
+            SetupKpiCard(pnlKpi2, lblKpi2Title, lblKpi2Val, lblKpi2Sub, lblKpi2Badge,
+                "Tổng đơn hàng", BrownPeak, Color.FromArgb(245, 238, 230), BrownDark);
+            SetupKpiCard(pnlKpi3, lblKpi3Title, lblKpi3Val, lblKpi3Sub, lblKpi3Badge,
+                "Giá vốn (COGS)", BrownPeak, Color.FromArgb(245, 238, 230), BrownDark);
+            SetupKpiCard(pnlKpi4, lblKpi4Title, lblKpi4Val, lblKpi4Sub, lblKpi4Badge,
+                "Lợi nhuận gộp", BrownDark, Color.FromArgb(232, 244, 234), Color.FromArgb(46, 125, 50));
+            SetupKpiCard(pnlKpi5, lblKpi5Title, lblKpi5Val, lblKpi5Sub, lblKpi5Badge,
+                "Giảm giá / Voucher", BrownPeak, Color.FromArgb(252, 236, 230), Color.FromArgb(160, 70, 50));
             SeedPresets();
             BuildTimeTabs();
             WireEvents();

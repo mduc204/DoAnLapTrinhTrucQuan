@@ -12,21 +12,15 @@ namespace DoAnLapTrinhTrucQuan
 
         private void InitializeComponent()
         {
-            var cream = Color.FromArgb(250, 247, 243);
-            var brown = Color.FromArgb(86, 57, 39);
-            var borderGray = Color.FromArgb(232, 224, 218);
-
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             pnlScroll = new Panel();
             pnlContainer = new Panel();
-
-            // Header
             pnlHeader = new Panel();
             lblTitle = new Label();
             btnXuatExcel = new Button();
             btnXuatPdf = new Button();
             btnInBaoCao = new Button();
-
-            // Filter Bar
             pnlFilterCard = new Panel();
             pnlTimeTabs = new Panel();
             pnlFilterControls = new Panel();
@@ -36,29 +30,22 @@ namespace DoAnLapTrinhTrucQuan
             lblThuNganLabel = new Label();
             cboThuNgan = new ComboBox();
             btnApDung = new Button();
-
-            // KPI Row
             pnlKpiRow = new Panel();
-            pnlKpi1 = new Panel(); lblKpi1Title = new Label(); lblKpi1Val = new Label(); lblKpi1Sub = new Label(); lblKpi1Badge = new Label();
-            pnlKpi2 = new Panel(); lblKpi2Title = new Label(); lblKpi2Val = new Label(); lblKpi2Sub = new Label(); lblKpi2Badge = new Label();
-            pnlKpi3 = new Panel(); lblKpi3Title = new Label(); lblKpi3Val = new Label(); lblKpi3Sub = new Label(); lblKpi3Badge = new Label();
-            pnlKpi4 = new Panel(); lblKpi4Title = new Label(); lblKpi4Val = new Label(); lblKpi4Sub = new Label(); lblKpi4Badge = new Label();
-            pnlKpi5 = new Panel(); lblKpi5Title = new Label(); lblKpi5Val = new Label(); lblKpi5Sub = new Label(); lblKpi5Badge = new Label();
-
-            // Middle Row (Charts)
+            pnlKpi1 = new Panel();
+            pnlKpi2 = new Panel();
+            pnlKpi3 = new Panel();
+            pnlKpi4 = new Panel();
+            pnlKpi5 = new Panel();
             pnlChartsRow = new Panel();
             pnlHourlyCard = new Panel();
             lblHourlyTitle = new Label();
             lblHourlyLegend = new Label();
             pnlHourlyChart = new DoubleBufferedPanel();
-
             pnlPaymentCard = new Panel();
             lblPaymentTitle = new Label();
             lblPaymentBadge = new Label();
             pnlDonutChart = new DoubleBufferedPanel();
             pnlPaymentList = new Panel();
-
-            // Bottom Row (Top 5 + Cash Drawer)
             pnlBottomRow = new Panel();
             pnlTop5Card = new Panel();
             lblTop5Title = new Label();
@@ -67,11 +54,35 @@ namespace DoAnLapTrinhTrucQuan
             pnlTop5Footer = new Panel();
             lblTop5Total = new Label();
             lnkViewAllMenu = new LinkLabel();
-
             pnlCashCard = new Panel();
             lblCashTitle = new Label();
             lblCashStatusBadge = new Label();
             pnlCashBody = new Panel();
+            pnlCashFooter = new Panel();
+            lblCashierAvatar = new Label();
+            lblCashierName = new Label();
+            lblCashierRole = new Label();
+            btnXacNhanKetCa = new Button();
+            lblKpi1Title = new Label();
+            lblKpi1Val = new Label();
+            lblKpi1Sub = new Label();
+            lblKpi1Badge = new Label();
+            lblKpi2Title = new Label();
+            lblKpi2Val = new Label();
+            lblKpi2Sub = new Label();
+            lblKpi2Badge = new Label();
+            lblKpi3Title = new Label();
+            lblKpi3Val = new Label();
+            lblKpi3Sub = new Label();
+            lblKpi3Badge = new Label();
+            lblKpi4Title = new Label();
+            lblKpi4Val = new Label();
+            lblKpi4Sub = new Label();
+            lblKpi4Badge = new Label();
+            lblKpi5Title = new Label();
+            lblKpi5Val = new Label();
+            lblKpi5Sub = new Label();
+            lblKpi5Badge = new Label();
             lblCashOpenVal = new Label();
             lblCashInVal = new Label();
             lblCashOutVal = new Label();
@@ -79,335 +90,858 @@ namespace DoAnLapTrinhTrucQuan
             lblCashTotalVal = new Label();
             pnlCashDiffBar = new Panel();
             lblCashDiffVal = new Label();
-            pnlCashFooter = new Panel();
-            lblCashierAvatar = new Label();
-            lblCashierName = new Label();
-            lblCashierRole = new Label();
-            btnXacNhanKetCa = new Button();
-
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
+            pnlScroll.SuspendLayout();
+            pnlContainer.SuspendLayout();
+            pnlHeader.SuspendLayout();
+            pnlFilterCard.SuspendLayout();
+            pnlFilterControls.SuspendLayout();
+            pnlKpiRow.SuspendLayout();
+            pnlChartsRow.SuspendLayout();
+            pnlHourlyCard.SuspendLayout();
+            pnlPaymentCard.SuspendLayout();
+            pnlBottomRow.SuspendLayout();
+            pnlTop5Card.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvTop5).BeginInit();
+            pnlTop5Footer.SuspendLayout();
+            pnlCashCard.SuspendLayout();
+            pnlCashFooter.SuspendLayout();
             SuspendLayout();
-
-            // Root UserControl
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = cream;
-            Dock = DockStyle.Fill;
-            Font = new Font("Segoe UI", 9F);
-            Name = "UcM08";
-            Size = new Size(1240, 920);
-
-            // Scroll wrapper
-            pnlScroll.Dock = DockStyle.Fill;
+            // 
+            // pnlScroll
+            // 
             pnlScroll.AutoScroll = true;
-            pnlScroll.BackColor = cream;
-            Controls.Add(pnlScroll);
-
-            pnlContainer.Location = new Point(0, 0);
-            pnlContainer.Size = new Size(1200, 910);
-            pnlContainer.BackColor = cream;
-            pnlContainer.Padding = new Padding(20, 14, 20, 20);
+            pnlScroll.BackColor = Color.FromArgb(250, 247, 243);
             pnlScroll.Controls.Add(pnlContainer);
-
-            // ════════════════════════════════════════════════════════════════
-            // 1. Header Row
-            // ════════════════════════════════════════════════════════════════
-            pnlHeader.Location = new Point(20, 14);
-            pnlHeader.Size = new Size(1160, 66);
-            pnlHeader.BackColor = cream;
+            pnlScroll.Dock = DockStyle.Fill;
+            pnlScroll.Location = new Point(0, 0);
+            pnlScroll.Margin = new Padding(6, 6, 6, 6);
+            pnlScroll.Name = "pnlScroll";
+            pnlScroll.Size = new Size(2087, 1330);
+            pnlScroll.TabIndex = 0;
+            // 
+            // pnlContainer
+            // 
+            pnlContainer.BackColor = Color.FromArgb(250, 247, 243);
             pnlContainer.Controls.Add(pnlHeader);
-
-            lblTitle.Text = "Báo cáo thống kê";
-            lblTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            lblTitle.ForeColor = Color.FromArgb(52, 34, 23);
-            lblTitle.Location = new Point(0, 10);
-            lblTitle.AutoSize = true;
+            pnlContainer.Controls.Add(pnlFilterCard);
+            pnlContainer.Controls.Add(pnlKpiRow);
+            pnlContainer.Controls.Add(pnlChartsRow);
+            pnlContainer.Controls.Add(pnlBottomRow);
+            pnlContainer.Location = new Point(0, 0);
+            pnlContainer.Margin = new Padding(6, 6, 6, 6);
+            pnlContainer.Name = "pnlContainer";
+            pnlContainer.Padding = new Padding(37, 30, 37, 43);
+            pnlContainer.Size = new Size(2229, 1941);
+            pnlContainer.TabIndex = 0;
+            // 
+            // pnlHeader
+            // 
+            pnlHeader.BackColor = Color.FromArgb(250, 247, 243);
             pnlHeader.Controls.Add(lblTitle);
-
-            btnXuatExcel = MakeActionBtn("Xuất Excel", Color.White, Color.FromArgb(22, 101, 52), borderGray);
-            btnXuatPdf = MakeActionBtn("Xuất PDF", Color.White, Color.FromArgb(185, 28, 28), borderGray);
-            btnInBaoCao = MakeActionBtn("In báo cáo ngày", Color.FromArgb(74, 48, 32), Color.White, Color.FromArgb(74, 48, 32));
-            btnXuatExcel.Size = new Size(112, 30);
-            btnXuatPdf.Size = new Size(104, 30);
-            btnInBaoCao.Size = new Size(134, 32);
             pnlHeader.Controls.Add(btnXuatExcel);
             pnlHeader.Controls.Add(btnXuatPdf);
             pnlHeader.Controls.Add(btnInBaoCao);
-
-            // ════════════════════════════════════════════════════════════════
-            // 2. Filter Bar Card
-            // ════════════════════════════════════════════════════════════════
-            pnlFilterCard.Location = new Point(20, 82);
-            pnlFilterCard.Size = new Size(1160, 88);
+            pnlHeader.Location = new Point(37, 30);
+            pnlHeader.Margin = new Padding(6, 6, 6, 6);
+            pnlHeader.Name = "pnlHeader";
+            pnlHeader.Size = new Size(2154, 141);
+            pnlHeader.TabIndex = 0;
+            // 
+            // lblTitle
+            // 
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblTitle.ForeColor = Color.FromArgb(52, 34, 23);
+            lblTitle.Location = new Point(0, 21);
+            lblTitle.Margin = new Padding(6, 0, 6, 0);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(419, 65);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "Báo cáo thống kê";
+            // 
+            // btnXuatExcel
+            // 
+            btnXuatExcel.Location = new Point(0, 0);
+            btnXuatExcel.Margin = new Padding(6, 6, 6, 6);
+            btnXuatExcel.Name = "btnXuatExcel";
+            btnXuatExcel.Size = new Size(208, 64);
+            btnXuatExcel.TabIndex = 1;
+            // 
+            // btnXuatPdf
+            // 
+            btnXuatPdf.Location = new Point(0, 0);
+            btnXuatPdf.Margin = new Padding(6, 6, 6, 6);
+            btnXuatPdf.Name = "btnXuatPdf";
+            btnXuatPdf.Size = new Size(193, 64);
+            btnXuatPdf.TabIndex = 2;
+            // 
+            // btnInBaoCao
+            // 
+            btnInBaoCao.Location = new Point(0, 0);
+            btnInBaoCao.Margin = new Padding(6, 6, 6, 6);
+            btnInBaoCao.Name = "btnInBaoCao";
+            btnInBaoCao.Size = new Size(249, 68);
+            btnInBaoCao.TabIndex = 3;
+            // 
+            // pnlFilterCard
+            // 
             pnlFilterCard.BackColor = Color.White;
             pnlFilterCard.BorderStyle = BorderStyle.FixedSingle;
-            pnlContainer.Controls.Add(pnlFilterCard);
-
-            pnlTimeTabs.Location = new Point(12, 8);
-            pnlTimeTabs.Size = new Size(760, 32);
-            pnlTimeTabs.BackColor = Color.Transparent;
             pnlFilterCard.Controls.Add(pnlTimeTabs);
-
-            pnlFilterControls.Location = new Point(12, 46);
-            pnlFilterControls.Size = new Size(1134, 34);
-            pnlFilterControls.BackColor = Color.Transparent;
             pnlFilterCard.Controls.Add(pnlFilterControls);
-
-            lblDateRange.Text = "📅  23/10/2024 – 23/10/2024";
+            pnlFilterCard.Location = new Point(37, 175);
+            pnlFilterCard.Margin = new Padding(6, 6, 6, 6);
+            pnlFilterCard.Name = "pnlFilterCard";
+            pnlFilterCard.Size = new Size(2153, 185);
+            pnlFilterCard.TabIndex = 1;
+            // 
+            // pnlTimeTabs
+            // 
+            pnlTimeTabs.BackColor = Color.Transparent;
+            pnlTimeTabs.Location = new Point(22, 17);
+            pnlTimeTabs.Margin = new Padding(6, 6, 6, 6);
+            pnlTimeTabs.Name = "pnlTimeTabs";
+            pnlTimeTabs.Size = new Size(1411, 68);
+            pnlTimeTabs.TabIndex = 0;
+            // 
+            // pnlFilterControls
+            // 
+            pnlFilterControls.BackColor = Color.Transparent;
+            pnlFilterControls.Controls.Add(lblDateRange);
+            pnlFilterControls.Controls.Add(lblCaLabel);
+            pnlFilterControls.Controls.Add(cboCa);
+            pnlFilterControls.Controls.Add(lblThuNganLabel);
+            pnlFilterControls.Controls.Add(cboThuNgan);
+            pnlFilterControls.Controls.Add(btnApDung);
+            pnlFilterControls.Location = new Point(22, 98);
+            pnlFilterControls.Margin = new Padding(6, 6, 6, 6);
+            pnlFilterControls.Name = "pnlFilterControls";
+            pnlFilterControls.Size = new Size(2106, 73);
+            pnlFilterControls.TabIndex = 1;
+            // 
+            // lblDateRange
+            // 
+            lblDateRange.AutoSize = true;
             lblDateRange.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblDateRange.ForeColor = Color.FromArgb(55, 55, 55);
-            lblDateRange.Location = new Point(0, 6);
-            lblDateRange.AutoSize = true;
-            pnlFilterControls.Controls.Add(lblDateRange);
-
-            lblCaLabel.Text = "CA:";
+            lblDateRange.Location = new Point(0, 13);
+            lblDateRange.Margin = new Padding(6, 0, 6, 0);
+            lblDateRange.Name = "lblDateRange";
+            lblDateRange.Size = new Size(356, 32);
+            lblDateRange.TabIndex = 0;
+            lblDateRange.Text = "📅  23/10/2024 – 23/10/2024";
+            // 
+            // lblCaLabel
+            // 
+            lblCaLabel.AutoSize = true;
             lblCaLabel.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
             lblCaLabel.ForeColor = Color.Gray;
-            lblCaLabel.Location = new Point(220, 7);
-            lblCaLabel.AutoSize = true;
-            pnlFilterControls.Controls.Add(lblCaLabel);
-
+            lblCaLabel.Location = new Point(409, 15);
+            lblCaLabel.Margin = new Padding(6, 0, 6, 0);
+            lblCaLabel.Name = "lblCaLabel";
+            lblCaLabel.Size = new Size(50, 31);
+            lblCaLabel.TabIndex = 1;
+            lblCaLabel.Text = "CA:";
+            // 
+            // cboCa
+            // 
             cboCa.DropDownStyle = ComboBoxStyle.DropDownList;
             cboCa.Font = new Font("Segoe UI", 9F);
             cboCa.Items.AddRange(new object[] { "Cả ngày", "Ca sáng (06:30 - 14:30)", "Ca chiều (14:30 - 22:00)" });
-            cboCa.SelectedIndex = 0;
-            cboCa.Location = new Point(250, 3);
-            cboCa.Size = new Size(175, 25);
-            pnlFilterControls.Controls.Add(cboCa);
-
-            lblThuNganLabel.Text = "THU NGÂN:";
+            cboCa.Location = new Point(464, 6);
+            cboCa.Margin = new Padding(6, 6, 6, 6);
+            cboCa.Name = "cboCa";
+            cboCa.Size = new Size(322, 40);
+            cboCa.TabIndex = 2;
+            // 
+            // lblThuNganLabel
+            // 
+            lblThuNganLabel.AutoSize = true;
             lblThuNganLabel.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
             lblThuNganLabel.ForeColor = Color.Gray;
-            lblThuNganLabel.Location = new Point(445, 7);
-            lblThuNganLabel.AutoSize = true;
-            pnlFilterControls.Controls.Add(lblThuNganLabel);
-
+            lblThuNganLabel.Location = new Point(826, 15);
+            lblThuNganLabel.Margin = new Padding(6, 0, 6, 0);
+            lblThuNganLabel.Name = "lblThuNganLabel";
+            lblThuNganLabel.Size = new Size(142, 31);
+            lblThuNganLabel.TabIndex = 3;
+            lblThuNganLabel.Text = "THU NGÂN:";
+            // 
+            // cboThuNgan
+            // 
             cboThuNgan.DropDownStyle = ComboBoxStyle.DropDownList;
             cboThuNgan.Font = new Font("Segoe UI", 9F);
             cboThuNgan.Items.AddRange(new object[] { "Tất cả nhân viên", "Nguyễn Văn Hưng", "Lê Mỹ Hạnh", "Trần Đình Nam" });
-            cboThuNgan.SelectedIndex = 0;
-            cboThuNgan.Location = new Point(522, 3);
-            cboThuNgan.Size = new Size(185, 25);
-            pnlFilterControls.Controls.Add(cboThuNgan);
-
-            btnApDung = MakeActionBtn("↻ Áp dụng", brown, Color.White, brown);
-            btnApDung.Size = new Size(105, 28);
-            btnApDung.Location = new Point(1020, 1);
-            pnlFilterControls.Controls.Add(btnApDung);
-
-            // ════════════════════════════════════════════════════════════════
-            // 3. KPI Summary Cards Row
-            // ════════════════════════════════════════════════════════════════
-            pnlKpiRow.Location = new Point(20, 182);
-            pnlKpiRow.Size = new Size(1160, 112);
+            cboThuNgan.Location = new Point(969, 6);
+            cboThuNgan.Margin = new Padding(6, 6, 6, 6);
+            cboThuNgan.Name = "cboThuNgan";
+            cboThuNgan.Size = new Size(340, 40);
+            cboThuNgan.TabIndex = 4;
+            // 
+            // btnApDung
+            // 
+            btnApDung.Location = new Point(1894, 2);
+            btnApDung.Margin = new Padding(6, 6, 6, 6);
+            btnApDung.Name = "btnApDung";
+            btnApDung.Size = new Size(195, 60);
+            btnApDung.TabIndex = 5;
+            // 
+            // pnlKpiRow
+            // 
             pnlKpiRow.BackColor = Color.Transparent;
-            pnlContainer.Controls.Add(pnlKpiRow);
-
-            SetupKpiCard(pnlKpi1, lblKpi1Title, lblKpi1Val, lblKpi1Sub, lblKpi1Badge, "DOANH THU THUẦN", Color.FromArgb(45, 30, 20), Color.FromArgb(220, 252, 231), Color.FromArgb(22, 163, 74));
-            SetupKpiCard(pnlKpi2, lblKpi2Title, lblKpi2Val, lblKpi2Sub, lblKpi2Badge, "TỔNG ĐƠN HÀNG POS", Color.FromArgb(45, 30, 20), Color.Transparent, Color.FromArgb(55, 55, 55));
-            SetupKpiCard(pnlKpi3, lblKpi3Title, lblKpi3Val, lblKpi3Sub, lblKpi3Badge, "GIÁ VỐN (COGS)", Color.FromArgb(45, 30, 20), Color.FromArgb(220, 252, 231), Color.FromArgb(22, 163, 74));
-            SetupKpiCard(pnlKpi4, lblKpi4Title, lblKpi4Val, lblKpi4Sub, lblKpi4Badge, "LỢI NHUẬN GỘP", Color.FromArgb(45, 30, 20), Color.Transparent, Color.FromArgb(22, 163, 74));
-            SetupKpiCard(pnlKpi5, lblKpi5Title, lblKpi5Val, lblKpi5Sub, lblKpi5Badge, "GIẢM GIÁ & KHUYẾN MÃI", Color.FromArgb(220, 38, 38), Color.Transparent, Color.FromArgb(220, 38, 38));
-
-            pnlKpiRow.Controls.AddRange(new Control[] { pnlKpi1, pnlKpi2, pnlKpi3, pnlKpi4, pnlKpi5 });
-
-            // ════════════════════════════════════════════════════════════════
-            // 4. Middle Charts Row
-            // ════════════════════════════════════════════════════════════════
-            pnlChartsRow.Location = new Point(20, 306);
-            pnlChartsRow.Size = new Size(1160, 290);
+            pnlKpiRow.Controls.Add(pnlKpi1);
+            pnlKpiRow.Controls.Add(pnlKpi2);
+            pnlKpiRow.Controls.Add(pnlKpi3);
+            pnlKpiRow.Controls.Add(pnlKpi4);
+            pnlKpiRow.Controls.Add(pnlKpi5);
+            pnlKpiRow.Location = new Point(37, 388);
+            pnlKpiRow.Margin = new Padding(6, 6, 6, 6);
+            pnlKpiRow.Name = "pnlKpiRow";
+            pnlKpiRow.Size = new Size(2154, 239);
+            pnlKpiRow.TabIndex = 2;
+            // 
+            // pnlKpi1
+            // 
+            pnlKpi1.Location = new Point(0, 0);
+            pnlKpi1.Margin = new Padding(6, 6, 6, 6);
+            pnlKpi1.Name = "pnlKpi1";
+            pnlKpi1.Size = new Size(371, 213);
+            pnlKpi1.TabIndex = 0;
+            // 
+            // pnlKpi2
+            // 
+            pnlKpi2.Location = new Point(0, 0);
+            pnlKpi2.Margin = new Padding(6, 6, 6, 6);
+            pnlKpi2.Name = "pnlKpi2";
+            pnlKpi2.Size = new Size(371, 213);
+            pnlKpi2.TabIndex = 1;
+            // 
+            // pnlKpi3
+            // 
+            pnlKpi3.Location = new Point(0, 0);
+            pnlKpi3.Margin = new Padding(6, 6, 6, 6);
+            pnlKpi3.Name = "pnlKpi3";
+            pnlKpi3.Size = new Size(371, 213);
+            pnlKpi3.TabIndex = 2;
+            // 
+            // pnlKpi4
+            // 
+            pnlKpi4.Location = new Point(0, 0);
+            pnlKpi4.Margin = new Padding(6, 6, 6, 6);
+            pnlKpi4.Name = "pnlKpi4";
+            pnlKpi4.Size = new Size(371, 213);
+            pnlKpi4.TabIndex = 3;
+            // 
+            // pnlKpi5
+            // 
+            pnlKpi5.Location = new Point(0, 0);
+            pnlKpi5.Margin = new Padding(6, 6, 6, 6);
+            pnlKpi5.Name = "pnlKpi5";
+            pnlKpi5.Size = new Size(371, 213);
+            pnlKpi5.TabIndex = 4;
+            // 
+            // pnlChartsRow
+            // 
             pnlChartsRow.BackColor = Color.Transparent;
-            pnlContainer.Controls.Add(pnlChartsRow);
-
-            // Left: Hourly Revenue
+            pnlChartsRow.Controls.Add(pnlHourlyCard);
+            pnlChartsRow.Controls.Add(pnlPaymentCard);
+            pnlChartsRow.Location = new Point(37, 653);
+            pnlChartsRow.Margin = new Padding(6, 6, 6, 6);
+            pnlChartsRow.Name = "pnlChartsRow";
+            pnlChartsRow.Size = new Size(2154, 619);
+            pnlChartsRow.TabIndex = 3;
+            // 
+            // pnlHourlyCard
+            // 
             pnlHourlyCard.BackColor = Color.White;
             pnlHourlyCard.BorderStyle = BorderStyle.FixedSingle;
-            pnlChartsRow.Controls.Add(pnlHourlyCard);
-
-            lblHourlyTitle.Text = "📊  Doanh thu theo giờ";
+            pnlHourlyCard.Controls.Add(lblHourlyTitle);
+            pnlHourlyCard.Controls.Add(lblHourlyLegend);
+            pnlHourlyCard.Controls.Add(pnlHourlyChart);
+            pnlHourlyCard.Location = new Point(0, 0);
+            pnlHourlyCard.Margin = new Padding(6, 6, 6, 6);
+            pnlHourlyCard.Name = "pnlHourlyCard";
+            pnlHourlyCard.Size = new Size(370, 211);
+            pnlHourlyCard.TabIndex = 0;
+            // 
+            // lblHourlyTitle
+            // 
+            lblHourlyTitle.AutoSize = true;
             lblHourlyTitle.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             lblHourlyTitle.ForeColor = Color.FromArgb(45, 30, 20);
-            lblHourlyTitle.Location = new Point(14, 12);
-            lblHourlyTitle.AutoSize = true;
-            pnlHourlyCard.Controls.Add(lblHourlyTitle);
-
-            lblHourlyLegend.Text = "● Giờ thường    ● Giờ cao điểm";
+            lblHourlyTitle.Location = new Point(26, 26);
+            lblHourlyTitle.Margin = new Padding(6, 0, 6, 0);
+            lblHourlyTitle.Name = "lblHourlyTitle";
+            lblHourlyTitle.Size = new Size(351, 41);
+            lblHourlyTitle.TabIndex = 0;
+            lblHourlyTitle.Text = "📊  Doanh thu theo giờ";
+            // 
+            // lblHourlyLegend
+            // 
+            lblHourlyLegend.AutoSize = true;
             lblHourlyLegend.Font = new Font("Segoe UI", 8.5F);
             lblHourlyLegend.ForeColor = Color.FromArgb(100, 90, 80);
-            lblHourlyLegend.AutoSize = true;
-            pnlHourlyCard.Controls.Add(lblHourlyLegend);
-
-            pnlHourlyChart.Location = new Point(14, 44);
-            pnlHourlyChart.Size = new Size(700, 232);
-            pnlHourlyChart.BackColor = Color.White;
-            pnlHourlyCard.Controls.Add(pnlHourlyChart);
-
-            // Right: Payment Breakdown
+            lblHourlyLegend.Location = new Point(0, 0);
+            lblHourlyLegend.Margin = new Padding(6, 0, 6, 0);
+            lblHourlyLegend.Name = "lblHourlyLegend";
+            lblHourlyLegend.Size = new Size(332, 31);
+            lblHourlyLegend.TabIndex = 1;
+            lblHourlyLegend.Text = "● Giờ thường    ● Giờ cao điểm";
+            // 
+            // pnlPaymentCard
+            // 
             pnlPaymentCard.BackColor = Color.White;
             pnlPaymentCard.BorderStyle = BorderStyle.FixedSingle;
-            pnlChartsRow.Controls.Add(pnlPaymentCard);
-
-            lblPaymentTitle.Text = "◔  Cơ cấu thanh toán";
+            pnlPaymentCard.Controls.Add(lblPaymentTitle);
+            pnlPaymentCard.Controls.Add(lblPaymentBadge);
+            pnlPaymentCard.Controls.Add(pnlDonutChart);
+            pnlPaymentCard.Controls.Add(pnlPaymentList);
+            pnlPaymentCard.Location = new Point(0, 0);
+            pnlPaymentCard.Margin = new Padding(6, 6, 6, 6);
+            pnlPaymentCard.Name = "pnlPaymentCard";
+            pnlPaymentCard.Size = new Size(370, 211);
+            pnlPaymentCard.TabIndex = 1;
+            // 
+            // lblPaymentTitle
+            // 
+            lblPaymentTitle.AutoSize = true;
             lblPaymentTitle.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             lblPaymentTitle.ForeColor = Color.FromArgb(45, 30, 20);
-            lblPaymentTitle.Location = new Point(14, 12);
-            lblPaymentTitle.AutoSize = true;
-            pnlPaymentCard.Controls.Add(lblPaymentTitle);
-
-            lblPaymentBadge.Text = "100% Thu";
+            lblPaymentTitle.Location = new Point(26, 26);
+            lblPaymentTitle.Margin = new Padding(6, 0, 6, 0);
+            lblPaymentTitle.Name = "lblPaymentTitle";
+            lblPaymentTitle.Size = new Size(317, 41);
+            lblPaymentTitle.TabIndex = 0;
+            lblPaymentTitle.Text = "◔  Cơ cấu thanh toán";
+            // 
+            // lblPaymentBadge
+            // 
+            lblPaymentBadge.AutoSize = true;
+            lblPaymentBadge.BackColor = Color.FromArgb(245, 240, 235);
             lblPaymentBadge.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             lblPaymentBadge.ForeColor = Color.FromArgb(100, 80, 65);
-            lblPaymentBadge.BackColor = Color.FromArgb(245, 240, 235);
-            lblPaymentBadge.Padding = new Padding(6, 2, 6, 2);
-            lblPaymentBadge.AutoSize = true;
-            pnlPaymentCard.Controls.Add(lblPaymentBadge);
-
-            pnlDonutChart.Location = new Point(14, 42);
-            pnlDonutChart.Size = new Size(370, 128);
-            pnlDonutChart.BackColor = Color.White;
-            pnlPaymentCard.Controls.Add(pnlDonutChart);
-
-            pnlPaymentList.Location = new Point(14, 174);
-            pnlPaymentList.Size = new Size(370, 106);
+            lblPaymentBadge.Location = new Point(0, 0);
+            lblPaymentBadge.Margin = new Padding(6, 0, 6, 0);
+            lblPaymentBadge.Name = "lblPaymentBadge";
+            lblPaymentBadge.Padding = new Padding(11, 4, 11, 4);
+            lblPaymentBadge.Size = new Size(138, 38);
+            lblPaymentBadge.TabIndex = 1;
+            lblPaymentBadge.Text = "100% Thu";
+            // 
+            // pnlPaymentList
+            // 
             pnlPaymentList.BackColor = Color.White;
-            pnlPaymentCard.Controls.Add(pnlPaymentList);
-
-            // ════════════════════════════════════════════════════════════════
-            // 5. Bottom Row (Top 5 + Cash Drawer)
-            // ════════════════════════════════════════════════════════════════
-            pnlBottomRow.Location = new Point(20, 608);
-            pnlBottomRow.Size = new Size(1160, 286);
+            pnlPaymentList.Location = new Point(26, 371);
+            pnlPaymentList.Margin = new Padding(6, 6, 6, 6);
+            pnlPaymentList.Name = "pnlPaymentList";
+            pnlPaymentList.Size = new Size(687, 226);
+            pnlPaymentList.TabIndex = 2;
+            // 
+            // pnlBottomRow
+            // 
             pnlBottomRow.BackColor = Color.Transparent;
-            pnlContainer.Controls.Add(pnlBottomRow);
-
-            // Left: Top 5 Best Sellers
+            pnlBottomRow.Controls.Add(pnlTop5Card);
+            pnlBottomRow.Controls.Add(pnlCashCard);
+            pnlBottomRow.Location = new Point(37, 1297);
+            pnlBottomRow.Margin = new Padding(6, 6, 6, 6);
+            pnlBottomRow.Name = "pnlBottomRow";
+            pnlBottomRow.Size = new Size(2154, 610);
+            pnlBottomRow.TabIndex = 4;
+            // 
+            // pnlTop5Card
+            // 
             pnlTop5Card.BackColor = Color.White;
             pnlTop5Card.BorderStyle = BorderStyle.FixedSingle;
-            pnlBottomRow.Controls.Add(pnlTop5Card);
-
-            lblTop5Title.Text = "☆  Top 5 món bán chạy";
+            pnlTop5Card.Controls.Add(lblTop5Title);
+            pnlTop5Card.Controls.Add(lblTop5Share);
+            pnlTop5Card.Controls.Add(dgvTop5);
+            pnlTop5Card.Controls.Add(pnlTop5Footer);
+            pnlTop5Card.Location = new Point(0, 0);
+            pnlTop5Card.Margin = new Padding(6, 6, 6, 6);
+            pnlTop5Card.Name = "pnlTop5Card";
+            pnlTop5Card.Size = new Size(370, 211);
+            pnlTop5Card.TabIndex = 0;
+            // 
+            // lblTop5Title
+            // 
+            lblTop5Title.AutoSize = true;
             lblTop5Title.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             lblTop5Title.ForeColor = Color.FromArgb(45, 30, 20);
-            lblTop5Title.Location = new Point(14, 12);
-            lblTop5Title.AutoSize = true;
-            pnlTop5Card.Controls.Add(lblTop5Title);
-
-            lblTop5Share.Text = "Chiếm 65.4% tổng doanh số";
+            lblTop5Title.Location = new Point(26, 26);
+            lblTop5Title.Margin = new Padding(6, 0, 6, 0);
+            lblTop5Title.Name = "lblTop5Title";
+            lblTop5Title.Size = new Size(341, 41);
+            lblTop5Title.TabIndex = 0;
+            lblTop5Title.Text = "☆  Top 5 món bán chạy";
+            // 
+            // lblTop5Share
+            // 
+            lblTop5Share.AutoSize = true;
             lblTop5Share.Font = new Font("Segoe UI", 8.5F);
             lblTop5Share.ForeColor = Color.Gray;
-            lblTop5Share.AutoSize = true;
-            pnlTop5Card.Controls.Add(lblTop5Share);
-
-            dgvTop5.Location = new Point(14, 42);
-            dgvTop5.Size = new Size(690, 202);
-            dgvTop5.BackgroundColor = Color.White;
-            dgvTop5.BorderStyle = BorderStyle.None;
-            dgvTop5.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvTop5.GridColor = Color.FromArgb(242, 238, 234);
-            dgvTop5.RowHeadersVisible = false;
+            lblTop5Share.Location = new Point(0, 0);
+            lblTop5Share.Margin = new Padding(6, 0, 6, 0);
+            lblTop5Share.Name = "lblTop5Share";
+            lblTop5Share.Size = new Size(299, 31);
+            lblTop5Share.TabIndex = 1;
+            lblTop5Share.Text = "Chiếm 65.4% tổng doanh số";
+            // 
+            // dgvTop5
+            // 
             dgvTop5.AllowUserToAddRows = false;
             dgvTop5.AllowUserToDeleteRows = false;
             dgvTop5.AllowUserToResizeRows = false;
-            dgvTop5.ReadOnly = true;
-            dgvTop5.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvTop5.MultiSelect = false;
-            dgvTop5.EnableHeadersVisualStyles = false;
+            dgvTop5.BackgroundColor = Color.White;
+            dgvTop5.BorderStyle = BorderStyle.None;
+            dgvTop5.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(250, 247, 243);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(120, 105, 95);
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvTop5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvTop5.ColumnHeadersHeight = 30;
             dgvTop5.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvTop5.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(250, 247, 243);
-            dgvTop5.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(120, 105, 95);
-            dgvTop5.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
-            dgvTop5.DefaultCellStyle.SelectionBackColor = Color.FromArgb(255, 250, 244);
-            dgvTop5.DefaultCellStyle.SelectionForeColor = Color.FromArgb(45, 30, 20);
+            dgvTop5.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6 });
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(255, 250, 244);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(45, 30, 20);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvTop5.DefaultCellStyle = dataGridViewCellStyle6;
+            dgvTop5.EnableHeadersVisualStyles = false;
+            dgvTop5.GridColor = Color.FromArgb(242, 238, 234);
+            dgvTop5.Location = new Point(26, 90);
+            dgvTop5.Margin = new Padding(6, 6, 6, 6);
+            dgvTop5.MultiSelect = false;
+            dgvTop5.Name = "dgvTop5";
+            dgvTop5.ReadOnly = true;
+            dgvTop5.RowHeadersVisible = false;
+            dgvTop5.RowHeadersWidth = 82;
             dgvTop5.RowTemplate.Height = 34;
-
-            dgvTop5.Columns.Add(new DataGridViewTextBoxColumn { Name = "colHang", HeaderText = "HẠNG", Width = 50, SortMode = DataGridViewColumnSortMode.NotSortable });
-            dgvTop5.Columns.Add(new DataGridViewTextBoxColumn { Name = "colTenMon", HeaderText = "MÃ MÓN & TÊN SẢN PHẨM", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill, SortMode = DataGridViewColumnSortMode.NotSortable });
-            dgvTop5.Columns.Add(new DataGridViewTextBoxColumn { Name = "colSoLuong", HeaderText = "SỐ LƯỢNG BÁN", Width = 96, SortMode = DataGridViewColumnSortMode.NotSortable, DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleRight } });
-            dgvTop5.Columns.Add(new DataGridViewTextBoxColumn { Name = "colDonGia", HeaderText = "ĐƠN GIÁ TB", Width = 86, SortMode = DataGridViewColumnSortMode.NotSortable, DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleRight } });
-            dgvTop5.Columns.Add(new DataGridViewTextBoxColumn { Name = "colThanhTien", HeaderText = "TỔNG THÀNH TIỀN", Width = 115, SortMode = DataGridViewColumnSortMode.NotSortable, DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleRight, Font = new Font("Segoe UI", 9F, FontStyle.Bold) } });
-            dgvTop5.Columns.Add(new DataGridViewTextBoxColumn { Name = "colTyTrong", HeaderText = "TỶ TRỌNG", Width = 75, SortMode = DataGridViewColumnSortMode.NotSortable, DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter } });
-            pnlTop5Card.Controls.Add(dgvTop5);
-
-            pnlTop5Footer.Location = new Point(14, 248);
-            pnlTop5Footer.Size = new Size(690, 30);
+            dgvTop5.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvTop5.Size = new Size(1281, 431);
+            dgvTop5.TabIndex = 2;
+            // 
+            // pnlTop5Footer
+            // 
             pnlTop5Footer.BackColor = Color.White;
-            pnlTop5Card.Controls.Add(pnlTop5Footer);
-
-            lblTop5Total.Text = "Tổng doanh thu Top 5 món: 5.528.000 đ";
+            pnlTop5Footer.Controls.Add(lblTop5Total);
+            pnlTop5Footer.Controls.Add(lnkViewAllMenu);
+            pnlTop5Footer.Location = new Point(26, 529);
+            pnlTop5Footer.Margin = new Padding(6, 6, 6, 6);
+            pnlTop5Footer.Name = "pnlTop5Footer";
+            pnlTop5Footer.Size = new Size(1281, 64);
+            pnlTop5Footer.TabIndex = 3;
+            // 
+            // lblTop5Total
+            // 
+            lblTop5Total.AutoSize = true;
             lblTop5Total.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
             lblTop5Total.ForeColor = Color.FromArgb(65, 50, 40);
-            lblTop5Total.Location = new Point(0, 6);
-            lblTop5Total.AutoSize = true;
-            pnlTop5Footer.Controls.Add(lblTop5Total);
-
-            lnkViewAllMenu.Text = "Xem toàn bộ 34 món thực đơn >";
-            lnkViewAllMenu.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
-            lnkViewAllMenu.LinkColor = Color.FromArgb(145, 95, 60);
-            lnkViewAllMenu.ActiveLinkColor = brown;
+            lblTop5Total.Location = new Point(0, 13);
+            lblTop5Total.Margin = new Padding(6, 0, 6, 0);
+            lblTop5Total.Name = "lblTop5Total";
+            lblTop5Total.Size = new Size(441, 31);
+            lblTop5Total.TabIndex = 0;
+            lblTop5Total.Text = "Tổng doanh thu Top 5 món: 5.528.000 đ";
+            // 
+            // lnkViewAllMenu
+            // 
+            lnkViewAllMenu.ActiveLinkColor = Color.FromArgb(86, 57, 39);
             lnkViewAllMenu.AutoSize = true;
+            lnkViewAllMenu.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
             lnkViewAllMenu.LinkBehavior = LinkBehavior.HoverUnderline;
-            pnlTop5Footer.Controls.Add(lnkViewAllMenu);
-
-            // Right: Cash Drawer & Handover
+            lnkViewAllMenu.LinkColor = Color.FromArgb(145, 95, 60);
+            lnkViewAllMenu.Location = new Point(0, 0);
+            lnkViewAllMenu.Margin = new Padding(6, 0, 6, 0);
+            lnkViewAllMenu.Name = "lnkViewAllMenu";
+            lnkViewAllMenu.Size = new Size(364, 31);
+            lnkViewAllMenu.TabIndex = 1;
+            lnkViewAllMenu.TabStop = true;
+            lnkViewAllMenu.Text = "Xem toàn bộ 34 món thực đơn >";
+            // 
+            // pnlCashCard
+            // 
             pnlCashCard.BackColor = Color.White;
             pnlCashCard.BorderStyle = BorderStyle.FixedSingle;
-            pnlBottomRow.Controls.Add(pnlCashCard);
-
-            lblCashTitle.Text = "🗄  Két tiền & bàn giao ca";
+            pnlCashCard.Controls.Add(lblCashTitle);
+            pnlCashCard.Controls.Add(lblCashStatusBadge);
+            pnlCashCard.Controls.Add(pnlCashBody);
+            pnlCashCard.Controls.Add(pnlCashFooter);
+            pnlCashCard.Location = new Point(0, 0);
+            pnlCashCard.Margin = new Padding(6, 6, 6, 6);
+            pnlCashCard.Name = "pnlCashCard";
+            pnlCashCard.Size = new Size(370, 211);
+            pnlCashCard.TabIndex = 1;
+            // 
+            // lblCashTitle
+            // 
+            lblCashTitle.AutoSize = true;
             lblCashTitle.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             lblCashTitle.ForeColor = Color.FromArgb(45, 30, 20);
-            lblCashTitle.Location = new Point(14, 12);
-            lblCashTitle.AutoSize = true;
-            pnlCashCard.Controls.Add(lblCashTitle);
-
-            lblCashStatusBadge.Text = "● Khớp 100%";
-            lblCashStatusBadge.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
-            lblCashStatusBadge.BackColor = Color.FromArgb(220, 252, 231);
-            lblCashStatusBadge.ForeColor = Color.FromArgb(22, 163, 74);
-            lblCashStatusBadge.Padding = new Padding(8, 3, 8, 3);
+            lblCashTitle.Location = new Point(26, 26);
+            lblCashTitle.Margin = new Padding(6, 0, 6, 0);
+            lblCashTitle.Name = "lblCashTitle";
+            lblCashTitle.Size = new Size(363, 41);
+            lblCashTitle.TabIndex = 0;
+            lblCashTitle.Text = "🗄  Két tiền & bàn giao ca";
+            // 
+            // lblCashStatusBadge
+            // 
             lblCashStatusBadge.AutoSize = true;
-            pnlCashCard.Controls.Add(lblCashStatusBadge);
-
-            pnlCashBody.Location = new Point(14, 44);
-            pnlCashBody.Size = new Size(370, 180);
+            lblCashStatusBadge.BackColor = Color.FromArgb(220, 252, 231);
+            lblCashStatusBadge.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
+            lblCashStatusBadge.ForeColor = Color.FromArgb(22, 163, 74);
+            lblCashStatusBadge.Location = new Point(0, 0);
+            lblCashStatusBadge.Margin = new Padding(6, 0, 6, 0);
+            lblCashStatusBadge.Name = "lblCashStatusBadge";
+            lblCashStatusBadge.Padding = new Padding(15, 6, 15, 6);
+            lblCashStatusBadge.Size = new Size(181, 42);
+            lblCashStatusBadge.TabIndex = 1;
+            lblCashStatusBadge.Text = "● Khớp 100%";
+            // 
+            // pnlCashBody
+            // 
             pnlCashBody.BackColor = Color.White;
-            pnlCashCard.Controls.Add(pnlCashBody);
-
-            BuildCashRows();
-
-            pnlCashFooter.Location = new Point(14, 228);
-            pnlCashFooter.Size = new Size(370, 48);
+            pnlCashBody.Location = new Point(26, 94);
+            pnlCashBody.Margin = new Padding(6, 6, 6, 6);
+            pnlCashBody.Name = "pnlCashBody";
+            pnlCashBody.Size = new Size(687, 384);
+            pnlCashBody.TabIndex = 2;
+            // 
+            // pnlCashFooter
+            // 
             pnlCashFooter.BackColor = Color.FromArgb(250, 247, 243);
-            pnlCashCard.Controls.Add(pnlCashFooter);
-
-            lblCashierAvatar.Text = "NVH";
-            lblCashierAvatar.Size = new Size(34, 34);
-            lblCashierAvatar.Location = new Point(8, 7);
-            lblCashierAvatar.BackColor = brown;
-            lblCashierAvatar.ForeColor = Color.White;
-            lblCashierAvatar.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
-            lblCashierAvatar.TextAlign = ContentAlignment.MiddleCenter;
             pnlCashFooter.Controls.Add(lblCashierAvatar);
-
-            lblCashierName.Text = "Nguyễn Văn Hưng";
+            pnlCashFooter.Controls.Add(lblCashierName);
+            pnlCashFooter.Controls.Add(lblCashierRole);
+            pnlCashFooter.Controls.Add(btnXacNhanKetCa);
+            pnlCashFooter.Location = new Point(26, 486);
+            pnlCashFooter.Margin = new Padding(6, 6, 6, 6);
+            pnlCashFooter.Name = "pnlCashFooter";
+            pnlCashFooter.Size = new Size(687, 102);
+            pnlCashFooter.TabIndex = 3;
+            // 
+            // lblCashierAvatar
+            // 
+            lblCashierAvatar.BackColor = Color.FromArgb(86, 57, 39);
+            lblCashierAvatar.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            lblCashierAvatar.ForeColor = Color.White;
+            lblCashierAvatar.Location = new Point(15, 15);
+            lblCashierAvatar.Margin = new Padding(6, 0, 6, 0);
+            lblCashierAvatar.Name = "lblCashierAvatar";
+            lblCashierAvatar.Size = new Size(63, 73);
+            lblCashierAvatar.TabIndex = 0;
+            lblCashierAvatar.Text = "NVH";
+            lblCashierAvatar.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblCashierName
+            // 
+            lblCashierName.AutoSize = true;
             lblCashierName.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblCashierName.ForeColor = Color.FromArgb(45, 30, 20);
-            lblCashierName.Location = new Point(50, 6);
-            lblCashierName.AutoSize = true;
-            pnlCashFooter.Controls.Add(lblCashierName);
-
-            lblCashierRole.Text = "Quản lý ca · MC-004";
+            lblCashierName.Location = new Point(93, 13);
+            lblCashierName.Margin = new Padding(6, 0, 6, 0);
+            lblCashierName.Name = "lblCashierName";
+            lblCashierName.Size = new Size(225, 32);
+            lblCashierName.TabIndex = 1;
+            lblCashierName.Text = "Nguyễn Văn Hưng";
+            // 
+            // lblCashierRole
+            // 
+            lblCashierRole.AutoSize = true;
             lblCashierRole.Font = new Font("Segoe UI", 8F);
             lblCashierRole.ForeColor = Color.Gray;
-            lblCashierRole.Location = new Point(50, 24);
-            lblCashierRole.AutoSize = true;
-            pnlCashFooter.Controls.Add(lblCashierRole);
-
-            btnXacNhanKetCa = MakeActionBtn("Xác nhận kết ca", Color.White, brown, borderGray);
-            btnXacNhanKetCa.Size = new Size(124, 30);
+            lblCashierRole.Location = new Point(93, 51);
+            lblCashierRole.Margin = new Padding(6, 0, 6, 0);
+            lblCashierRole.Name = "lblCashierRole";
+            lblCashierRole.Size = new Size(210, 30);
+            lblCashierRole.TabIndex = 2;
+            lblCashierRole.Text = "Quản lý ca · MC-004";
+            // 
+            // btnXacNhanKetCa
+            // 
             btnXacNhanKetCa.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
-            pnlCashFooter.Controls.Add(btnXacNhanKetCa);
-
+            btnXacNhanKetCa.Location = new Point(0, 0);
+            btnXacNhanKetCa.Margin = new Padding(6, 6, 6, 6);
+            btnXacNhanKetCa.Name = "btnXacNhanKetCa";
+            btnXacNhanKetCa.Size = new Size(230, 64);
+            btnXacNhanKetCa.TabIndex = 3;
+            // 
+            // lblKpi1Title
+            // 
+            lblKpi1Title.Location = new Point(0, 0);
+            lblKpi1Title.Name = "lblKpi1Title";
+            lblKpi1Title.Size = new Size(100, 23);
+            lblKpi1Title.TabIndex = 0;
+            // 
+            // lblKpi1Val
+            // 
+            lblKpi1Val.Location = new Point(0, 0);
+            lblKpi1Val.Name = "lblKpi1Val";
+            lblKpi1Val.Size = new Size(100, 23);
+            lblKpi1Val.TabIndex = 0;
+            // 
+            // lblKpi1Sub
+            // 
+            lblKpi1Sub.Location = new Point(0, 0);
+            lblKpi1Sub.Name = "lblKpi1Sub";
+            lblKpi1Sub.Size = new Size(100, 23);
+            lblKpi1Sub.TabIndex = 0;
+            // 
+            // lblKpi1Badge
+            // 
+            lblKpi1Badge.Location = new Point(0, 0);
+            lblKpi1Badge.Name = "lblKpi1Badge";
+            lblKpi1Badge.Size = new Size(100, 23);
+            lblKpi1Badge.TabIndex = 0;
+            // 
+            // lblKpi2Title
+            // 
+            lblKpi2Title.Location = new Point(0, 0);
+            lblKpi2Title.Name = "lblKpi2Title";
+            lblKpi2Title.Size = new Size(100, 23);
+            lblKpi2Title.TabIndex = 0;
+            // 
+            // lblKpi2Val
+            // 
+            lblKpi2Val.Location = new Point(0, 0);
+            lblKpi2Val.Name = "lblKpi2Val";
+            lblKpi2Val.Size = new Size(100, 23);
+            lblKpi2Val.TabIndex = 0;
+            // 
+            // lblKpi2Sub
+            // 
+            lblKpi2Sub.Location = new Point(0, 0);
+            lblKpi2Sub.Name = "lblKpi2Sub";
+            lblKpi2Sub.Size = new Size(100, 23);
+            lblKpi2Sub.TabIndex = 0;
+            // 
+            // lblKpi2Badge
+            // 
+            lblKpi2Badge.Location = new Point(0, 0);
+            lblKpi2Badge.Name = "lblKpi2Badge";
+            lblKpi2Badge.Size = new Size(100, 23);
+            lblKpi2Badge.TabIndex = 0;
+            // 
+            // lblKpi3Title
+            // 
+            lblKpi3Title.Location = new Point(0, 0);
+            lblKpi3Title.Name = "lblKpi3Title";
+            lblKpi3Title.Size = new Size(100, 23);
+            lblKpi3Title.TabIndex = 0;
+            // 
+            // lblKpi3Val
+            // 
+            lblKpi3Val.Location = new Point(0, 0);
+            lblKpi3Val.Name = "lblKpi3Val";
+            lblKpi3Val.Size = new Size(100, 23);
+            lblKpi3Val.TabIndex = 0;
+            // 
+            // lblKpi3Sub
+            // 
+            lblKpi3Sub.Location = new Point(0, 0);
+            lblKpi3Sub.Name = "lblKpi3Sub";
+            lblKpi3Sub.Size = new Size(100, 23);
+            lblKpi3Sub.TabIndex = 0;
+            // 
+            // lblKpi3Badge
+            // 
+            lblKpi3Badge.Location = new Point(0, 0);
+            lblKpi3Badge.Name = "lblKpi3Badge";
+            lblKpi3Badge.Size = new Size(100, 23);
+            lblKpi3Badge.TabIndex = 0;
+            // 
+            // lblKpi4Title
+            // 
+            lblKpi4Title.Location = new Point(0, 0);
+            lblKpi4Title.Name = "lblKpi4Title";
+            lblKpi4Title.Size = new Size(100, 23);
+            lblKpi4Title.TabIndex = 0;
+            // 
+            // lblKpi4Val
+            // 
+            lblKpi4Val.Location = new Point(0, 0);
+            lblKpi4Val.Name = "lblKpi4Val";
+            lblKpi4Val.Size = new Size(100, 23);
+            lblKpi4Val.TabIndex = 0;
+            // 
+            // lblKpi4Sub
+            // 
+            lblKpi4Sub.Location = new Point(0, 0);
+            lblKpi4Sub.Name = "lblKpi4Sub";
+            lblKpi4Sub.Size = new Size(100, 23);
+            lblKpi4Sub.TabIndex = 0;
+            // 
+            // lblKpi4Badge
+            // 
+            lblKpi4Badge.Location = new Point(0, 0);
+            lblKpi4Badge.Name = "lblKpi4Badge";
+            lblKpi4Badge.Size = new Size(100, 23);
+            lblKpi4Badge.TabIndex = 0;
+            // 
+            // lblKpi5Title
+            // 
+            lblKpi5Title.Location = new Point(0, 0);
+            lblKpi5Title.Name = "lblKpi5Title";
+            lblKpi5Title.Size = new Size(100, 23);
+            lblKpi5Title.TabIndex = 0;
+            // 
+            // lblKpi5Val
+            // 
+            lblKpi5Val.Location = new Point(0, 0);
+            lblKpi5Val.Name = "lblKpi5Val";
+            lblKpi5Val.Size = new Size(100, 23);
+            lblKpi5Val.TabIndex = 0;
+            // 
+            // lblKpi5Sub
+            // 
+            lblKpi5Sub.Location = new Point(0, 0);
+            lblKpi5Sub.Name = "lblKpi5Sub";
+            lblKpi5Sub.Size = new Size(100, 23);
+            lblKpi5Sub.TabIndex = 0;
+            // 
+            // lblKpi5Badge
+            // 
+            lblKpi5Badge.Location = new Point(0, 0);
+            lblKpi5Badge.Name = "lblKpi5Badge";
+            lblKpi5Badge.Size = new Size(100, 23);
+            lblKpi5Badge.TabIndex = 0;
+            // 
+            // lblCashOpenVal
+            // 
+            lblCashOpenVal.Location = new Point(0, 0);
+            lblCashOpenVal.Name = "lblCashOpenVal";
+            lblCashOpenVal.Size = new Size(100, 23);
+            lblCashOpenVal.TabIndex = 0;
+            // 
+            // lblCashInVal
+            // 
+            lblCashInVal.Location = new Point(0, 0);
+            lblCashInVal.Name = "lblCashInVal";
+            lblCashInVal.Size = new Size(100, 23);
+            lblCashInVal.TabIndex = 0;
+            // 
+            // lblCashOutVal
+            // 
+            lblCashOutVal.Location = new Point(0, 0);
+            lblCashOutVal.Name = "lblCashOutVal";
+            lblCashOutVal.Size = new Size(100, 23);
+            lblCashOutVal.TabIndex = 0;
+            // 
+            // pnlCashTotalBar
+            // 
+            pnlCashTotalBar.Location = new Point(0, 0);
+            pnlCashTotalBar.Name = "pnlCashTotalBar";
+            pnlCashTotalBar.Size = new Size(200, 100);
+            pnlCashTotalBar.TabIndex = 0;
+            // 
+            // lblCashTotalVal
+            // 
+            lblCashTotalVal.Location = new Point(0, 0);
+            lblCashTotalVal.Name = "lblCashTotalVal";
+            lblCashTotalVal.Size = new Size(100, 23);
+            lblCashTotalVal.TabIndex = 0;
+            // 
+            // pnlCashDiffBar
+            // 
+            pnlCashDiffBar.Location = new Point(0, 0);
+            pnlCashDiffBar.Name = "pnlCashDiffBar";
+            pnlCashDiffBar.Size = new Size(200, 100);
+            pnlCashDiffBar.TabIndex = 0;
+            // 
+            // lblCashDiffVal
+            // 
+            lblCashDiffVal.Location = new Point(0, 0);
+            lblCashDiffVal.Name = "lblCashDiffVal";
+            lblCashDiffVal.Size = new Size(100, 23);
+            lblCashDiffVal.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.MinimumWidth = 10;
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            dataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.MinimumWidth = 10;
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            dataGridViewTextBoxColumn2.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewTextBoxColumn3.MinimumWidth = 10;
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            dataGridViewTextBoxColumn3.ReadOnly = true;
+            dataGridViewTextBoxColumn3.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewTextBoxColumn4.MinimumWidth = 10;
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            dataGridViewTextBoxColumn4.ReadOnly = true;
+            dataGridViewTextBoxColumn4.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            dataGridViewTextBoxColumn5.MinimumWidth = 10;
+            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            dataGridViewTextBoxColumn5.ReadOnly = true;
+            dataGridViewTextBoxColumn5.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            dataGridViewTextBoxColumn6.MinimumWidth = 10;
+            dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            dataGridViewTextBoxColumn6.ReadOnly = true;
+            dataGridViewTextBoxColumn6.Width = 200;
+            // 
+            // UcM08
+            // 
+            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(250, 247, 243);
+            Controls.Add(pnlScroll);
+            Font = new Font("Segoe UI", 9F);
+            Margin = new Padding(6, 6, 6, 6);
+            Name = "UcM08";
+            Size = new Size(2087, 1330);
+            pnlScroll.ResumeLayout(false);
+            pnlContainer.ResumeLayout(false);
+            pnlHeader.ResumeLayout(false);
+            pnlHeader.PerformLayout();
+            pnlFilterCard.ResumeLayout(false);
+            pnlFilterControls.ResumeLayout(false);
+            pnlFilterControls.PerformLayout();
+            pnlKpiRow.ResumeLayout(false);
+            pnlChartsRow.ResumeLayout(false);
+            pnlHourlyCard.ResumeLayout(false);
+            pnlHourlyCard.PerformLayout();
+            pnlPaymentCard.ResumeLayout(false);
+            pnlPaymentCard.PerformLayout();
+            pnlBottomRow.ResumeLayout(false);
+            pnlTop5Card.ResumeLayout(false);
+            pnlTop5Card.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvTop5).EndInit();
+            pnlTop5Footer.ResumeLayout(false);
+            pnlTop5Footer.PerformLayout();
+            pnlCashCard.ResumeLayout(false);
+            pnlCashCard.PerformLayout();
+            pnlCashFooter.ResumeLayout(false);
+            pnlCashFooter.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -612,5 +1146,11 @@ namespace DoAnLapTrinhTrucQuan
         private Panel pnlCashFooter = null!;
         private Label lblCashierAvatar = null!, lblCashierName = null!, lblCashierRole = null!;
         private Button btnXacNhanKetCa = null!;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     }
 }
