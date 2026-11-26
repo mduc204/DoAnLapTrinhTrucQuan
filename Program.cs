@@ -13,7 +13,7 @@ namespace DoAnLapTrinhTrucQuan
 
             // Run login dialog; A01Login must set DialogResult = OK and
             // expose LoggedInUsername when login succeeds.
-            var login = new A01Login();
+            var login = new dlgLogin();
             var result = login.ShowDialog();
 
             if (result == DialogResult.OK)

@@ -1,6 +1,6 @@
 namespace DoAnLapTrinhTrucQuan.Forms
 {
-    partial class frmPhieuKhoPopup
+    partial class dlgStockVoucher
     {
         private System.ComponentModel.IContainer components = null;
 

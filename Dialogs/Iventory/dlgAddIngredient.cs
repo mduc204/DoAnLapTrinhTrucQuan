@@ -12,7 +12,7 @@ using DoAnLapTrinhTrucQuan.Models;
 
 namespace DoAnLapTrinhTrucQuan.Forms
 {
-    public partial class FormThemNguyenLieu : Form
+    public partial class dlgAddIngredient : Form
     {
         public Ingredient? NewIngredient { get; private set; }
         public bool HasImportedData { get; private set; } = false;
@@ -20,7 +20,7 @@ namespace DoAnLapTrinhTrucQuan.Forms
         private List<Ingredient> _importedPreviewList = new List<Ingredient>();
         private string _selectedExcelPath = string.Empty;
 
-        public FormThemNguyenLieu(int initialTab = 0)
+        public dlgAddIngredient(int initialTab = 0)
         {
             InitializeComponent();
             SetupForm();
@@ -310,7 +310,7 @@ namespace DoAnLapTrinhTrucQuan.Forms
                 return;
             }
 
-            using (var dlg = new FormPreviewExcel("Xem trước dữ liệu Excel", $"Tệp: {Path.GetFileName(_selectedExcelPath)}", _importedPreviewList))
+            using (var dlg = new dlgPreviewExcel("Xem trước dữ liệu Excel", $"Tệp: {Path.GetFileName(_selectedExcelPath)}", _importedPreviewList))
             {
                 dlg.ShowDialog(this);
             }
@@ -441,7 +441,7 @@ namespace DoAnLapTrinhTrucQuan.Forms
         {
             var allList = MockDataService.Instance.DanhSachNguyenLieu.Select(x => (Ingredient)x).ToList();
 
-            using (var dlg = new FormPreviewExcel("Dữ liệu xuất Excel", $"Tổng cộng {allList.Count} nguyên liệu trong kho hiện tại", allList))
+            using (var dlg = new dlgPreviewExcel("Dữ liệu xuất Excel", $"Tổng cộng {allList.Count} nguyên liệu trong kho hiện tại", allList))
             {
                 dlg.ShowDialog(this);
             }

@@ -1,6 +1,6 @@
 ﻿namespace DoAnLapTrinhTrucQuan.Forms
 {
-    partial class FrmThemNhanVien
+    partial class dlgAddEmployee
     {
         /// <summary>
         /// Required designer variable.

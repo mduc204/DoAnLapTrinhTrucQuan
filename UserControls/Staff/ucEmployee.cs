@@ -267,7 +267,7 @@ namespace DoAnLapTrinhTrucQuan
 
         private void btnThemnhanvien_Click(object sender, EventArgs e)
         {
-            using (var frm = new FrmThemNhanVien(GenerateNextEmployeeCode()))
+            using (var frm = new dlgAddEmployee(GenerateNextEmployeeCode()))
             {
                 if (frm.ShowDialog(this.FindForm()) != DialogResult.OK || frm.EmployeeData is not { } employee)
                     return;

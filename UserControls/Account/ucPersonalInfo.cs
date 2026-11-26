@@ -87,7 +87,7 @@ namespace DoAnLapTrinhTrucQuan
         // ── Đổi mật khẩu ────────────────────────────────────────────────
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
-            using var dlg = new A04ChangePassword();
+            using var dlg = new dlgChangePassword();
             dlg.ShowDialog(this.FindForm());
         }
 

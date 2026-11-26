@@ -376,7 +376,7 @@ namespace DoAnLapTrinhTrucQuan.UserControls
                 return;
             }
 
-            using (var popup = new frmPhieuKhoPopup(_selectedIngredient, isImport, "Nguyễn Văn Hưng"))
+            using (var popup = new dlgStockVoucher(_selectedIngredient, isImport, "Nguyễn Văn Hưng"))
             {
                 if (popup.ShowDialog(this) == DialogResult.OK)
                 {
@@ -467,7 +467,7 @@ namespace DoAnLapTrinhTrucQuan.UserControls
         private void BtnThemNguyenLieu_Click(object? sender, EventArgs e)
         {
             // Mở popup ở Tab 1 (Thêm thủ công)
-            using (var dlg = new FormThemNguyenLieu(initialTab: 0))
+            using (var dlg = new dlgAddIngredient(initialTab: 0))
             {
                 if (dlg.ShowDialog(this) == DialogResult.OK)
                 {
@@ -495,7 +495,7 @@ namespace DoAnLapTrinhTrucQuan.UserControls
         private void BtnXuatExcel_Click(object? sender, EventArgs e)
         {
             // Mở popup ở Tab 2 (Nhập / Xuất Excel)
-            using (var dlg = new FormThemNguyenLieu(initialTab: 1))
+            using (var dlg = new dlgAddIngredient(initialTab: 1))
             {
                 if (dlg.ShowDialog(this) == DialogResult.OK)
                 {

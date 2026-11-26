@@ -2,7 +2,7 @@ using DoAnLapTrinhTrucQuan.Helpers;
 
 namespace DoAnLapTrinhTrucQuan.Forms
 {
-    partial class FormPreviewExcel
+    partial class dlgPreviewExcel
     {
         private System.ComponentModel.IContainer components = null;
 

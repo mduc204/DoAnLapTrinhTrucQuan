@@ -4,16 +4,16 @@ using System.Net.Mail;
 
 namespace DoAnLapTrinhTrucQuan.Forms
 {
-    public partial class FrmThemNhanVien : Form
+    public partial class dlgAddEmployee : Form
     {
         public NewEmployeeData? EmployeeData { get; private set; }
 
-        public FrmThemNhanVien()
+        public dlgAddEmployee()
             : this("NV015")
         {
         }
 
-        public FrmThemNhanVien(string employeeCode)
+        public dlgAddEmployee(string employeeCode)
         {
             InitializeComponent();
             ApplyRoundedRegions();

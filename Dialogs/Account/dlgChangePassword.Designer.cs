@@ -1,6 +1,6 @@
 namespace DoAnLapTrinhTrucQuan
 {
-    partial class A04ChangePassword
+    partial class dlgChangePassword
     {
         private System.ComponentModel.IContainer? components = null;
 

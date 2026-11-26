@@ -2,7 +2,7 @@ using DoAnLapTrinhTrucQuan.Helpers;
 
 namespace DoAnLapTrinhTrucQuan.Forms
 {
-    partial class FormThemNguyenLieu
+    partial class dlgAddIngredient
     {
         private System.ComponentModel.IContainer components = null;
 

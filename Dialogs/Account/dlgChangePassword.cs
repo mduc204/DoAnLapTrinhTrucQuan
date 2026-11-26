@@ -5,11 +5,11 @@ namespace DoAnLapTrinhTrucQuan
     /// Demo password: Cafe@123
     /// Closes with DialogResult.OK on success.
     /// </summary>
-    public partial class A04ChangePassword : Form
+    public partial class dlgChangePassword : Form
     {
         private const string DemoCurrentPassword = "Cafe@123";
 
-        public A04ChangePassword()
+        public dlgChangePassword()
         {
             InitializeComponent();
         }

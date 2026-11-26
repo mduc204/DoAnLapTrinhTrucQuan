@@ -1,6 +1,6 @@
 namespace DoAnLapTrinhTrucQuan
 {
-    partial class A02ForgotPassword
+    partial class dlgForgotPassword
     {
         /// <summary>
         /// Required designer variable.

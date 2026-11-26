@@ -5,16 +5,16 @@ using System.Windows.Forms;
 
 namespace DoAnLapTrinhTrucQuan
 {
-    public partial class A02_2OTP : Form
+    public partial class dlgOTP : Form
     {
         private System.Windows.Forms.Timer _countdownTimer;
         private int _secondsLeft = 60;
 
-        public A02_2OTP() : this("số *** *** 678")
+        public dlgOTP() : this("số *** *** 678")
         {
         }
 
-        public A02_2OTP(string recipient)
+        public dlgOTP(string recipient)
         {
             InitializeComponent();
             lblOTPSubtitle.Text = $"Mã gồm 6 số đã được gửi đến {MaskRecipient(recipient)}";

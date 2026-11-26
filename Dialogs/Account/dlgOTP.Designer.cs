@@ -1,6 +1,6 @@
 namespace DoAnLapTrinhTrucQuan
 {
-    partial class A02_2OTP
+    partial class dlgOTP
     {
         /// <summary>
         /// Required designer variable.

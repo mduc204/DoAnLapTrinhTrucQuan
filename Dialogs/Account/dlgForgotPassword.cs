@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace DoAnLapTrinhTrucQuan
 {
-    public partial class A02ForgotPassword : Form
+    public partial class dlgForgotPassword : Form
     {
         private bool _isStep2 = false;
 
@@ -15,7 +15,7 @@ namespace DoAnLapTrinhTrucQuan
         [DllImport("user32.dll")]
         private static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
 
-        public A02ForgotPassword()
+        public dlgForgotPassword()
         {
             InitializeComponent();
             ShowStep1();
@@ -69,7 +69,7 @@ namespace DoAnLapTrinhTrucQuan
                 return;
             }
 
-            using (A02_2OTP formOTP = new A02_2OTP(txtFPContact.Text.Trim()))
+            using (dlgOTP formOTP = new dlgOTP(txtFPContact.Text.Trim()))
             {
                 DialogResult result;
                 Opacity = 0.62;

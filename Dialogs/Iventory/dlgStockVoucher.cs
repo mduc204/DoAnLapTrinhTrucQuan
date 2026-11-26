@@ -6,7 +6,7 @@ using DoAnLapTrinhTrucQuan.Models;
 
 namespace DoAnLapTrinhTrucQuan.Forms
 {
-    public partial class frmPhieuKhoPopup : Form
+    public partial class dlgStockVoucher : Form
     {
         private readonly Ingredient _ingredient;
         private readonly bool _isImport;
@@ -18,7 +18,7 @@ namespace DoAnLapTrinhTrucQuan.Forms
         public string GhiChu => txtGhiChu.Text.Trim();
         public string NhaCungCap => txtNhaCungCap.Text.Trim();
 
-        public frmPhieuKhoPopup(Ingredient ingredient, bool isImport, string currentUser = "Nguyễn Văn Hưng")
+        public dlgStockVoucher(Ingredient ingredient, bool isImport, string currentUser = "Nguyễn Văn Hưng")
         {
             InitializeComponent();
             _ingredient = ingredient;

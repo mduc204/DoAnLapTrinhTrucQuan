@@ -7,9 +7,9 @@ using DoAnLapTrinhTrucQuan.Models;
 
 namespace DoAnLapTrinhTrucQuan.Forms
 {
-    public partial class FormPreviewExcel : Form
+    public partial class dlgPreviewExcel : Form
     {
-        public FormPreviewExcel(string title, string subtitle, List<Ingredient> ingredients)
+        public dlgPreviewExcel(string title, string subtitle, List<Ingredient> ingredients)
         {
             InitializeComponent();
 

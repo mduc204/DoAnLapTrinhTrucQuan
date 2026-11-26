@@ -8,12 +8,12 @@ using System.Windows.Forms;
 
 namespace DoAnLapTrinhTrucQuan
 {
-    public partial class A01Login : Form
+    public partial class dlgLogin : Form
     {
         /// <summary>Tên / email đăng nhập thành công, dùng bởi Program.cs</summary>
         public string LoggedInUsername { get; private set; } = string.Empty;
 
-        public A01Login()
+        public dlgLogin()
         {
             InitializeComponent();
             btnLogin.Click += btnLogin_Click;
@@ -58,7 +58,7 @@ namespace DoAnLapTrinhTrucQuan
 
         private void lnkForgotPassword_LinkClicked(object? sender, LinkLabelLinkClickedEventArgs e)
         {
-            using var dialog = new A02ForgotPassword();
+            using var dialog = new dlgForgotPassword();
             dialog.ShowDialog(this);
         }
     }
